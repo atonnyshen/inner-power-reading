@@ -338,18 +338,27 @@
     }
     .persona-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    @media (max-width: 860px) {
+      .persona-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
     }
     .persona-card {
       background: #FFFFFF;
       border: 1px solid var(--border-card);
       border-radius: var(--radius-lg);
-      padding: 34px 26px;
+      padding: 36px 32px;
       box-shadow: var(--shadow-sm);
       transition: all 0.25s ease;
       display: flex;
       flex-direction: column;
+      height: auto;
+      min-height: 100%;
+      overflow: visible;
     }
     .persona-card:hover {
       transform: translateY(-4px);
@@ -1225,7 +1234,7 @@
         <h2 class="section-title">核心畫像解構：退讓與內耗的共謀機制</h2>
         <p class="section-desc">
           在職場高壓會議與過往家庭生活中，面對強勢者時習慣妥協退讓，獨處時卻反覆重播自責。<br>
-          當場妥協與事後反芻，源於神經防禦機制的代償錯位，而非個人性格軟弱。
+          當場妥協與事後反芻，源於神經防禦機制的代償錯位，與個人意志力強弱無涉。
         </p>
       </div>
       <div class="persona-grid">
@@ -1414,7 +1423,7 @@
           <div class="strategy-num">1</div>
           <h3 class="strategy-title">微步承諾：5 分鐘切片急救閱讀法</h3>
           <p class="strategy-text">
-            妳不需要正襟危坐從第一頁讀到最後一頁。把這些書當作擺在辦公桌與床頭的「急救醫藥箱」：今天遇到被越界時，只翻《給予》第 142 頁；深夜反芻睡不著時，只看《自我對話習慣》第 3 節。每天 5 分鐘，翻開一頁，就是在為自己奪回一寸主權。
+            妳不需要正襟危坐從第一頁讀到最後一頁。把這些書當作擺在辦公桌與床頭的「急救醫藥箱」：今天遇到被過度索取時，直接翻閱《給予》第 6 章〈保護型給予者：如何避免被索取者耗盡〉；深夜反芻自責時，直接點開《強大內心的自我對話習慣》第 2 章〈心理抽離的工具箱：從暴風雨中心退後一步〉。在 Readify AI 裡隨手點開一個章節，就是在為自己奪回一寸主權。
           </p>
         </div>
 
@@ -1422,7 +1431,7 @@
           <div class="strategy-num">2</div>
           <h3 class="strategy-title">蔡格尼克效應：破解衝突現場的關鍵懸念</h3>
           <p class="strategy-text">
-            當主管當眾否定妳的方案，為什麼保持微笑或立刻反駁都是錯的？葛倫費德教授在《懂權力》第四章揭示了一種罕為人知的「第三姿態」，能讓強勢者在 10 秒內本能收回侵略性。翻開原書對應頁面，直接取得完整的破局腳本。
+            當主管當眾否定妳的方案，為什麼保持微笑或立刻反駁都是錯的？葛倫費德教授在《懂權力》第 2 章〈高姿態的權力〉與第 8 章〈力抗霸凌，擺脫受害者角色〉中，詳細拆解了重掌主導權的肢體定錨法，能讓強勢者在 10 秒內本能收回侵略性。在電子書目錄中點選第八章，即可取得完整的防禦對話範本。
           </p>
         </div>
 
@@ -1430,7 +1439,7 @@
           <div class="strategy-num">3</div>
           <h3 class="strategy-title">去病理化接納：升級過往的自我保護裝備</h3>
           <p class="strategy-text">
-            翻閱這些書，不是為了挑剔妳的過去，更不是要求妳變得冷酷狡詐。妳的退讓與敏感，曾保護妳安全度過童年與動盪環境。現在妳長大了，翻開原書，只是為當年的保護本能升級一套成熟堅固的裝備。妳本就值得被溫柔而堅定地對待。
+            翻閱原書旨在為過去的自我防禦本能升級更成熟的應對工具，全然接納妳一路走來的生存智慧。妳的退讓與敏感，曾保護妳度過童年與動盪環境；如今翻開原書，是為了讓這份敏銳轉化為保護自己的堅實防線，平靜而堅定地立足。
           </p>
         </div>
 
@@ -1446,7 +1455,7 @@
           <div class="strategy-num">5</div>
           <h3 class="strategy-title">If-Then 執行意向：建立睡前充電定錨儀式</h3>
           <p class="strategy-text">
-            建立清晰的行為公式：<strong>如果</strong>今晚大腦又開始重播白天的會議衝突，<strong>那麼</strong>我就打開 Readify AI，翻開《強大內心的自我對話習慣》第 52 頁，跟著作者做一次 3 分鐘心理抽離練習，以理性陪伴替代孤獨自責。
+            建立清晰的行為公式：<strong>如果</strong>今晚大腦又開始重播白天的會議衝突，<strong>那麼</strong>我就打開 Readify AI，點開《強大內心的自我對話習慣》第 2 章〈工具箱〉中的第三人稱抽離練習，跟隨內文做一次思維重置，以客觀平靜替代孤獨自責。
           </p>
         </div>
       </div>
@@ -1501,7 +1510,7 @@
               <div class="book-section-block">
                 <div class="book-block-label"><span>💡</span> 破局心法：如演員般切換「高權力」與「低權力」姿態</div>
                 <div class="book-block-text">
-                  權力如同舞台上的角色外衣。當團隊需要決策與方向時，你必須穿上高權力姿態定調；當需要傾聽與協作時，再靈活切換至低權力姿態。權力的真正價值在於推進團隊目標，並非彰顯個人優越。
+                  權力如同舞台上的角色外衣。當團隊需要決策與方向時，你必須穿上高權力姿態定調；當需要傾聽與協作時，再靈活切換至低權力姿態。權力的本質在於推進團隊目標與承擔決策責任，旨在服務集體成果。
                 </div>
               </div>
 
@@ -1513,7 +1522,7 @@
 
             <div class="book-action-bar">
               <a href="book-power.html" class="btn-detail-link">閱讀專屬獨立長頁 ➔</a>
-              <span style="font-size: 0.85rem; color: var(--text-dim);">（各大實體與電子書城現正熱售中）</span>
+              <a href="books/懂權力_在每個角色上發光_黛博拉·葛倫費德.epub" class="btn btn-secondary" onclick="handleBookDownload('懂權力')" download>下載 EPUB (1.4MB)</a>
             </div>
           </div>
         </article>
@@ -1552,7 +1561,7 @@
               <div class="book-section-block">
                 <div class="book-block-label"><span>💡</span> 破局心法：主動呈現工作成果，建立專業合作人脈</div>
                 <div class="book-block-text">
-                  主動呈現工作成果屬於正當的職業責任，並非個人自誇。學習菲佛的法則：成為不可替代的資源節點，將自身價值清晰傳達給決策者，在合規前提下打破陳規以推進目標。
+                  主動呈現工作成果屬於正當且必要的職業責任，能有效建立不可替代的專業節點。學習菲佛的法則：成為不可替代的資源節點，將自身價值清晰傳達給決策者，在合規前提下打破陳規以推進目標。
                 </div>
               </div>
 
@@ -1590,7 +1599,7 @@
               </div>
               <h3 class="book-main-title">給予：華頓商學院最啟發人心的一堂課</h3>
               <div class="book-core-axiom">
-                核心公理：成功的付出者絕非無底線退讓，而是具備高敏銳度的邊界意識，能夠精準辨識索取者。
+                核心公理：成功的付出者具備高度敏銳的邊界防線，能夠精準辨識索取者並設立保護機制。
               </div>
 
               <div class="book-section-block">
@@ -1608,8 +1617,8 @@
               </div>
 
               <div class="book-quote-box">
-                「保護性的給予者在幫助別人的同時，從未忘記守護自身利益。無底線的退讓實質上損害了自身價值，不能等同於純粹善良。」
-                <button class="copy-quote-btn" onclick="copyQuote(this, '保護性的給予者在幫助別人的同時，從未忘記守護自身利益。無底線的退讓實質上損害了自身價值，不能等同於純粹善良。')">複製金句</button>
+                「保護性的給予者在幫助別人的同時，從未忘記守護自身利益。無底線的退讓會直接損耗自身心力，真正的善良必須建立在明確的邊界保護之上。」
+                <button class="copy-quote-btn" onclick="copyQuote(this, '保護性的給予者在幫助別人的同時，從未忘記守護自身利益。無底線的退讓會直接損耗自身心力，真正的善良必須建立在明確的邊界保護之上。')">複製金句</button>
               </div>
             </div>
 
@@ -1641,7 +1650,7 @@
               </div>
               <h3 class="book-main-title">強大內心的自我對話習慣 (Chatter)</h3>
               <div class="book-core-axiom">
-                核心公理：大腦失控反芻並非理性思考。學會心理抽離與第三人稱對話，能迅速降溫過載的大腦。
+                核心公理：大腦失控反芻屬於神經迴路過載引起的自我審訊風暴。學會心理抽離與第三人稱對話，能迅速降溫過載的大腦。
               </div>
 
               <div class="book-section-block">
@@ -1692,7 +1701,7 @@
               </div>
               <h3 class="book-main-title">鈍感力（青島出版社權威譯本）</h3>
               <div class="book-core-axiom">
-                核心公理：鈍感屬於主動過濾無效訊號的高階生理防禦機制，與愚鈍無關。
+                核心公理：鈍感屬於主動過濾無效噪音的生理防禦智慧，確保自律神經與精力高度聚焦於核心目標。
               </div>
 
               <div class="book-section-block">
@@ -1710,8 +1719,8 @@
               </div>
 
               <div class="book-quote-box">
-                「在漫長生涯中，具備堅定鈍感力、不受瑣事干擾者，往往比過度敏感的天才走得更穩健。」
-                <button class="copy-quote-btn" onclick="copyQuote(this, '在漫長生涯中，具備堅定鈍感力、不受瑣事干擾者，往往比過度敏感的天才走得更穩健。')">複製金句</button>
+                「在漫長生涯中，具備堅定鈍感力、不受瑣事干擾者，往往展現出更持久的抗挫力與穩定表現。」
+                <button class="copy-quote-btn" onclick="copyQuote(this, '在漫長生涯中，具備堅定鈍感力、不受瑣事干擾者，往往展現出更持久的抗挫力與穩定表現。')">複製金句</button>
               </div>
             </div>
 
@@ -1794,7 +1803,7 @@
               </div>
               <h3 class="book-main-title">過度努力：每個「過度」，都是傷的證明</h3>
               <div class="book-core-axiom">
-                核心公理：過度努力並非單純的追求卓越，而是為了逃避「不夠好就不配被愛」的深層恐懼。
+                核心公理：過度努力源於深層的情感防禦，藉由不斷追求完美來抵禦被否定或被拋棄的內在焦慮。
               </div>
 
               <div class="book-section-block">
@@ -2091,7 +2100,7 @@
         <span class="section-tag">DOWNLOAD CENTER</span>
         <h2 class="section-title">電子書資源下載中心</h2>
         <p class="section-desc">
-          精選 6 部完整正規 EPUB 電子書，均已完成校驗。<br>
+          精選 7 部完整正規 EPUB 電子書，均已完成校驗。<br>
           全面推薦搭配專用 AI 伴讀工具 <strong>Readify AI</strong>，享受深層對話與有聲導讀。
         </p>
       </div>
@@ -2111,6 +2120,18 @@
       </div>
 
       <div class="download-grid">
+        <div class="download-card">
+          <div class="download-info-top">
+            <img src="covers/acting-with-power.jpg" alt="懂權力" class="download-thumb">
+            <div>
+              <h4 class="download-card-title">懂權力，在每個角色上發光</h4>
+              <p class="download-card-meta">史丹佛 MBA 選修課 · 1.4 MB · 天下雜誌</p>
+            </div>
+          </div>
+          <a href="books/懂權力_在每個角色上發光_黛博拉·葛倫費德.epub" class="download-btn" onclick="handleBookDownload('懂權力')" download>
+            <span>⬇️</span> <span>下載 EPUB（支援 Readify AI）</span>
+          </a>
+        </div>
         <div class="download-card">
           <div class="download-info-top">
             <img src="covers/rules-of-power.jpg" alt="精進權力" class="download-thumb">
