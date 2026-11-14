@@ -1456,7 +1456,7 @@
             <a href="books/精進權力_7大權力法則_傑夫瑞·菲佛.epub" download class="btn-download-book">
               <span>📥</span> <span>下載 EPUB 電子書 (2.2 MB)</span>
             </a>
-            <a href="https://github.com/atonny/inner-power-reading/raw/main/books/精進權力_7大權力法則_傑夫瑞·菲佛.epub" target="_blank" class="btn-download-mirror">
+            <a href="https://github.com/atonnyshen/inner-power-reading/raw/main/books/精進權力_7大權力法則_傑夫瑞·菲佛.epub" target="_blank" class="btn-download-mirror">
               <span>🔗</span> <span>GitHub 備用載點</span>
             </a>
           </div>
@@ -1512,7 +1512,7 @@
             <a href="books/給予_華頓商學院最啟發人心的一堂課_亞當·格蘭特.epub" download class="btn-download-book">
               <span>📥</span> <span>下載 EPUB 電子書 (885 KB)</span>
             </a>
-            <a href="https://github.com/atonny/inner-power-reading/raw/main/books/給予_華頓商學院最啟發人心的一堂課_亞當·格蘭特.epub" target="_blank" class="btn-download-mirror">
+            <a href="https://github.com/atonnyshen/inner-power-reading/raw/main/books/給予_華頓商學院最啟發人心的一堂課_亞當·格蘭特.epub" target="_blank" class="btn-download-mirror">
               <span>🔗</span> <span>GitHub 備用載點</span>
             </a>
           </div>
@@ -1568,7 +1568,7 @@
             <a href="books/強大內心的自我對話習慣_伊森·克洛斯.epub" download class="btn-download-book">
               <span>📥</span> <span>下載 EPUB 電子書 (811 KB)</span>
             </a>
-            <a href="https://github.com/atonny/inner-power-reading/raw/main/books/強大內心的自我對話習慣_伊森·克洛斯.epub" target="_blank" class="btn-download-mirror">
+            <a href="https://github.com/atonnyshen/inner-power-reading/raw/main/books/強大內心的自我對話習慣_伊森·克洛斯.epub" target="_blank" class="btn-download-mirror">
               <span>🔗</span> <span>GitHub 備用載點</span>
             </a>
           </div>
@@ -1624,7 +1624,7 @@
             <a href="books/鈍感力_渡邊淳一_青島出版社版.epub" download class="btn-download-book">
               <span>📥</span> <span>下載 EPUB 電子書 (251 KB)</span>
             </a>
-            <a href="https://github.com/atonny/inner-power-reading/raw/main/books/鈍感力_渡邊淳一_青島出版社版.epub" target="_blank" class="btn-download-mirror">
+            <a href="https://github.com/atonnyshen/inner-power-reading/raw/main/books/鈍感力_渡邊淳一_青島出版社版.epub" target="_blank" class="btn-download-mirror">
               <span>🔗</span> <span>GitHub 備用載點</span>
             </a>
           </div>
@@ -1680,7 +1680,7 @@
             <a href="books/如果父母情緒不成熟_和內在父母和解_琳賽·吉普森.epub" download class="btn-download-book">
               <span>📥</span> <span>下載 EPUB 電子書 (2.8 MB)</span>
             </a>
-            <a href="https://github.com/atonny/inner-power-reading/raw/main/books/如果父母情緒不成熟_和內在父母和解_琳賽·吉普森.epub" target="_blank" class="btn-download-mirror">
+            <a href="https://github.com/atonnyshen/inner-power-reading/raw/main/books/如果父母情緒不成熟_和內在父母和解_琳賽·吉普森.epub" target="_blank" class="btn-download-mirror">
               <span>🔗</span> <span>GitHub 備用載點</span>
             </a>
           </div>
@@ -1736,7 +1736,7 @@
             <a href="books/過度努力_每個過度都是傷的證明_周慕姿.epub" download class="btn-download-book">
               <span>📥</span> <span>下載 EPUB 電子書 (353 KB)</span>
             </a>
-            <a href="https://github.com/atonny/inner-power-reading/raw/main/books/過度努力_每個過度都是傷的證明_周慕姿.epub" target="_blank" class="btn-download-mirror">
+            <a href="https://github.com/atonnyshen/inner-power-reading/raw/main/books/過度努力_每個過度都是傷的證明_周慕姿.epub" target="_blank" class="btn-download-mirror">
               <span>🔗</span> <span>GitHub 備用載點</span>
             </a>
           </div>
@@ -2085,7 +2085,7 @@
             下載後可在 iOS Apple Books、微信讀書（本地匯入）、多看閱讀、Calibre 或 Kobo 載具無障礙開啟。
           </span>
         </div>
-        <a href="https://github.com/atonny/inner-power-reading" target="_blank" class="btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1.25rem;">
+        <a href="https://github.com/atonnyshen/inner-power-reading" target="_blank" class="btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1.25rem;">
           <span>📦</span> <span>前往 GitHub 開源倉庫</span>
         </a>
       </div>
@@ -2231,12 +2231,6 @@
     for (let i = 0; i < T_FULL_STR.length; i++) {
       T2S_MAP[T_FULL_STR[i]] = S_FULL_STR[i];
       S2T_MAP[S_FULL_STR[i]] = T_FULL_STR[i];
-    }
-
-    // Invert mapping for S to T
-    const S2T_MAP = {};
-    for (const [t, s] of Object.entries(T2S_MAP)) {
-      S2T_MAP[s] = t;
     }
 
     let currentLang = localStorage.getItem('site_lang') || 'zh-TW';

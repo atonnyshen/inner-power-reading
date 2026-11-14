@@ -11,7 +11,7 @@
 - **官方生產站台 (Cloudflare 全球邊緣節點 · 大陸免翻牆秒開)**：  
   👉 [https://inner-power-reading.pages.dev](https://inner-power-reading.pages.dev)
 - **GitHub 專案倉庫**：  
-  👉 [https://github.com/atonny/inner-power-reading](https://github.com/atonny/inner-power-reading)
+  👉 [https://github.com/atonnyshen/inner-power-reading](https://github.com/atonnyshen/inner-power-reading)
 
 本站具備 **繁體中文 / 简体中文** 一鍵實時無縫切換，支援 3 分鐘心理受困自我檢測與行動卡，全面適配手機、平板與桌面閱讀。
 
