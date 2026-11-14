@@ -9,6 +9,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
+
+    /* Fixed Top Navigation Guard */
+    header.top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
     :root {
       --bg-page: #FAF8F5;
       --bg-page-alt: #F4EFEA;
@@ -1162,14 +1172,334 @@
       .adversarial-box { padding: 22px; }
       .assessment-card { padding: 22px; }
     }
+  
+    /* === Award-Winning Web Craft Design Enhancements === */
+
+    /* 1. Global Overflow & Multi-Device Containment */
+    html {
+      overflow-x: hidden;
+      width: 100%;
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-height, 80px) + 20px);
+    }
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      min-width: 0;
+      position: relative;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      min-width: 0;
+    }
+
+    /* 2. Top Navigation (Smart Hide/Reveal & Blur) */
+    header.top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(253, 251, 247, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-card);
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+      will-change: transform;
+    }
+    header.top-nav.nav-hidden {
+      transform: translateY(-100%);
+      box-shadow: none;
+    }
+    .top-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      gap: 16px;
+    }
+
+    /* Chapter Scroll Snap Bar inside Header */
+    .nav-chapter-bar {
+      border-top: 1px solid rgba(45, 41, 38, 0.06);
+      background: rgba(253, 251, 247, 0.85);
+      padding: 6px 0;
+      position: relative;
+    }
+    .chapter-nav-scroll {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 2px 8px;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent);
+    }
+    .chapter-nav-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .nav-chip {
+      scroll-snap-align: start;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      transition: all 0.2s ease;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .nav-chip:hover, .nav-chip.active {
+      color: var(--accent-rose);
+      border-color: var(--accent-rose);
+      background: var(--accent-rose-light);
+    }
+
+    /* 3. Floating Quick Nav Pill (Back to Top & Assessment for Mobile & Desktop) */
+    .floating-quick-nav {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      z-index: 990;
+      display: inline-flex;
+      align-items: center;
+      background: rgba(253, 251, 247, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-full);
+      box-shadow: 0 10px 28px rgba(45, 41, 38, 0.16);
+      padding: 4px 8px;
+      gap: 4px;
+      opacity: 0;
+      transform: translateY(16px);
+      pointer-events: none;
+      transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .floating-quick-nav.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .quick-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      border: none;
+      background: transparent;
+      color: var(--text-main);
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .quick-nav-btn:hover {
+      background: var(--accent-rose-light);
+      color: var(--accent-rose);
+    }
+    .quick-nav-divider {
+      width: 1px;
+      height: 16px;
+      background: var(--border-subtle);
+      margin: 0 2px;
+    }
+
+    /* 4. Multi-Variable Assessment Progress Visualization */
+    .assessment-meters {
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      background: #FFFFFF;
+      padding: 20px 22px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+    .meter-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .meter-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .meter-score {
+      font-family: var(--font-serif);
+      color: var(--accent-rose);
+      font-weight: 800;
+    }
+    .meter-track {
+      width: 100%;
+      height: 8px;
+      background: rgba(45, 41, 38, 0.08);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      position: relative;
+    }
+    .meter-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #D48B70, var(--accent-rose));
+      border-radius: var(--radius-full);
+      width: 0%;
+      transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .meter-fill.meter-r { background: linear-gradient(90deg, #E08269, #C06C52); }
+    .meter-fill.meter-p { background: linear-gradient(90deg, #D99B5B, #B87333); }
+    .meter-fill.meter-b { background: linear-gradient(90deg, #6C8EAD, #466D88); }
+    .meter-fill.meter-o { background: linear-gradient(90deg, #7C9885, #557A60); }
+
+    /* Composite Profile Badge */
+    .composite-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: var(--accent-rose-light);
+      border: 1px solid rgba(192, 108, 82, 0.3);
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--accent-rose);
+      margin-bottom: 12px;
+    }
+
+    /* 5. Global Image Lightbox Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2000;
+      background: rgba(20, 18, 16, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      cursor: zoom-out;
+      opacity: 0;
+      transition: opacity 0.28s ease;
+      pointer-events: none;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-box {
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      cursor: default;
+    }
+    .modal-img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+      object-fit: contain;
+    }
+    .modal-caption {
+      margin-top: 14px;
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      color: #FDFBF7;
+      text-align: center;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+    .modal-close {
+      position: absolute;
+      top: -44px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #FFFFFF;
+      font-size: 1.2rem;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .modal-close:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    /* 6. Dark / Night Theme Contrast Protection */
+    @media (prefers-color-scheme: dark) {
+      [data-theme="dark"], body.theme-dark {
+        --bg-page: #1A1816;
+        --bg-page-alt: #221F1C;
+        --bg-card: #282421;
+        --bg-card-soft: #302B27;
+        --text-main: #F5F2EB;
+        --text-muted: #D1C9BD;
+        --text-dim: #9E9486;
+        --border-card: #3D3732;
+        --border-subtle: #4A433D;
+        --accent-rose: #E08269;
+        --accent-rose-light: rgba(224, 130, 105, 0.18);
+      }
+    }
+    [data-theme="dark"], [data-theme="night"] {
+      --bg-page: #1A1816;
+      --bg-page-alt: #221F1C;
+      --bg-card: #282421;
+      --bg-card-soft: #302B27;
+      --text-main: #F5F2EB;
+      --text-muted: #D1C9BD;
+      --text-dim: #9E9486;
+      --border-card: #3D3732;
+      --border-subtle: #4A433D;
+      --accent-rose: #E08269;
+      --accent-rose-light: rgba(224, 130, 105, 0.18);
+    }
+
+    /* 7. Prefers Reduced Motion Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
   </style>
 </head>
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar" aria-label="主要導航">
-    <div class="container navbar-inner">
-      <a href="#" class="brand">
+    <!-- Top Navigation (Fixed, Blur, Smart Hide & Scroll Snap Chapter Bar) -->
+  <header class="top-nav" id="topNav" aria-label="主要導航與板塊目錄">
+    <div class="container top-nav-inner">
+      <a href="#" class="brand" aria-label="回頁首">
         <div class="brand-icon">🏛️</div>
         <div>
           <span class="brand-title">心智自立書單</span>
@@ -1178,13 +1508,12 @@
       </a>
       <ul class="nav-links">
         <li><a href="#persona">受困剖析</a></li>
-        <li><a href="#adversarial">對抗審查</a></li>
-        <li><a href="#reading-strategy">閱讀心法</a></li>
+        <li><a href="#ladder">演化階梯</a></li>
         <li><a href="#pillars">七大專書</a></li>
         <li><a href="#companions">互補矩陣</a></li>
         <li><a href="#assessment">受困自測</a></li>
         <li><a href="#playbook">防身處方</a></li>
-        <li><a href="#downloads">資源下載</a></li>
+        <li><a href="#downloads">電子書庫</a></li>
       </ul>
       <div class="nav-actions">
         <button id="langToggleBtn" class="lang-btn" aria-label="切換繁簡中文">
@@ -1192,10 +1521,28 @@
         </button>
       </div>
     </div>
-  </nav>
+
+    <!-- Integrated Horizontal Scroll Snap Chapter Bar -->
+    <nav class="nav-chapter-bar" aria-label="板塊快速跳轉">
+      <div class="container">
+        <div class="chapter-nav-scroll" id="chapterNavScroll">
+          <a href="#persona" class="nav-chip"><span>💔</span> <span>受困圖景</span></a>
+          <a href="#ladder" class="nav-chip"><span>🪜</span> <span>演化階梯</span></a>
+          <a href="#pillars" class="nav-chip"><span>📚</span> <span>七大專書</span></a>
+          <a href="#companions" class="nav-chip"><span>🛡️</span> <span>互補矩陣</span></a>
+          <a href="#assessment" class="nav-chip"><span>⚡</span> <span>心智自測</span></a>
+          <a href="#playbook" class="nav-chip"><span>💊</span> <span>行動處方</span></a>
+          <a href="#downloads" class="nav-chip"><span>📥</span> <span>電子書庫</span></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Wrapper (HTML5 Semantic) -->
+  <main id="main-content">
 
   <!-- Hero Section -->
-  <header class="hero">
+  <section class="hero" id="hero">
     <div class="container">
       <div class="hero-tag">
         <span>⚡</span> <span>深度書單與心智自立行動手冊</span>
@@ -1224,7 +1571,7 @@
         <div class="hero-badge-item"><span>🕊️</span> 成人假性孤兒臨床心理和解</div>
       </div>
     </div>
-  </header>
+  </section>
 
   <!-- Section 1: Persona Breakdown -->
   <section id="persona">
@@ -1928,60 +2275,115 @@
   </section>
 
   <!-- Section 5: Assessment -->
+    <!-- Section 5: Assessment -->
   <section id="assessment">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">SELF-ASSESSMENT TOOL</span>
-        <h2 class="section-title">3 分鐘受困心智自測：測出你的主導型態與第一優先書單</h2>
+        <h2 class="section-title">3 分鐘受困心智自測：四維向量全變數診斷</h2>
         <p class="section-desc">
-          勾選你在日常人際或職場中符合的典型反應，系統將精確診斷你的核心卡點並計算最優起手書目。
+          勾選在日常人際或職場中符合的典型反應。系統將即時計算四大心理學維度負荷，給予複合型態深度處方與第一起手書單。
         </p>
       </div>
 
       <div class="assessment-card">
         <p class="assessment-intro">
-          <strong>檢測指標（請勾選最符合你現狀的項目，可多選）：</strong><br>
-          勾選項目將實時計算，給予針對性行動處方。
+          <strong>檢測指標（請勾選符合現狀的項目，可多選）：</strong><br>
+          系統採用 R（反芻）、P（權力）、B（邊界）、O（童年）多維加權向量演算法，全面反映真實受困維度。
         </p>
-        <div class="assessment-options">
+        <div class="assessment-options" id="assessmentOptions">
+          <!-- 12 題情境選項動態/靜態渲染 -->
           <label class="assessment-opt-label">
-            <input type="checkbox" name="q" value="A" onchange="runAssessment()">
-            <span class="assessment-opt-text">1. 在高壓場合被強勢反駁後，當下腦袋一片空白只能妥協，回到家卻在床上反覆後悔重播。</span>
+            <input type="checkbox" name="q" value="0" onchange="runAssessment()">
+            <span class="assessment-opt-text">1. 面對強勢威壓或當眾質疑時，當下身體凍結、呼吸急促無法言語，事後反芻自責長達數天。</span>
           </label>
           <label class="assessment-opt-label">
-            <input type="checkbox" name="q" value="B" onchange="runAssessment()">
-            <span class="assessment-opt-text">2. 覺得爭取權力、邀功或向上管理很虛偽，相信「只要我把事情做好自然會被公正對待」。</span>
+            <input type="checkbox" name="q" value="1" onchange="runAssessment()">
+            <span class="assessment-opt-text">2. 內心深信「只要把工作做好，自然會被看見」，認為爭取能見度或主動爭取資源是虛偽且不光彩的行為。</span>
           </label>
           <label class="assessment-opt-label">
-            <input type="checkbox" name="q" value="C" onchange="runAssessment()">
-            <span class="assessment-opt-text">3. 常常無法拒絕同事或主管的臨時要求，明明自己已精疲力竭，仍勉強答應幫忙。</span>
+            <input type="checkbox" name="q" value="2" onchange="runAssessment()">
+            <span class="assessment-opt-text">3. 明明自己的工作已嚴重超載，但面對同事或主管請求時，仍舊難以開口拒絕，害怕破壞和諧。</span>
           </label>
           <label class="assessment-opt-label">
-            <input type="checkbox" name="q" value="A" onchange="runAssessment()">
-            <span class="assessment-opt-text">4. 對主管或權威人物的一個眼神或冷淡語氣極度敏感，本能地覺得「是不是我又做錯了什麼」。</span>
+            <input type="checkbox" name="q" value="3" onchange="runAssessment()">
+            <span class="assessment-opt-text">4. 幼年時期習慣承擔照顧父母情緒的責任，長大後在職場依然戒不掉「必須成為懂事可靠的大人」的沉重包袱。</span>
           </label>
           <label class="assessment-opt-label">
-            <input type="checkbox" name="q" value="A" onchange="runAssessment()">
-            <span class="assessment-opt-text">5. 發生衝突後常常失眠，大腦如同失控的錄音機，不停想像「我當時應該說這句話才對」。</span>
+            <input type="checkbox" name="q" value="4" onchange="runAssessment()">
+            <span class="assessment-opt-text">5. 結束一場會議或社交後，腦海反覆播放「我剛剛是不是說錯話了」、「對方眼神是不是在嫌棄我」。</span>
           </label>
           <label class="assessment-opt-label">
-            <input type="checkbox" name="q" value="B" onchange="runAssessment()">
-            <span class="assessment-opt-text">6. 在重要會議中習慣坐在邊角、發言時聲音輕柔帶歉意，總覺得自己「還不夠資格」發表定調意見。</span>
+            <input type="checkbox" name="q" value="5" onchange="runAssessment()">
+            <span class="assessment-opt-text">6. 在重要決策場合習慣退坐邊緣、聲音輕柔帶歉意，總覺得自己「還不夠格」扮演主導者角色。</span>
           </label>
           <label class="assessment-opt-label">
-            <input type="checkbox" name="q" value="D" onchange="runAssessment()">
-            <span class="assessment-opt-text">7. 小時候常承擔照顧父母情緒的責任，習慣當個懂事聽話、不給大人添麻煩的「乖孩子」。</span>
+            <input type="checkbox" name="q" value="6" onchange="runAssessment()">
+            <span class="assessment-opt-text">7. 經常為他人雪中送炭，卻屢屢遭到索取者視為理所當然，甚至被轉嫁責任，深陷心力交瘁。</span>
           </label>
           <label class="assessment-opt-label">
-            <input type="checkbox" name="q" value="D" onchange="runAssessment()">
-            <span class="assessment-opt-text">8. 就算已經取得很不錯的成績，依然不敢放鬆休息，總覺得一旦停下來就會被拋棄或否定。</span>
+            <input type="checkbox" name="q" value="7" onchange="runAssessment()">
+            <span class="assessment-opt-text">8. 即便已經取得顯著成果，依然不敢片刻鬆懈，內心常有「一旦停下來就會失去價值被淘汰」的恐慌感。</span>
+          </label>
+          <label class="assessment-opt-label">
+            <input type="checkbox" name="q" value="8" onchange="runAssessment()">
+            <span class="assessment-opt-text">9. 遭遇不公對待時，本能地選擇退讓妥協，寧願自己委屈吞下，也不敢正面提出抗議維護權利。</span>
+          </label>
+          <label class="assessment-opt-label">
+            <input type="checkbox" name="q" value="9" onchange="runAssessment()">
+            <span class="assessment-opt-text">10. 睡眠品質不佳，入睡前大腦如同失控的放映機，不停編排白天衝突的「完美反駁台詞」。</span>
+          </label>
+          <label class="assessment-opt-label">
+            <input type="checkbox" name="q" value="10" onchange="runAssessment()">
+            <span class="assessment-opt-text">11. 習慣無底線照顧團隊每一個人的情緒感受，把所有人的不開心都當成是自己的責任。</span>
+          </label>
+          <label class="assessment-opt-label">
+            <input type="checkbox" name="q" value="11" onchange="runAssessment()">
+            <span class="assessment-opt-text">12. 只要收到主管傳來的訊息或未接來電，即使沒有任何犯錯，內心也會瞬間湧起大難臨頭的焦慮。</span>
           </label>
         </div>
 
         <div id="assessmentResult" class="assessment-result">
-          <h3 id="resultTitle" class="result-title">診斷結果生成中...</h3>
+          <div id="resultBadge" class="composite-badge">四維全變數計算完成</div>
+          <h3 id="resultTitle" class="result-title">複合型態診斷分析</h3>
+
+          <!-- 四維視覺進度條 -->
+          <div class="assessment-meters" id="assessmentMeters">
+            <div class="meter-row">
+              <div class="meter-label-row">
+                <span>🧠 急性神經反芻與迷走凍結 (R)</span>
+                <span class="meter-score" id="scoreR">0%</span>
+              </div>
+              <div class="meter-track"><div class="meter-fill meter-r" id="fillR"></div></div>
+            </div>
+            <div class="meter-row">
+              <div class="meter-label-row">
+                <span>⚡ 權力博弈盲區與能見度阻滯 (P)</span>
+                <span class="meter-score" id="scoreP">0%</span>
+              </div>
+              <div class="meter-track"><div class="meter-fill meter-p" id="fillP"></div></div>
+            </div>
+            <div class="meter-row">
+              <div class="meter-label-row">
+                <span>🛡️ 邊界失守與過度利他透支 (B)</span>
+                <span class="meter-score" id="scoreB">0%</span>
+              </div>
+              <div class="meter-track"><div class="meter-fill meter-b" id="fillB"></div></div>
+            </div>
+            <div class="meter-row">
+              <div class="meter-label-row">
+                <span>🌱 童年代償與努力過度強迫 (O)</span>
+                <span class="meter-score" id="scoreO">0%</span>
+              </div>
+              <div class="meter-track"><div class="meter-fill meter-o" id="fillO"></div></div>
+            </div>
+          </div>
+
           <div id="resultBody" class="result-body"></div>
-          <a id="resultLink" href="#pillars" class="btn btn-primary">前往專屬推薦書單 ➔</a>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;">
+            <a id="resultLink" href="#pillars" class="btn btn-primary">前往專屬推薦書單 ➔</a>
+            <a id="resultDownload" href="#downloads" class="btn btn-secondary">直接領取對應 EPUB 電子書 📥</a>
+          </div>
         </div>
       </div>
     </div>
@@ -2213,7 +2615,11 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
+  </main>
+
   <footer>
     <div class="container">
       <div class="footer-inner">
@@ -2250,8 +2656,34 @@
       <div class="footer-bottom">
         <p>© 2026 心智自立書單與行動手冊 · 支援 Readify AI 智慧閱讀 · 內容引自權威學術研究與原著 · 供個人成長學習使用</p>
       </div>
+          <p class="copyright-notice" style="font-size: 0.85rem; color: var(--text-dim); margin-top: 14px; line-height: 1.7;">
+        本站內容專注於女性成長、心理學與組織博弈之非營利學術探討與數位共讀推廣，尊重正版知識產權。所有電子書檔案皆標註原出版社與作者資訊，推薦讀者支持正版紙本書與官方電子書。
+      </p>
+      <p class="takedown-notice" style="font-size: 0.85rem; color: var(--text-dim); margin-top: 8px; line-height: 1.7;">
+        <strong>【權利人優先下架條款 (Notice & Takedown)】</strong>：若版權方或權利人對本站引證或內容有任何異議，請隨時透過聯繫管道通報，我們將於 24 小時內即時核實並立即移除相關內容。聯繫通報窗口：<code>contact@inner-power-reading.pages.dev</code>
+      </p>
     </div>
   </footer>
+
+  <!-- Floating Quick Nav Pill (Back to Top & Quick Assessment) -->
+  <aside class="floating-quick-nav" id="floatingQuickNav" aria-label="快捷導航懸浮列">
+    <button type="button" class="quick-nav-btn" id="btnBackToTop" aria-label="快速回到頂部導覽列" onclick="scrollToTopNav()">
+      <span>▲</span> <span>回頂部</span>
+    </button>
+    <span class="quick-nav-divider"></span>
+    <a href="#assessment" class="quick-nav-btn" aria-label="前往心智自測">
+      <span>⚡</span> <span>自測</span>
+    </a>
+  </aside>
+
+  <!-- Lightbox Modal Overlay (Award-Winning Web Craft Pillar 6) -->
+  <div id="lightbox-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="圖片放大檢視" onclick="closeLightboxModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button type="button" class="modal-close" id="modalClose" aria-label="關閉圖片檢視" onclick="closeLightboxModal()">✕</button>
+      <img id="modalImg" src="" alt="放大檢視封面" class="modal-img">
+      <p id="modalCaption" class="modal-caption"></p>
+    </div>
+  </div>
 
   <!-- Status Toast -->
   <div id="status-toast" role="status" aria-live="polite">已複製到剪貼簿</div>
@@ -2293,58 +2725,285 @@
     }
 
     // 4. Assessment Logic
-    function runAssessment() {
-      const checked = document.querySelectorAll('input[name="q"]:checked');
-      const resBox = document.getElementById('assessmentResult');
-      const title = document.getElementById('resultTitle');
-      const body = document.getElementById('resultBody');
-      const link = document.getElementById('resultLink');
+        /* === Award-Winning Web Craft State Machine & Interactive Features === */
 
-      if (checked.length === 0) {
-        resBox.classList.remove('active');
-        return;
+    // 1. Dynamic Nav Height & ResizeObserver
+    const topNav = document.getElementById('topNav');
+    if (topNav && window.ResizeObserver) {
+      const ro = new ResizeObserver(entries => {
+        for (const entry of entries) {
+          const navH = Math.round(entry.contentRect.height);
+          document.documentElement.style.setProperty('--nav-height', `${navH}px`);
+        }
+      });
+      ro.observe(topNav);
+    }
+
+    // 2. Smart Scroll Navigation State Machine (Physics & Accumulated Delta)
+    let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    let accumulatedDelta = 0;
+    let isNavigating = false;
+    const floatingNav = document.getElementById('floatingQuickNav');
+
+    function handleScrollPhysics() {
+      if (isNavigating) return;
+
+      const rawY = window.pageYOffset || document.documentElement.scrollTop;
+      const maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
+      const clampedY = Math.max(0, Math.min(rawY, maxScrollY)); // iOS overscroll clamping
+
+      const diff = clampedY - lastScrollY;
+      lastScrollY = clampedY;
+
+      // Directional Accumulator
+      if (diff > 0) {
+        accumulatedDelta = accumulatedDelta > 0 ? accumulatedDelta + diff : diff;
+      } else {
+        accumulatedDelta = accumulatedDelta < 0 ? accumulatedDelta + diff : diff;
       }
 
-      const counts = { A: 0, B: 0, C: 0, D: 0 };
-      checked.forEach(cb => {
-        counts[cb.value] = (counts[cb.value] || 0) + 1;
-      });
-
-      let maxCat = 'A';
-      let maxVal = -1;
-      for (const cat in counts) {
-        if (counts[cat] > maxVal) {
-          maxVal = counts[cat];
-          maxCat = cat;
+      // Hide / Reveal Top Nav
+      if (clampedY > 100 && accumulatedDelta > 20) {
+        if (topNav && !topNav.classList.contains('nav-hidden')) {
+          topNav.classList.add('nav-hidden');
+        }
+      } else if (accumulatedDelta < -10 || clampedY <= 40) {
+        if (topNav && topNav.classList.contains('nav-hidden')) {
+          topNav.classList.remove('nav-hidden');
         }
       }
 
-      resBox.classList.add('active');
-
-      if (maxCat === 'A') {
-        title.textContent = '診斷結果：急性神經反芻型（大腦自我評判過載）';
-        body.innerHTML = '你的核心消耗在於「事後的持續自責與大腦小對話」。面對衝突後，大腦前額葉持續處於過熱反芻狀態。<br><strong>🚨 急救建議：</strong>暫時不要深入挖掘童年痛苦，先執行<strong>階梯 I 止血步驟</strong>。優先閱讀《強大內心的自我對話習慣》掌握第三人稱抽離技術，搭配《鈍感力》降低日常神經敏感度，先恢復平靜睡眠。可透過 Readify AI 聽有聲書放鬆神經。';
-        link.href = '#book-chatter';
-        link.textContent = '前往攻讀《強大內心的自我對話習慣》➔';
-      } else if (maxCat === 'B') {
-        title.textContent = '診斷結果：權力認知障礙型（好人道德潔癖）';
-        body.innerHTML = '你的核心卡點在於「公正世界迷思」。你誤以為爭取自身利益是自私骯髒的，期待靠默默苦幹換取認同。<br><strong>🚨 突破建議：</strong>直接開讀<strong>階梯 II 權力覺醒</strong>。並讀菲佛《精進權力》打破好人幻想，結合葛倫費德《懂權力》學會將權力視為承擔責任的必要工具，建立個人影響力。';
-        link.href = '#book-rules-of-power';
-        link.textContent = '前往攻讀《精進權力》與《懂權力》➔';
-      } else if (maxCat === 'C') {
-        title.textContent = '診斷結果：邊界失守犧牲型（過度付出受害者）';
-        body.innerHTML = '你擁有真誠溫暖的特質，但缺乏防範索取者的心理護欄，容易成為他人情緒與任務的垃圾桶。<br><strong>🚨 突破建議：</strong>深入研讀<strong>《給予》</strong>與<strong>《關鍵對話》</strong>。學會建立時間與精力配額，對索取者保持警戒，從「自我犧牲者」進化為「策略型保護付出者」。';
-        link.href = '#book-give-and-take';
-        link.textContent = '前往攻讀《給予》➔';
-      } else {
-        title.textContent = '診斷結果：童年創傷代償型（假性孤兒與過度努力）';
-        body.innerHTML = '你在職場與關係中的過度謹慎與討好，根源於童年時期照護者的情緒不穩定，被迫成為懂事的大人。<br><strong>🚨 治本建議：</strong>進入<strong>階梯 IV 源頭解咒</strong>。閱讀《如果父母情緒不成熟》確立情感邊界，隨後閱讀周慕姿《過度努力》，看清努力背後的防禦傷口，找回內在自主安全感。';
-        link.href = '#book-immature-parents';
-        link.textContent = '前往攻讀《如果父母情緒不成熟》與《過度努力》➔';
+      // Floating Quick Nav (Mobile & Desktop)
+      if (floatingNav) {
+        if (clampedY > 280) {
+          floatingNav.classList.add('active');
+        } else {
+          floatingNav.classList.remove('active');
+        }
       }
     }
 
-    // 5. Traditional / Simplified Chinese Switcher
+    window.addEventListener('scroll', handleScrollPhysics, { passive: true });
+
+    // Scroll to Top Nav helper (User feedback fix)
+    function scrollToTopNav() {
+      isNavigating = true;
+      if (topNav) topNav.classList.remove('nav-hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => {
+        isNavigating = false;
+        accumulatedDelta = 0;
+      }, 850);
+    }
+
+    // Anchor Jump with 20px Net Margin & Micro-correction settling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        const targetEl = document.querySelector(targetId);
+        if (!targetEl) return;
+
+        e.preventDefault();
+        isNavigating = true;
+        if (topNav) topNav.classList.remove('nav-hidden');
+
+        const navH = topNav ? topNav.offsetHeight : 72;
+        const targetOffset = targetEl.getBoundingClientRect().top + window.pageYOffset - (navH + 20);
+
+        window.scrollTo({
+          top: Math.max(0, targetOffset),
+          behavior: 'smooth'
+        });
+
+        // Micro-correction settling
+        setTimeout(() => {
+          const currentGap = targetEl.getBoundingClientRect().top;
+          const deviation = currentGap - (navH + 20);
+          if (Math.abs(deviation) > 3) {
+            window.scrollBy({ top: deviation, behavior: 'smooth' });
+          }
+          isNavigating = false;
+          accumulatedDelta = 0;
+        }, 850);
+      });
+    });
+
+    // 3. Multi-Variable Assessment Matrix Engine (R, P, B, O)
+    const ASSESSMENT_WEIGHTS = [
+      { R: 3, P: 1, B: 0, O: 0 }, // 1. 身體凍結反芻
+      { R: 0, P: 3, B: 1, O: 0 }, // 2. 相信做好自然被看見
+      { R: 0, P: 0, B: 3, O: 1 }, // 3. 難以拒絕超載
+      { R: 0, P: 0, B: 1, O: 3 }, // 4. 童年照顧父母情緒
+      { R: 3, P: 0, B: 0, O: 1 }, // 5. 會後反覆自責重播
+      { R: 1, P: 3, B: 0, O: 0 }, // 6. 習慣退坐邊緣聲音輕
+      { R: 0, P: 1, B: 3, O: 0 }, // 7. 被索取者視為理所當然
+      { R: 1, P: 0, B: 0, O: 3 }, // 8. 不敢放鬆害怕被淘汰
+      { R: 0, P: 3, B: 1, O: 0 }, // 9. 遭受不公選擇退讓
+      { R: 3, P: 1, B: 0, O: 0 }, // 10. 入睡前大腦放映反駁
+      { R: 0, P: 0, B: 3, O: 1 }, // 11. 無底線照顧他人情緒
+      { R: 1, P: 0, B: 0, O: 3 }  // 12. 收到主管訊息焦慮
+    ];
+
+    function runAssessment() {
+      const checked = document.querySelectorAll('input[name="q"]:checked');
+      const resBox = document.getElementById('assessmentResult');
+      const badge = document.getElementById('resultBadge');
+      const title = document.getElementById('resultTitle');
+      const body = document.getElementById('resultBody');
+      const link = document.getElementById('resultLink');
+      const dlLink = document.getElementById('resultDownload');
+
+      if (checked.length === 0) {
+        resBox.classList.remove('active');
+        ['R', 'P', 'B', 'O'].forEach(k => {
+          document.getElementById('score' + k).textContent = '0%';
+          document.getElementById('fill' + k).style.width = '0%';
+        });
+        return;
+      }
+
+      // 累積四維向量分數
+      const scores = { R: 0, P: 0, B: 0, O: 0 };
+      checked.forEach(cb => {
+        const idx = parseInt(cb.value, 10);
+        const w = ASSESSMENT_WEIGHTS[idx];
+        if (w) {
+          scores.R += w.R;
+          scores.P += w.P;
+          scores.B += w.B;
+          scores.O += w.O;
+        }
+      });
+
+      // 歸一化為百分比 (基準滿分 7 分即達 100%)
+      const pct = {
+        R: Math.min(100, Math.round((scores.R / 7) * 100)),
+        P: Math.min(100, Math.round((scores.P / 7) * 100)),
+        B: Math.min(100, Math.round((scores.B / 7) * 100)),
+        O: Math.min(100, Math.round((scores.O / 7) * 100))
+      };
+
+      // 渲染四維動態進度條
+      ['R', 'P', 'B', 'O'].forEach(k => {
+        document.getElementById('score' + k).textContent = pct[k] + '%';
+        document.getElementById('fill' + k).style.width = pct[k] + '%';
+      });
+
+      resBox.classList.add('active');
+
+      // 排序判定主導型態與次要伴隨型態
+      const sortedKeys = ['R', 'P', 'B', 'O'].sort((a, b) => pct[b] - pct[a]);
+      const topKey = sortedKeys[0];
+      const secondKey = sortedKeys[1];
+      const diff = pct[topKey] - pct[secondKey];
+      const isComposite = (diff <= 25 && pct[secondKey] >= 35);
+
+      const profileNames = {
+        R: '急性神經反芻與迷走凍結型',
+        P: '權力博弈盲區與道德潔癖型',
+        B: '邊界失守與過度付出透支型',
+        O: '童年創傷代償與過度努力型'
+      };
+
+      if (isComposite) {
+        badge.textContent = `⚡ 雙重複合受困診斷：${profileNames[topKey]} × ${profileNames[secondKey]}`;
+        title.textContent = `複合型態：大腦內耗與行為阻滯的雙重拉扯（${pct[topKey]}% / ${pct[secondKey]}%）`;
+
+        let compositeAnalysis = '';
+        let targetAnchor = '#pillars';
+        let targetBookName = '七大專書';
+
+        if ((topKey === 'R' && secondKey === 'P') || (topKey === 'P' && secondKey === 'R')) {
+          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：白日面對權威或衝突時不敢確立專業能見度與邊界（權力盲區），當場退讓妥協；入夜後大腦神經反芻機制全面失控重播自責（神經反芻）。<br><strong>🚨 雙軌突破處方：</strong>第一優先攻讀<strong>《強大內心的自我對話習慣》</strong>拉開心理距離、平息自責；隨後研讀<strong>《懂權力》</strong>與<strong>《精進權力》</strong>，建立角色責任意識與身體高權力姿態，杜絕下一次無謂退讓。';
+          targetAnchor = '#book-power';
+          targetBookName = '《懂權力》與《自我對話》';
+        } else if ((topKey === 'B' && secondKey === 'O') || (topKey === 'O' && secondKey === 'B')) {
+          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：童年時期作為懂事的假性孤兒承擔過多照護責任，內化了「只有表現優秀、體貼退讓才配被愛」的信條，導致成年後在職場中徹底失去拒絕能力，任由索取者榨取。<br><strong>🚨 雙軌突破處方：</strong>先讀<strong>《如果父母情緒不成熟》</strong>確立內在心理主權，再讀<strong>《過度努力》</strong>看清努力背後的傷；隨後以<strong>《給予》</strong>建立保護型利他護欄，學會向索取者堅定說「不」。';
+          targetAnchor = '#book-immature-parents';
+          targetBookName = '《如果父母情緒不成熟》與《給予》';
+        } else if ((topKey === 'R' && secondKey === 'O') || (topKey === 'O' && secondKey === 'R')) {
+          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：將「自我價值」與「完美成果」極端綁定。只要遭遇些微挫折或冷淡，童年被否定的創傷記憶瞬間被喚醒，轉化為大腦無休止的嚴厲自我審查與失眠。<br><strong>🚨 雙軌突破處方：</strong>研讀<strong>《過度努力》</strong>卸下防禦盔甲，隨後閱讀<strong>《鈍感力》</strong>過濾外界惡意噪音，守護自律神經與內在平靜。';
+          targetAnchor = '#book-overeffort';
+          targetBookName = '《過度努力》與《鈍感力》';
+        } else {
+          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：深陷道德潔癖與自我犧牲的泥潭，誤以為只要老實付出就會獲得公正回報，卻在現實權力博弈中屢屢受挫被邊緣化。<br><strong>🚨 雙軌突破處方：</strong>閱讀<strong>《精進權力》</strong>打破公正世界假設，隨後研讀<strong>《關鍵對話》</strong>開展防禦性協商，守護自身勞動成果。';
+          targetAnchor = '#book-rules-of-power';
+          targetBookName = '《精進權力》與《關鍵對話》';
+        }
+
+        body.innerHTML = compositeAnalysis;
+        link.href = targetAnchor;
+        link.textContent = `前往攻讀首選書單：${targetBookName} ➔`;
+        dlLink.href = '#downloads';
+      } else {
+        badge.textContent = `🎯 單一主導受困型態：${profileNames[topKey]}（${pct[topKey]}%）`;
+
+        if (topKey === 'R') {
+          title.textContent = '主導型態：急性神經反芻型（大腦自我評判過載）';
+          body.innerHTML = '你的核心消耗在於「事後的持續自責與大腦小對話」。面對衝突後，大腦前額葉將抑鬱全部轉化為對自我的嚴厲審判。<br><strong>🚨 破局處方：</strong>立即進入<strong>階梯 I 止血急救</strong>。首選精讀<strong>《強大內心的自我對話習慣》</strong>，以「抽離式自言自語」中斷大腦反芻；輔以<strong>《鈍感力》</strong>鈍化神經信號，迅速恢復情緒清明。';
+          link.href = '#book-chatter';
+          link.textContent = '前往攻讀《強大內心的自我對話習慣》➔';
+        } else if (topKey === 'P') {
+          title.textContent = '主導型態：權力認知潔癖型（被動等待公正迷思）';
+          body.innerHTML = '你的核心障礙在於「對權力懷有道德潔癖」。深信公正世界假設，害怕展現強勢會傷害關係，導致在資源分配時主動退讓被邊緣化。<br><strong>🚨 破局處方：</strong>進入<strong>階梯 III 權力重構</strong>。首選精讀<strong>《懂權力，在每個角色上發光》</strong>將權力視為責任資源；隨後閱讀<strong>《精進權力》</strong>拆除職場天真盲點，主動建立專業能見度。';
+          link.href = '#book-power';
+          link.textContent = '前往攻讀《懂權力》與《精進權力》➔';
+        } else if (topKey === 'B') {
+          title.textContent = '主導型態：邊界失守犧牲型（過度付出受害者）';
+          body.innerHTML = '你的核心特質為真誠溫暖，但缺乏防範索取者的心理護欄，容易承擔過多不屬於自己的責任與情緒。<br><strong>🚨 破局處方：</strong>進入<strong>階梯 II 防禦邊界</strong>。首選精讀<strong>《給予》</strong>，學會辨識索取者並設立精力配額；輔以<strong>《關鍵對話》</strong>掌握防禦性溝通技巧，從自我犧牲轉型為具備護欄的保護型給予者。';
+          link.href = '#book-give-and-take';
+          link.textContent = '前往攻讀《給予》➔';
+        } else {
+          title.textContent = '主導型態：童年創傷代償型（假性孤兒與過度努力）';
+          body.innerHTML = '你的過度謹慎與退讓根源於童年時期照護者的情緒不穩定，被迫成為懂事的假性孤兒，內化了討好信條。<br><strong>🚨 破局處方：</strong>進入<strong>階梯 IV 源頭解咒</strong>。首選精讀<strong>《如果父母情緒不成熟》</strong>確立心理主權；隨後閱讀周慕姿<strong>《過度努力》</strong>，看清努力背後的傷，接納真實的自己。';
+          link.href = '#book-immature-parents';
+          link.textContent = '前往攻讀《如果父母情緒不成熟》與《過度努力》➔';
+        }
+      }
+    }
+
+    // 4. Global Image Lightbox Modal Engine (Pillar 6)
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const modalImg = document.getElementById('modalImg');
+    const modalCaption = document.getElementById('modalCaption');
+
+    function openLightboxModal(src, captionText) {
+      if (!lightboxModal || !modalImg) return;
+      modalImg.src = src;
+      modalCaption.textContent = captionText || '官方圖書封面檢視';
+      lightboxModal.classList.add('active');
+      lightboxModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightboxModal(e) {
+      if (!lightboxModal) return;
+      lightboxModal.classList.remove('active');
+      setTimeout(() => {
+        lightboxModal.style.display = 'none';
+        if (modalImg) modalImg.src = '';
+      }, 200);
+      document.body.style.overflow = '';
+    }
+
+    // Bind all book covers to lightbox
+    document.querySelectorAll('.book-real-cover-img, .download-thumb, .showcase-cover-img, figure img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', function() {
+        openLightboxModal(this.src, this.alt || this.getAttribute('data-caption'));
+      });
+    });
+
+    // Keyboard Escape to close modal
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) {
+        closeLightboxModal();
+      }
+    });
+
+
+// 5. Traditional / Simplified Chinese Switcher
     const T2S_DICT = {
       '權': '权', '力': '力', '在': '在', '每': '每', '個': '个', '角': '角', '色': '色', '上': '上', '發': '发', '光': '光',
       '精': '精', '進': '进', '史': '史', '丹': '丹', '佛': '佛', '教': '教', '授': '授', '的': '的', '大': '大', '法': '法',

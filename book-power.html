@@ -8,6 +8,238 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
   <style>
 
+    /* === Award-Winning Web Craft Standards === */
+    header.top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(253, 251, 247, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-card);
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    header.top-nav.nav-hidden {
+      transform: translateY(-100%);
+    }
+    html {
+      overflow-x: hidden;
+      width: 100%;
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-height, 80px) + 20px);
+    }
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      min-width: 0;
+      position: relative;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      min-width: 0;
+    }
+
+    /* Chapter Scroll Snap Bar */
+    .nav-chapter-bar {
+      border-top: 1px solid rgba(45, 41, 38, 0.06);
+      background: rgba(253, 251, 247, 0.85);
+      padding: 6px 0;
+    }
+    .chapter-nav-scroll {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 2px 8px;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent);
+    }
+    .chapter-nav-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .nav-chip {
+      scroll-snap-align: start;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .nav-chip:hover {
+      color: var(--accent-rose);
+      border-color: var(--accent-rose);
+    }
+
+    /* Floating Quick Nav Pill */
+    .floating-quick-nav {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      z-index: 990;
+      display: inline-flex;
+      align-items: center;
+      background: rgba(253, 251, 247, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-full);
+      box-shadow: 0 10px 28px rgba(45, 41, 38, 0.16);
+      padding: 4px 8px;
+      gap: 4px;
+      opacity: 0;
+      transform: translateY(16px);
+      pointer-events: none;
+      transition: opacity 0.28s ease, transform 0.28s ease;
+    }
+    .floating-quick-nav.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .quick-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      border: none;
+      background: transparent;
+      color: var(--text-main);
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .quick-nav-btn:hover {
+      background: var(--accent-rose-light);
+      color: var(--accent-rose);
+    }
+    .quick-nav-divider {
+      width: 1px;
+      height: 16px;
+      background: var(--border-subtle);
+      margin: 0 2px;
+    }
+
+    /* Lightbox Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2000;
+      background: rgba(20, 18, 16, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      cursor: zoom-out;
+      opacity: 0;
+      transition: opacity 0.28s ease;
+      pointer-events: none;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-box {
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      cursor: default;
+    }
+    .modal-img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+      object-fit: contain;
+    }
+    .modal-caption {
+      margin-top: 14px;
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      color: #FDFBF7;
+      text-align: center;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+    .modal-close {
+      position: absolute;
+      top: -44px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #FFFFFF;
+      font-size: 1.2rem;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    /* Dark Mode & Reduced Motion */
+    @media (prefers-color-scheme: dark) {
+      [data-theme="dark"], [data-theme="night"] {
+        --bg-page: #1A1816;
+        --bg-page-alt: #221F1C;
+        --bg-card: #282421;
+        --bg-card-soft: #302B27;
+        --text-main: #F5F2EB;
+        --text-muted: #D1C9BD;
+        --text-dim: #9E9486;
+        --border-card: #3D3732;
+        --border-subtle: #4A433D;
+        --accent-rose: #E08269;
+        --accent-rose-light: rgba(224, 130, 105, 0.18);
+      }
+    }
+    [data-theme="dark"], [data-theme="night"] {
+      --bg-page: #1A1816;
+      --bg-page-alt: #221F1C;
+      --bg-card: #282421;
+      --bg-card-soft: #302B27;
+      --text-main: #F5F2EB;
+      --text-muted: #D1C9BD;
+      --text-dim: #9E9486;
+      --border-card: #3D3732;
+      --border-subtle: #4A433D;
+      --accent-rose: #E08269;
+      --accent-rose-light: rgba(224, 130, 105, 0.18);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+
     :root {
       --bg-page: #FAF8F5;
       --bg-page-alt: #F4EFEA;
@@ -581,47 +813,219 @@
       }
     }
 
-  </style>
+  
+    /* Editorial Showcase Header */
+    .editorial-header {
+      background: linear-gradient(180deg, var(--bg-page) 0%, var(--bg-page-alt) 100%);
+      padding: 40px 0 48px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-bottom: 24px;
+    }
+    .breadcrumb-nav a {
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .breadcrumb-nav a:hover {
+      color: var(--accent-rose);
+    }
+    .editorial-showcase {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .editorial-showcase {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .showcase-cover-box {
+        max-width: 200px;
+        margin: 0 auto 12px auto;
+      }
+    }
+    .showcase-cover-box {
+      width: 100%;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(45, 41, 38, 0.18);
+      border: 1px solid rgba(45, 41, 38, 0.08);
+      background: #FFFFFF;
+      aspect-ratio: 1 / 1.44;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .showcase-cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .showcase-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .showcase-content {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .showcase-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      background: var(--accent-rose-light);
+      color: var(--accent-rose);
+      font-size: 0.8rem;
+      font-weight: 700;
+      width: fit-content;
+      border: 1px solid rgba(192, 108, 82, 0.2);
+    }
+    .showcase-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.85rem, 3.2vw, 2.45rem);
+      font-weight: 900;
+      color: var(--text-main);
+      line-height: 1.32;
+      margin: 0;
+      text-wrap: balance;
+    }
+    .showcase-subtitle {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: var(--accent-rose);
+      line-height: 1.6;
+      margin: 0;
+      text-wrap: pretty;
+      word-break: keep-all;
+    }
+    .showcase-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      margin-top: 4px;
+    }
+    .showcase-chip {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 4px 10px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .showcase-chip strong {
+      color: var(--text-main);
+    }
+    .editorial-quote-box {
+      margin-top: 14px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-left: 4px solid var(--accent-rose);
+      border-radius: var(--radius-sm);
+      padding: 18px 22px;
+      box-shadow: var(--shadow-sm);
+      text-align: left;
+    }
+    .editorial-quote-text {
+      font-family: var(--font-serif);
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--text-main);
+      margin: 0;
+      text-wrap: pretty;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      font-style: italic;
+    }
+    
+</style>
 </head>
 <body>
-  <nav class="site-nav" aria-label="全站導航">
-    <div class="container nav-inner">
-      <a href="index.html" class="nav-brand">
-        <span>🌿</span>
-        <span>溫柔生長</span>
-        <span class="nav-brand-tag">讀書誌</span>
+    <!-- Top Navigation (Fixed, Blur, Smart Hide & Scroll Snap Chapter Bar) -->
+  <header class="top-nav site-nav" id="topNav" aria-label="全站導航">
+    <div class="container nav-inner" style="display: flex; align-items: center; justify-content: space-between; height: 60px;">
+      <a href="index.html" class="nav-brand" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 700; color: var(--text-main);">
+        <span>🏛️</span>
+        <span>心智自立書單</span>
+        <span class="nav-brand-tag" style="font-size: 0.75rem; background: var(--accent-rose-light); color: var(--accent-rose); padding: 2px 8px; border-radius: 999px;">專題精讀</span>
       </a>
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">← 回首頁讀書誌</a></li>
-        <li><a href="index.html#matrix" class="nav-link">四階路徑</a></li>
-        <li><a href="index.html#downloads" class="nav-link">全書庫</a></li>
-        <li>
-          <button type="button" class="btn-lang-toggle" onclick="toggleLanguage()" aria-label="切換繁體或簡體中文">
-            <span>🌐</span> <span id="lang-label">繁 / 簡</span>
-          </button>
-        </li>
+      <ul class="nav-menu" style="display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; align-items: center;">
+        <li><a href="index.html" class="nav-link" style="color: var(--text-muted); font-size: 0.88rem;">← 回首頁書單</a></li>
+        <li><a href="index.html#pillars" class="nav-link" style="color: var(--text-muted); font-size: 0.88rem;">七大專書</a></li>
+        <li><a href="index.html#downloads" class="nav-link" style="color: var(--text-muted); font-size: 0.88rem;">全書庫</a></li>
       </ul>
     </div>
-  </nav>
+    <nav class="nav-chapter-bar" aria-label="板塊快速跳轉">
+      <div class="container">
+        <div class="chapter-nav-scroll">
+          <a href="#overview" class="nav-chip"><span>📖</span> <span>圖書概述</span></a>
+          <a href="#pain-points" class="nav-chip"><span>🎯</span> <span>直擊痛點</span></a>
+          <a href="#strategies" class="nav-chip"><span>💡</span> <span>破局心法</span></a>
+          <a href="#quotes" class="nav-chip"><span>💬</span> <span>核心金句</span></a>
+          <a href="#action-plan" class="nav-chip"><span>⚡</span> <span>行動清單</span></a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-  <header class="hero-section" style="padding: 3.5rem 0 2.5rem;">
+  <main id="main-content">
+
+    <!-- Editorial Showcase Header -->
+  <header class="editorial-header">
     <div class="container">
-      <div class="hero-badge" style="background: var(--accent-rose-light); color: var(--accent-rose);">
-        <span>📖</span> <span>角色權力建構 · 重構權力</span>
-      </div>
-      <h1 class="hero-title" style="margin-bottom: 0.75rem;">《懂權力，在每個角色上發光》</h1>
-      <p style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--accent-rose); margin-bottom: 1rem;">
-        史丹佛 MBA 爆棚選修課：擊敗沒安全感，讓自己被需要就能自信發揮影響力
-      </p>
-      <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; font-size: 0.9rem; color: var(--text-dim); margin-bottom: 1.5rem;">
-        <span><strong>作者：</strong>黛博拉·葛倫費德 (Deborah Gruenfeld)</span>
-        <span><strong>原著：</strong><em>Acting with Power: Why We Are More Powerful Than We Believe</em></span>
-        <span><strong>出版：</strong>天下雜誌 (2021 繁中版)</span>
-      </div>
-      <div style="max-width: 65ch; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
-        <p style="font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.8; color: var(--text-main); margin: 0; font-style: italic;">
-          「權力實為角色為實現集體目標所承擔的責任資源。只要在組織中創造不可或缺的價值，妳便擁有穩固的影響力。」
-        </p>
+      <nav class="breadcrumb-nav" aria-label="路徑導航">
+        <a href="index.html">首頁</a>
+        <span>/</span>
+        <a href="index.html#pillars">七大核心專書</a>
+        <span>/</span>
+        <span>《懂權力，在每個角色上發光》</span>
+      </nav>
+
+      <div class="editorial-showcase">
+        <div class="showcase-cover-col">
+          <div class="showcase-cover-box">
+            <img src="covers/acting-with-power.jpg?v=2" alt="《懂權力，在每個角色上發光》 官方封面" class="showcase-cover-img" loading="eager">
+          </div>
+          <div class="showcase-actions">
+            <a href="books/懂權力_在每個角色上發光_黛博拉·葛倫費德.epub" class="btn btn-primary" style="width: 100%; padding: 8px 14px; font-size: 0.88rem;" download>
+              <span>⬇️</span> <span>下載 EPUB (1.4 MB)</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="showcase-content">
+          <span class="showcase-badge">📖 角色權力建構 · 擺脫受害思維</span>
+          <h1 class="showcase-title">《懂權力，在每個角色上發光》</h1>
+          <p class="showcase-subtitle">史丹佛 MBA 爆棚選修課：擊敗沒安全感，讓自己被需要就能自信發揮影響力</p>
+
+          <div class="showcase-chips">
+            <span class="showcase-chip"><span>作者：</span><strong>黛博拉·葛倫費德 (Deborah Gruenfeld)</strong></span>
+            <span class="showcase-chip"><span>原名：</span><em>Acting with Power: Why We Are More Powerful Than We Believe</em></span>
+            <span class="showcase-chip"><span>出版：</span>天下雜誌 (2021 繁中版)</span>
+            <span class="showcase-chip"><span>體系：</span>史丹佛商學研究所</span>
+          </div>
+
+          <div class="editorial-quote-box">
+            <p class="editorial-quote-text">
+              權力實為角色為實現集體目標所承擔的責任資源。只要在組織中創造不可或缺的價值，妳便擁有穩固的影響力。
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -853,6 +1257,8 @@
     </div>
   </section>
 
+  </main>
+
   <footer>
     <div class="container">
       <div class="footer-inner">
@@ -869,7 +1275,33 @@
         遵循 Modern Web Guidance 規範建置 · 支援無障礙閱讀與純客戶端繁簡切換 · 免翻牆高速訪問
       </div>
     </div>
+        <p class="copyright-notice" style="font-size: 0.85rem; color: var(--text-dim); margin-top: 14px; line-height: 1.7;">
+        本站內容專注於女性成長、心理學與組織博弈之非營利學術探討與數位共讀推廣，尊重正版知識產權。推薦讀者支持正版紙本書與官方電子書。
+      </p>
+      <p class="takedown-notice" style="font-size: 0.85rem; color: var(--text-dim); margin-top: 8px; line-height: 1.7;">
+        <strong>【權利人優先下架條款 (Notice & Takedown)】</strong>：若版權方或權利人對本站引證或內容有任何異議，請隨時透過聯繫管道通報，我們將於 24 小時內即時核實並立即移除相關內容。聯繫通報窗口：<code>contact@inner-power-reading.pages.dev</code>
+      </p>
   </footer>
+
+  <!-- Floating Quick Nav Pill -->
+  <aside class="floating-quick-nav" id="floatingQuickNav" aria-label="快捷導航懸浮列">
+    <button type="button" class="quick-nav-btn" id="btnBackToTop" aria-label="快速回到頂部導覽列" onclick="scrollToTopNav()">
+      <span>▲</span> <span>回頂部</span>
+    </button>
+    <span class="quick-nav-divider"></span>
+    <a href="index.html" class="quick-nav-btn" aria-label="回到首頁">
+      <span>🏛️</span> <span>首頁</span>
+    </a>
+  </aside>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="圖片放大檢視" onclick="closeLightboxModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button type="button" class="modal-close" id="modalClose" aria-label="關閉圖片檢視" onclick="closeLightboxModal()">✕</button>
+      <img id="modalImg" src="" alt="放大檢視封面" class="modal-img">
+      <p id="modalCaption" class="modal-caption"></p>
+    </div>
+  </div>
 
   <script>
 
@@ -946,6 +1378,128 @@
     document.addEventListener('DOMContentLoaded', () => {
       if (currentLang === 'zh-CN') {
         applyLanguage('zh-CN');
+      }
+    });
+
+  
+    /* === Web Craft Interactive Engines === */
+    const topNav = document.getElementById('topNav');
+    if (topNav && window.ResizeObserver) {
+      const ro = new ResizeObserver(entries => {
+        for (const entry of entries) {
+          const navH = Math.round(entry.contentRect.height);
+          document.documentElement.style.setProperty('--nav-height', `${navH}px`);
+        }
+      });
+      ro.observe(topNav);
+    }
+
+    let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    let accumulatedDelta = 0;
+    let isNavigating = false;
+    const floatingNav = document.getElementById('floatingQuickNav');
+
+    window.addEventListener('scroll', function() {
+      if (isNavigating) return;
+      const rawY = window.pageYOffset || document.documentElement.scrollTop;
+      const maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
+      const clampedY = Math.max(0, Math.min(rawY, maxScrollY));
+
+      const diff = clampedY - lastScrollY;
+      lastScrollY = clampedY;
+
+      if (diff > 0) {
+        accumulatedDelta = accumulatedDelta > 0 ? accumulatedDelta + diff : diff;
+      } else {
+        accumulatedDelta = accumulatedDelta < 0 ? accumulatedDelta + diff : diff;
+      }
+
+      if (clampedY > 100 && accumulatedDelta > 20) {
+        if (topNav && !topNav.classList.contains('nav-hidden')) topNav.classList.add('nav-hidden');
+      } else if (accumulatedDelta < -10 || clampedY <= 40) {
+        if (topNav && topNav.classList.contains('nav-hidden')) topNav.classList.remove('nav-hidden');
+      }
+
+      if (floatingNav) {
+        if (clampedY > 280) floatingNav.classList.add('active');
+        else floatingNav.classList.remove('active');
+      }
+    }, { passive: true });
+
+    function scrollToTopNav() {
+      isNavigating = true;
+      if (topNav) topNav.classList.remove('nav-hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => {
+        isNavigating = false;
+        accumulatedDelta = 0;
+      }, 850);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        const targetEl = document.querySelector(targetId);
+        if (!targetEl) return;
+
+        e.preventDefault();
+        isNavigating = true;
+        if (topNav) topNav.classList.remove('nav-hidden');
+
+        const navH = topNav ? topNav.offsetHeight : 72;
+        const targetOffset = targetEl.getBoundingClientRect().top + window.pageYOffset - (navH + 20);
+
+        window.scrollTo({
+          top: Math.max(0, targetOffset),
+          behavior: 'smooth'
+        });
+
+        setTimeout(() => {
+          const currentGap = targetEl.getBoundingClientRect().top;
+          const deviation = currentGap - (navH + 20);
+          if (Math.abs(deviation) > 3) {
+            window.scrollBy({ top: deviation, behavior: 'smooth' });
+          }
+          isNavigating = false;
+          accumulatedDelta = 0;
+        }, 850);
+      });
+    });
+
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const modalImg = document.getElementById('modalImg');
+    const modalCaption = document.getElementById('modalCaption');
+
+    function openLightboxModal(src, captionText) {
+      if (!lightboxModal || !modalImg) return;
+      modalImg.src = src;
+      modalCaption.textContent = captionText || '官方圖書封面檢視';
+      lightboxModal.classList.add('active');
+      lightboxModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightboxModal() {
+      if (!lightboxModal) return;
+      lightboxModal.classList.remove('active');
+      setTimeout(() => {
+        lightboxModal.style.display = 'none';
+        if (modalImg) modalImg.src = '';
+      }, 200);
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.showcase-cover-img, img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', function() {
+        openLightboxModal(this.src, this.alt || '圖書插圖');
+      });
+    });
+
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) {
+        closeLightboxModal();
       }
     });
 
