@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>《過度努力》深度專頁 · 溫柔生長讀書誌</title>
+  <meta name="description" content="過度努力 深度導讀、8大原著金句庫、職場家庭情境自處指南與實踐微習慣。">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+  <style>
+
+    :root {
+      --bg-page: #FAF8F5;
+      --bg-page-alt: #F4EFEA;
+      --bg-card: #FFFFFF;
+      --bg-card-soft: #FDFBF8;
+      --border-subtle: #E8E1D7;
+      --border-card: #EFE8DE;
+      --border-highlight: #C06C52;
+      --text-main: #2D2926;
+      --text-muted: #5E5852;
+      --text-dim: #8C847B;
+      --accent-rose: #C06C52;
+      --accent-rose-light: #FBEBE6;
+      --accent-sage: #4F7564;
+      --accent-sage-light: #EEF4F1;
+      --accent-amber: #A36A36;
+      --accent-amber-light: #FAF2E8;
+      --accent-blue: #4A6B82;
+      --accent-blue-light: #EBF1F5;
+      --shadow-sm: 0 2px 8px rgba(45, 41, 38, 0.04);
+      --shadow-md: 0 6px 20px rgba(45, 41, 38, 0.06);
+      --shadow-lg: 0 12px 36px rgba(45, 41, 38, 0.08);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --font-serif: "Playfair Display", "Songti SC", "Source Han Serif TC", "Noto Serif CJK TC", "STSong", "Hiragino Mincho ProN", serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      overflow-wrap: anywhere;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Modern Web Guidance: Balanced headlines & pretty paragraph wrapping */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-serif);
+      color: var(--text-main);
+      font-weight: 600;
+      line-height: 1.35;
+      text-wrap: balance;
+    }
+
+    p, blockquote, li {
+      text-wrap: pretty;
+      color: var(--text-muted);
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      max-width: 72ch;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--accent-rose);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    a:hover {
+      color: #9C523B;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header / Navbar */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 248, 245, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: background 0.3s ease;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .nav-brand-tag {
+      font-size: 0.75rem;
+      background: var(--accent-rose-light);
+      color: var(--accent-rose);
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-weight: 500;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 0.4rem 0.6rem;
+      border-radius: var(--radius-sm);
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--accent-rose);
+    }
+
+    .btn-lang-toggle {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      padding: 0.4rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+
+    .btn-lang-toggle:hover {
+      border-color: var(--accent-rose);
+      color: var(--accent-rose);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--accent-rose);
+      color: #FFFFFF !important;
+      padding: 0.75rem 1.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.95rem;
+      font-weight: 500;
+      box-shadow: 0 4px 14px rgba(192, 108, 82, 0.28);
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: #A8573E;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(192, 108, 82, 0.36);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--bg-card);
+      color: var(--text-main) !important;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-full);
+      font-size: 0.95rem;
+      font-weight: 500;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-rose);
+      color: var(--accent-rose) !important;
+      background: var(--bg-card-soft);
+    }
+
+    /* Hero */
+    .hero-section {
+      padding: 4.5rem 0 3.5rem;
+      text-align: center;
+      background: radial-gradient(circle at 50% 20%, rgba(192, 108, 82, 0.06), transparent 70%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent-rose-light);
+      color: var(--accent-rose);
+      padding: 0.35rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 1.5rem + 2.5vw, 3.25rem);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
+
+    .hero-desc {
+      font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.2rem);
+      max-width: 68ch;
+      margin: 0 auto 2rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 4.5rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .section-alt {
+      background-color: var(--bg-page-alt);
+    }
+
+    .section-header {
+      margin-bottom: 2.75rem;
+      text-align: center;
+    }
+
+    .section-tag {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-rose);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 1.25rem + 1.2vw, 2.3rem);
+      margin-bottom: 0.85rem;
+    }
+
+    .section-subtitle {
+      max-width: 65ch;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-subtle);
+    }
+
+    /* Book Pillars Grid on Index */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .book-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .book-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: #DFD7CB;
+    }
+
+    .book-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1rem;
+    }
+
+    .tag-rose { background: var(--accent-rose-light); color: var(--accent-rose); }
+    .tag-amber { background: var(--accent-amber-light); color: var(--accent-amber); }
+    .tag-sage { background: var(--accent-sage-light); color: var(--accent-sage); }
+    .tag-blue { background: var(--accent-blue-light); color: var(--accent-blue); }
+
+    .book-card-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .book-card-author {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      margin-bottom: 1.1rem;
+      display: block;
+    }
+
+    .book-card-axiom {
+      font-style: italic;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      padding-left: 0.85rem;
+      border-left: 3px solid var(--accent-rose);
+      background: var(--bg-card-soft);
+      padding: 0.75rem 0.85rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .book-card-intro {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .book-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.25rem;
+      margin-top: auto;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    /* Quotes Grid */
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .quote-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .quote-text {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-main);
+    }
+
+    .quote-text::before {
+      content: "“";
+      font-size: 2.2rem;
+      line-height: 1;
+      color: var(--accent-rose);
+      opacity: 0.4;
+      display: block;
+      margin-bottom: -0.5rem;
+    }
+
+    /* Copy Button (MWG copy-button compliant) */
+    .copy-btn-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+
+    .btn-copy {
+      background: var(--bg-page-alt);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-copy:hover {
+      border-color: var(--accent-rose);
+      color: var(--accent-rose);
+      background: var(--bg-card);
+    }
+
+    .live-status {
+      font-size: 0.75rem;
+      color: var(--accent-sage);
+      font-weight: 500;
+    }
+
+    /* Scenario Accordion / List */
+    .scenario-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .scenario-title {
+      font-size: 1.25rem;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .dialogue-comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .dialogue-comparison {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .dialogue-box {
+      padding: 1.2rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.93rem;
+      line-height: 1.75;
+    }
+
+    .box-before {
+      background: #FBF1F0;
+      border-left: 3px solid #E07A5F;
+    }
+
+    .box-after {
+      background: #F0F6F2;
+      border-left: 3px solid var(--accent-sage);
+    }
+
+    .box-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .scenario-principle {
+      background: var(--bg-page-alt);
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-page-alt);
+      border-top: 1px solid var(--border-subtle);
+      padding: 3.5rem 0 2rem;
+      margin-top: auto;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-copy {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+    }
+
+    /* Forced colors support (MWG color guideline) */
+    @media (forced-colors: active) {
+      .btn-primary, .btn-secondary, .card, .book-card, .quote-box {
+        border: 1px solid ButtonText;
+      }
+      .book-card-axiom {
+        border-left: 3px solid Highlight;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="全站導航">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span>🌿</span>
+        <span>溫柔生長</span>
+        <span class="nav-brand-tag">讀書誌</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">← 回首頁讀書誌</a></li>
+        <li><a href="index.html#matrix" class="nav-link">四階路徑</a></li>
+        <li><a href="index.html#downloads" class="nav-link">全書庫</a></li>
+        <li>
+          <button type="button" class="btn-lang-toggle" onclick="toggleLanguage()" aria-label="切換繁體或簡體中文">
+            <span>🌐</span> <span id="lang-label">繁 / 簡</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero-section" style="padding: 3.5rem 0 2.5rem;">
+    <div class="container">
+      <div class="hero-badge" style="background: var(--accent-rose-light); color: var(--accent-rose);">
+        <span>📖</span> <span>自我接納 · 核心安頓</span>
+      </div>
+      <h1 class="hero-title" style="margin-bottom: 0.75rem;">《過度努力》</h1>
+      <p style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--accent-rose); margin-bottom: 1rem;">
+        每個「過度」都是傷的證明：走出討好與逞強的牢籠，擁抱原本就值得被愛的自己
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; font-size: 0.9rem; color: var(--text-dim); margin-bottom: 1.5rem;">
+        <span><strong>作者：</strong>周慕姿 (諮商心理師)</span>
+        <span><strong>原著：</strong><em>過度努力：每個「過度」，都是傷的證明</em></span>
+        <span><strong>出版：</strong>寶瓶文化 (2021 正版精校)</span>
+      </div>
+      <div style="max-width: 65ch; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+        <p style="font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.8; color: var(--text-main); margin: 0; font-style: italic;">
+          「妳之所以停不下來地努力、停不下來地討好，是因為妳心底深深恐懼著：只有那個優秀、懂事、順從的自己，才配被這個世界溫柔相待。」
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section 1: Why you need this book -->
+  <section>
+    <div class="container">
+      <div style="max-width: 75ch; margin: 0 auto;">
+        <span class="section-tag">FOR EMPATHETIC SOULS</span>
+        <h2 class="section-title">寫給常在退讓中委屈自己的妳</h2>
+        <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 1.5rem;">
+          妳是不是不管完成了多大的成就，心裡永遠有一個苛刻的聲音在鞭策妳：『還不夠，如果妳停下來，妳就會被淘汰、被厭棄』？在職場上習慣退讓、事後又在深夜裡狠狠責備自己無能，這種痛徹心扉的內耗，正是周慕姿心理師筆下的『過度努力』。努力本是生命的恩賜，但當它變成了『如果不努力我就毫無價值』的生存防禦時，它就成了最殘酷的枷鎖。周慕姿用一個個溫柔細膩的諮商故事，輕輕撥開妳心中結痂的傷口，讓妳明白：不必總是咬緊牙關逞強，妳的存在本身，就已經足夠美好。
+        </p>
+        <p style="font-size: 1.02rem; line-height: 1.9; color: var(--text-muted);">
+          當妳讀這本書時，請不要抱持「我要把自己徹底改造成另一種人」的焦慮。相反地，妳的善良、同理心與細膩感知，是這個世界上最稀缺的天賦。這本書只是為妳的溫柔裝上邊界，讓妳在面對權力與人性的試煉時，多了一件隨時能護住心靈的軟蝟甲。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Expanded Quotes Vault -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">WORDS OF STRENGTH</span>
+        <h2 class="section-title">全書精選力量金句庫</h2>
+        <p class="section-subtitle">
+          在那些感到懷疑、疲憊或想退縮的時刻，點擊複製一句抄進手帳，讓文字成為妳前行時的微光。
+        </p>
+      </div>
+      <div class="quotes-grid">
+        
+        <div class="quote-box">
+          <p class="quote-text">每一個過度用力的背後，都藏著一個害怕被拋棄、害怕自己不夠好的委屈小女孩。</p>
+          <div class="copy-btn-wrap">
+            <span id="status-q-0" class="live-status" role="status"></span>
+            <button type="button" class="btn-copy" onclick="copyQuote('每一個過度用力的背後，都藏著一個害怕被拋棄、害怕自己不夠好的委屈小女孩。', 'status-q-0')" aria-label="複製本句金句">
+              <span>📋</span> <span>複製金句</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="quote-box">
+          <p class="quote-text">妳把別人的需要看得比自己重要，不是因為妳真正無私，而是因為妳潛意識裡誤以為自己不值得被珍惜。</p>
+          <div class="copy-btn-wrap">
+            <span id="status-q-1" class="live-status" role="status"></span>
+            <button type="button" class="btn-copy" onclick="copyQuote('妳把別人的需要看得比自己重要，不是因為妳真正無私，而是因為妳潛意識裡誤以為自己不值得被珍惜。', 'status-q-1')" aria-label="複製本句金句">
+              <span>📋</span> <span>複製金句</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="quote-box">
+          <p class="quote-text">過去，妳為了別人的期待拼命努力；現在，請妳為了自己的幸福勇敢一次。</p>
+          <div class="copy-btn-wrap">
+            <span id="status-q-2" class="live-status" role="status"></span>
+            <button type="button" class="btn-copy" onclick="copyQuote('過去，妳為了別人的期待拼命努力；現在，請妳為了自己的幸福勇敢一次。', 'status-q-2')" aria-label="複製本句金句">
+              <span>📋</span> <span>複製金句</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="quote-box">
+          <p class="quote-text">停下腳步喘口氣，世界不會因此塌陷；真正愛妳的人，愛的是妳這個活生生的人，而不是妳交出的滿分成績單。</p>
+          <div class="copy-btn-wrap">
+            <span id="status-q-3" class="live-status" role="status"></span>
+            <button type="button" class="btn-copy" onclick="copyQuote('停下腳步喘口氣，世界不會因此塌陷；真正愛妳的人，愛的是妳這個活生生的人，而不是妳交出的滿分成績單。', 'status-q-3')" aria-label="複製本句金句">
+              <span>📋</span> <span>複製金句</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="quote-box">
+          <p class="quote-text">承認自己的極限、承認自己現在真的很累，這不是軟弱，而是深刻愛自己的第一步。</p>
+          <div class="copy-btn-wrap">
+            <span id="status-q-4" class="live-status" role="status"></span>
+            <button type="button" class="btn-copy" onclick="copyQuote('承認自己的極限、承認自己現在真的很累，這不是軟弱，而是深刻愛自己的第一步。', 'status-q-4')" aria-label="複製本句金句">
+              <span>📋</span> <span>複製金句</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="quote-box">
+          <p class="quote-text">把手輕輕放在胸口，感受掌心溫暖的起伏，告訴自己：『這段時間妳真的太辛苦了，妳已經做得很好了。』</p>
+          <div class="copy-btn-wrap">
+            <span id="status-q-5" class="live-status" role="status"></span>
+            <button type="button" class="btn-copy" onclick="copyQuote('把手輕輕放在胸口，感受掌心溫暖的起伏，告訴自己：『這段時間妳真的太辛苦了，妳已經做得很好了。』', 'status-q-5')" aria-label="複製本句金句">
+              <span>📋</span> <span>複製金句</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="quote-box">
+          <p class="quote-text">放過那個必須樣樣考一百分的自己，人生最溫暖的修行，是學會溫柔地陪伴自己慢慢變好。</p>
+          <div class="copy-btn-wrap">
+            <span id="status-q-6" class="live-status" role="status"></span>
+            <button type="button" class="btn-copy" onclick="copyQuote('放過那個必須樣樣考一百分的自己，人生最溫暖的修行，是學會溫柔地陪伴自己慢慢變好。', 'status-q-6')" aria-label="複製本句金句">
+              <span>📋</span> <span>複製金句</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="quote-box">
+          <p class="quote-text">不論過去發生過什麼，現在的妳永遠擁有選擇的權利，去過一種不再需要委曲求全的自在人生。</p>
+          <div class="copy-btn-wrap">
+            <span id="status-q-7" class="live-status" role="status"></span>
+            <button type="button" class="btn-copy" onclick="copyQuote('不論過去發生過什麼，現在的妳永遠擁有選擇的權利，去過一種不再需要委曲求全的自在人生。', 'status-q-7')" aria-label="複製本句金句">
+              <span>📋</span> <span>複製金句</span>
+            </button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: In-Situ Scenarios & Playbook -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">REAL-LIFE EMBODIMENT</span>
+        <h2 class="section-title">典型困境現場自處指南</h2>
+        <p class="section-subtitle">
+          不再只是空洞的大道理。以下對照表拆解了三個妳最常碰到的生活與工作場景，教妳如何在當下從容應對。
+        </p>
+      </div>
+      <div style="max-width: 780px; margin: 0 auto;">
+        
+        <div class="scenario-card">
+          <h3 class="scenario-title"><span>🌿</span> <span>職場：身體已經出現偏頭痛、心悸或慢性胃痛，依然硬撐著通宵加班趕專案</span></h3>
+          <div class="dialogue-comparison">
+            <div class="dialogue-box box-before">
+              <span class="box-label" style="color: #C06C52;">以往的直覺妥協</span>
+              <p>「如果我不把它改到極致，主管一定會覺得我能力低下，我不能停下來。」</p>
+            </div>
+            <div class="dialogue-box box-after">
+              <span class="box-label" style="color: var(--accent-sage);">守護邊界的溫柔回覆</span>
+              <p>看見身體發出的求救信號。周慕姿提醒我們：完美主義是恐懼的偽裝。合上筆電，給自己倒一杯溫水：「八十分已經很棒了，我的身體比這份報告重要一萬倍。現在去睡覺，明天世界依然轉動。」</p>
+            </div>
+          </div>
+          <div class="scenario-principle">
+            <strong>💡 自處核心心法：</strong> 從『表現型人格』轉化為『存在型人格』。接納自己的局限，正是生命成熟的象徵。
+          </div>
+        </div>
+        
+        <div class="scenario-card">
+          <h3 class="scenario-title"><span>🌿</span> <span>家庭：包攬所有家務與家人情緒照顧，累到崩潰時卻換來一句冷淡的『又沒人逼妳做』</span></h3>
+          <div class="dialogue-comparison">
+            <div class="dialogue-box box-before">
+              <span class="box-label" style="color: #C06C52;">以往的直覺妥協</span>
+              <p>躲進洗手間默默流淚，心想「果然我付出再多也沒人感激」，第二天又繼續默默拖地。</p>
+            </div>
+            <div class="dialogue-box box-after">
+              <span class="box-label" style="color: var(--accent-sage);">守護邊界的溫柔回覆</span>
+              <p>放下手中的抹布，坐在沙發上給自己切一盤水果。平靜而明確地對家人說：「我感到非常疲憊，這個家庭的運轉需要大家共同承擔。從今天起，晚餐後的清理工作由大家輪流負責。」</p>
+            </div>
+          </div>
+          <div class="scenario-principle">
+            <strong>💡 自處核心心法：</strong> 停止用『過度付出』來乞求被愛。敢於讓家庭出現短暫的混亂，才能重新建立健康的共擔界線。
+          </div>
+        </div>
+        
+        <div class="scenario-card">
+          <h3 class="scenario-title"><span>🌿</span> <span>內在：只要週末躺在床上放空，就充滿了無邊的罪惡感與焦慮</span></h3>
+          <div class="dialogue-comparison">
+            <div class="dialogue-box box-before">
+              <span class="box-label" style="color: #C06C52;">以往的直覺妥協</span>
+              <p>逼自己爬起來背單字、看專業書、打掃衛生，把週末過得比工作日還緊繃。</p>
+            </div>
+            <div class="dialogue-box box-after">
+              <span class="box-label" style="color: var(--accent-sage);">守護邊界的溫柔回覆</span>
+              <p>換上最柔軟舒適的睡衣，挑一部溫馨的喜劇電影。在心裡深呼吸告訴自己：「休息不是犯罪，休息是神經系統自我修復的崇高生理需求。我今天什麼都不產出，就是對我靈魂最大的慈悲。」</p>
+            </div>
+          </div>
+          <div class="scenario-principle">
+            <strong>💡 自處核心心法：</strong> 周慕姿自我慈悲法：允許自己有脆弱無為的時刻，在無所事事中體會生命的真實飽滿。
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Daily Micro Habits -->
+  <section class="section-alt">
+    <div class="container">
+      <div style="max-width: 720px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-sm);">
+        <span class="section-tag">DAILY PRACTICE</span>
+        <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem;">三條融入生活的實踐微習慣</h2>
+        <ul style="list-style: none; padding: 0;">
+          
+        <li style="margin-bottom: 0.85rem; padding-left: 0.5rem; line-height: 1.8;">
+          『自我慈悲三步心法』：在感到委屈想要苛責自己時，把手放在心口：① 感受當下的難受；② 明白每個人都會受傷，自己並不孤單；③ 對自己說一句溫柔的鼓勵。
+        </li>
+        
+        <li style="margin-bottom: 0.85rem; padding-left: 0.5rem; line-height: 1.8;">
+          『及格線哲學』：在非核心事務上，刻意只做到 75 分就提交，體驗「原來天不會塌下來」的鬆弛感。
+        </li>
+        
+        <li style="margin-bottom: 0.85rem; padding-left: 0.5rem; line-height: 1.8;">
+          『無所事事日曆』：每週在日曆上劃出連續 3 小時標記為「純粹留白時間」，嚴禁排入任何自我提升的待辦事項。
+        </li>
+        
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Resource Download & Mirrors -->
+  <section>
+    <div class="container">
+      <div style="max-width: 780px; margin: 0 auto;">
+        <div class="section-header" style="text-align: left; margin-bottom: 1.75rem;">
+          <span class="section-tag">GET THE BOOK</span>
+          <h2 class="section-title">獲取電子書與閱讀指引</h2>
+        </div>
+        
+        <div style="background: var(--bg-card-soft); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.75rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem;">
+          <div>
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.35rem; color: var(--text-main); font-family: var(--font-sans);">📥 本書電子書資源（正版校訂 EPUB）</h4>
+            <p style="font-size: 0.88rem; color: var(--text-dim); margin: 0;">檔案大小：353 KB (精校完整 EPUB) · 支援 Apple Books、微信讀書、Kobo、Kindle 本地閱讀</p>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="books/過度努力_每個過度都是傷的證明_周慕姿.epub" download class="btn-primary" style="font-size: 0.9rem; padding: 0.65rem 1.4rem;">
+              <span>📥</span> <span>一鍵下載 EPUB</span>
+            </a>
+            <a href="https://github.com/atonnyshen/inner-power-reading/raw/main/books/過度努力_每個過度都是傷的證明_周慕姿.epub" target="_blank" class="btn-secondary" style="font-size: 0.9rem; padding: 0.65rem 1.25rem;">
+              <span>🔗</span> <span>GitHub 備用鏡像</span>
+            </a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.35rem;">溫柔生長 · 內在自立讀書誌</h4>
+          <p class="footer-copy">在不對等的關係裡，給善良穿上鎧甲，讓溫柔擁有平靜的底氣。</p>
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <a href="index.html" class="nav-link">回首頁</a>
+          <a href="https://github.com/atonnyshen/inner-power-reading" target="_blank" class="nav-link">GitHub 開源專案</a>
+        </div>
+      </div>
+      <div style="text-align: center; border-top: 1px solid var(--border-subtle); padding-top: 1.5rem; font-size: 0.82rem; color: var(--text-dim);">
+        遵循 Modern Web Guidance 規範建置 · 支援無障礙閱讀與純客戶端繁簡切換 · 免翻牆高速訪問
+      </div>
+    </div>
+  </footer>
+
+  <script>
+
+    // Character translation tables (MWG clean fast client-side i18n)
+    const T_STR = "並乾亞來係倉個們倫側傑備傷傾僅價償優儲兒內兩冊凍別則剛剝創劃動務勝勢匯區協卻厭厲員問啟單嗎嚴國圖團執堅報場壓夠夥奪奮婦學實審寫寶將專尋對導尷屜層屬島師帶幫庫廣張強後徑從復徵徹悅惡愛態慣憊憤懇應懷懸懼戀戰拋拚採換揮摯撫擁擊擋擔據擺攬敗數斷於時暢暫書會東桿條棄業極構槓樂標樣機檔檢檻權歷歸殺毀氣決淪測湯準溝溫滅滯滿潑潔潛潰濟濾瀏灣為無煉熱爭爾牆狀猶獨獲獻現環畫異當療癒發皺盡盤盧確碼礙禦種稱窮競筆節範簡籌約紅納紐紙級紛紮細終組結絕絞絡給統絲綁經維網緊緒線緣緩練縮總績繃織繹繼續罰義習聰聲聶職脅脫腦腳臨臺與興芻華葉薦藥蘭處虛蝕術衛衝裝裡複襲見規視親覺覽觀觸訂計訊討記訪設許訴診試話該詳誌認語誠誤說誰課調談請論諮諷謀講證譏識譯議護讀變讓負責貴貶費賀資賞賦質賴賽踐躍軌軟載輕輩輪輯轉辦辯迴這連週進運過達遠適遲遷選還邊邏醫釁針鈍鉤銷鋒錄錨錯鍋鍵鎖鎧鏈鐘長門閉開間閱閹關陣陸隊階際險隱雙雜離難雲電靈靜韌響頁頂項順須頓領頭題額願類顧風飆馬駁驗骯髒體鬆鬥麼點齊";
+    const S_STR = "并干亚来系仓个们伦侧杰备伤倾仅价偿优储儿内两册冻别则刚剥创划动务胜势汇区协却厌厉员问启单吗严国图团执坚报场压够伙夺奋妇学实审写宝将专寻对导尴屉层属岛师带帮库广张强后径从复征彻悦恶爱态惯惫愤恳应怀悬惧恋战抛拼采换挥挚抚拥击挡担据摆揽败数断于时畅暂书会东杆条弃业极构杠乐标样机档检槛权历归杀毁气决沦测汤准沟温灭滞满泼洁潜溃济滤浏湾为无炼热争尔墙状犹独获献现环画异当疗愈发皱尽盘卢确码碍御种称穷竞笔节范简筹约红纳纽纸级纷扎细终组结绝绞络给统丝绑经维网紧绪线缘缓练缩总绩绷织绎继续罚义习聪声聂职胁脱脑脚临台与兴刍华叶荐药兰处虚蚀术卫冲装里复袭见规视亲觉览观触订计讯讨记访设许诉诊试话该详志认语诚误说谁课调谈请论咨讽谋讲证讥识议护读变让负责贵贬费贺资赏赋质赖赛践跃轨软载轻辈轮辑转办辩回这连周进运过达远适迟迁选还边逻医衅针钝钩销锋录锚错锅键锁铠链钟长门闭开间阅阉关阵陆队阶际险隐双杂离难云电灵静韧响页顶项顺须顿领头题额愿类顾风飙马驳验肮脏体松斗么点齐";
+    const T2S = {};
+    const S2T = {};
+    for (let i = 0; i < T_STR.length; i++) {
+      T2S[T_STR[i]] = S_STR[i];
+      S2T[S_STR[i]] = T_STR[i];
+    }
+
+    let currentLang = localStorage.getItem('site_lang') || 'zh-TW';
+
+    function walkText(node, map) {
+      if (node.nodeType === Node.TEXT_NODE) {
+        let text = node.nodeValue;
+        let res = '';
+        for (let i = 0; i < text.length; i++) {
+          const c = text[i];
+          res += map[c] || c;
+        }
+        node.nodeValue = res;
+      } else {
+        node.childNodes.forEach(child => walkText(child, map));
+      }
+    }
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('site_lang', lang);
+      const label = document.getElementById('lang-label');
+      if (lang === 'zh-CN') {
+        walkText(document.body, T2S);
+        document.documentElement.lang = 'zh-CN';
+        if (label) label.innerText = '简 / 繁';
+      } else {
+        walkText(document.body, S2T);
+        document.documentElement.lang = 'zh-TW';
+        if (label) label.innerText = '繁 / 簡';
+      }
+    }
+
+    function toggleLanguage() {
+      applyLanguage(currentLang === 'zh-TW' ? 'zh-CN' : 'zh-TW');
+    }
+
+    // Accessible Copy Function (MWG copy-button compliant)
+    async function copyQuote(text, statusId) {
+      try {
+        await navigator.clipboard.writeText(text);
+        const statusEl = document.getElementById(statusId);
+        if (statusEl) {
+          statusEl.innerText = '✓ 已複製';
+          setTimeout(() => { statusEl.innerText = ''; }, 2500);
+        }
+      } catch (err) {
+        // Fallback for older browsers
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        const statusEl = document.getElementById(statusId);
+        if (statusEl) {
+          statusEl.innerText = '✓ 已複製';
+          setTimeout(() => { statusEl.innerText = ''; }, 2500);
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (currentLang === 'zh-CN') {
+        applyLanguage('zh-CN');
+      }
+    });
+
+  </script>
+</body>
+</html>
