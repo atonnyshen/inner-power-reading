@@ -2,7 +2,9 @@
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: document-domain=(), microphone=(), camera=()
+  Permissions-Policy: document-domain=(), microphone=(), camera=(), geolocation=()
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Content-Security-Policy: default-src 'self' 'unsafe-inline' data:; img-src 'self' data: https:; media-src 'self'; font-src 'self' data:; connect-src 'self';
 
 /books/*.epub
   Content-Type: application/epub+zip
