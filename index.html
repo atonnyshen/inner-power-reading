@@ -55,7 +55,7 @@
       --radius-lg: 20px;
       --radius-full: 9999px;
       --font-serif: "Noto Serif TC", "Noto Serif SC", "Songti TC", "Songti SC", "Source Han Serif TC", "Source Han Serif SC", "STSong", "SimSun", "PMingLiU", serif;
-      --font-sans: "Noto Sans TC", "Noto Sans SC", "PingFang TC", "PingFang SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "PingFang SC", "Noto Sans TC", "Noto Sans SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", system-ui, sans-serif;
       color-scheme: light;
     }
 
@@ -865,7 +865,7 @@
       border-left: 3px solid var(--accent-rose);
       padding: 16px 20px;
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      font-family: var(--font-serif);
+      font-family: var(--font-sans);
       font-size: 0.96rem;
       color: var(--text-main);
       line-height: 1.75;
@@ -2564,6 +2564,31 @@
 
     /* 手機端深層閱讀與排版調優 (@media max-width: 768px) */
     @media (max-width: 768px) {
+      .mobile-break {
+        display: block !important;
+      }
+      .book-block-label {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 5px !important;
+        margin-bottom: 6px !important;
+      }
+      .label-badge {
+        font-size: 0.76rem !important;
+        padding: 2px 7px !important;
+        border-radius: 4px !important;
+        font-weight: 700 !important;
+      }
+      .label-heading {
+        font-family: var(--font-sans) !important;
+        font-size: 1.02rem !important;
+        font-weight: 700 !important;
+        line-height: 1.48 !important;
+        text-align: left !important;
+        color: var(--text-main) !important;
+      }
+
       .container {
         padding-left: 16px !important;
         padding-right: 16px !important;
@@ -2573,19 +2598,28 @@
       }
       .section-header {
         margin: 0 auto 28px auto !important;
+        text-align: left !important;
       }
       .section-title {
-        font-size: clamp(1.35rem, 5.2vw, 1.7rem) !important;
+        font-family: var(--font-serif) !important;
+        font-size: clamp(1.4rem, 5.4vw, 1.75rem) !important;
         line-height: 1.35 !important;
+        text-wrap: balance !important;
+        word-break: break-word !important;
+        text-align: left !important;
       }
       .section-desc {
-        font-size: 0.88rem !important;
-        line-height: 1.65 !important;
-        margin-top: 8px !important;
+        font-family: var(--font-sans) !important;
+        font-size: 0.96rem !important; /* 告別 0.88rem 小字，升級為 15.4px 舒暢字級 */
+        line-height: 1.72 !important;
+        margin-top: 10px !important;
+        text-align: left !important; /* 置左自然對齊 */
+        color: var(--text-muted) !important;
+        word-break: break-word !important;
       }
 
       /* ══════════════════════════════════════════════════════════════════
-         十大專書深度導讀：書封與規格垂直居中、字體粗細一致化、呼吸感出版排版
+         十大專書深度導讀：書封與規格垂直置中、內文全面無襯線蘋方黑體、置左對齊
          ══════════════════════════════════════════════════════════════════ */
       .book-pillars-list {
         display: flex;
@@ -2594,8 +2628,8 @@
       }
       .book-pillar-card {
         grid-template-columns: 1fr !important;
-        padding: 18px 14px !important;
-        gap: 14px !important;
+        padding: 20px 16px !important;
+        gap: 16px !important;
         border-radius: 16px !important;
         margin-bottom: 8px !important;
       }
@@ -2603,7 +2637,7 @@
         display: grid !important;
         grid-template-columns: 104px 1fr !important;
         gap: 14px !important;
-        align-items: center !important; /* 書封與右側規格上下置中對齊 */
+        align-items: center !important; /* 書封與右側規格垂直置中 */
       }
       .book-real-cover-box {
         width: 104px !important;
@@ -2625,106 +2659,120 @@
       }
       .book-meta-list {
         padding: 12px 14px !important;
-        font-size: 0.78rem !important;
-        gap: 5px !important;
+        font-size: 0.90rem !important; /* 從 0.78rem 提升至 0.90rem (14.4px) */
+        gap: 6px !important;
         border-radius: 10px !important;
-        line-height: 1.45 !important;
+        line-height: 1.5 !important;
         background: var(--bg-card-soft) !important;
         align-self: center !important; /* 規格自體置中 */
         margin: 0 !important;
         border: 1px solid var(--border-subtle) !important;
+        font-family: var(--font-sans) !important;
       }
       .book-meta-item {
-        font-size: 0.76rem !important;
+        font-size: 0.88rem !important; /* 從 0.76rem 提升至 0.88rem (14px) */
         flex-direction: column !important;
         gap: 1px !important;
+        font-family: var(--font-sans) !important;
       }
       .book-meta-item span:first-child {
-        font-size: 0.7rem;
-        color: var(--text-dim);
+        font-size: 0.82rem !important; /* 從 0.7rem 提升至 0.82rem (13.1px)，徹底杜絕螞蟻字 */
+        color: var(--text-dim) !important;
+        font-weight: 500 !important;
       }
       .book-meta-item span:last-child {
-        font-weight: 600;
-        color: var(--text-main);
+        font-size: 0.90rem !important; /* 從 0.76rem 提升至 0.90rem (14.4px) */
+        font-weight: 600 !important;
+        color: var(--text-main) !important;
       }
 
       .book-content-panel {
         gap: 12px !important;
       }
       .book-header-line {
-        margin-bottom: 6px !important;
+        margin-bottom: 8px !important;
       }
       .card-highlight-tag {
-        font-size: 0.78rem !important;
-        padding: 3px 10px !important;
+        font-size: 0.84rem !important; /* 提升標籤字號 */
+        padding: 4px 10px !important;
+        font-family: var(--font-sans) !important;
       }
       .book-main-title {
-        font-family: var(--font-serif) !important;
-        font-size: 1.35rem !important;
+        font-family: var(--font-serif) !important; /* 書名保留優雅宋體 */
+        font-size: 1.38rem !important;
         font-weight: 700 !important;
-        line-height: 1.38 !important;
+        line-height: 1.4 !important;
         color: var(--text-main) !important;
-        margin-bottom: 8px !important;
-        text-wrap: balance !important;
+        margin-bottom: 10px !important;
+        text-wrap: balance !important; /* 自動平衡折行，消除結尾孤字 */
         word-break: break-word !important;
+        text-align: left !important;
       }
       .book-core-axiom {
-        font-family: var(--font-sans) !important;
-        font-size: 0.9rem !important;
+        font-family: var(--font-sans) !important; /* 核心公理改為無襯線黑體 */
+        font-size: 0.98rem !important; /* 提升至 15.7px */
         font-weight: 500 !important;
-        line-height: 1.62 !important;
-        padding: 10px 12px !important;
+        line-height: 1.68 !important;
+        padding: 12px 14px !important;
         background: var(--accent-rose-light) !important;
-        border-left: 3px solid var(--accent-rose) !important;
+        border-left: 3.5px solid var(--accent-rose) !important;
         border-radius: 0 8px 8px 0 !important;
-        margin-bottom: 12px !important;
+        margin-bottom: 14px !important;
         color: var(--accent-rose) !important;
+        text-align: left !important;
+        word-break: break-word !important;
       }
       /* 清除小段落內部繁瑣的嵌套灰底卡片，改為呼吸感出版排版 */
       .book-section-block {
-        margin-bottom: 12px !important;
+        margin-bottom: 14px !important;
         padding: 0 !important;
         background: transparent !important;
         border: none !important;
       }
       .book-block-label {
-        font-family: var(--font-sans) !important;
-        font-size: 0.92rem !important;
+        font-family: var(--font-sans) !important; /* 標籤統一無襯線黑體 */
+        font-size: 1.02rem !important; /* 提升至 16.3px 加粗 */
         font-weight: 700 !important;
         color: var(--text-main) !important;
-        margin-bottom: 4px !important;
+        margin-bottom: 5px !important;
         display: block !important; /* 確保無圖標縮進，文字左緣 100% 齊平 */
         line-height: 1.45 !important;
         text-wrap: balance !important;
+        text-align: left !important;
       }
       .book-block-label svg {
         display: none !important; /* 隱藏行內圖標，達成 100% 左邊緣齊平 */
       }
       .book-block-text {
-        font-family: var(--font-sans) !important;
-        font-size: 0.88rem !important;
+        font-family: var(--font-sans) !important; /* 內文全面無襯線黑體，與 Mac 體驗一致 */
+        font-size: 0.96rem !important; /* 提升至 15.4px，不再有小字感 */
         font-weight: 400 !important;
-        line-height: 1.72 !important;
+        line-height: 1.75 !important;
         color: var(--text-muted) !important;
-        text-align: justify !important;
-        text-justify: inter-ideograph !important;
-        margin: 0 0 4px 0 !important;
+        text-align: left !important; /* 自然置左對齊，不強行左右分散拉伸 */
+        margin: 0 0 6px 0 !important;
+        word-break: break-word !important;
       }
+      /* 金句盒：徹底移除宋體，改用與 Mac 版一致之 PingFang/Noto Sans 黑體 */
       .book-quote-box {
-        font-family: var(--font-serif) !important;
+        font-family: var(--font-sans) !important; /* 移除宋體，採用黑體 */
         padding: 14px 16px !important;
-        font-size: 0.9rem !important;
+        font-size: 0.96rem !important; /* 提升至 15.4px */
         font-weight: 500 !important;
-        line-height: 1.68 !important;
+        line-height: 1.72 !important;
         border-radius: 10px !important;
-        margin: 12px 0 8px 0 !important;
+        margin: 14px 0 8px 0 !important;
         background: var(--bg-card-soft) !important;
-        border-left: 3px solid var(--accent-amber) !important;
+        border-left: 3.5px solid var(--accent-amber) !important;
+        color: var(--text-main) !important;
+        text-align: left !important; /* 置左對齊 */
+        word-break: break-word !important;
       }
       .book-quote-box .copy-quote-btn {
         margin-top: 8px !important;
-        font-size: 0.76rem !important;
-        padding: 3px 8px !important;
+        font-size: 0.82rem !important;
+        padding: 4px 10px !important;
+        font-family: var(--font-sans) !important;
       }
       .book-action-bar {
         display: flex !important;
@@ -2738,13 +2786,14 @@
         justify-content: center !important;
         text-align: center !important;
         padding: 12px 16px !important;
-        font-size: 0.92rem !important;
+        font-size: 0.94rem !important;
         font-weight: 600 !important;
         border-radius: var(--radius-md) !important;
+        font-family: var(--font-sans) !important;
       }
 
       /* ══════════════════════════════════════════════════════════════════
-         受困圖景剖析 (Persona)：小標題與內文對齊，消除孤行斷行
+         受困圖景剖析 (Persona)：小標題平衡折行，內文全面無襯線黑體置左
          ══════════════════════════════════════════════════════════════════ */
       .persona-grid {
         grid-template-columns: 1fr !important;
@@ -2765,33 +2814,36 @@
       .persona-tag {
         display: inline-block !important;
         margin-bottom: 8px !important;
-        font-size: 0.8rem !important;
+        font-size: 0.84rem !important;
         font-weight: 700 !important;
         letter-spacing: 0.04em !important;
+        font-family: var(--font-sans) !important;
       }
       .persona-title {
         font-family: var(--font-serif) !important;
-        font-size: 1.15rem !important;
+        font-size: 1.2rem !important;
         font-weight: 700 !important;
         line-height: 1.42 !important;
         margin-bottom: 8px !important;
         color: var(--text-main) !important;
-        text-wrap: balance !important;
+        text-wrap: balance !important; /* 平衡折行，消除孤字 */
         word-break: break-word !important;
+        text-align: left !important;
         width: 100% !important;
       }
       .persona-desc {
-        font-size: 0.88rem !important;
-        line-height: 1.72 !important;
+        font-family: var(--font-sans) !important; /* 內文全面無襯線黑體 */
+        font-size: 0.96rem !important; /* 從 0.88rem 提升至 0.96rem (15.4px) */
+        line-height: 1.75 !important;
         color: var(--text-muted) !important;
-        text-align: justify !important;
-        text-justify: inter-ideograph !important;
+        text-align: left !important; /* 自然置左對齊 */
         margin: 0 !important;
         width: 100% !important;
+        word-break: break-word !important;
       }
 
       /* ══════════════════════════════════════════════════════════════════
-         盲點審查與破局對策 (Blindspots)：扁平化結構，釋放寶貴寬度
+         盲點審查與破局對策 (Blindspots)：標題平衡折行，正文置左舒展
          ══════════════════════════════════════════════════════════════════ */
       .adversarial-box {
         background: transparent !important;
@@ -2801,12 +2853,15 @@
       }
       .adversarial-header {
         margin-bottom: 16px !important;
+        text-align: left !important;
       }
       .adversarial-card-title {
-        font-size: 1.35rem !important;
-        line-height: 1.35 !important;
+        font-family: var(--font-serif) !important;
+        font-size: 1.38rem !important;
+        line-height: 1.38 !important;
         margin-bottom: 6px !important;
         text-wrap: balance !important;
+        text-align: left !important;
       }
       .blindspot-grid {
         display: flex !important;
@@ -2836,38 +2891,43 @@
         border-left: 4px solid #3E6B56 !important; /* 破局對策生機綠 */
       }
       .blindspot-tag {
-        font-size: 0.78rem !important;
+        font-family: var(--font-sans) !important;
+        font-size: 0.82rem !important;
         font-weight: 700 !important;
         margin-bottom: 6px !important;
         display: inline-block !important;
       }
       .blindspot-title {
         font-family: var(--font-serif) !important;
-        font-size: 1.05rem !important;
+        font-size: 1.1rem !important;
         font-weight: 700 !important;
         line-height: 1.42 !important;
         color: var(--text-main) !important;
         margin-bottom: 8px !important;
-        text-wrap: balance !important;
+        text-wrap: balance !important; /* 平衡折行 */
         word-break: break-word !important;
+        text-align: left !important;
       }
       .blindspot-text {
-        font-size: 0.86rem !important;
-        line-height: 1.68 !important;
+        font-family: var(--font-sans) !important; /* 內文無襯線黑體 */
+        font-size: 0.95rem !important; /* 從 0.86rem 提升至 0.95rem (15.2px) */
+        line-height: 1.72 !important;
         color: var(--text-muted) !important;
-        text-align: justify !important;
+        text-align: left !important; /* 置左對齊 */
         margin: 0 !important;
+        word-break: break-word !important;
       }
 
       /* ══════════════════════════════════════════════════════════════════
-         互補矩陣 (Companions)：橫向滑動輪播軌道，告別縱向 1500px 巨幅堆疊
+         互補矩陣 (Companions)：橫向滑動輪播軌道，內文無襯線置左
          ══════════════════════════════════════════════════════════════════ */
       .companion-swipe-tip {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         gap: 6px !important;
-        font-size: 0.82rem !important;
+        font-family: var(--font-sans) !important;
+        font-size: 0.86rem !important;
         color: var(--accent-rose) !important;
         font-weight: 600 !important;
         margin-bottom: 12px !important;
@@ -2901,28 +2961,38 @@
       }
       .companion-title {
         font-family: var(--font-serif) !important;
-        font-size: 1.15rem !important;
-        line-height: 1.38 !important;
+        font-size: 1.18rem !important;
+        line-height: 1.4 !important;
+        text-wrap: balance !important;
+        text-align: left !important;
       }
       .companion-field {
-        margin-top: 10px !important;
+        margin-top: 12px !important;
+      }
+      .companion-field-label {
+        font-family: var(--font-sans) !important;
+        font-size: 0.86rem !important;
       }
       .companion-field-text {
-        font-size: 0.86rem !important;
-        line-height: 1.68 !important;
-        text-align: justify !important;
+        font-family: var(--font-sans) !important; /* 內文無襯線黑體 */
+        font-size: 0.94rem !important; /* 從 0.86rem 提升至 0.94rem (15px) */
+        line-height: 1.7 !important;
+        text-align: left !important; /* 置左對齊 */
+        word-break: break-word !important;
       }
 
       /* ══════════════════════════════════════════════════════════════════
-         3 分鐘心智自測 (Assessment)：高質感方塊勾選框，極致互動暗示
+         3 分鐘心智自測 (Assessment)：大字號題幹 + 方塊勾選框
          ══════════════════════════════════════════════════════════════════ */
       .assessment-card {
         padding: 20px 16px !important;
         border-radius: 16px !important;
       }
       .assessment-intro {
-        font-size: 0.88rem !important;
+        font-family: var(--font-sans) !important;
+        font-size: 0.96rem !important;
         margin-bottom: 16px !important;
+        text-align: left !important;
       }
       .assessment-options {
         gap: 12px !important;
@@ -2931,8 +3001,8 @@
       .assessment-opt-label {
         display: flex !important;
         align-items: flex-start !important;
-        gap: 12px !important;
-        padding: 14px 14px !important;
+        gap: 14px !important;
+        padding: 15px 14px !important;
         border-radius: 12px !important;
         background: var(--bg-card-soft) !important;
         border: 1.5px solid var(--border-subtle) !important;
@@ -2981,9 +3051,12 @@
         box-shadow: 0 4px 16px rgba(192, 108, 82, 0.09) !important;
       }
       .assessment-opt-text {
-        font-size: 0.88rem !important;
-        line-height: 1.65 !important;
+        font-family: var(--font-sans) !important; /* 題幹無襯線黑體 */
+        font-size: 0.98rem !important; /* 從 0.88rem 提升至 0.98rem (15.7px)，清晰好讀！ */
+        line-height: 1.7 !important;
         color: var(--text-main) !important;
+        text-align: left !important;
+        word-break: break-word !important;
       }
 
       /* 處方卡片 (Playbook) */
@@ -2992,22 +3065,30 @@
         gap: 14px !important;
       }
       .playbook-card {
-        padding: 16px 14px !important;
+        padding: 18px 16px !important;
         border-radius: 14px !important;
       }
       .playbook-title {
-        font-size: 1.15rem !important;
-        line-height: 1.38 !important;
+        font-family: var(--font-serif) !important;
+        font-size: 1.2rem !important;
+        line-height: 1.4 !important;
+        text-wrap: balance !important;
+        text-align: left !important;
       }
       .playbook-desc {
-        font-size: 0.86rem !important;
-        line-height: 1.65 !important;
+        font-family: var(--font-sans) !important;
+        font-size: 0.95rem !important; /* 從 0.86rem 提升至 0.95rem (15.2px) */
+        line-height: 1.72 !important;
+        text-align: left !important;
+        word-break: break-word !important;
       }
       .playbook-script-box {
+        font-family: var(--font-sans) !important;
         padding: 12px 14px !important;
-        font-size: 0.88rem !important;
-        line-height: 1.65 !important;
+        font-size: 0.95rem !important; /* 從 0.88rem 提升至 0.95rem (15.2px) */
+        line-height: 1.72 !important;
         border-radius: 10px !important;
+        text-align: left !important;
       }
 
       /* 電子書下載 (Downloads) */
@@ -3016,7 +3097,12 @@
         gap: 12px !important;
       }
       .download-card {
-        padding: 14px !important;
+        padding: 16px !important;
+      }
+      .download-card-title {
+        font-family: var(--font-serif) !important;
+        font-size: 1.15rem !important;
+        text-align: left !important;
       }
 
       /* 雙鍵浮動操作島 (Floating Quick Capsule) */
@@ -3030,7 +3116,8 @@
       }
       .quick-nav-btn {
         padding: 7px 12px !important;
-        font-size: 0.82rem !important;
+        font-size: 0.84rem !important;
+        font-family: var(--font-sans) !important;
       }
     }
 
@@ -3701,7 +3788,7 @@
         <article class="persona-card">
           <div class="persona-icon"><svg class="bujo-icon" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" stroke="var(--border-subtle)" stroke-width="0.8" stroke-dasharray="2 2"/><g transform="translate(-0.8, 0.8)" opacity="0.4" stroke="var(--riso-sage)" stroke-width="1.2"><path d="M 16 7 L 16 25 M 7 16 L 25 16 M 10 10 L 22 22 M 10 22 L 22 10"/></g><g stroke="var(--riso-rose)" stroke-width="1.5" stroke-linecap="round"><path d="M 16 8 L 16 24 M 8 16 L 24 16"/><circle cx="16" cy="16" r="2.5" fill="var(--text-main)"/></g><circle cx="16" cy="8" r="1.2" fill="var(--riso-sage)"/><circle cx="16" cy="24" r="1.2" fill="var(--riso-sage)"/></svg></div>
           <span class="persona-tag">即時機轉 · 生理防衛</span>
-          <h3 class="persona-title">迷走神經凍結與討好反應：現場暫停呼吸</h3>
+          <h3 class="persona-title">迷走神經凍結與討好反應：<br class="mobile-break">現場暫停呼吸</h3>
           <p class="persona-desc">
             身處權力嚴重傾斜的場合，人體背側迷走神經會迅速觸發「凍結反應（Freeze）」或「討好反應（Fawn）」。大腦前額葉皮質血液暫時被抽離，理智思考受阻，容易本能地點頭、道歉或接受不合理要求。這是個體面對強大威脅時的自我保護本能，與意志力強弱無關。
           </p>
@@ -3710,7 +3797,7 @@
         <article class="persona-card">
           <div class="persona-icon"><svg class="bujo-icon" viewBox="0 0 32 32" fill="none"><g transform="translate(0.8, -0.6)" opacity="0.4" stroke="var(--riso-rose)" stroke-width="1.2"><path d="M 23 11 C 21 8 18 7 15 8 C 11 9 9 13 10 17 C 11 21 15 24 19 23 C 23 21 24 17 22 14"/></g><g stroke="var(--text-main)" stroke-width="1.5" stroke-linecap="round"><path d="M 22 10 C 20 7 17 6 14 7 C 10 8 8 12 9 16 C 10 20 14 23 18 22 C 22 20 23 16 21 13"/><polyline points="23,7 23,11 19,11"/></g><circle cx="15" cy="14" r="1.5" fill="var(--riso-sage)"/></svg></div>
           <span class="persona-tag">事後折磨 · 神經反芻</span>
-          <h3 class="persona-title">反芻風暴與失控自我對話：心理降溫抽離</h3>
+          <h3 class="persona-title">反芻風暴與失控自我對話：<br class="mobile-break">心理降溫抽離</h3>
           <p class="persona-desc">
             離開衝突現場後，神經反芻機制正式啟動。伊森·克洛斯（Ethan Kross）研究證實：單憑邏輯思考平復情緒衝擊，極易陷入反芻陷阱。大腦以極快語速反覆播放：「剛剛為何沒有反駁？」「對方是否認為我軟弱？」「為何我又退讓了？」。對外部不公的壓抑情緒，最終全部轉化為對自我的嚴厲審訊與反覆消耗。
           </p>
@@ -3719,7 +3806,7 @@
         <article class="persona-card">
           <div class="persona-icon"><svg class="bujo-icon" viewBox="0 0 32 32" fill="none"><g transform="translate(-0.8, 0.6)" opacity="0.4" stroke="var(--riso-sage)" stroke-width="1.2"><line x1="8" y1="12" x2="24" y2="12"/><path d="M 8 12 L 5 19 C 5 21 11 21 11 19 Z"/><path d="M 24 12 L 21 17 C 21 19 27 19 27 17 Z"/></g><g stroke="var(--text-main)" stroke-width="1.5" stroke-linecap="round"><line x1="16" y1="6" x2="16" y2="26"/><line x1="12" y1="26" x2="20" y2="26"/><line x1="8" y1="11" x2="24" y2="11"/><path d="M 8 11 L 5 18 C 5 20 11 20 11 18 Z"/><path d="M 24 11 L 21 16 C 21 18 27 18 27 16 Z"/></g><circle cx="16" cy="11" r="2" fill="var(--riso-rose)"/></svg></div>
           <span class="persona-tag">認知盲區 · 道德潔癖</span>
-          <h3 class="persona-title">公正世界假說與弱勢執念：放下討好執念</h3>
+          <h3 class="persona-title">公正世界假說與弱勢執念：<br class="mobile-break">放下討好執念</h3>
           <p class="persona-desc">
             傑夫瑞·菲佛（Jeffrey Pfeffer）指出，習慣妥協者常抱持「公正世界假說（Just-World Fallacy）」，深信只要工作成果踏實、為人誠懇，自然會獲得公平對待。若將權力視為負面手段並刻意迴避，將直接失去話語權，任由組織規則被強勢索取者單向決定。
           </p>
@@ -3728,7 +3815,7 @@
         <article class="persona-card">
           <div class="persona-icon"><svg class="riso-icon-lg" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg></div>
           <span class="persona-tag">童年印記 · 情感代償</span>
-          <h3 class="persona-title">童年印記與過度努力代償：重獲心理主權</h3>
+          <h3 class="persona-title">童年印記與過度努力代償：<br class="mobile-break">重獲心理主權</h3>
           <p class="persona-desc">
             琳賽·吉普森（Lindsay Gibson）與周慕姿共同指出：童年時期若家庭照護者情緒不穩定、易怒或冷漠，敏銳的孩子往往被迫承擔照顧大人情緒的角色。為了維持安全感，孩子內化了「唯有表現優秀、懂事退讓，才配被愛」的信條，並在成年後將此模式完整複製到職場關係中。
           </p>
@@ -3964,20 +4051,20 @@
                 <span class="card-highlight-tag tag-amber">核心定位：重構權力認知</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">史丹佛 MBA 爆棚選修課</span>
               </div>
-              <h3 class="book-main-title">懂權力，在每個角色上發光</h3>
+              <h3 class="book-main-title">懂權力，<br class="mobile-break">在每個角色上發光</h3>
               <div class="book-core-axiom">
                 核心公理：權力實為角色賦予的責任工具，而非個人特權。弱勢感往往源於對權力的道德潔癖。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：面對上位者不由自主自卑萎縮</div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">面對上位者，<br class="mobile-break">不由自主自卑萎縮</span></div>
                 <div class="book-block-text">
                   許多人在權威面前習慣將自己縮小，聲音變細、視線閃爍、過度道歉。內心誤以為展現強勢就是霸凌他人，寧可扮演受害者也不願承擔領導責任。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：如演員般切換「高權力」與「低權力」姿態</div>
+                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">如演員般切換<br class="mobile-break">「高權力」與「低權力」姿態</span></div>
                 <div class="book-block-text">
                   權力如同舞台上的角色外衣。當團隊需要決策與方向時，你必須穿上高權力姿態定調；當需要傾聽與協作時，再靈活切換至低權力姿態。權力的本質在於推進團隊目標與承擔決策責任，旨在服務集體成果。
                 </div>
@@ -4015,20 +4102,20 @@
                 <span class="card-highlight-tag tag-rose">核心定位：拆除組織天真</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">史丹佛權力學權威巨作</span>
               </div>
-              <h3 class="book-main-title">精進權力：史丹佛教授的 7 大權力法則</h3>
+              <h3 class="book-main-title">精進權力：<br class="mobile-break">史丹佛教授的 7 大權力法則</h3>
               <div class="book-core-axiom">
                 核心公理：工作成果不會替你說話，世界不保證公平回報。拒絕理解權力，實質是放棄自我保護。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：埋頭苦幹卻總被搶功，淪為隱形工具人</div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">埋頭苦幹卻總被搶功，<br class="mobile-break">淪為隱形工具人</span></div>
                 <div class="book-block-text">
                   堅信「只要我做得夠好，老闆自然會看見」，結果功勞被善於表現者搶走，升遷被善於建立關係者拿走，自己只剩下做不完的雜務與滿腔委屈。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：主動呈現工作成果，建立專業合作人脈</div>
+                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">主動呈現工作成果，<br class="mobile-break">建立專業合作人脈</span></div>
                 <div class="book-block-text">
                   主動呈現工作成果屬於正當且必要的職業責任，能有效建立不可替代的專業節點。學習菲佛的法則：成為不可替代的資源節點，將自身價值清晰傳達給決策者，在合規前提下打破陳規以推進目標。
                 </div>
@@ -4066,20 +4153,20 @@
                 <span class="card-highlight-tag tag-rose">核心定位：微觀職場除魅</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">全球暢銷 20 年女性職涯經典</span>
               </div>
-              <h3 class="book-main-title">職場女性：別讓這些細節絆住你</h3>
+              <h3 class="book-main-title">職場女性：<br class="mobile-break">別讓這些細節絆住你</h3>
               <div class="book-core-axiom">
                 核心公理：把童年「乖巧討喜」模式帶入職場，只會成為被過度索取的免洗勞動力。成熟的職業素養需要主動爭取能見度與佔據空間。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：職場中無意識出賣權力的細節</div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">職場中無意識出賣權力的細節，<br class="mobile-break">習慣過度道歉與退讓</span></div>
                 <div class="book-block-text">
                   發言前習慣先道歉「對不起我插一句」、主動替大家張羅茶水退化成辦公室老媽子、在會議室挑角落坐、把手藏在桌下、難以開口拒絕雜務。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：從「乖巧女孩」向「成熟專業者」的轉身</div>
+                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">從「乖巧女孩」<br class="mobile-break">向「成熟專業者」的轉身</span></div>
                 <div class="book-block-text">
                   零道歉溝通：刪除軟化前綴，直接陳述要點與專業建議；佔據物理空間：提前進場入座會議長桌中央，身體挺直，雙手自然置於桌面；確立向上彙報成果是保護自身勞動成果最清醒的防線。
                 </div>
@@ -4117,20 +4204,20 @@
                 <span class="card-highlight-tag tag-sage">核心定位：防索取護盾</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">華頓商學院最年輕終身教授</span>
               </div>
-              <h3 class="book-main-title">給予：華頓商學院最啟發人心的一堂課</h3>
+              <h3 class="book-main-title">給予：<br class="mobile-break">華頓商學院最啟發人心的一堂課</h3>
               <div class="book-core-axiom">
                 核心公理：成功的付出者具備高度敏銳的邊界防線，能夠精準辨識索取者並設立保護機制。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：不懂得拒絕別人，淪為職場受氣包</div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">不懂得拒絕別人，<br class="mobile-break">淪為職場受氣包</span></div>
                 <div class="book-block-text">
                   總是優先滿足他人的要求，甚至犧牲自己的專案進度與休息時間。害怕說「不」會被討厭，結果累得精疲力竭，績效與身心雙雙落入谷底。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：從「自我犧牲型付出者」轉型為「策略型保護付出者」</div>
+                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">從「自我犧牲型付出者」<br class="mobile-break">轉型為「策略型保護付出者」</span></div>
                 <div class="book-block-text">
                   給予必須設立邊界與時間配額。對待真誠合作者保持慷慨；面對掠奪型的索取者（Takers），立即切換為條件式互惠（Tit-for-Tat），守護自己的能量與時間。
                 </div>
@@ -4168,20 +4255,20 @@
                 <span class="card-highlight-tag tag-blue">核心定位：拆解罪惡感綁架</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">台灣破億心理諮商現象級專著</span>
               </div>
-              <h3 class="book-main-title">情緒勒索：那些在伴侶、親子、職場間，最讓人窒息的相處</h3>
+              <h3 class="book-main-title">情緒勒索：<br class="mobile-break">那些在伴侶、親子、職場間，最讓人窒息的相處</h3>
               <div class="book-core-axiom">
                 核心公理：情緒勒索者利用 FOG（恐懼、責任、罪惡感）讓妳動彈不得。建立情緒界限的「停、看、應」，是找回自我價值的護身符。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：被勒索者的四個心理按鈕</div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">被勒索者的四個心理按鈕：<br class="mobile-break">渴望認同與恐懼衝突</span></div>
                 <div class="book-block-text">
                   渴望獲得認同、害怕衝突摩擦、過度在乎他人感受、習慣性自我懷疑。勒索者精準利用妳的善良與責任感，讓妳誤以為妥協才是「懂事」與「負責任」。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：建立情緒界限的「停、看、應」法則</div>
+                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">建立情緒界限的<br class="mobile-break">「停、看、應」法則</span></div>
                 <div class="book-block-text">
                   停：當場面對施壓不即時承諾，以緩衝句果斷離開現場；看：覺察自己的恐懼與罪惡感，區分「對方的責任」與「我的界限」；應：溫和而堅定地表達底線，不爭辯、不掉入對方的道德審判陷阱。
                 </div>
@@ -4219,20 +4306,20 @@
                 <span class="card-highlight-tag tag-blue">核心定位：終結神經反芻</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">全球情緒實驗室權威專著</span>
               </div>
-              <h3 class="book-main-title">強大內心的自我對話習慣 (Chatter)</h3>
+              <h3 class="book-main-title">強大內心的<br class="mobile-break">自我對話習慣 (Chatter)</h3>
               <div class="book-core-axiom">
                 核心公理：大腦失控反芻屬於神經迴路過載引起的自我審訊風暴。學會心理抽離與第三人稱對話，能迅速降溫過載的大腦。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：深夜失眠，腦中不斷重播衝突現場與後悔自責</div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">深夜失眠與大腦反芻：<br class="mobile-break">反覆重播衝突現場與後悔自責</span></div>
                 <div class="book-block-text">
                   白天妥協後，夜間大腦持續陷入內耗循環，反覆質問「我當時為什麼不反駁？」「他是不是看扁我了？」，導致心律加速、皮質醇飆升、長期失眠。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：執行「第三人稱自言自語」與「時間透視抽離」</div>
+                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">執行「第三人稱自言自語」<br class="mobile-break">與「時間透視抽離」</span></div>
                 <div class="book-block-text">
                   在心裡直呼自己的全名展開對話，將大腦從沉浸的威脅中拉開；接著啟動五年透視法：「五年後看今天這件事，還重要嗎？」，迅速平復情緒風暴。
                 </div>
@@ -4270,20 +4357,20 @@
                 <span class="card-highlight-tag tag-amber">核心定位：過度敏感抗體</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">現代職場高敏救贖指南</span>
               </div>
-              <h3 class="book-main-title">鈍感力（青島出版社權威譯本）</h3>
+              <h3 class="book-main-title">鈍感力<br class="mobile-break"><span style="font-size: 0.9em; font-weight: 500;">（青島出版社權威譯本）</span></h3>
               <div class="book-core-axiom">
                 核心公理：鈍感屬於主動過濾無效噪音的生理防禦智慧，確保自律神經與精力高度聚焦於核心目標。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：對主管的一句話或一個眼神過度解讀</div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">對主管的一句話或一個眼神，<br class="mobile-break">過度解讀並自我折磨</span></div>
                 <div class="book-block-text">
                   別人隨口一句評價或冷淡表情，高敏感者會在心中咀嚼三天，懷疑自己做錯了什麼，陷入長期的焦慮與自我懷疑中。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：練習「聽過即忘」的過濾智慧</div>
+                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">修煉自律神經防護罩：<br class="mobile-break">練習「聽過即忘」的過濾智慧</span></div>
                 <div class="book-block-text">
                   將他人的情緒化批評視為「雨滴落在防水雨衣上」，任其自然滑落而不滲透到心靈內部。專注於長期的健康與核心目標，對枝節瑣事保持健康的遲鈍。
                 </div>
@@ -4321,20 +4408,20 @@
                 <span class="card-highlight-tag tag-rose">核心定位：破除情感內疚</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">成人情感獨立實踐聖經</span>
               </div>
-              <h3 class="book-main-title">如果父母情緒不成熟：和內在父母和解</h3>
+              <h3 class="book-main-title">如果父母情緒不成熟：<br class="mobile-break">和內在父母和解</h3>
               <div class="book-core-axiom">
                 核心公理：你不需要為大人的情緒失控負責。放棄改變對方的幻想，才能真正走向情感獨立。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：面對權威時產生強烈的「假性孤兒」恐懼與自責</div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">面對權威時產生強烈的<br class="mobile-break">「假性孤兒」恐懼與自責</span></div>
                 <div class="book-block-text">
                   從小習慣察言觀色、承接長輩情緒。長大後將這種模式轉移至職場，一旦主管不高興，便立刻感到恐慌與自責，認為是自己的錯。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：轉換為「客觀觀察者視角」，建立清晰情感邊界</div>
+                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">轉換為「客觀觀察者視角」，<br class="mobile-break">建立清晰情感邊界</span></div>
                 <div class="book-block-text">
                   將情緒不成熟的主管或長輩視為「只有三歲心理年齡的個體」。停止尋求他們的認同與同理，將互動嚴格限定在事務層面，不再交出自己的情感主權。
                 </div>
@@ -4372,20 +4459,20 @@
                 <span class="card-highlight-tag tag-amber">核心定位：卸下防禦性完美</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">暢銷 20 萬冊深度心靈剖析</span>
               </div>
-              <h3 class="book-main-title">過度努力：每個「過度」，都是傷的證明</h3>
+              <h3 class="book-main-title">過度努力：<br class="mobile-break">每個「過度」，都是傷的證明</h3>
               <div class="book-core-axiom">
                 核心公理：過度努力源於深層的情感防禦，藉由不斷追求完美來抵禦被否定或被拋棄的內在焦慮。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：停不下來的自責與緊繃，無法接納自己的放鬆</div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">停不下來的自責與緊繃，<br class="mobile-break">無法接納自己的放鬆</span></div>
                 <div class="book-block-text">
                   即便事情已經做得很好，依然害怕只要稍有鬆懈就會被拋棄或否定。把所有的疲憊都歸咎於「自己還不夠努力」。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：看見努力背後的傷口，重新擁抱真實自我</div>
+                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">看見努力背後的傷口，<br class="mobile-break">重新擁抱真實自我</span></div>
                 <div class="book-block-text">
                   停下腳步，認清努力是為了生活，而非為了向世界證明自己的存在資格。學會對自己寬容，允許自己擁有弱點，卸下沉重的心理防禦。
                 </div>
@@ -4423,20 +4510,20 @@
                 <span class="card-highlight-tag tag-green">核心定位：清理毒性羞恥感</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">全球心靈覺醒奠基之作</span>
               </div>
-              <h3 class="book-main-title">不完美的禮物：放下「以為自己該成為的樣子」，擁抱「真實的自己」</h3>
+              <h3 class="book-main-title">不完美的禮物：<br class="mobile-break">放下「以為自己該成為的樣子」，擁抱「真實的自己」</h3>
               <div class="book-core-axiom">
                 核心公理：反芻自責的底層是對「我不夠好」的恐懼。放下完美主義盔甲，在不確定性中展現真實，才能獲得不可撼動的自尊。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：毒性羞恥感與完美主義防禦盔甲</div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">毒性羞恥感與<br class="mobile-break">完美主義防禦盔甲</span></div>
                 <div class="book-block-text">
                   內疚是「我做錯了一件事」，羞恥是「我這個人是有缺陷的」。習慣退讓者常把所有的外在摩擦歸因為自身無能，並用完美主義來武裝自己，陷入筋疲力竭。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：全心生活的三個指南針</div>
+                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">踐行全心生活的<br class="mobile-break">三個勇氣指南針</span></div>
                 <div class="book-block-text">
                   日常勇氣：傾吐真實感受，坦露自己的極限，不再假裝堅強；自我慈悲：停下內心嚴酷法官的審判，像對待摯友般接納自己的不完美；真實聯結：放下討好偽裝，在被真實看見中建立深層安全感。
                 </div>
@@ -4474,7 +4561,7 @@
       <div class="companion-grid">
         <article class="companion-card">
           <div class="companion-header">
-            <h3 class="companion-title">關鍵對話 (Crucial Conversations)</h3>
+            <h3 class="companion-title">關鍵對話<br class="mobile-break"><span style="font-size: 0.88em; font-weight: 500;">(Crucial Conversations)</span></h3>
             <span class="companion-author">Kerry Patterson 等著</span>
           </div>
           <div class="companion-field">
@@ -4489,7 +4576,7 @@
 
         <article class="companion-card">
           <div class="companion-header">
-            <h3 class="companion-title">非暴力溝通 (Nonviolent Communication)</h3>
+            <h3 class="companion-title">非暴力溝通<br class="mobile-break"><span style="font-size: 0.88em; font-weight: 500;">(Nonviolent Communication)</span></h3>
             <span class="companion-author">Marshall B. Rosenberg 著</span>
           </div>
           <div class="companion-field">
@@ -4504,7 +4591,7 @@
 
         <article class="companion-card">
           <div class="companion-header">
-            <h3 class="companion-title">自我慈悲 (Self-Compassion)</h3>
+            <h3 class="companion-title">自我慈悲<br class="mobile-break"><span style="font-size: 0.88em; font-weight: 500;">(Self-Compassion)</span></h3>
             <span class="companion-author">Kristin Neff 著</span>
           </div>
           <div class="companion-field">
