@@ -2194,11 +2194,11 @@
       gap: 8px;
     }
     .hero-crisis-title {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.82rem;
-      color: var(--accent-sage);
+      font-family: var(--font-serif);
+      font-size: 0.98rem;
+      color: var(--text-main);
       font-weight: 700;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.02em;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -2300,20 +2300,15 @@
 
     @media (max-width: 768px) {
       .hero-crisis-grid {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
+        display: grid;
+        grid-template-columns: 1fr;
         gap: 12px;
-        padding-bottom: 12px;
-        -webkit-overflow-scrolling: touch;
       }
       .hero-crisis-card {
-        flex: 0 0 290px;
-        scroll-snap-align: start;
         padding: 16px;
       }
       .hero-crisis-question {
-        font-size: 0.92rem;
+        font-size: 0.95rem;
       }
     }
 
@@ -2896,9 +2891,8 @@
         <div class="hero-crisis-header-bar">
           <div class="hero-crisis-title">
             <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg>
-            <span>CRISIS-TO-BOOK 10-VOLUME INDEX // 依妳此刻最切身的困境，翻開對應專書：</span>
+            <span>心靈急救專書檢索：依妳此刻最切身的困境，翻開對應專書</span>
           </div>
-          <span class="hero-crisis-hint">← 手機左右滑動檢索 4 大情境 →</span>
         </div>
 
         <div class="hero-crisis-grid">
