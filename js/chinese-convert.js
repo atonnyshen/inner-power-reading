@@ -33,7 +33,9 @@
   "自拍棒": "自拍杆",
   "飯店": "酒店",
   "應用程式": "应用程序",
-  "答覆": "复",
+  "答覆": "答复",
+  "回覆": "回复",
+  "反覆": "反复",
   "品質": "质量",
   "介面": "界面",
   "影本": "复印件",
@@ -71,6 +73,70 @@
     } catch(e) {}
   }
 
+  // Keep accessibility text, image alternative text and tooltips in the selected script.
+  // Never transform user-entered form values, URLs, code or source attributes.
+  var TEXT_ATTRIBUTES = ['title', 'alt', 'placeholder', 'aria-label', 'aria-description'];
+  function protectedLanguage(el) {
+    var langNode = el && el.closest && el.closest('[lang]');
+    if (!langNode) return false;
+    var lang = (langNode.getAttribute('lang') || '').toLowerCase();
+    return !!lang && lang.indexOf('zh') !== 0;
+  }
+  function convertAttributes(root, isSimp) {
+    var elements = [];
+    if (root.nodeType === 1) elements.push(root);
+    if (root.querySelectorAll) {
+      var more = root.querySelectorAll('[title],[alt],[placeholder],[aria-label],[aria-description]');
+      for (var k = 0; k < more.length; k++) elements.push(more[k]);
+    }
+    for (var i = 0; i < elements.length; i++) {
+      var el = elements[i];
+      if (protectedLanguage(el)) continue;
+      if (!el._origLangAttributes) el._origLangAttributes = {};
+      for (var j = 0; j < TEXT_ATTRIBUTES.length; j++) {
+        var attr = TEXT_ATTRIBUTES[j];
+        if (!el.hasAttribute(attr)) continue;
+        if (!(attr in el._origLangAttributes)) {
+          el._origLangAttributes[attr] = el.getAttribute(attr);
+        }
+        var source = el._origLangAttributes[attr];
+        var target = isSimp ? toSC(source) : source;
+        if (el.getAttribute(attr) !== target) el.setAttribute(attr, target);
+      }
+    }
+  }
+
+  // Keep source snapshots in sync when an existing DOM node is edited by page code.
+  // A source edit is authoritative in either language; the display conversion is derived.
+  function skipTextNode(node) {
+    var parent = node && node.parentElement;
+    return !parent || protectedLanguage(parent) ||
+      !!parent.closest('script,style,noscript,pre,code,#langText,#lang-label');
+  }
+  function syncChangedText(node, isSimp) {
+    if (!node || node.nodeType !== 3 || skipTextNode(node)) return;
+    node._origText = node.nodeValue;
+    if (isSimp) {
+      var displayText = toSC(node._origText);
+      if (node.nodeValue !== displayText) node.nodeValue = displayText;
+    }
+  }
+  function syncChangedAttribute(el, attr, isSimp) {
+    if (!el || el.nodeType !== 1 || protectedLanguage(el) ||
+        TEXT_ATTRIBUTES.indexOf(attr) < 0) return;
+    if (!el._origLangAttributes) el._origLangAttributes = {};
+    if (!el.hasAttribute(attr)) {
+      delete el._origLangAttributes[attr];
+      return;
+    }
+    var source = el.getAttribute(attr);
+    el._origLangAttributes[attr] = source;
+    if (isSimp) {
+      var displayText = toSC(source);
+      if (source !== displayText) el.setAttribute(attr, displayText);
+    }
+  }
+
   // Walk all text nodes, saving original text on the node if not present
   function walkAndConvert(root, isSimp) {
     if (!root || typeof document === 'undefined' || typeof NodeFilter === 'undefined') return;
@@ -81,10 +147,7 @@
       {
         acceptNode: function(node) {
           if (!node || !node.parentNode) return NodeFilter.FILTER_REJECT;
-          var tag = node.parentNode.tagName;
-          if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'NOSCRIPT' || tag === 'PRE' || tag === 'CODE') {
-            return NodeFilter.FILTER_REJECT;
-          }
+          if (skipTextNode(node)) return NodeFilter.FILTER_REJECT;
           if (!node.nodeValue || !node.nodeValue.trim()) {
             return NodeFilter.FILTER_SKIP;
           }
@@ -105,34 +168,78 @@
       if (n._origText === undefined) {
         n._origText = n.nodeValue;
       }
-      if (isSimp) {
-        n.nodeValue = toSC(n._origText);
-      } else {
-        n.nodeValue = n._origText;
-      }
+      var targetText = isSimp ? toSC(n._origText) : n._origText;
+      if (n.nodeValue !== targetText) n.nodeValue = targetText;
+    }
+    convertAttributes(root, isSimp);
+  }
+
+  function observeLanguageChanges(observer) {
+    observer.observe(document.body, {
+      subtree: true, childList: true, characterData: true,
+      attributes: true, attributeFilter: TEXT_ATTRIBUTES
+    });
+  }
+
+  function processLanguageMutations(records) {
+    var observer = window.__innerPowerLangObserver;
+    if (!observer) return;
+    var isSimp = getStorage('inner_power_lang') === 's';
+    // Own conversion writes must not be mistaken for newly authored source text.
+    observer.disconnect();
+    try {
+      // Refresh edited source snapshots before processing inserted DOM.
+      records.forEach(function(record) {
+        if (record.type === 'characterData') {
+          syncChangedText(record.target, isSimp);
+        } else if (record.type === 'attributes') {
+          syncChangedAttribute(record.target, record.attributeName, isSimp);
+        }
+      });
+      records.forEach(function(record) {
+        if (record.type !== 'childList') return;
+        record.addedNodes.forEach(function(node) {
+          if (node.nodeType === 3) {
+            syncChangedText(node, isSimp);
+          } else if (node.nodeType === 1 || node.nodeType === 11) {
+            walkAndConvert(node, isSimp);
+          }
+        });
+      });
+    } finally {
+      observeLanguageChanges(observer);
     }
   }
 
   function setLanguage(lang) {
     var isSimp = (lang === 'zh-CN' || lang === 's');
     var normalizedLang = isSimp ? 'zh-CN' : 'zh-TW';
-
-    setStorage('inner_power_lang', isSimp ? 's' : 't');
-    setStorage('site_lang', normalizedLang);
-    document.documentElement.lang = normalizedLang;
-
-    walkAndConvert(document.body, isSimp);
-
-    // Update index.html toggle button if present
-    var btnText = document.getElementById('langText');
-    if (btnText) {
-      btnText.textContent = isSimp ? '繁體中文' : '简体中文';
+    var observer = window.__innerPowerLangObserver;
+    if (observer) {
+      var pending = observer.takeRecords();
+      if (pending.length) processLanguageMutations(pending);
+      observer.disconnect();
     }
+    try {
+      setStorage('inner_power_lang', isSimp ? 's' : 't');
+      setStorage('site_lang', normalizedLang);
+      document.documentElement.lang = normalizedLang;
 
-    // Update book-*.html toggle label if present
-    var label = document.getElementById('lang-label');
-    if (label) {
-      label.textContent = isSimp ? '繁體中文' : '简体中文';
+      walkAndConvert(document.body, isSimp);
+
+      // Update index.html toggle button if present
+      var btnText = document.getElementById('langText');
+      if (btnText) {
+        btnText.textContent = isSimp ? '繁體中文' : '简体中文';
+      }
+
+      // Update book-*.html toggle label if present
+      var label = document.getElementById('lang-label');
+      if (label) {
+        label.textContent = isSimp ? '繁體中文' : '简体中文';
+      }
+    } finally {
+      if (observer) observeLanguageChanges(observer);
     }
   }
 
@@ -141,8 +248,17 @@
     var nextLang = (saved === 's') ? 'zh-TW' : 'zh-CN';
     setLanguage(nextLang);
     if (window.showToast) {
-      window.showToast(nextLang === 'zh-CN' ? '已切換為簡體中文（套用思源宋體簡體）' : '已切換為繁體中文（套用思源宋體繁體）');
+      window.showToast(nextLang === 'zh-CN' ? '已切換為簡體中文' : '已切換為繁體中文');
     }
+  }
+
+  // Watch both new nodes and edits to existing content in either language.
+  // Disconnect around our own writes to prevent self-triggered conversion loops.
+  function watchDynamicContent() {
+    if (!window.MutationObserver || window.__innerPowerLangObserver || !document.body) return;
+    var observer = new window.MutationObserver(processLanguageMutations);
+    window.__innerPowerLangObserver = observer;
+    observeLanguageChanges(observer);
   }
 
   function init() {
@@ -169,6 +285,7 @@
         toggleLanguage();
       };
     });
+    watchDynamicContent();
   }
 
   window.ChineseConverter = {

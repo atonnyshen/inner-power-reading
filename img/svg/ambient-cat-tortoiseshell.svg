@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 280" width="100%" height="100%" fill="none">
+  <!-- Minimalist Pictogram Style: Tortoiseshell Sentinel Cat (4 Colors Max) -->
+  <!-- Colors: Charcoal #2B2623, Orange #F28C38, Emerald Green #28B873, White #FFFFFF -->
+
+  <!-- Upright Body Column (端坐深黑幾何柱狀身軀) -->
+  <rect x="75" y="105" width="90" height="135" rx="42" fill="#2B2623"/>
+
+  <!-- Pure White Ascot Chest Bib (下巴大片雪白圍巾毛) -->
+  <path d="M 86 115 C 86 115, 120 160, 120 160 C 120 160, 154 115, 154 115 C 135 125, 105 125, 86 115 Z" fill="#FFFFFF"/>
+
+  <!-- Upright Front Legs & Pure White Mitten Paws (黑長腿配白手套) -->
+  <rect x="88" y="222" width="26" height="22" rx="11" fill="#FFFFFF" stroke="#2B2623" stroke-width="3"/>
+  <rect x="126" y="222" width="26" height="22" rx="11" fill="#FFFFFF" stroke="#2B2623" stroke-width="3"/>
+
+  <!-- Head Base: Rounded Charcoal Mask -->
+  <circle cx="120" cy="85" r="46" fill="#2B2623"/>
+
+  <!-- Natural Alert Ears (天然立耳，無帽子) -->
+  <polygon points="76,65 80,24 106,50" fill="#2B2623" stroke="#2B2623" stroke-width="3" stroke-linejoin="round"/>
+  <polygon points="134,50 160,24 164,65" fill="#2B2623" stroke="#2B2623" stroke-width="3" stroke-linejoin="round"/>
+  <polygon points="84,55 83,32 100,48" fill="#F28C38"/>
+
+  <!-- Caramel Gold Blaze & Muzzle (額頭筆直金流光與暖橘口吻) -->
+  <path d="M 113 42 L 127 42 L 126 80 L 138 98 C 130 114, 110 114, 102 98 L 114 80 Z" fill="#F28C38"/>
+
+  <!-- Striking Emerald Green Eyes (晶瑩明亮翡翠大圓眼) -->
+  <circle cx="100" cy="82" r="9" fill="#28B873"/>
+  <circle cx="100" cy="82" r="4.2" fill="#2B2623"/>
+  <circle cx="98" cy="79" r="2.2" fill="#FFFFFF"/>
+
+  <circle cx="140" cy="82" r="9" fill="#28B873"/>
+  <circle cx="140" cy="82" r="4.2" fill="#2B2623"/>
+  <circle cx="138" cy="79" r="2.2" fill="#FFFFFF"/>
+
+  <!-- Nose & W-mouth -->
+  <polygon points="120,95 116,91 124,91" fill="#2B2623"/>
+  <path d="M 120 95 L 120 100 C 117 103, 112 102, 110 100" stroke="#2B2623" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M 120 100 C 123 103, 128 102, 130 100" stroke="#2B2623" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+  <!-- ICONIC BLACK BEAUTY MARK (右側鼻翼標誌性黑美人痣！) -->
+  <circle cx="130" cy="95" r="3.2" fill="#2B2623"/>
+</svg>

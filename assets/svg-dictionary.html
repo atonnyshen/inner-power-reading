@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>瑞士解構 Risograph 雙色向量符號庫字典 | Inner Power Reading Suite</title>
+  <link rel="stylesheet" href="riso-symbols.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-serif: "Noto Serif TC", "Noto Serif SC", "Songti TC", "Songti SC", serif;
+      --font-sans: "Noto Sans TC", "Noto Sans SC", "PingFang TC", system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --bg-page: #FAF8F5;
+      --text-main: #2D2926;
+      --text-dim: #888077;
+      --border-subtle: #E8E1D7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-page);
+      background-image: radial-gradient(rgba(200, 190, 178, 0.4) 1px, transparent 1px);
+      background-size: 24px 24px;
+      color: var(--text-main);
+      padding: 48px 24px;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .header-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 20px rgba(45, 41, 38, 0.05);
+    }
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--riso-rose);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 700;
+      margin: 8px 0 12px 0;
+    }
+    .desc {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      max-width: 760px;
+    }
+    .palette-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px dashed var(--border-subtle);
+    }
+    .palette-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--border-subtle);
+      background: #FFFFFF;
+    }
+    .chip-swatch {
+      width: 14px;
+      height: 14px;
+      border-radius: 2px;
+    }
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .catalog-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(45, 41, 38, 0.04);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .catalog-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(45, 41, 38, 0.08);
+    }
+    .catalog-card-wide {
+      grid-column: 1 / -1;
+    }
+    .card-preview {
+      background: var(--riso-paper);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 140px;
+      margin-bottom: 16px;
+    }
+    .catalog-card-wide .card-preview {
+      min-height: 240px;
+      max-height: 360px;
+    }
+    .preview-svg {
+      width: 100%;
+      height: 100%;
+      max-height: 260px;
+    }
+    .card-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .card-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--riso-rose);
+      font-weight: 700;
+    }
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+    .card-dim {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-dim);
+    }
+    .code-box {
+      background: #F8F6F2;
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      padding: 8px 10px;
+      margin-top: 8px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: #3E3B36;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-box">
+      <span class="eyebrow">SWISS DESIGN · RISOGRAPH DUAL-DRUM SYSTEM · SPECIMEN CATALOG</span>
+      <h1>溫柔生長・手帳讀書誌：抽象幾何符號庫字典</h1>
+      <p class="desc">
+        本字典收錄全套 17 組自洽、高端、去寫實照片的純 SVG 符號系統。包含兩款 280×200 雙貓心理學標本板（橘白放鬆伸腿、三花堅定邊界）、五大生活花草物件（細框眼鏡、熱咖啡杯、鼠尾草枝條、洋甘菊花朵、鋼筆尖）與全站去 Emoji 系統功能符號。全向量支援微型坐標註記與 Risograph 雙色印刷機械錯位層疊。
+      </p>
+      <div class="palette-strip">
+        <div class="palette-chip"><div class="chip-swatch" style="background:#C06C52;"></div> <span>RISO ROSE #C06C52</span></div>
+        <div class="palette-chip"><div class="chip-swatch" style="background:#3E6B56;"></div> <span>RISO SAGE #3E6B56</span></div>
+        <div class="palette-chip"><div class="chip-swatch" style="background:#9E6234;"></div> <span>RISO AMBER #9E6234</span></div>
+        <div class="palette-chip"><div class="chip-swatch" style="background:#2D2926;"></div> <span>RISO INK #2D2926</span></div>
+        <div class="palette-chip"><div class="chip-swatch" style="background:#FAF8F5; border:1px solid #ddd;"></div> <span>RISO PAPER #FAF8F5</span></div>
+      </div>
+    </div>
+
+    <!-- Master Sprite Hidden Embedding -->
+    <div style="display:none;">
+      <!-- Master SVG Sprite Embedded for Immediate Test -->
+    </div>
+
+    <div class="catalog-grid">
+      
+    <div class="catalog-card catalog-card-wide">
+      <div class="card-preview">
+  <svg class="preview-svg" viewBox="0 0 280 200" role="img" aria-label="琥珀橘白放鬆伸腿標本板">
+    <use href="riso-symbols.svg#symbol-cat-amber-plate"/>
+  </svg>
+</div>
+      <div class="card-meta">
+        <span class="card-tag">ID: #symbol-cat-amber-plate</span>
+        <h4 class="card-title">琥珀橘白放鬆伸腿標本板</h4>
+        <span class="card-dim">VIEWBOX: 0 0 280 200 · FILE: cat-amber-stretch-specimen.svg</span>
+        <div class="code-box">
+          <code>&lt;svg class="bujo-specimen-svg" role="img" aria-label="琥珀橘白放鬆伸腿標本板"&gt;
+  &lt;use href="assets/riso-symbols.svg#symbol-cat-amber-plate"/&gt;
+&lt;/svg&gt;</code>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-card catalog-card-wide">
+      <div class="card-preview">
+  <svg class="preview-svg" viewBox="0 0 280 200" role="img" aria-label="翡翠玳瑁端坐守護標本板">
+    <use href="riso-symbols.svg#symbol-cat-calico-plate"/>
+  </svg>
+</div>
+      <div class="card-meta">
+        <span class="card-tag">ID: #symbol-cat-calico-plate</span>
+        <h4 class="card-title">翡翠玳瑁端坐守護標本板</h4>
+        <span class="card-dim">VIEWBOX: 0 0 280 200 · FILE: cat-tortoiseshell-sentinel-specimen.svg</span>
+        <div class="code-box">
+          <code>&lt;svg class="bujo-specimen-svg" role="img" aria-label="翡翠玳瑁端坐守護標本板"&gt;
+  &lt;use href="assets/riso-symbols.svg#symbol-cat-calico-plate"/&gt;
+&lt;/svg&gt;</code>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-card">
+      <div class="card-preview">
+  <svg class="preview-svg" viewBox="0 0 32 32" role="img" aria-label="雙色解構貓咪微型標識">
+    <use href="riso-symbols.svg#symbol-brand-cat"/>
+  </svg>
+</div>
+      <div class="card-meta">
+        <span class="card-tag">ID: #symbol-brand-cat</span>
+        <h4 class="card-title">雙色解構貓咪微型標識</h4>
+        <span class="card-dim">VIEWBOX: 0 0 32 32 · FILE: brand-cat.svg</span>
+        <div class="code-box">
+          <code>&lt;svg class="riso-icon" role="img" aria-label="雙色解構貓咪微型標識"&gt;
+  &lt;use href="assets/riso-symbols.svg#symbol-brand-cat"/&gt;
+&lt;/svg&gt;</code>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-card">
+      <div class="card-preview">
+  <svg class="preview-svg" viewBox="0 0 32 32" role="img" aria-label="細框眼鏡 (專注聚焦)">
+    <use href="riso-symbols.svg#symbol-glasses"/>
+  </svg>
+</div>
+      <div class="card-meta">
+        <span class="card-tag">ID: #symbol-glasses</span>
+        <h4 class="card-title">細框眼鏡 (專注聚焦)</h4>
+        <span class="card-dim">VIEWBOX: 0 0 32 32 · FILE: icon-glasses.svg</span>
+        <div class="code-box">
+          <code>&lt;svg class="riso-icon" role="img" aria-label="細框眼鏡 (專注聚焦)"&gt;
+  &lt;use href="assets/riso-symbols.svg#symbol-glasses"/&gt;
+&lt;/svg&gt;</code>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-card">
+      <div class="card-preview">
+  <svg class="preview-svg" viewBox="0 0 32 32" role="img" aria-label="熱咖啡杯 (溫熱平復)">
+    <use href="riso-symbols.svg#symbol-coffee"/>
+  </svg>
+</div>
+      <div class="card-meta">
+        <span class="card-tag">ID: #symbol-coffee</span>
+        <h4 class="card-title">熱咖啡杯 (溫熱平復)</h4>
+        <span class="card-dim">VIEWBOX: 0 0 32 32 · FILE: icon-coffee.svg</span>
+        <div class="code-box">
+          <code>&lt;svg class="riso-icon" role="img" aria-label="熱咖啡杯 (溫熱平復)"&gt;
+  &lt;use href="assets/riso-symbols.svg#symbol-coffee"/&gt;
+&lt;/svg&gt;</code>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-card">
+      <div class="card-preview">
+  <svg class="preview-svg" viewBox="0 0 32 32" role="img" aria-label="鼠尾草枝條 (淨化心緒)">
+    <use href="riso-symbols.svg#symbol-sage"/>
+  </svg>
+</div>
+      <div class="card-meta">
+        <span class="card-tag">ID: #symbol-sage</span>
+        <h4 class="card-title">鼠尾草枝條 (淨化心緒)</h4>
+        <span class="card-dim">VIEWBOX: 0 0 32 32 · FILE: icon-sage.svg</span>
+        <div class="code-box">
+          <code>&lt;svg class="riso-icon" role="img" aria-label="鼠尾草枝條 (淨化心緒)"&gt;
+  &lt;use href="assets/riso-symbols.svg#symbol-sage"/&gt;
+&lt;/svg&gt;</code>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-card">
+      <div class="card-preview">
+  <svg class="preview-svg" viewBox="0 0 32 32" role="img" aria-label="洋甘菊花朵 (安撫神經)">
+    <use href="riso-symbols.svg#symbol-chamomile"/>
+  </svg>
+</div>
+      <div class="card-meta">
+        <span class="card-tag">ID: #symbol-chamomile</span>
+        <h4 class="card-title">洋甘菊花朵 (安撫神經)</h4>
+        <span class="card-dim">VIEWBOX: 0 0 32 32 · FILE: icon-chamomile.svg</span>
+        <div class="code-box">
+          <code>&lt;svg class="riso-icon" role="img" aria-label="洋甘菊花朵 (安撫神經)"&gt;
+  &lt;use href="assets/riso-symbols.svg#symbol-chamomile"/&gt;
+&lt;/svg&gt;</code>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-card">
+      <div class="card-preview">
+  <svg class="preview-svg" viewBox="0 0 32 32" role="img" aria-label="鋼筆尖 (深刻書寫)">
+    <use href="riso-symbols.svg#symbol-pen"/>
+  </svg>
+</div>
+      <div class="card-meta">
+        <span class="card-tag">ID: #symbol-pen</span>
+        <h4 class="card-title">鋼筆尖 (深刻書寫)</h4>
+        <span class="card-dim">VIEWBOX: 0 0 32 32 · FILE: icon-pen.svg</span>
+        <div class="code-box">
+          <code>&lt;svg class="riso-icon" role="img" aria-label="鋼筆尖 (深刻書寫)"&gt;
+  &lt;use href="assets/riso-symbols.svg#symbol-pen"/&gt;
+&lt;/svg&gt;</code>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-card">
+      <div class="card-preview">
+  <svg class="preview-svg" viewBox="0 0 32 32" role="img" aria-label="閃電能量 (心智自測)">
+    <use href="riso-symbols.svg#symbol-lightning"/>
+  </svg>
+</div>
+      <div class="card-meta">
+        <span class="card-tag">ID: #symbol-lightning</span>
+        <h4 class="card-title">閃電能量 (心智自測)</h4>
+        <span class="card-dim">VIEWBOX: 0 0 32 32 · FILE: icon-lightning.svg</span>
+        <div class="code-box">
+          <code>&lt;svg class="riso-icon" role="img" aria-label="閃電能量 (心智自測)"&gt;
+  &lt;use href="assets/riso-symbols.svg#symbol-lightning"/&gt;
+&lt;/svg&gt;</code>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-card">
+      <div class="card-preview">
+  <svg class="preview-svg" viewBox="0 0 32 32" role="img" aria-label="雙色處方膠囊 (行動處方)">
+    <use href="riso-symbols.svg#symbol-pill"/>
+  </svg>
+</div>
+      <div class="card-meta">
+        <span class="card-tag">ID: #symbol-pill</span>
+        <h4 class="card-title">雙色處方膠囊 (行動處方)</h4>
+        <span class="card-dim">VIEWBOX: 0 0 32 32 · FILE: icon-pill.svg</span>
+        <div class="code-box">
+          <code>&lt;svg class="riso-icon" role="img" aria-label="雙色處方膠囊 (行動處方)"&gt;
+  &lt;use href="assets/riso-symbols.svg#symbol-pill"/&gt;
+&lt;/svg&gt;</code>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-card">
+      <div class="card-preview">
+  <svg class="preview-svg" viewBox="0 0 32 32" role="img" aria-label="開卷書本 (專書導讀與書庫)">
+    <use href="riso-symbols.svg#symbol-book"/>
+  </svg>
+</div>
+      <div class="card-meta">
+        <span class="card-tag">ID: #symbol-book</span>
+        <h4 class="card-title">開卷書本 (專書導讀與書庫)</h4>
+        <span class="card-dim">VIEWBOX: 0 0 32 32 · FILE: icon-book.svg</span>
+        <div class="code-box">
+          <code>&lt;svg class="riso-icon" role="img" aria-label="開卷書本 (專書導讀與書庫)"&gt;
+  &lt;use href="assets/riso-symbols.svg#symbol-book"/&gt;
+&lt;/svg&gt;</code>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-card">
+      <div class="card-preview">
+  <svg class="preview-svg" viewBox="0 0 32 32" role="img" aria-label="經典神廟 (史丹佛組織權力學)">
+    <use href="riso-symbols.svg#symbol-temple"/>
+  </svg>
+</div>
+      <div class="card-meta">
+        <span class="card-tag">ID: #symbol-temple</span>
+        <h4 class="card-title">經典神廟 (史丹佛組織權力學)</h4>
+        <span class="card-dim">VIEWBOX: 0 0 32 32 · FILE: icon-temple.svg</span>
+        <div class="code-box">
+          <code>&lt;svg class="riso-icon" role="img" aria-label="經典神廟 (史丹佛組織權力學)"&gt;
+  &lt;use href="assets/riso-symbols.svg#symbol-temple"/&gt;
+&lt;/svg&gt;</code>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-card">
+      <div class="card-preview">
+  <svg class="preview-svg" viewBox="0 0 32 32" role="img" aria-label="神經迴路 (密西根大腦反芻)">
+    <use href="riso-symbols.svg#symbol-brain"/>
+  </svg>
+</div>
+      <div class="card-meta">
+        <span class="card-tag">ID: #symbol-brain</span>
+        <h4 class="card-title">神經迴路 (密西根大腦反芻)</h4>
+        <span class="card-dim">VIEWBOX: 0 0 32 32 · FILE: icon-brain.svg</span>
+        <div class="code-box">
+          <code>&lt;svg class="riso-icon" role="img" aria-label="神經迴路 (密西根大腦反芻)"&gt;
+  &lt;use href="assets/riso-symbols.svg#symbol-brain"/&gt;
+&lt;/svg&gt;</code>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-card">
+      <div class="card-preview">
+  <svg class="preview-svg" viewBox="0 0 32 32" role="img" aria-label="守護盾牌 (拒絕掠奪邊界)">
+    <use href="riso-symbols.svg#symbol-shield"/>
+  </svg>
+</div>
+      <div class="card-meta">
+        <span class="card-tag">ID: #symbol-shield</span>
+        <h4 class="card-title">守護盾牌 (拒絕掠奪邊界)</h4>
+        <span class="card-dim">VIEWBOX: 0 0 32 32 · FILE: icon-shield.svg</span>
+        <div class="code-box">
+          <code>&lt;svg class="riso-icon" role="img" aria-label="守護盾牌 (拒絕掠奪邊界)"&gt;
+  &lt;use href="assets/riso-symbols.svg#symbol-shield"/&gt;
+&lt;/svg&gt;</code>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-card">
+      <div class="card-preview">
+  <svg class="preview-svg" viewBox="0 0 32 32" role="img" aria-label="幾何和解鴿 (假性孤兒療癒)">
+    <use href="riso-symbols.svg#symbol-dove"/>
+  </svg>
+</div>
+      <div class="card-meta">
+        <span class="card-tag">ID: #symbol-dove</span>
+        <h4 class="card-title">幾何和解鴿 (假性孤兒療癒)</h4>
+        <span class="card-dim">VIEWBOX: 0 0 32 32 · FILE: icon-dove.svg</span>
+        <div class="code-box">
+          <code>&lt;svg class="riso-icon" role="img" aria-label="幾何和解鴿 (假性孤兒療癒)"&gt;
+  &lt;use href="assets/riso-symbols.svg#symbol-dove"/&gt;
+&lt;/svg&gt;</code>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-card">
+      <div class="card-preview">
+  <svg class="preview-svg" viewBox="0 0 32 32" role="img" aria-label="困境羅盤 (心靈困境導引)">
+    <use href="riso-symbols.svg#symbol-compass"/>
+  </svg>
+</div>
+      <div class="card-meta">
+        <span class="card-tag">ID: #symbol-compass</span>
+        <h4 class="card-title">困境羅盤 (心靈困境導引)</h4>
+        <span class="card-dim">VIEWBOX: 0 0 32 32 · FILE: icon-compass.svg</span>
+        <div class="code-box">
+          <code>&lt;svg class="riso-icon" role="img" aria-label="困境羅盤 (心靈困境導引)"&gt;
+  &lt;use href="assets/riso-symbols.svg#symbol-compass"/&gt;
+&lt;/svg&gt;</code>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-card">
+      <div class="card-preview">
+  <svg class="preview-svg" viewBox="0 0 32 32" role="img" aria-label="手帳印章 (核准標記)">
+    <use href="riso-symbols.svg#symbol-stamp"/>
+  </svg>
+</div>
+      <div class="card-meta">
+        <span class="card-tag">ID: #symbol-stamp</span>
+        <h4 class="card-title">手帳印章 (核准標記)</h4>
+        <span class="card-dim">VIEWBOX: 0 0 32 32 · FILE: icon-stamp-check.svg</span>
+        <div class="code-box">
+          <code>&lt;svg class="riso-icon" role="img" aria-label="手帳印章 (核准標記)"&gt;
+  &lt;use href="assets/riso-symbols.svg#symbol-stamp"/&gt;
+&lt;/svg&gt;</code>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>

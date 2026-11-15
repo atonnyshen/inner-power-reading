@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>《溫柔生長讀書誌》貓咪手帳概念測試版 · 實驗設計系統</title>
+  <meta name="description" content="貓咪手帳概念實驗頁面：融合瑞士解構平面設計、Risograph 印刷錯位與幾何貓咪抽象標識，為習慣退讓者建立如貓一般優雅自洽的心理邊界。">
+
+  <!-- Cross-Platform Noto Serif & Noto Sans Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       AWARD-WINNING WEB CRAFT + DECONSTRUCTED SWISS JOURNAL SPECIFICATION
+       秩序 × 誤差 · 精密 × 手工痕跡 · 數字 × 模擬 · 理性 × 溫柔情緒
+       ========================================================================== */
+
+    /* Typography & Dual Language Tokens */
+    :root {
+      --font-serif: "Noto Serif TC", "Songti TC", "Source Han Serif TC", "PingFang TC", "Hiragino Mincho ProN", serif;
+      --font-sans: "Noto Sans TC", "PingFang TC", -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", sans-serif;
+      --font-mono: "JetBrains Mono", "SF Mono", Consolas, monospace;
+
+      /* Palette Tokens */
+      --paper-cream: #FAF6F0;
+      --paper-card: #FFFFFF;
+      --paper-subtle: #F4EDE2;
+      --paper-line: #E6DCD0;
+      --paper-dot: #DDD2C4;
+      
+      --ink-black: #1D1A18;
+      --ink-gray: #544F49;
+      --ink-light: #8E877E;
+      --ink-ghost: #B9B2A8;
+      
+      --riso-rose: #D95D50;
+      --riso-sage: #3E6B56;
+      --riso-amber: #D48834;
+      --riso-blue: #325A73;
+
+      --nav-height: 64px;
+      --content-max-width: 920px;
+    }
+
+    html:lang(zh-TW) {
+      --font-serif: "Noto Serif TC", "Songti TC", "Source Han Serif TC", "PingFang TC", serif;
+      --font-sans: "Noto Sans TC", "PingFang TC", sans-serif;
+    }
+
+    html:lang(zh-CN) {
+      --font-serif: "Noto Serif SC", "Songti SC", "Source Han Serif SC", "PingFang SC", serif;
+      --font-sans: "Noto Sans SC", "PingFang SC", sans-serif;
+    }
+
+    /* Dark Mode Palette */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper-cream: #181615;
+        --paper-card: #22201D;
+        --paper-subtle: #2C2926;
+        --paper-line: #3D3934;
+        --paper-dot: #38342F;
+        
+        --ink-black: #F5EFEB;
+        --ink-gray: #C7C0B7;
+        --ink-light: #9B948A;
+        --ink-ghost: #69635A;
+        
+        --riso-rose: #E57366;
+        --riso-sage: #588B73;
+        --riso-amber: #E29B4D;
+        --riso-blue: #4D7996;
+      }
+    }
+
+    /* Reset & Base Setup */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      min-width: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-height) + 20px);
+      background-color: var(--paper-cream);
+      color: var(--ink-black);
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "palt" 1;
+    }
+
+    body {
+      font-family: var(--font-serif);
+      line-height: 1.85;
+      background-color: var(--paper-cream);
+      background-image: 
+        radial-gradient(var(--paper-dot) 1px, transparent 1px),
+        linear-gradient(to right, rgba(229, 220, 208, 0.25) 1px, transparent 1px);
+      background-size: 24px 24px, 120px 120px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Risograph Texture Overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* ==========================================================================
+       SMART HIDE/REVEAL NAVIGATION + HORIZONTAL SCROLL SNAP
+       ========================================================================== */
+    header.top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(250, 246, 240, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--paper-line);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      header.top-nav {
+        background: rgba(24, 22, 21, 0.88);
+      }
+    }
+
+    header.top-nav.nav-hidden {
+      transform: translateY(-100%);
+    }
+
+    .nav-container {
+      max-width: var(--content-max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--ink-black);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      flex-shrink: 0;
+    }
+
+    .nav-brand-badge {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      background: var(--riso-rose);
+      color: #FFF;
+      padding: 0.15rem 0.45rem;
+      border-radius: 2px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    /* Horizontal Scroll Snap Navigation Track */
+    .nav-track-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      mask-image: linear-gradient(to right, transparent, black 12px, black calc(100% - 12px), transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 12px, black calc(100% - 12px), transparent);
+    }
+
+    .nav-track-wrap::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-bookmarks {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      list-style: none;
+      padding: 0 1rem;
+      white-space: nowrap;
+    }
+
+    .nav-bookmark-item {
+      scroll-snap-align: center;
+    }
+
+    .nav-link {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-decoration: none;
+      color: var(--ink-gray);
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--ink-black);
+      border-color: var(--paper-line);
+      background: var(--paper-card);
+    }
+
+    /* Ghost Language Toggle */
+    .btn-ghost-lang {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      background: transparent;
+      border: 1px solid var(--paper-line);
+      color: var(--ink-gray);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .btn-ghost-lang:hover {
+      border-color: var(--ink-black);
+      color: var(--ink-black);
+      background: var(--paper-card);
+    }
+
+    /* ==========================================================================
+       LAYOUT & TYPOGRAPHY MEASURES
+       ========================================================================== */
+    .container {
+      max-width: var(--content-max-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    main {
+      padding-top: calc(var(--nav-height) + 1.5rem);
+    }
+
+    /* Specimen Hero */
+    .hero-specimen {
+      padding: 3rem 0 3.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .washi-tape-pill {
+      display: inline-block;
+      background: rgba(217, 93, 80, 0.12);
+      border-left: 2px dashed rgba(217, 93, 80, 0.45);
+      border-right: 2px dashed rgba(217, 93, 80, 0.45);
+      padding: 0.25rem 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--riso-rose);
+      transform: rotate(-0.8deg);
+      margin-bottom: 2rem;
+      letter-spacing: 0.08em;
+    }
+
+    /* The Generative Cat Symbolspecimen Canvas */
+    .specimen-grid-canvas {
+      position: relative;
+      width: 330px;
+      height: 330px;
+      margin: 0 auto 2.5rem;
+      background: var(--paper-card);
+      border: 1px solid var(--paper-line);
+      box-shadow: 
+        0 1px 3px rgba(0,0,0,0.02),
+        6px 6px 0px rgba(221, 211, 196, 0.5);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    }
+
+    .specimen-grid-canvas:hover {
+      transform: translateY(-2px);
+      box-shadow: 
+        0 8px 24px rgba(0,0,0,0.06),
+        8px 8px 0px rgba(221, 211, 196, 0.7);
+    }
+
+    .coord-tl { position: absolute; top: 10px; left: 12px; font-family: var(--font-mono); font-size: 0.55rem; color: var(--ink-ghost); }
+    .coord-tr { position: absolute; top: 10px; right: 12px; font-family: var(--font-mono); font-size: 0.55rem; color: var(--ink-ghost); }
+    .coord-bl { position: absolute; bottom: 10px; left: 12px; font-family: var(--font-mono); font-size: 0.55rem; color: var(--ink-ghost); }
+    .coord-br { position: absolute; bottom: 10px; right: 12px; font-family: var(--font-mono); font-size: 0.55rem; color: var(--ink-ghost); }
+
+    .grid-cross {
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      pointer-events: none;
+    }
+    .grid-cross::before, .grid-cross::after {
+      content: "";
+      position: absolute;
+      background: var(--ink-ghost);
+    }
+    .grid-cross::before { top: 3px; left: 0; width: 7px; height: 1px; }
+    .grid-cross::after { top: 0; left: 3px; width: 1px; height: 7px; }
+
+    .cat-symbol-svg {
+      width: 260px;
+      height: 260px;
+      flex-shrink: 0;
+    }
+
+    .hero-h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      color: var(--ink-black);
+    }
+
+    .hero-lead {
+      font-size: 1.05rem;
+      color: var(--ink-gray);
+      max-width: 65ch;
+      margin: 0 auto 2rem;
+      line-height: 1.9;
+    }
+
+    .pill-group {
+      display: inline-flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .pill-item {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid var(--paper-line);
+      background: var(--paper-card);
+      border-radius: 999px;
+      color: var(--ink-gray);
+      letter-spacing: 0.05em;
+    }
+
+    /* Section Component */
+    .journal-section {
+      margin: 4.5rem 0;
+      padding-top: 3rem;
+      border-top: 1px dashed var(--paper-line);
+      position: relative;
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--riso-rose);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--ink-black);
+      margin-bottom: 1.8rem;
+      letter-spacing: 0.01em;
+    }
+
+    /* 3-Column Axioms Grid */
+    .axioms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .axiom-card {
+      background: var(--paper-card);
+      border: 1px solid var(--paper-line);
+      padding: 2rem 1.6rem;
+      border-radius: 2px;
+      position: relative;
+      box-shadow: 2px 2px 0px rgba(221, 211, 196, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .axiom-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 4px 4px 0px rgba(221, 211, 196, 0.6);
+    }
+
+    .axiom-idx {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--ink-light);
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .axiom-h3 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 0.9rem;
+      color: var(--ink-black);
+    }
+
+    .axiom-body {
+      font-size: 0.95rem;
+      color: var(--ink-gray);
+      line-height: 1.85;
+    }
+
+    .axiom-stamp {
+      position: absolute;
+      bottom: 12px;
+      right: 14px;
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      color: var(--ink-ghost);
+    }
+
+    /* Quote Strips */
+    .quote-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .quote-row {
+      background: var(--paper-card);
+      border: 1px solid var(--paper-line);
+      border-left: 3px solid var(--riso-sage);
+      padding: 1.4rem 1.8rem;
+      border-radius: 0 2px 2px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      box-shadow: 2px 2px 0px rgba(221, 211, 196, 0.35);
+    }
+
+    .quote-text {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--ink-black);
+    }
+
+    .quote-author {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-light);
+      white-space: nowrap;
+    }
+
+    /* Checklist Box */
+    .checklist-container {
+      background: var(--paper-card);
+      border: 1px solid var(--paper-line);
+      padding: 2.2rem;
+      border-radius: 2px;
+      box-shadow: 3px 3px 0px rgba(221, 211, 196, 0.45);
+    }
+
+    .check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px dotted var(--paper-line);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .check-row:last-child {
+      border-bottom: none;
+    }
+
+    .check-indicator {
+      width: 18px;
+      height: 18px;
+      border: 1.5px solid var(--ink-gray);
+      border-radius: 3px;
+      flex-shrink: 0;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+    }
+
+    .check-row.done .check-indicator {
+      background: var(--riso-rose);
+      border-color: var(--riso-rose);
+    }
+
+    .check-row.done .check-indicator::after {
+      content: "✓";
+      color: #FFF;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .check-row.done .check-desc {
+      color: var(--ink-ghost);
+      text-decoration: line-through;
+    }
+
+    .check-desc {
+      font-size: 0.95rem;
+      color: var(--ink-gray);
+      line-height: 1.75;
+    }
+
+    /* Provenance Hub & Copyright */
+    .provenance-box {
+      margin-top: 4.5rem;
+      padding: 2rem;
+      background: var(--paper-subtle);
+      border: 1px solid var(--paper-line);
+      border-radius: 2px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-gray);
+      line-height: 1.8;
+    }
+
+    .provenance-header {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--ink-black);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Footer */
+    footer.colophon-footer {
+      margin-top: 4rem;
+      padding: 2.5rem 0 3.5rem;
+      border-top: 1px solid var(--paper-line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--ink-light);
+      letter-spacing: 0.08em;
+    }
+
+    /* Prefers Reduced Motion Guard */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .specimen-grid-canvas {
+        width: 280px;
+        height: 280px;
+      }
+      .cat-symbol-svg {
+        width: 220px;
+        height: 220px;
+      }
+      .quote-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+      footer.colophon-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Smart Hide/Reveal Top Navigation Bar -->
+  <header class="top-nav" id="topNav">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">
+        <span class="nav-brand-badge">CAT-LAB</span>
+        <span>讀書誌 · 貓咪手帳</span>
+      </a>
+
+      <!-- Horizontal Scroll Snap Index Track -->
+      <nav class="nav-track-wrap" aria-label="手帳頁面章節導覽">
+        <ul class="nav-bookmarks">
+          <li class="nav-bookmark-item"><a href="#hero" class="nav-link active">00. 核心標識</a></li>
+          <li class="nav-bookmark-item"><a href="#axioms" class="nav-link">01. 貓咪法則</a></li>
+          <li class="nav-bookmark-item"><a href="#quotes" class="nav-link">02. 手帳摘抄</a></li>
+          <li class="nav-bookmark-item"><a href="#checklist" class="nav-link">03. 今日打卡</a></li>
+          <li class="nav-bookmark-item"><a href="#provenance" class="nav-link">04. 著作引證</a></li>
+        </ul>
+      </nav>
+
+      <!-- Ghost Language Toggle -->
+      <button type="button" class="btn-ghost-lang btn-lang-toggle" id="btnLangToggle" aria-label="切換繁簡中文">
+        <span id="lang-label">简体中文</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Semantic Main Wrapper -->
+  <main class="container">
+
+    <!-- Hero Section: The Generative Cat Identity Symbol -->
+    <section class="hero-specimen" id="hero">
+      <div class="washi-tape-pill">
+        ★ SPECIMEN 02 : FELINE POSTURE DECONSTRUCTION // SWISS GRID 0.5PT
+      </div>
+
+      <!-- The Core Abstract Visual Identity Canvas -->
+      <div class="specimen-grid-canvas" aria-label="貓咪抽象系統視覺識別標識">
+        <div class="coord-tl">LOC. 01 [LAT. 35.689]</div>
+        <div class="coord-tr">ROT. +0.00°</div>
+        <div class="coord-bl">SWISS-MOD : 12×12</div>
+        <div class="coord-br">FIG. 01-A</div>
+
+        <div class="grid-cross" style="top: 20px; left: 20px;"></div>
+        <div class="grid-cross" style="top: 20px; right: 20px;"></div>
+        <div class="grid-cross" style="bottom: 20px; left: 20px;"></div>
+        <div class="grid-cross" style="bottom: 20px; right: 20px;"></div>
+
+        <!-- Abstract Cat Generative SVG Symbol -->
+        <svg class="cat-symbol-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Background Construction Circles (Swiss Guide Lines) -->
+          <circle cx="100" cy="100" r="76" stroke="#EFE7DC" stroke-width="0.75" stroke-dasharray="2 3" />
+          <circle cx="100" cy="100" r="52" stroke="#EFE7DC" stroke-width="0.75" />
+          <line x1="100" y1="16" x2="100" y2="184" stroke="#F1EAE0" stroke-width="0.5" stroke-dasharray="4 4" />
+          <line x1="16" y1="100" x2="184" y2="100" stroke="#F1EAE0" stroke-width="0.5" stroke-dasharray="4 4" />
+
+          <!-- LAYER 1: Riso Registration Shift (Sage Cyan Offset, -1.5px, +1.2px) -->
+          <g transform="translate(-1.5, 1.2)" opacity="0.45">
+            <path d="M 62 76 L 72 44 L 86 64 Z" stroke="var(--riso-sage)" stroke-width="1.2" stroke-linejoin="round" />
+            <path d="M 114 64 L 128 44 L 138 76 Z" stroke="var(--riso-sage)" stroke-width="1.2" stroke-linejoin="round" />
+            <path d="M 86 64 C 95 62 105 62 114 64" stroke="var(--riso-sage)" stroke-width="1.2" />
+            <path d="M 60 96 C 52 120 64 148 100 148 C 136 148 148 120 140 96" stroke="var(--riso-sage)" stroke-width="1.2" />
+            <path d="M 136 142 C 158 142 168 126 168 108 C 168 94 158 88 150 92" stroke="var(--riso-sage)" stroke-width="1.2" stroke-linecap="round" />
+          </g>
+
+          <!-- LAYER 2: Primary Riso Color Layer (Warm Terracotta / Rose Offset, +1.2px, -1.0px) -->
+          <g transform="translate(1.2, -1.0)" opacity="0.38">
+            <path d="M 62 76 L 72 44 L 86 64 Z" stroke="var(--riso-rose)" stroke-width="1.2" stroke-linejoin="round" />
+            <path d="M 114 64 L 128 44 L 138 76 Z" stroke="var(--riso-rose)" stroke-width="1.2" stroke-linejoin="round" />
+            <path d="M 136 142 C 158 142 168 126 168 108 C 168 94 158 88 150 92" stroke="var(--riso-rose)" stroke-width="1.2" stroke-linecap="round" />
+            <polygon points="72,49 82,64 68,66" fill="var(--riso-rose)" />
+          </g>
+
+          <!-- LAYER 3: Core Graphic Black Line (The Deconstructed Precision Swiss Structure) -->
+          <g stroke="var(--ink-black)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Left & Right Ears -->
+            <path d="M 62 76 L 72 44 L 86 64" />
+            <path d="M 114 64 L 128 44 L 138 76" />
+            <!-- Head Crown Arc -->
+            <path d="M 86 64 C 95 62 105 62 114 64" />
+            
+            <!-- Eyes as Precision Geometric Crosshairs -->
+            <circle cx="82" cy="84" r="2.5" fill="var(--ink-black)" stroke="none" />
+            <circle cx="118" cy="84" r="2.5" fill="var(--ink-black)" stroke="none" />
+            
+            <!-- Whiskers as Minimal Swiss Tick Marks -->
+            <line x1="52" y1="90" x2="68" y2="88" stroke-width="0.85" />
+            <line x1="50" y1="96" x2="66" y2="96" stroke-width="0.85" />
+            <line x1="132" y1="88" x2="148" y2="90" stroke-width="0.85" />
+            <line x1="134" y1="96" x2="150" y2="96" stroke-width="0.85" />
+
+            <!-- Nose as Single Micro Inverse Triangle -->
+            <polygon points="100,92 97,88 103,88" fill="var(--ink-black)" stroke="none" />
+
+            <!-- Body Contour: Seated Posture Abstraction -->
+            <path d="M 62 76 C 54 104 60 148 100 148 C 140 148 146 104 138 76" />
+            
+            <!-- Tail: Logarithmic Spiral Trajectory -->
+            <path d="M 134 142 C 158 142 168 126 168 108 C 168 94 158 88 150 92" />
+          </g>
+
+          <!-- Annotations & Node Coordinates -->
+          <text x="70" y="40" font-family="'JetBrains Mono', monospace" font-size="5" fill="var(--ink-light)" letter-spacing="0.5">E-01</text>
+          <text x="126" y="40" font-family="'JetBrains Mono', monospace" font-size="5" fill="var(--ink-light)" letter-spacing="0.5">E-02</text>
+          <text x="148" y="148" font-family="'JetBrains Mono', monospace" font-size="5.5" fill="var(--riso-rose)" font-weight="bold">SPIRAL-R</text>
+          <text x="94" y="160" font-family="'JetBrains Mono', monospace" font-size="5" fill="var(--ink-ghost)">AXIS 0.0</text>
+          
+          <circle cx="72" cy="44" r="1.5" fill="var(--riso-rose)" />
+          <circle cx="128" cy="44" r="1.5" fill="var(--riso-sage)" />
+          <circle cx="150" cy="92" r="1.5" fill="var(--riso-amber)" />
+        </svg>
+      </div>
+
+      <div class="pill-group">
+        <span class="pill-item">#FELINE-POSTURE-DECONSTRUCTION</span>
+        <span class="pill-item">#RISO-REGISTRATION-SHIFT</span>
+        <span class="pill-item">#SWISS-GRID-0.5PT</span>
+        <span class="pill-item">#WARM-CREAM-PAPER</span>
+      </div>
+
+      <h1 class="hero-h1">像貓一樣守護邊界：鬆弛、自洽與不討好</h1>
+      <p class="hero-lead">
+        在不對等的權力關係中，我們總被社會化要求「聽話、配合、懂事」。但一隻貓從不因他人的期待而感到羞恥。牠在陽光下安然舒展，在受侵犯時果斷確立邊界。這是一份將貓咪神經自洽轉化為手帳心理防禦的實驗設計頁面。
+      </p>
+    </section>
+
+    <!-- Section 1: Feline Axioms -->
+    <section class="journal-section" id="axioms">
+      <div class="section-eyebrow">
+        <span>●</span>
+        <span>SECTION 01 // FELINE EMBODIMENT PROTOCOLS</span>
+      </div>
+      <h2 class="section-title">貓咪核心三階自處法則：從身心反應到內在防衛</h2>
+      
+      <div class="axioms-grid">
+        <article class="axiom-card">
+          <span class="axiom-idx">[ RULE : 01 / POSTURE ]</span>
+          <h3 class="axiom-h3">身體鬆弛，勝過百句辯解</h3>
+          <p class="axiom-body">
+            貓在安全時全身如流水般放鬆；但在邊界被觸碰時，牠不會先道歉，而是平靜而清晰地拉開距離。面對職場強勢者的情緒傾倒，先讓雙肩下沉、呼吸放緩，拒絕身體層面的本能凍結。
+          </p>
+          <span class="axiom-stamp">FIG. REF-P1</span>
+        </article>
+
+        <article class="axiom-card">
+          <span class="axiom-idx">[ RULE : 02 / REJECTION ]</span>
+          <h3 class="axiom-h3">不帶敵意的溫和拒絕</h3>
+          <p class="axiom-body">
+            當貓不想被摸時，牠只是輕巧地偏過頭走開，既不恐慌也不帶著罪惡感。學習「停、看、應」的界線守護：明確陳述自己的限制，不為他人的不滿而承擔過剩的自責。
+          </p>
+          <span class="axiom-stamp">FIG. REF-P2</span>
+        </article>
+
+        <article class="axiom-card">
+          <span class="axiom-idx">[ RULE : 03 / FOCUS ]</span>
+          <h3 class="axiom-h3">收斂注意力，停止精神反芻</h3>
+          <p class="axiom-body">
+            離開衝突現場後，貓會立刻坐下來專心舔毛。牠不會在夜深人靜時反覆審問自己「剛剛我是不是做錯了」。將抽離的精力收回到手帳與手頭實體事物，斬斷大腦失控的自責重播。
+          </p>
+          <span class="axiom-stamp">FIG. REF-P3</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- Section 2: Quotes Stream -->
+    <section class="journal-section" id="quotes">
+      <div class="section-eyebrow">
+        <span>●</span>
+        <span>SECTION 02 // ARCHIVAL BOOK QUOTES</span>
+      </div>
+      <h2 class="section-title">手帳摘抄條：給習慣退讓者的防禦文字</h2>
+
+      <div class="quote-stack">
+        <div class="quote-row">
+          <p class="quote-text">「在會議長桌上坐正、開口前不先說對不起。妳的專業價值在於思考的深度，而非無窮無盡的後勤討好。」</p>
+          <span class="quote-author">—— 弗蘭克爾《職場女性》</span>
+        </div>
+
+        <div class="quote-row" style="border-left-color: var(--riso-rose);">
+          <p class="quote-text">「對方的憤怒是他自己的情緒課題，妳沒有義務用委屈自己的人生，去填滿另一個成年人的安全感黑洞。」</p>
+          <span class="quote-author">—— 周慕姿《情緒勒索》</span>
+        </div>
+
+        <div class="quote-row" style="border-left-color: var(--riso-amber);">
+          <p class="quote-text">「完美主義是一套重達二十噸的沉重防禦；接納脆弱並非軟弱，而是允許真實的自己踏入競技場。」</p>
+          <span class="quote-author">—— 布琳·布朗《不完美的禮物》</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Daily Habit Checker -->
+    <section class="journal-section" id="checklist">
+      <div class="section-eyebrow">
+        <span>●</span>
+        <span>SECTION 03 // DAILY HABIT CHECKER</span>
+      </div>
+      <h2 class="section-title">今日手帳打卡：像貓一樣生活的 5 個微練習</h2>
+
+      <div class="checklist-container">
+        <div class="check-row" onclick="this.classList.toggle('done')">
+          <div class="check-indicator"></div>
+          <div class="check-desc">
+            <strong>01. 戒斷習慣性道歉：</strong> 在今天發出的工作訊息或郵件中，將開頭的「不好意思 / 抱歉」改為「感謝你的耐心等待 / 感謝你的確認」。
+          </div>
+        </div>
+
+        <div class="check-row" onclick="this.classList.toggle('done')">
+          <div class="check-indicator"></div>
+          <div class="check-desc">
+            <strong>02. 守護 15 分鐘的發呆界線：</strong> 午餐後給自己一段完全不看社群動態、不回覆瑣碎訊息的時間，像貓在窗台曬太陽一樣全然放空。
+          </div>
+        </div>
+
+        <div class="check-row" onclick="this.classList.toggle('done')">
+          <div class="check-indicator"></div>
+          <div class="check-desc">
+            <strong>03. 不接突如其來的非本職差事：</strong> 當他人試圖推卸責任時，溫和直視對方回覆：「這項工作目前不在我的排程內，建議依照常規流程提報。」
+          </div>
+        </div>
+
+        <div class="check-row" onclick="this.classList.toggle('done')">
+          <div class="check-indicator"></div>
+          <div class="check-desc">
+            <strong>04. 睡前終止精神反芻：</strong> 當大腦開始播放「今天開會如果換個說法就好了」時，用手掌輕拍胸口三次，默念：「今天的考驗已經結束，我已做到當時的最好。」
+          </div>
+        </div>
+
+        <div class="check-row" onclick="this.classList.toggle('done')">
+          <div class="check-indicator"></div>
+          <div class="check-desc">
+            <strong>05. 在手帳寫下一件肯定自己的事：</strong> 無論多微小（如準時下班、喝足了溫水），給自己蓋上一枚心靈的及格戳章。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Provenance Hub & Copyright Compliance -->
+    <section class="provenance-box" id="provenance">
+      <div class="provenance-header">
+        <span>📌</span>
+        <span>PROVENANCE HUB & LEGAL NOTICES (著作權合規與來源引證聲明)</span>
+      </div>
+      <p>
+        1. <strong>實驗設計與教育合理使用</strong>：本頁面為《溫柔生長讀書誌》本機實驗設計概念原型（Experimental Concept Specimen），非正式商用發布頁面。頁面內所引述之心理學與出版文獻均標明原著出處，旨在探討心理成長與設計工藝。<br>
+        2. <strong>權利人優先下架條款 (Notice and Takedown Policy)</strong>：若任何出版機構或著作權人對頁面中引述之書名或金句摘抄存有異議，請透過專案 GitHub 倉庫 Issue 或指定聯繫管道提出，我們將第一時間配合移除或修正相關內容。<br>
+        3. <strong>無障礙與隱私保障</strong>：本頁面無第三方跨站追蹤器，不收集讀者個資，全面支援無障礙高對比與減弱動態偏好。
+      </p>
+    </section>
+
+    <!-- Colophon Footer -->
+    <footer class="colophon-footer" id="colophon">
+      <div>
+        INNER-POWER LAB // CONCEPT SPECIMEN ONLY<br>
+        LOCAL TEST FILE : preview-kawaii-journal.html
+      </div>
+      <div>
+        POST-DIGITAL DECONSTRUCTED SWISS × RISO GRAIN<br>
+        STRICTLY LOCAL · NOT DEPLOYED TO PRODUCTION
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Smart Hide/Reveal Navigation Script -->
+  <script>
+    (function() {
+      const topNav = document.getElementById('topNav');
+      let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+      let accumulatedDelta = 0;
+      let isAnchorScrolling = false;
+      const SCROLL_THRESHOLD = 35;
+      const REVEAL_THRESHOLD = -25;
+
+      // Update Nav Height Variable Dynamically
+      const updateNavHeight = () => {
+        if (topNav) {
+          const h = topNav.offsetHeight;
+          document.documentElement.style.setProperty('--nav-height', `${h}px`);
+        }
+      };
+
+      if (window.ResizeObserver && topNav) {
+        new ResizeObserver(updateNavHeight).observe(topNav);
+      }
+      updateNavHeight();
+
+      // Click link with smooth micro-correction
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          const targetId = link.getAttribute('href');
+          if (targetId && targetId.startsWith('#') && targetId.length > 1) {
+            e.preventDefault();
+            const targetEl = document.querySelector(targetId);
+            if (targetEl) {
+              isAnchorScrolling = true;
+              topNav.classList.remove('nav-hidden');
+              
+              const navH = topNav.offsetHeight || 64;
+              const targetTop = targetEl.getBoundingClientRect().top + window.pageYOffset - navH - 20;
+              
+              window.scrollTo({
+                top: Math.max(0, targetTop),
+                behavior: 'smooth'
+              });
+
+              document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+              link.classList.add('active');
+
+              setTimeout(() => {
+                isAnchorScrolling = false;
+                lastScrollY = window.pageYOffset;
+              }, 600);
+            }
+          }
+        });
+      });
+
+      // Directional Accumulator & Clamp iOS Bounce
+      window.addEventListener('scroll', () => {
+        if (isAnchorScrolling) return;
+
+        const currentY = window.pageYOffset || document.documentElement.scrollTop;
+        const maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
+
+        // Clamp iOS Rubber Banding
+        if (currentY <= 10) {
+          topNav.classList.remove('nav-hidden');
+          accumulatedDelta = 0;
+          lastScrollY = currentY;
+          return;
+        }
+        if (currentY >= maxScrollY - 10) {
+          accumulatedDelta = 0;
+          lastScrollY = currentY;
+          return;
+        }
+
+        const scrollDelta = currentY - lastScrollY;
+        accumulatedDelta += scrollDelta;
+
+        if (accumulatedDelta > SCROLL_THRESHOLD) {
+          topNav.classList.add('nav-hidden');
+          accumulatedDelta = 0;
+        } else if (accumulatedDelta < REVEAL_THRESHOLD) {
+          topNav.classList.remove('nav-hidden');
+          accumulatedDelta = 0;
+        }
+
+        lastScrollY = currentY;
+      }, { passive: true });
+    })();
+  </script>
+
+  <!-- Universal Chinese Converter -->
+  <script src="js/chinese-convert.js"></script>
+</body>
+</html>

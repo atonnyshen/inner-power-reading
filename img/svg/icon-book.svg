@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100%" height="100%" fill="none" role="img" aria-label="開卷書本 (專書導讀與書庫)">
+<g id="icon-book-root">
+  <!-- Left Page -->
+  <path d="M 16 8 C 12 7, 7 8, 4 9 V 25 C 7 24, 12 23, 16 24 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Right Page -->
+  <path d="M 16 8 C 20 7, 25 8, 28 9 V 25 C 25 24, 20 23, 16 24 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Sage Book Ribbon Bookmark -->
+  <path d="M 16 8 V 27 L 14.5 25.5 L 13 27 V 8" fill="var(--riso-sage, #3E6B56)" stroke="var(--text-main, #2D2926)" stroke-width="0.8"/>
+  <!-- Page Text Hairlines -->
+  <line x1="7" y1="13" x2="13" y2="12.5" stroke="var(--text-dim, #888077)" stroke-width="0.8"/>
+  <line x1="7" y1="17" x2="13" y2="16.5" stroke="var(--text-dim, #888077)" stroke-width="0.8"/>
+  <line x1="19" y1="12.5" x2="25" y2="13" stroke="var(--text-dim, #888077)" stroke-width="0.8"/>
+  <line x1="19" y1="16.5" x2="25" y2="17" stroke="var(--text-dim, #888077)" stroke-width="0.8"/>
+</g>
+</svg>

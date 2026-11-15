@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>《給予》深度專頁 · 溫柔生長讀書誌</title>
   <meta name="description" content="給予 深度導讀、8大原著金句庫、職場家庭情境自處指南與實踐微習慣。">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon-cat.svg">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="溫柔生長"><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23C06C52%22/><circle cx=%2216%22 cy=%2216%22 r=%229%22 fill=%22%23FAF8F5%22/><circle cx=%2216%22 cy=%2216%22 r=%224%22 fill=%22%233E6B56%22/></svg>">
     <!-- Cross-Platform Noto Serif & Noto Sans Web Fonts -->
   <link rel=preconnect href=https://fonts.googleapis.com>
   <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/riso-symbols.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
 
     /* === Award-Winning Web Craft Standards === */
@@ -37,12 +41,12 @@
 
     /* Language-specific typographic priority for optimal CJK glyph rendering */
     html[lang="zh-TW"], :lang(zh-TW) {
-      --font-serif: -apple-system-ui-serif, "Playfair Display", "Noto Serif TC", "Songti TC", "Source Han Serif TC", "STSong", "PMingLiU", "Noto Serif SC", "Songti SC", serif;
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", "Source Han Sans TC", "Microsoft JhengHei", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      --font-serif: "Noto Serif TC", "Songti TC", "Source Han Serif TC", "STSong", "PMingLiU", "Noto Serif SC", "Songti SC", serif;
+      --font-sans: "Noto Sans TC", "PingFang TC", "Source Han Sans TC", "Microsoft JhengHei", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     html[lang="zh-CN"], :lang(zh-CN) {
-      --font-serif: -apple-system-ui-serif, "Playfair Display", "Noto Serif SC", "Songti SC", "Source Han Serif SC", "STSong", "SimSun", "Noto Serif TC", "Songti TC", serif;
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      --font-serif: "Noto Serif SC", "Songti SC", "Source Han Serif SC", "STSong", "SimSun", "Noto Serif TC", "Songti TC", serif;
+      --font-sans: "Noto Sans SC", "PingFang SC", "Source Han Sans SC", "Microsoft YaHei", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     html {
       text-rendering: optimizeLegibility;
@@ -288,8 +292,8 @@
       --radius-md: 14px;
       --radius-lg: 20px;
       --radius-full: 9999px;
-      --font-serif: -apple-system-ui-serif, "Playfair Display", "Noto Serif TC", "Noto Serif SC", "Songti TC", "Songti SC", "Source Han Serif TC", "Source Han Serif SC", "STSong", "SimSun", "PMingLiU", serif;
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "PingFang SC", "Noto Sans TC", "Noto Sans SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
+      --font-serif: "Noto Serif TC", "Noto Serif SC", "Songti TC", "Songti SC", "Source Han Serif TC", "Source Han Serif SC", "STSong", "SimSun", "PMingLiU", serif;
+      --font-sans: "Noto Sans TC", "Noto Sans SC", "PingFang TC", "PingFang SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color-scheme: light;
     }
 
@@ -437,6 +441,17 @@
     .btn-lang-toggle:hover {
       border-color: var(--accent-rose);
       color: var(--accent-rose);
+    }
+
+    /* Keep the script switch visible without covering book navigation on narrow screens. */
+    @media (max-width: 640px) {
+      .site-nav .nav-inner { gap: 6px; padding-inline: 10px; }
+      .site-nav .nav-brand { gap: 4px !important; white-space: nowrap; font-size: 0.78rem; }
+      .site-nav .nav-brand-tag { display: none; }
+      .site-nav .nav-menu { gap: 4px !important; }
+      .site-nav .nav-menu li:not(.language-control):not(:first-child) { display: none; }
+      .site-nav .nav-menu .nav-link { font-size: 0.7rem !important; padding: 2px !important; white-space: nowrap; }
+      .site-nav .btn-lang-toggle { font-size: 0.7rem; padding: 4px 7px; white-space: nowrap; }
     }
 
     /* Buttons */
@@ -931,7 +946,9 @@
       line-height: 1.6;
       margin: 0;
       text-wrap: pretty;
-      word-break: keep-all;
+      word-break: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
     }
     .showcase-chips {
       display: flex;
@@ -970,36 +987,618 @@
       color: var(--text-main);
       margin: 0;
       text-wrap: pretty;
-      word-break: keep-all;
+      word-break: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
       overflow-wrap: break-word;
       font-style: normal;
     }
     
+
+    
+    /* Reading-First Bullet Journal Styling & Washi Tape Accents */
+    :root {
+      --riso-rose: #C06C52;
+      --riso-sage: #3E6B56;
+      --riso-amber: #9E6234;
+      --bujo-dot: rgba(200, 190, 178, 0.4);
+      --washi-amber: rgba(192, 108, 82, 0.22);
+      --washi-sage: rgba(62, 107, 86, 0.22);
+    }
+    body {
+      background-image: radial-gradient(var(--bujo-dot) 1px, transparent 1px);
+      background-size: 24px 24px;
+      background-position: 0 0;
+    }
+    .subpage-bujo-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-rose);
+      background: var(--accent-rose-light);
+      border: 1px solid rgba(192, 108, 82, 0.25);
+      padding: 4px 14px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+      letter-spacing: 0.06em;
+      box-shadow: 0 1px 3px rgba(192, 108, 82, 0.08);
+    }
+    .editorial-showcase {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 36px;
+      align-items: start;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 32px 32px 36px 32px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      background-image: radial-gradient(rgba(215, 208, 198, 0.35) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .editorial-showcase::before {
+      content: "";
+      position: absolute;
+      top: -9px;
+      left: 54px;
+      width: 130px;
+      height: 22px;
+      background: var(--washi-amber);
+      border-left: 2px dashed rgba(192, 108, 82, 0.45);
+      border-right: 2px dashed rgba(192, 108, 82, 0.45);
+      transform: rotate(-0.8deg);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      z-index: 2;
+      pointer-events: none;
+    }
+    @media (max-width: 860px) {
+      .editorial-showcase {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 24px 20px;
+      }
+      .editorial-showcase::before {
+        left: 24px;
+        width: 100px;
+      }
+    }
+    .scenario-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      background-image: radial-gradient(rgba(215, 208, 198, 0.28) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .quote-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      background-image: radial-gradient(rgba(215, 208, 198, 0.25) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .bujo-companion-reminder {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent-rose-light);
+      border: 1px solid rgba(192, 108, 82, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 6px 14px;
+      margin-top: 14px;
+      font-size: 0.88rem;
+    }
+
 </style>
 </head>
 <body>
+  <!-- Embedded Risograph & Swiss Design SVG Symbol Sprite (Zero-CORS, Local file:// Compatible) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <defs>
+    <!-- Risograph Paper Texture Filter (Optional Micro Stipple) -->
+    <filter id="riso-stipple" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.07 0"/>
+      <feComposite in2="SourceGraphic" in="glitch" operator="in"/>
+    </filter>
+  </defs>
+  <symbol id="symbol-cat-amber-plate" viewBox="0 0 280 200">
+<g id="amber-cat-specimen-root">
+  <!-- Swiss Precision Construction Grid (Background Layer) -->
+  <rect x="0" y="0" width="280" height="200" fill="var(--riso-paper, #FAF8F5)" rx="6"/>
+  <rect x="12" y="12" width="256" height="176" fill="none" stroke="var(--riso-grid-line, rgba(45,41,38,0.12))" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <rect x="20" y="20" width="240" height="160" fill="none" stroke="var(--riso-grid-line, rgba(45,41,38,0.08))" stroke-width="0.6"/>
+
+  <!-- Technical Registration Crosshairs & Datum Lines -->
+  <!-- Top Left Registration Mark -->
+  <g transform="translate(24, 24)" stroke="var(--riso-rose, #C06C52)" stroke-width="0.8">
+    <circle cx="0" cy="0" r="4.5" fill="none"/>
+    <line x1="-7" y1="0" x2="7" y2="0"/>
+    <line x1="0" y1="-7" x2="0" y2="7"/>
+    <text x="9" y="3.5" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6.5" fill="var(--text-dim, #888077)" letter-spacing="0.08em" stroke="none">REG.MK 01-A // CH-01</text>
+  </g>
+
+  <!-- Top Right Micro Coordinates -->
+  <g transform="translate(256, 26)" text-anchor="end">
+    <text x="0" y="0" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="7" font-weight="700" fill="var(--riso-rose, #C06C52)" letter-spacing="0.1em">SPECIMEN 01 // E-01</text>
+    <text x="0" y="9" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" fill="var(--text-dim, #888077)" letter-spacing="0.06em">AXIS 0.0 · φ=1.618 · DE-FREEZING</text>
+  </g>
+
+  <!-- Bottom Left Baseline Annotation -->
+  <g transform="translate(24, 182)">
+    <text x="0" y="0" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" fill="var(--riso-sage, #3E6B56)" font-weight="600" letter-spacing="0.06em">PARASYMPATHETIC ACTIVATION · VAGUS NERVE TONE</text>
+  </g>
+
+  <!-- Bottom Right Scale & Grid Spec -->
+  <g transform="translate(256, 182)" text-anchor="end">
+    <text x="0" y="0" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" fill="var(--text-dim, #888077)" letter-spacing="0.05em">280×200MM // 24×24 SWISS DOT</text>
+  </g>
+
+  <!-- Ground Plane Datum Axis -->
+  <line x1="28" y1="148" x2="252" y2="148" stroke="var(--text-dim, #888077)" stroke-width="0.8" stroke-dasharray="2 3"/>
+  <circle cx="28" cy="148" r="1.5" fill="var(--text-dim, #888077)"/>
+  <circle cx="252" cy="148" r="1.5" fill="var(--text-dim, #888077)"/>
+
+  <!-- Construction Geometric Arcs & Tangents (Deconstructed Swiss Anatomy) -->
+  <!-- Concentric Torso Mass Guides -->
+  <circle cx="118" cy="122" r="38" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.7" stroke-dasharray="2 3" opacity="0.45"/>
+  <circle cx="118" cy="122" r="54" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.3"/>
+  <!-- Head Circle Guide -->
+  <circle cx="86" cy="102" r="22" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="0.7" stroke-dasharray="2 2" opacity="0.4"/>
+  <!-- Tangent Angle Vector for Hindlimb Extension -->
+  <line x1="140" y1="126" x2="228" y2="144" stroke="var(--riso-rose, #C06C52)" stroke-width="0.8" stroke-dasharray="2 2" opacity="0.6"/>
+  <text x="232" y="142" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" fill="var(--riso-rose, #C06C52)">∡ 12.8°</text>
+
+  <!-- RISOGRAPH LAYER 1 (Cool Sage Misregistration Shadow Layer - Offset dx=1.8, dy=-1.2) -->
+  <g transform="translate(1.8, -1.2)" opacity="0.32" style="mix-blend-mode: multiply;">
+    <!-- Cat Torso Silhouette Shift -->
+    <path d="M 68 128 C 66 98, 92 84, 126 90 C 152 94, 168 106, 172 124 C 174 136, 154 146, 124 147 C 94 147, 72 143, 68 128 Z" fill="var(--riso-sage, #3E6B56)"/>
+    <!-- Hind Leg Stretch Silhouette Shift -->
+    <path d="M 148 124 C 168 126, 196 135, 222 140 C 228 141, 230 145, 224 147 C 206 149, 176 148, 154 138 Z" fill="var(--riso-sage, #3E6B56)"/>
+    <!-- Head Shift -->
+    <circle cx="86" cy="102" r="20" fill="var(--riso-sage, #3E6B56)"/>
+    <!-- Tail Arc Shift -->
+    <path d="M 68 132 C 48 134, 38 144, 44 156 C 50 164, 64 162, 72 154" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="4.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- RISOGRAPH LAYER 2 (Warm Terracotta / Amber Primary Layer) -->
+  <g>
+    <!-- Cat Underbelly & Chest (Paper White Base Geometry) -->
+    <path d="M 70 128 C 68 100, 92 86, 126 92 C 150 96, 166 108, 170 124 C 172 136, 152 146, 122 146 C 94 146, 72 142, 70 128 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+
+    <!-- Amber Back & Dorsal Riso Inking Patch (The Classic Orange Cat Patch) -->
+    <path d="M 88 94 C 108 90, 134 94, 154 104 C 166 112, 170 120, 168 128 C 162 134, 148 130, 138 124 C 120 114, 102 110, 88 114 Z" fill="var(--riso-rose, #C06C52)" opacity="0.88"/>
+
+    <!-- Relaxed Extended Hind Leg (舒展後腿：放鬆、生理凍結瓦解之核心識別) -->
+    <path d="M 148 124 C 168 126, 196 135, 222 140 C 228 141, 230 145, 224 147 C 206 149, 176 148, 154 138 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+    <!-- Amber Patch on Stretched Leg Thigh -->
+    <path d="M 154 126 C 172 128, 190 134, 202 138 C 196 143, 178 143, 164 137 Z" fill="var(--riso-rose, #C06C52)" opacity="0.88"/>
+    <!-- Leg Toe Pads (Delicate Geometric Circles) -->
+    <circle cx="225" cy="142" r="1.8" fill="var(--riso-rose, #C06C52)"/>
+    <circle cx="228" cy="144" r="1.8" fill="var(--riso-rose, #C06C52)"/>
+    <circle cx="225" cy="146.5" r="1.8" fill="var(--riso-rose, #C06C52)"/>
+
+    <!-- Head & Ears (Serene, Dropped Shoulders) -->
+    <circle cx="86" cy="102" r="20" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4"/>
+    <!-- Amber Forehead & Ear Mask Patch -->
+    <path d="M 74 96 C 76 86, 84 84, 94 86 C 98 90, 96 98, 92 102 C 84 102, 76 100, 74 96 Z" fill="var(--riso-rose, #C06C52)" opacity="0.88"/>
+    <!-- Left Triangular Ear -->
+    <polygon points="72,90 78,70 88,86" fill="var(--riso-rose, #C06C52)" stroke="var(--text-main, #2D2926)" stroke-width="1.3" stroke-linejoin="round"/>
+    <polygon points="74,88 78,74 85,86" fill="#FFFFFF" opacity="0.4"/>
+    <!-- Right Triangular Ear -->
+    <polygon points="90,84 100,72 106,88" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.3" stroke-linejoin="round"/>
+    <polygon points="93,84 99,75 103,87" fill="var(--riso-rose, #C06C52)" opacity="0.75"/>
+
+    <!-- Serene Closed Sleeping/Relaxed Eye Arc (放鬆閉眼、安定沉著) -->
+    <path d="M 80 104 Q 85 108 90 104" fill="none" stroke="var(--text-main, #2D2926)" stroke-width="1.6" stroke-linecap="round"/>
+    <!-- Nose & Whisker Node -->
+    <polygon points="86,108 84.5,106.5 87.5,106.5" fill="var(--riso-rose, #C06C52)"/>
+    <line x1="88" y1="107" x2="98" y2="105" stroke="var(--text-main, #2D2926)" stroke-width="0.8" stroke-linecap="round"/>
+    <line x1="88" y1="109" x2="97" y2="110" stroke="var(--text-main, #2D2926)" stroke-width="0.8" stroke-linecap="round"/>
+
+    <!-- Lazy Curled Tail -->
+    <path d="M 70 132 C 48 134, 38 144, 44 156 C 50 164, 64 162, 72 154" fill="none" stroke="var(--text-main, #2D2926)" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M 44 156 C 48 162, 58 161, 66 156" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="4.5" stroke-linecap="round"/>
+
+    <!-- Front Paws (Folded Neatly Under Chest) -->
+    <ellipse cx="94" cy="144" rx="8" ry="4.5" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+    <line x1="94" y1="142" x2="94" y2="146.5" stroke="var(--text-main, #2D2926)" stroke-width="0.9"/>
+  </g>
+
+  <!-- Micro Typographic Overlay & Coordinates -->
+  <g transform="translate(148, 114)">
+    <rect x="0" y="0" width="46" height="13" fill="var(--riso-paper, #FAF8F5)" stroke="var(--riso-rose, #C06C52)" stroke-width="0.7"/>
+    <text x="4" y="9" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" font-weight="700" fill="var(--riso-rose, #C06C52)" letter-spacing="0.06em">CALM // 0.0</text>
+  </g>
+</g>
+  </symbol>
+  <symbol id="symbol-cat-calico-plate" viewBox="0 0 280 200">
+<g id="calico-cat-specimen-root">
+  <!-- Swiss Precision Construction Grid (Background Layer) -->
+  <rect x="0" y="0" width="280" height="200" fill="var(--riso-paper, #FAF8F5)" rx="6"/>
+  <rect x="12" y="12" width="256" height="176" fill="none" stroke="var(--riso-grid-line, rgba(45,41,38,0.12))" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <rect x="20" y="20" width="240" height="160" fill="none" stroke="var(--riso-grid-line, rgba(45,41,38,0.08))" stroke-width="0.6"/>
+
+  <!-- Technical Registration Crosshairs & Datum Lines -->
+  <!-- Top Left Registration Mark -->
+  <g transform="translate(24, 24)" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.8">
+    <circle cx="0" cy="0" r="4.5" fill="none"/>
+    <line x1="-7" y1="0" x2="7" y2="0"/>
+    <line x1="0" y1="-7" x2="0" y2="7"/>
+    <text x="9" y="3.5" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6.5" fill="var(--text-dim, #888077)" letter-spacing="0.08em" stroke="none">REG.MK 02-B // CH-02</text>
+  </g>
+
+  <!-- Top Right Micro Coordinates -->
+  <g transform="translate(256, 26)" text-anchor="end">
+    <text x="0" y="0" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="7" font-weight="700" fill="var(--riso-sage, #3E6B56)" letter-spacing="0.1em">SPECIMEN 02 // E-02</text>
+    <text x="0" y="9" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" fill="var(--text-dim, #888077)" letter-spacing="0.06em">AXIS 90.0° · ISOSCELES · SOLID BOUNDARIES</text>
+  </g>
+
+  <!-- Bottom Left Baseline Annotation -->
+  <g transform="translate(24, 182)">
+    <text x="0" y="0" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" fill="var(--riso-rose, #C06C52)" font-weight="600" letter-spacing="0.06em">ASSERTIVE POSTURE · ZERO REFLEXIVE APOLOGY</text>
+  </g>
+
+  <!-- Bottom Right Scale & Grid Spec -->
+  <g transform="translate(256, 182)" text-anchor="end">
+    <text x="0" y="0" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" fill="var(--text-dim, #888077)" letter-spacing="0.05em">280×200MM // 24×24 SWISS DOT</text>
+  </g>
+
+  <!-- Vertical Central Datum Axis (AXIS 90.0°) -->
+  <line x1="140" y1="16" x2="140" y2="184" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <circle cx="140" cy="16" r="1.5" fill="var(--riso-sage, #3E6B56)"/>
+  <circle cx="140" cy="184" r="1.5" fill="var(--riso-sage, #3E6B56)"/>
+
+  <!-- Master Isosceles Triangle Construction Line (堅定邊界構造骨架) -->
+  <polygon points="140,32 88,168 192,168" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="0.7" stroke-dasharray="2 3" opacity="0.45"/>
+  <text x="143" y="38" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" fill="var(--riso-rose, #C06C52)">APEX 72°</text>
+
+  <!-- Concentric Boundary Radial Waves (警醒雷達場) -->
+  <circle cx="140" cy="68" r="30" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.6" stroke-dasharray="3 3" opacity="0.4"/>
+  <circle cx="140" cy="68" r="48" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.3"/>
+  <circle cx="140" cy="68" r="66" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.4" stroke-dasharray="5 5" opacity="0.2"/>
+
+  <!-- Horizontal Ground Plane -->
+  <line x1="36" y1="168" x2="244" y2="168" stroke="var(--text-dim, #888077)" stroke-width="0.8" stroke-dasharray="2 3"/>
+
+  <!-- RISOGRAPH LAYER 1 (Terracotta Misregistration Shift Layer - dx=-1.5, dy=1.2) -->
+  <g transform="translate(-1.5, 1.2)" opacity="0.28" style="mix-blend-mode: multiply;">
+    <!-- Upright Body Silhouette Shift -->
+    <path d="M 124 74 L 112 110 L 98 168 H 182 L 168 110 L 156 74 Z" fill="var(--riso-rose, #C06C52)"/>
+    <!-- Head Shift -->
+    <circle cx="140" cy="68" r="19" fill="var(--riso-rose, #C06C52)"/>
+    <!-- Pointed Ears Shift -->
+    <polygon points="120,62 114,36 132,48" fill="var(--riso-rose, #C06C52)"/>
+    <polygon points="148,48 166,36 160,62" fill="var(--riso-rose, #C06C52)"/>
+  </g>
+
+  <!-- RISOGRAPH LAYER 2 (Primary Tri-Color Calico Vector Architecture) -->
+  <g>
+    <!-- Base Body Silhouette (Clean White Architectural Monolith) -->
+    <path d="M 126 76 C 122 96, 110 125, 100 168 H 180 C 170 125, 158 96, 154 76 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+
+    <!-- Calico Distinct Patch 1: Terracotta Flank & Shoulder (Warm Riso Ink) -->
+    <path d="M 100 168 L 108 132 C 114 136, 122 144, 126 168 Z" fill="var(--riso-rose, #C06C52)" opacity="0.88"/>
+    <!-- Calico Distinct Patch 2: Sage Green Chest & Shoulder (Cool Riso Ink) -->
+    <path d="M 154 76 C 158 96, 168 120, 180 168 L 166 168 C 158 140, 146 112, 142 94 Z" fill="var(--riso-sage, #3E6B56)" opacity="0.88"/>
+
+    <!-- Two Parallel Pillar Front Legs (挺拔如柱：雙前腿筆直並攏，基底穩如泰山) -->
+    <rect x="127" y="108" width="10" height="60" rx="4" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+    <rect x="143" y="108" width="10" height="60" rx="4" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+    <line x1="132" y1="160" x2="132" y2="167" stroke="var(--text-main, #2D2926)" stroke-width="0.8"/>
+    <line x1="148" y1="160" x2="148" y2="167" stroke="var(--text-main, #2D2926)" stroke-width="0.8"/>
+
+    <!-- Neatly Wrapped Tail Around Paws (收束防禦邊界，泰然自若) -->
+    <path d="M 180 166 C 196 166, 198 152, 186 144 C 174 138, 170 148, 160 156 C 148 165, 120 167, 102 167" fill="none" stroke="var(--text-main, #2D2926)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 186 144 C 192 148, 194 158, 182 165" fill="none" stroke="var(--riso-amber, #9E6234)" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Head Contour (Circle + Alert Cheeks) -->
+    <circle cx="140" cy="68" r="19" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4"/>
+    <!-- Head Calico Patch: Right Temple (Sage Green) -->
+    <path d="M 140 50 C 148 50, 158 56, 158 68 C 158 74, 152 78, 144 76 Z" fill="var(--riso-sage, #3E6B56)" opacity="0.88"/>
+    <!-- Head Calico Patch: Left Brow (Terracotta Rose) -->
+    <path d="M 122 64 C 122 54, 130 50, 140 50 L 138 62 C 132 64, 126 66, 122 64 Z" fill="var(--riso-rose, #C06C52)" opacity="0.88"/>
+
+    <!-- Upright Pointed Triangular Ears (雙耳高聳直立，警醒審視邊界) -->
+    <!-- Left Ear (With Terracotta inner) -->
+    <polygon points="121,62 115,36 133,48" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.3" stroke-linejoin="round"/>
+    <polygon points="122,58 118,41 130,49" fill="var(--riso-rose, #C06C52)" opacity="0.75"/>
+    <!-- Right Ear (With Sage inner) -->
+    <polygon points="147,48 165,36 159,62" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.3" stroke-linejoin="round"/>
+    <polygon points="150,49 162,41 158,58" fill="var(--riso-sage, #3E6B56)" opacity="0.75"/>
+
+    <!-- Alert Eyes (平視堅定眼神，不畏縮不退讓) -->
+    <!-- Left Almond Eye -->
+    <path d="M 126 68 Q 131 63 136 68 Q 131 73 126 68 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+    <circle cx="131" cy="68" r="2.2" fill="var(--text-main, #2D2926)"/>
+    <circle cx="132" cy="67" r="0.7" fill="#FFFFFF"/>
+    <!-- Right Almond Eye -->
+    <path d="M 144 68 Q 149 63 154 68 Q 149 73 144 68 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+    <circle cx="149" cy="68" r="2.2" fill="var(--text-main, #2D2926)"/>
+    <circle cx="150" cy="67" r="0.7" fill="#FFFFFF"/>
+
+    <!-- Geometric Muzzle & Whiskers -->
+    <polygon points="140,73 138,71 142,71" fill="var(--riso-rose, #C06C52)"/>
+    <!-- Left Whiskers (Straight, Firm) -->
+    <line x1="135" y1="73" x2="116" y2="70" stroke="var(--text-main, #2D2926)" stroke-width="0.8" stroke-linecap="round"/>
+    <line x1="135" y1="75" x2="118" y2="76" stroke="var(--text-main, #2D2926)" stroke-width="0.8" stroke-linecap="round"/>
+    <!-- Right Whiskers -->
+    <line x1="145" y1="73" x2="164" y2="70" stroke="var(--text-main, #2D2926)" stroke-width="0.8" stroke-linecap="round"/>
+    <line x1="145" y1="75" x2="162" y2="76" stroke="var(--text-main, #2D2926)" stroke-width="0.8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Technical Stamp Badge -->
+  <g transform="translate(86, 126)">
+    <rect x="0" y="0" width="30" height="12" fill="var(--riso-paper, #FAF8F5)" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.7"/>
+    <text x="3" y="8.5" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="5.5" font-weight="700" fill="var(--riso-sage, #3E6B56)" letter-spacing="0.06em">BOUNDS</text>
+  </g>
+</g>
+  </symbol>
+  <symbol id="symbol-brand-cat" viewBox="0 0 32 32">
+<g id="brand-cat-root">
+  <!-- Deconstructed Dual-Feline Geometric Crest -->
+  <g transform="translate(1, 1)">
+    <!-- Left Facet (Amber / Terracotta Ear & Arch) -->
+    <path d="M 4 25 L 7 13 L 13 18 C 15 17 17 17 19 18 L 25 13 L 28 25" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Left Triangular Ear Patch (Amber) -->
+    <polygon points="7,13 11,5 15,14" fill="var(--riso-rose, #C06C52)" stroke="var(--text-main, #2D2926)" stroke-width="1.2" stroke-linejoin="round"/>
+    <!-- Right Triangular Ear Patch (Sage) -->
+    <polygon points="17,14 21,5 25,13" fill="var(--riso-sage, #3E6B56)" stroke="var(--text-main, #2D2926)" stroke-width="1.2" stroke-linejoin="round"/>
+    <!-- Eyes: Dual Balance (Serene Slit / Alert Dot) -->
+    <circle cx="11.5" cy="18.5" r="1.4" fill="var(--text-main, #2D2926)"/>
+    <circle cx="20.5" cy="18.5" r="1.4" fill="var(--text-main, #2D2926)"/>
+    <!-- Minimal Nose Wedge -->
+    <polygon points="16,21 14.5,19.5 17.5,19.5" fill="var(--riso-rose, #C06C52)"/>
+    <!-- Geometric Datum Base -->
+    <line x1="2" y1="28" x2="30" y2="28" stroke="var(--text-dim, #888077)" stroke-width="1" stroke-dasharray="2 2"/>
+    <circle cx="16" cy="28" r="1.5" fill="var(--riso-rose, #C06C52)"/>
+  </g>
+</g>
+  </symbol>
+  <symbol id="symbol-glasses" viewBox="0 0 32 32">
+<g id="icon-glasses-root">
+  <!-- Construction Optical Crosshairs -->
+  <line x1="10" y1="10" x2="10" y2="22" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.6" stroke-dasharray="1.5 1.5" opacity="0.5"/>
+  <line x1="22" y1="10" x2="22" y2="22" stroke="var(--riso-rose, #C06C52)" stroke-width="0.6" stroke-dasharray="1.5 1.5" opacity="0.5"/>
+  <!-- Left Lens (With Sage Tint) -->
+  <circle cx="10" cy="16" r="6.5" fill="var(--riso-sage, #3E6B56)" fill-opacity="0.14" stroke="var(--text-main, #2D2926)" stroke-width="1.4"/>
+  <!-- Right Lens (With Rose Tint) -->
+  <circle cx="22" cy="16" r="6.5" fill="var(--riso-rose, #C06C52)" fill-opacity="0.14" stroke="var(--text-main, #2D2926)" stroke-width="1.4"/>
+  <!-- Saddle Bridge Curve -->
+  <path d="M 16.5 16 C 16 13.5, 16 13.5, 15.5 16" fill="none" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 14.2 15 C 15 13.5 17 13.5 17.8 15" fill="none" stroke="var(--text-main, #2D2926)" stroke-width="1.3" stroke-linecap="round"/>
+  <!-- Left & Right Temples and Hinges -->
+  <line x1="3.5" y1="16" x2="1" y2="13.5" stroke="var(--text-main, #2D2926)" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="28.5" y1="16" x2="31" y2="13.5" stroke="var(--text-main, #2D2926)" stroke-width="1.3" stroke-linecap="round"/>
+  <!-- Micro Rivet Dots -->
+  <circle cx="3.8" cy="16" r="0.9" fill="var(--riso-rose, #C06C52)"/>
+  <circle cx="28.2" cy="16" r="0.9" fill="var(--riso-sage, #3E6B56)"/>
+</g>
+  </symbol>
+  <symbol id="symbol-coffee" viewBox="0 0 32 32">
+<g id="icon-coffee-root">
+  <!-- Rising Steam Harmonic Curves (Risograph Warm Rose) -->
+  <path d="M 10 9 C 9 6.5, 11.5 5, 10.5 2.5" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 15 8 C 14 5, 16.5 4, 15.5 1.5" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 20 9 C 19 6.5, 21.5 5, 20.5 2.5" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="1.4" stroke-linecap="round"/>
+  <!-- Cup Body Silhouette (Swiss Ceramic Cylindrical) -->
+  <path d="M 6 12 H 24 L 22.5 25 C 22 28, 19 29, 15 29 C 11 29, 8 28, 7.5 25 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Riso Offset Shadow (Terracotta Bottom Wedge) -->
+  <path d="M 8.5 23 C 11 27, 19 27, 21.5 23 L 22 25 C 21 28, 18 29, 15 29 C 11 29, 9 28, 8 25 Z" fill="var(--riso-rose, #C06C52)" opacity="0.85"/>
+  <!-- Internal Liquid Surface Level Line -->
+  <line x1="8" y1="16" x2="22" y2="16" stroke="var(--riso-amber, #9E6234)" stroke-width="1" stroke-dasharray="2 2"/>
+  <!-- Handle (Geometric Tangent D-Arc) -->
+  <path d="M 23.5 14.5 C 28 14.5, 28 22.5, 22.5 23.5" fill="none" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linecap="round"/>
+</g>
+  </symbol>
+  <symbol id="symbol-sage" viewBox="0 0 32 32">
+<g id="icon-sage-root">
+  <!-- Central Botanical Stem Axis -->
+  <line x1="16" y1="30" x2="16" y2="3" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- Leaf 1 (Bottom Left) -->
+  <path d="M 16 23 C 7 21, 6 14, 13 12 C 16 17, 16 23, 16 23 Z" fill="var(--riso-sage, #3E6B56)" fill-opacity="0.38" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- Leaf 2 (Bottom Right) -->
+  <path d="M 16 19 C 25 17, 26 10, 19 8 C 16 13, 16 19, 16 19 Z" fill="var(--riso-sage, #3E6B56)" fill-opacity="0.38" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- Leaf 3 (Mid Left) -->
+  <path d="M 16 13 C 9 11, 8 6, 14 4.5 C 16 8.5, 16 13, 16 13 Z" fill="var(--riso-sage, #3E6B56)" fill-opacity="0.5" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- Terminal Tip Bud -->
+  <path d="M 16 7 C 12 4, 14 1.5, 16 2.5 C 18 1.5, 20 4, 16 7 Z" fill="var(--riso-sage, #3E6B56)" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.1"/>
+  <!-- Riso Rose Pollen Accents -->
+  <circle cx="16" cy="13" r="1.2" fill="var(--riso-rose, #C06C52)"/>
+  <circle cx="16" cy="19" r="1.2" fill="var(--riso-rose, #C06C52)"/>
+</g>
+  </symbol>
+  <symbol id="symbol-chamomile" viewBox="0 0 32 32">
+<g id="icon-chamomile-root">
+  <!-- Concentric Petal Construction Circles -->
+  <circle cx="16" cy="15" r="12" fill="none" stroke="var(--riso-grid-line, rgba(45,41,38,0.12))" stroke-width="0.6" stroke-dasharray="1.5 2"/>
+  <!-- Geometric Radial Petals (12 Harmonious Arcs) -->
+  <g fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.1" stroke-linejoin="round">
+    <ellipse cx="16" cy="6" rx="2.2" ry="4.5"/>
+    <ellipse cx="16" cy="24" rx="2.2" ry="4.5"/>
+    <ellipse cx="7" cy="15" rx="4.5" ry="2.2"/>
+    <ellipse cx="25" cy="15" rx="4.5" ry="2.2"/>
+    <ellipse cx="9.6" cy="8.6" rx="2.2" ry="4.5" transform="rotate(-45 9.6 8.6)"/>
+    <ellipse cx="22.4" cy="21.4" rx="2.2" ry="4.5" transform="rotate(-45 22.4 21.4)"/>
+    <ellipse cx="22.4" cy="8.6" rx="2.2" ry="4.5" transform="rotate(45 22.4 8.6)"/>
+    <ellipse cx="9.6" cy="21.4" rx="2.2" ry="4.5" transform="rotate(45 9.6 21.4)"/>
+  </g>
+  <!-- Petal Shadow Shift (Riso Sage Offset) -->
+  <circle cx="16.8" cy="15.8" r="5" fill="var(--riso-sage, #3E6B56)" opacity="0.22"/>
+  <!-- Central Golden Amber Disc (Stippled Flower Core) -->
+  <circle cx="16" cy="15" r="5.2" fill="var(--riso-amber, #9E6234)" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+  <circle cx="16" cy="15" r="3.2" fill="none" stroke="#FFFFFF" stroke-width="0.8" stroke-dasharray="1.2 1.2"/>
+  <!-- Delicate Stem Tangent -->
+  <path d="M 16 27 V 31" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.4" stroke-linecap="round"/>
+</g>
+  </symbol>
+  <symbol id="symbol-pen" viewBox="0 0 32 32">
+<g id="icon-pen-root">
+  <!-- Nib Silhouette (Sharp Architectural Triangle) -->
+  <path d="M 10 28 L 10 21 C 10 16, 13.5 13, 16 3 C 18.5 13, 22 16, 22 21 L 22 28 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Tine Golden / Terracotta Inking Zone -->
+  <path d="M 12.8 17 C 14.5 12, 16 5, 16 5 C 16 5, 17.5 12, 19.2 17 Z" fill="var(--riso-rose, #C06C52)" opacity="0.85"/>
+  <!-- Circular Breather Hole -->
+  <circle cx="16" cy="16" r="2" fill="var(--riso-paper, #FAF8F5)" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+  <!-- Central Ink Slit Hairline -->
+  <line x1="16" y1="3" x2="16" y2="14" stroke="var(--text-main, #2D2926)" stroke-width="1.1"/>
+  <line x1="16" y1="18" x2="16" y2="24" stroke="var(--text-main, #2D2926)" stroke-width="0.9"/>
+  <!-- Collar Ring Line -->
+  <line x1="10" y1="25" x2="22" y2="25" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+  <!-- Left/Right Nib Shoulder Accent Arcs -->
+  <path d="M 12 21 C 13 18, 14 18, 14 21" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.9"/>
+  <path d="M 20 21 C 19 18, 18 18, 18 21" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.9"/>
+</g>
+  </symbol>
+  <symbol id="symbol-lightning" viewBox="0 0 32 32">
+<g id="icon-lightning-root">
+  <!-- Construction Guide Box -->
+  <rect x="6" y="4" width="20" height="24" fill="none" stroke="var(--riso-grid-line, rgba(45,41,38,0.12))" stroke-width="0.6" stroke-dasharray="2 2"/>
+  <!-- Riso Offset Shadow (Terracotta) -->
+  <polygon points="17,3 9,17 15,17 12,29 23,13 17,13" transform="translate(1.2, 0.8)" fill="var(--riso-rose, #C06C52)" opacity="0.3"/>
+  <!-- Main Crisp Lightning Bolt -->
+  <polygon points="17,3 9,17 15,17 12,29 23,13 17,13" fill="var(--riso-amber, #9E6234)" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+</g>
+  </symbol>
+  <symbol id="symbol-pill" viewBox="0 0 32 32">
+<g id="icon-pill-root">
+  <g transform="rotate(45 16 16)">
+    <!-- Capsule Body -->
+    <rect x="10" y="6" width="12" height="20" rx="6" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4"/>
+    <!-- Top Half (Terracotta Rose) -->
+    <path d="M 10 16 H 22 V 12 C 22 8.7, 19.3 6, 16 6 C 12.7 6, 10 8.7, 10 12 Z" fill="var(--riso-rose, #C06C52)"/>
+    <!-- Divider Line -->
+    <line x1="10" y1="16" x2="22" y2="16" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+    <!-- Reflective Gloss Highlight -->
+    <line x1="13" y1="9" x2="13" y2="13" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" opacity="0.8"/>
+  </g>
+</g>
+  </symbol>
+  <symbol id="symbol-book" viewBox="0 0 32 32">
+<g id="icon-book-root">
+  <!-- Left Page -->
+  <path d="M 16 8 C 12 7, 7 8, 4 9 V 25 C 7 24, 12 23, 16 24 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Right Page -->
+  <path d="M 16 8 C 20 7, 25 8, 28 9 V 25 C 25 24, 20 23, 16 24 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Sage Book Ribbon Bookmark -->
+  <path d="M 16 8 V 27 L 14.5 25.5 L 13 27 V 8" fill="var(--riso-sage, #3E6B56)" stroke="var(--text-main, #2D2926)" stroke-width="0.8"/>
+  <!-- Page Text Hairlines -->
+  <line x1="7" y1="13" x2="13" y2="12.5" stroke="var(--text-dim, #888077)" stroke-width="0.8"/>
+  <line x1="7" y1="17" x2="13" y2="16.5" stroke="var(--text-dim, #888077)" stroke-width="0.8"/>
+  <line x1="19" y1="12.5" x2="25" y2="13" stroke="var(--text-dim, #888077)" stroke-width="0.8"/>
+  <line x1="19" y1="16.5" x2="25" y2="17" stroke="var(--text-dim, #888077)" stroke-width="0.8"/>
+</g>
+  </symbol>
+  <symbol id="symbol-temple" viewBox="0 0 32 32">
+<g id="icon-temple-root">
+  <!-- Pediment Triangular Roof -->
+  <polygon points="16,4 4,11 28,11" fill="var(--riso-rose, #C06C52)" fill-opacity="0.25" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Architrave Beam -->
+  <rect x="5" y="11" width="22" height="3" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+  <!-- 4 Columns -->
+  <rect x="7" y="14" width="2.8" height="11" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.1"/>
+  <rect x="12" y="14" width="2.8" height="11" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.1"/>
+  <rect x="17.2" y="14" width="2.8" height="11" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.1"/>
+  <rect x="22.2" y="14" width="2.8" height="11" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.1"/>
+  <!-- Podium Stepped Base -->
+  <rect x="4" y="25" width="24" height="2.5" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+  <rect x="2" y="27.5" width="28" height="2.5" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+</g>
+  </symbol>
+  <symbol id="symbol-brain" viewBox="0 0 32 32">
+<g id="icon-brain-root">
+  <!-- Concentric Neural Convolutions -->
+  <!-- Left Hemisphere (Rose) -->
+  <path d="M 15 6 C 11 5, 6 8, 6 13 C 6 15, 8 16, 7 19 C 6 22, 9 26, 15 26" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 15 11 C 11 11, 10 14, 12 16 C 10 18, 12 21, 15 21" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="1.3" stroke-linecap="round"/>
+  <!-- Right Hemisphere (Sage) -->
+  <path d="M 17 6 C 21 5, 26 8, 26 13 C 26 15, 24 16, 25 19 C 26 22, 23 26, 17 26" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 17 11 C 21 11, 22 14, 20 16 C 22 18, 20 21, 17 21" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.3" stroke-linecap="round"/>
+  <!-- Center Synaptic Axis -->
+  <line x1="16" y1="5" x2="16" y2="27" stroke="var(--text-main, #2D2926)" stroke-width="1" stroke-dasharray="2 2"/>
+</g>
+  </symbol>
+  <symbol id="symbol-shield" viewBox="0 0 32 32">
+<g id="icon-shield-root">
+  <!-- Outer Shield Contour -->
+  <path d="M 16 4 L 27 8 V 16 C 27 22, 22 26.5, 16 29 C 10 26.5, 5 22, 5 16 V 8 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Left Field (Terracotta Rose) -->
+  <path d="M 16 5.5 L 7 8.8 V 16 C 7 21.2, 11 24.8, 16 27 Z" fill="var(--riso-rose, #C06C52)" opacity="0.85"/>
+  <!-- Right Field (Forest Sage) -->
+  <path d="M 16 5.5 L 25 8.8 V 16 C 25 21.2, 21 24.8, 16 27 Z" fill="var(--riso-sage, #3E6B56)" opacity="0.85"/>
+  <!-- Center Vertical Razor Hairline -->
+  <line x1="16" y1="5.5" x2="16" y2="27" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+  </symbol>
+  <symbol id="symbol-dove" viewBox="0 0 32 32">
+<g id="icon-dove-root">
+  <!-- Geometric Origami Flight Dove -->
+  <path d="M 5 21 C 9 20, 13 18, 17 15 L 27 7 C 27 10, 24 14, 20 17 L 26 21 L 21 21 L 17 25 L 14 25 L 15 21 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Wing Riso Sage Accent -->
+  <polygon points="17,15 27,7 23,14 18,17" fill="var(--riso-sage, #3E6B56)" opacity="0.75"/>
+  <!-- Olive Branch in Beak -->
+  <path d="M 5 21 L 2 20" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.2"/>
+  <circle cx="2" cy="19.5" r="1.2" fill="var(--riso-rose, #C06C52)"/>
+</g>
+  </symbol>
+  <symbol id="symbol-compass" viewBox="0 0 32 32">
+<g id="icon-compass-root">
+  <circle cx="16" cy="16" r="12" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4"/>
+  <!-- Cardinal Tick Marks -->
+  <line x1="16" y1="4" x2="16" y2="7" stroke="var(--riso-rose, #C06C52)" stroke-width="1.2"/>
+  <line x1="16" y1="25" x2="16" y2="28" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+  <line x1="4" y1="16" x2="7" y2="16" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+  <line x1="25" y1="16" x2="28" y2="16" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+  <!-- North Arrow (Terracotta Rose) -->
+  <polygon points="16,8 18.5,16 16,15 13.5,16" fill="var(--riso-rose, #C06C52)" stroke="var(--text-main, #2D2926)" stroke-width="1"/>
+  <!-- South Arrow (Paper/Sumi) -->
+  <polygon points="16,24 18.5,16 16,17 13.5,16" fill="var(--text-main, #2D2926)"/>
+  <!-- Central Pivot -->
+  <circle cx="16" cy="16" r="1.8" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1"/>
+</g>
+  </symbol>
+  <symbol id="symbol-stamp" viewBox="0 0 32 32">
+<g id="icon-stamp-root">
+  <rect x="4" y="5" width="24" height="22" rx="3" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="1.5" stroke-dasharray="3 1.5"/>
+  <rect x="7" y="8" width="18" height="16" rx="2" fill="var(--riso-rose, #C06C52)" fill-opacity="0.12" stroke="var(--riso-rose, #C06C52)" stroke-width="0.8"/>
+  <path d="M 11 16 L 14.5 19.5 L 21 12" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+  </symbol>
+</svg>
+
     <!-- Top Navigation (Fixed, Blur, Smart Hide & Scroll Snap Chapter Bar) -->
   <header class="top-nav site-nav" id="topNav" aria-label="全站導航">
     <div class="container nav-inner" style="display: flex; align-items: center; justify-content: space-between; height: 60px;">
-      <a href="index.html" class="nav-brand" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 700; color: var(--text-main);">
-        <span>🏛️</span>
-        <span>心智自立書單</span>
-        <span class="nav-brand-tag" style="font-size: 0.75rem; background: var(--accent-rose-light); color: var(--accent-rose); padding: 2px 8px; border-radius: 999px;">專題精讀</span>
+      <a href="index.html" class="nav-brand" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 700; color: var(--text-main);" aria-label="回手帳讀書誌首頁">
+        <img src="img/brand-cat-38.png" alt="手帳伴讀雙貓圖標" width="30" height="30" style="width:30px;height:30px;display:inline-block;border-radius:7px;object-fit:cover;vertical-align:middle;">
+        <span style="font-family: var(--font-serif); font-size: 1.05rem;">溫柔生長・手帳讀書誌</span>
+        <span class="nav-brand-tag" style="font-size: 0.72rem; font-family: 'JetBrains Mono', monospace; background: var(--accent-rose-light); color: var(--accent-rose); padding: 2px 8px; border-radius: 999px;">BOOK JOURNAL</span>
       </a>
       <ul class="nav-menu" style="display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; align-items: center;">
         <li><a href="index.html" class="nav-link" style="color: var(--text-muted); font-size: 0.88rem;">← 回首頁書單</a></li>
         <li><a href="index.html#pillars" class="nav-link" style="color: var(--text-muted); font-size: 0.88rem;">十大專書</a></li>
         <li><a href="index.html#downloads" class="nav-link" style="color: var(--text-muted); font-size: 0.88rem;">全書庫</a></li>
+        <li class="language-control"><button type="button" class="btn-lang-toggle" aria-label="切換繁簡中文"><span id="lang-label">简体中文</span></button></li>
       </ul>
     </div>
     <nav class="nav-chapter-bar" aria-label="板塊快速跳轉">
       <div class="container">
         <div class="chapter-nav-scroll">
-          <a href="#overview" class="nav-chip"><span>📖</span> <span>圖書概述</span></a>
-          <a href="#pain-points" class="nav-chip"><span>🎯</span> <span>直擊痛點</span></a>
-          <a href="#strategies" class="nav-chip"><span>💡</span> <span>破局心法</span></a>
-          <a href="#quotes" class="nav-chip"><span>💬</span> <span>核心金句</span></a>
-          <a href="#action-plan" class="nav-chip"><span>⚡</span> <span>行動清單</span></a>
+          <a href="#overview" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-book"></use></svg> <span>圖書概述</span></a>
+          <a href="#pain-points" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> <span>直擊痛點</span></a>
+          <a href="#strategies" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> <span>破局心法</span></a>
+          <a href="#quotes" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-pen"></use></svg> <span>核心金句</span></a>
+          <a href="#action-plan" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> <span>行動清單</span></a>
         </div>
       </div>
     </nav>
@@ -1025,13 +1624,14 @@
           </div>
           <div class="showcase-actions">
             <a href="books/給予_華頓商學院最啟發人心的一堂課_亞當·格蘭特.epub" class="btn btn-primary" style="width: 100%; padding: 8px 14px; font-size: 0.88rem;" download>
-              <span>⬇️</span> <span>下載 EPUB (885 KB)</span>
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-book"></use></svg> <span>下載 EPUB (885 KB)</span>
             </a>
           </div>
         </div>
 
         <div class="showcase-content">
-          <span class="showcase-badge">🛡️ 守護界線 · 避免精力耗竭</span>
+          <div class="subpage-bujo-tag">[ 專書手帳 04 // 邊界給予 ]</div>
+          <span class="showcase-badge"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> 守護界線 · 避免精力耗竭</span>
           <h1 class="showcase-title">《給予：華頓商學院最啟發人心的一堂課》</h1>
           <p class="showcase-subtitle">打破好人吃虧宿命：從自我犧牲轉型為具備防禦邊界的保護型給予者</p>
 
@@ -1047,6 +1647,12 @@
               健康的利他必須建立在明確的防禦護欄之上。學會辨識索取者並守護能量，善意方能持久且有力量。
             </p>
           </div>
+
+          <div class="bujo-companion-reminder">
+            <span class="reminder-tag">伴讀心法</span>
+            <span class="reminder-text">覺察身體緊繃，停止反射性道歉</span>
+            <span class="reminder-sub" style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-dim); margin-left: 6px;">[ 翡翠三花 · 邊界守護 // BOT. 03 清心鼠尾草 ]</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1059,7 +1665,7 @@
         <span class="section-tag">FOR EMPATHETIC SOULS</span>
         <h2 class="section-title">寫給常在退讓中委屈自己的妳</h2>
         <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 1.5rem;">
-          妳是不是團隊裡那個永遠有求必應的『救火隊員』？別人有困難妳第一個跳出來，但當妳疲憊無助時，卻無人問津。格蘭特教授揭示了深刻的職場真相：在各行各業中，處於金字塔最底層、最容易過勞甚至崩潰的，正是『無私付出者（Selfless Givers）』——他們把別人的需要看得比自己重，任由索取者榨乾精力。然而，站在金字塔最頂端、收穫最高敬意與幸福感的，居然也是付出者——『兼顧自我與他人的明智付出者（Otherish Givers）』。這本書將教妳守護自己的心力，把善意精準安放在值得的人事物上。
+          妳是不是團隊裡那個永遠有求必應的『救火隊員』？別人有困難妳第一個跳出來，但當妳疲憊無助時，卻無人問津。格蘭特教授揭示了深刻的職場真相：在各行各業中，處於金字塔最底層、最容易過勞甚至崩潰的，正是『無私付出者（Selfless Givers）』：他們把別人的需要看得比自己重，任由索取者榨乾精力。然而，站在金字塔最頂端、收穫最高敬意與幸福感的，居然也是付出者，也就是『兼顧自我與他人的明智付出者（Otherish Givers）』。這本書將教妳守護自己的心力，把善意精準安放在值得的人事物上。
         </p>
         <p style="font-size: 1.02rem; line-height: 1.9; color: var(--text-muted);">
           當妳讀這本書時，請不要抱持「我要把自己徹底改造成另一種人」的焦慮。相反地，妳的善良、同理心與細膩感知，是這個世界上最稀缺的天賦。這本書只是為妳的溫柔裝上邊界，讓妳在面對權力與人性的試煉時，多了一件隨時能護住心靈的軟蝟甲。
@@ -1085,7 +1691,7 @@
           <div class="copy-btn-wrap">
             <span id="status-q-0" class="live-status" role="status"></span>
             <button type="button" class="btn-copy" onclick="copyQuote('自我犧牲的付出者往往誤把討好當慷慨，最後把自己燃燒成灰燼，卻縱容了身邊的自私索取者。', 'status-q-0')" aria-label="複製本句金句">
-              <span>📋</span> <span>複製金句</span>
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
             </button>
           </div>
         </div>
@@ -1095,7 +1701,7 @@
           <div class="copy-btn-wrap">
             <span id="status-q-1" class="live-status" role="status"></span>
             <button type="button" class="btn-copy" onclick="copyQuote('明智的付出者在溫柔照亮他人的同時，心中始終牢牢鎖著屬於自己的界線與底牌。', 'status-q-1')" aria-label="複製本句金句">
-              <span>📋</span> <span>複製金句</span>
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
             </button>
           </div>
         </div>
@@ -1105,7 +1711,7 @@
           <div class="copy-btn-wrap">
             <span id="status-q-2" class="live-status" role="status"></span>
             <button type="button" class="btn-copy" onclick="copyQuote('妳不需要讓自己變得冷酷尖刻才能生存；妳只需要學會辨認身邊的『索取者』，並堅決對他們收回特權。', 'status-q-2')" aria-label="複製本句金句">
-              <span>📋</span> <span>複製金句</span>
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
             </button>
           </div>
         </div>
@@ -1115,7 +1721,7 @@
           <div class="copy-btn-wrap">
             <span id="status-q-3" class="live-status" role="status"></span>
             <button type="button" class="btn-copy" onclick="copyQuote('學會代位爭取：當妳為自己談判感到靦腆時，想像妳是在替妳珍視的家庭、團隊或未來守護權益，力量就會油然而生。', 'status-q-3')" aria-label="複製本句金句">
-              <span>📋</span> <span>複製金句</span>
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
             </button>
           </div>
         </div>
@@ -1125,7 +1731,7 @@
           <div class="copy-btn-wrap">
             <span id="status-q-4" class="live-status" role="status"></span>
             <button type="button" class="btn-copy" onclick="copyQuote('把妳寶貴的善意與時間，留給那些同樣懂得感恩與互惠的人，生命才能形成滋養的正向循環。', 'status-q-4')" aria-label="複製本句金句">
-              <span>📋</span> <span>複製金句</span>
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
             </button>
           </div>
         </div>
@@ -1135,7 +1741,7 @@
           <div class="copy-btn-wrap">
             <span id="status-q-5" class="live-status" role="status"></span>
             <button type="button" class="btn-copy" onclick="copyQuote('健康的給予必須立足於自身的資源餘裕，在守護個人邊界的前提下提供精準支持。', 'status-q-5')" aria-label="複製本句金句">
-              <span>📋</span> <span>複製金句</span>
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
             </button>
           </div>
         </div>
@@ -1145,7 +1751,7 @@
           <div class="copy-btn-wrap">
             <span id="status-q-6" class="live-status" role="status"></span>
             <button type="button" class="btn-copy" onclick="copyQuote('當妳不再隨傳隨到，別人反而會開始珍視妳每次付出的分量與智慧。', 'status-q-6')" aria-label="複製本句金句">
-              <span>📋</span> <span>複製金句</span>
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
             </button>
           </div>
         </div>
@@ -1155,7 +1761,7 @@
           <div class="copy-btn-wrap">
             <span id="status-q-7" class="live-status" role="status"></span>
             <button type="button" class="btn-copy" onclick="copyQuote('對索取者的盲目妥協實為對整體協作機制的破壞，亦損害了誠信奉獻者的合法權益。', 'status-q-7')" aria-label="複製本句金句">
-              <span>📋</span> <span>複製金句</span>
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
             </button>
           </div>
         </div>
@@ -1177,7 +1783,7 @@
       <div style="max-width: 780px; margin: 0 auto;">
         
         <div class="scenario-card">
-          <h3 class="scenario-title"><span>🌿</span> <span>職場：同事習慣性把自己的棘手工作打包拋給妳求助</span></h3>
+          <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> <span>職場：同事習慣性把自己的棘手工作打包拋給妳求助</span></h3>
           <div class="dialogue-comparison">
             <div class="dialogue-box box-before">
               <span class="box-label" style="color: #C06C52;">以往的直覺妥協</span>
@@ -1189,12 +1795,12 @@
             </div>
           </div>
           <div class="scenario-principle">
-            <strong>💡 自處核心心法：</strong> 格蘭特『大塊時間保護原則』：給出指引與工具，但不接過對方的猴子。區分『支援』與『代勞』。
+            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 自處核心心法：</strong> 格蘭特『大塊時間保護原則』：給出指引與工具，但不接過對方的猴子。區分『支援』與『代勞』。
           </div>
         </div>
         
         <div class="scenario-card">
-          <h3 class="scenario-title"><span>🌿</span> <span>職場：考評調薪時，明明貢獻卓越卻難以啟齒為自己開口爭取</span></h3>
+          <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> <span>職場：考評調薪時，明明貢獻卓越卻難以啟齒為自己開口爭取</span></h3>
           <div class="dialogue-comparison">
             <div class="dialogue-box box-before">
               <span class="box-label" style="color: #C06C52;">以往的直覺妥協</span>
@@ -1206,12 +1812,12 @@
             </div>
           </div>
           <div class="scenario-principle">
-            <strong>💡 自處核心心法：</strong> 借位爭取（Relational Account）：將自我爭取昇華為對公允規則的捍衛，消除女性潛意識中的羞恥感。
+            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 自處核心心法：</strong> 借位爭取（Relational Account）：將自我爭取昇華為對公允規則的捍衛，消除女性潛意識中的羞恥感。
           </div>
         </div>
         
         <div class="scenario-card">
-          <h3 class="scenario-title"><span>🌿</span> <span>家庭：親友習慣把妳當作全天候情緒垃圾桶，不停抱怨卻從不改變</span></h3>
+          <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> <span>家庭：親友習慣把妳當作全天候情緒垃圾桶，不停抱怨卻從不改變</span></h3>
           <div class="dialogue-comparison">
             <div class="dialogue-box box-before">
               <span class="box-label" style="color: #C06C52;">以往的直覺妥協</span>
@@ -1223,7 +1829,7 @@
             </div>
           </div>
           <div class="scenario-principle">
-            <strong>💡 自處核心心法：</strong> 為傾聽設置『時間配額』。只陪伴願意解決問題的人，不讓自己淪為他人情緒排毒的化糞池。
+            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 自處核心心法：</strong> 為傾聽設置『時間配額』。只陪伴願意解決問題的人，不讓自己淪為他人情緒排毒的化糞池。
           </div>
         </div>
         
@@ -1267,15 +1873,15 @@
         
         <div style="background: var(--bg-card-soft); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.75rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem;">
           <div>
-            <h4 style="font-size: 1.15rem; margin-bottom: 0.35rem; color: var(--text-main); font-family: var(--font-sans);">📥 本書電子書資源（正版校訂 EPUB）</h4>
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.35rem; color: var(--text-main); font-family: var(--font-sans);"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-book"></use></svg> 本書電子書資源（正版校訂 EPUB）</h4>
             <p style="font-size: 0.88rem; color: var(--text-dim); margin: 0;">檔案大小：885 KB (精校完整 EPUB) · 支援 Apple Books、微信讀書、Kobo、Kindle 本地閱讀</p>
           </div>
           <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
             <a href="books/給予_華頓商學院最啟發人心的一堂課_亞當·格蘭特.epub" download class="btn-primary" style="font-size: 0.9rem; padding: 0.65rem 1.4rem;">
-              <span>📥</span> <span>一鍵下載 EPUB</span>
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-book"></use></svg> <span>一鍵下載 EPUB</span>
             </a>
             <a href="https://github.com/atonnyshen/inner-power-reading/raw/main/books/給予_華頓商學院最啟發人心的一堂課_亞當·格蘭特.epub" target="_blank" class="btn-secondary" style="font-size: 0.9rem; padding: 0.65rem 1.25rem;">
-              <span>🔗</span> <span>GitHub 備用鏡像</span>
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-pen"></use></svg> <span>GitHub 備用鏡像</span>
             </a>
           </div>
         </div>
@@ -1355,11 +1961,7 @@
       }
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      if (currentLang === 'zh-CN') {
-        applyLanguage('zh-CN');
-      }
-    });
+    // Language initialization is handled exclusively by js/chinese-convert.js.
 
   
     /* === Web Craft Interactive Engines === */
@@ -1485,5 +2087,29 @@
 
   </script>
   <script src="js/chinese-convert.js"></script>
+
+  <!-- Smart Bullet Journal Preview Navigation -->
+  <script>
+    (function() {
+      try {
+        var isBujo = (document.referrer && document.referrer.indexOf("preview-bullet-journal-main.html") !== -1) ||
+                     (window.location.search && window.location.search.indexOf("preview=bujo") !== -1) ||
+                     (sessionStorage.getItem("reading_preview") === "bujo");
+        if (isBujo) {
+          document.querySelectorAll('a[href="index.html"]').forEach(function(a) {
+            a.href = "preview-bullet-journal-main.html";
+          });
+          document.querySelectorAll('a[href^="index.html#"]').forEach(function(a) {
+            a.href = a.href.replace("index.html#", "preview-bullet-journal-main.html#");
+          });
+          var backLink = document.querySelector(".nav-menu .nav-link");
+          if (backLink && backLink.textContent.indexOf("回首頁") !== -1) {
+            backLink.textContent = "← 回手帳讀書誌";
+          }
+        }
+      } catch(e) {}
+    })();
+  </script>
+
 </body>
 </html>

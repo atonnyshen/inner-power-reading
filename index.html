@@ -3,12 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>在權力不對等處立足：終結事後反芻與心理內耗｜心智自立書單與行動手冊</title>
-  <meta name="description" content="面對職場與家庭權力失衡，當場妥協退讓、事後反芻自責？融合史丹佛組織權力學、認知神經科學與系統分化理論，為習慣妥協者建立不可撼動的心智防禦機制。">
+  <title>《溫柔生長讀書誌》女生手帳概念版 · 在權力不對等處立足：心智自立與邊界守護讀書手帳</title>
+  <meta name="description" content="《溫柔生長讀書誌》女生手帳概念版：以手帳閱讀筆記為載體，融合雙貓伴讀哲學（橘白身心鬆弛 × 三花堅定邊界）與瑞士解構視覺。提供心靈困境專書檢索索引，為習慣退讓的女性建立安靜自洽的心理邊界。">
   <!-- Cross-Platform Noto Serif & Noto Sans Web Fonts -->
   <link rel=preconnect href=https://fonts.googleapis.com>
   <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/riso-symbols.css">
+  
+  <!-- Apple Touch Icon & Favicon for iOS Home Screen & Modern Browsers (iPhone 桌面與網頁圖標) -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon-cat.svg">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="溫柔生長">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <style>
 
     /* Fixed Top Navigation Guard */
@@ -46,8 +54,8 @@
       --radius-md: 14px;
       --radius-lg: 20px;
       --radius-full: 9999px;
-      --font-serif: -apple-system-ui-serif, "Playfair Display", "Noto Serif TC", "Noto Serif SC", "Songti TC", "Songti SC", "Source Han Serif TC", "Source Han Serif SC", "STSong", "SimSun", "PMingLiU", serif;
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "PingFang SC", "Noto Sans TC", "Noto Sans SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
+      --font-serif: "Noto Serif TC", "Noto Serif SC", "Songti TC", "Songti SC", "Source Han Serif TC", "Source Han Serif SC", "STSong", "SimSun", "PMingLiU", serif;
+      --font-sans: "Noto Sans TC", "Noto Sans SC", "PingFang TC", "PingFang SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color-scheme: light;
     }
 
@@ -60,12 +68,12 @@
 
     /* Language-specific typographic priority for optimal CJK glyph rendering */
     html[lang="zh-TW"], :lang(zh-TW) {
-      --font-serif: -apple-system-ui-serif, "Playfair Display", "Noto Serif TC", "Songti TC", "Source Han Serif TC", "STSong", "PMingLiU", "Noto Serif SC", "Songti SC", serif;
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", "Source Han Sans TC", "Microsoft JhengHei", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      --font-serif: "Noto Serif TC", "Songti TC", "Source Han Serif TC", "STSong", "PMingLiU", "Noto Serif SC", "Songti SC", serif;
+      --font-sans: "Noto Sans TC", "PingFang TC", "Source Han Sans TC", "Microsoft JhengHei", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     html[lang="zh-CN"], :lang(zh-CN) {
-      --font-serif: -apple-system-ui-serif, "Playfair Display", "Noto Serif SC", "Songti SC", "Source Han Serif SC", "STSong", "SimSun", "Noto Serif TC", "Songti TC", serif;
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      --font-serif: "Noto Serif SC", "Songti SC", "Source Han Serif SC", "STSong", "SimSun", "Noto Serif TC", "Songti TC", serif;
+      --font-sans: "Noto Sans SC", "PingFang SC", "Source Han Sans SC", "Microsoft YaHei", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     html {
       text-rendering: optimizeLegibility;
@@ -126,11 +134,19 @@
       justify-content: center;
       width: 38px;
       height: 38px;
-      background: var(--accent-rose-light);
-      color: var(--accent-rose);
-      border-radius: var(--radius-sm);
-      font-size: 1.25rem;
-      border: 1px solid rgba(192, 108, 82, 0.25);
+      background: #FFFFFF;
+      border-radius: 9px;
+      border: 1px solid rgba(221, 211, 196, 0.9);
+      box-shadow: 0 1px 3px rgba(45, 41, 38, 0.05);
+      overflow: hidden;
+      flex-shrink: 0;
+      padding: 0;
+    }
+    .brand-icon .riso-brand-mark {
+      width: 26px;
+      height: 26px;
+      margin: 0 !important;
+      display: block;
     }
     .brand-title {
       font-family: var(--font-serif);
@@ -261,13 +277,15 @@
       color: var(--text-muted);
       line-height: 1.8;
       text-wrap: pretty;
-      word-break: keep-all;
+      word-break: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
       overflow-wrap: break-word;
     }
 
     /* Hero Section (Anti-Orphan & Anti-Word-Break) */
     .hero {
-      background: linear-gradient(180deg, var(--bg-page) 0%, var(--bg-page-alt) 100%);
+      background: transparent;
       padding: 100px 0 84px 0;
       border-bottom: 1px solid var(--border-subtle);
       text-align: center;
@@ -328,7 +346,9 @@
       color: var(--text-muted);
       line-height: 1.85;
       text-wrap: pretty;
-      word-break: keep-all;
+      word-break: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
       overflow-wrap: break-word;
       margin: 0;
     }
@@ -427,7 +447,9 @@
       color: var(--text-muted);
       line-height: 1.8;
       text-wrap: pretty;
-      word-break: keep-all;
+      word-break: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
     }
 
     /* Section 2: Adversarial */
@@ -491,7 +513,9 @@
       color: var(--text-muted);
       line-height: 1.75;
       text-wrap: pretty;
-      word-break: keep-all;
+      word-break: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
     }
 
     /* Evolution Table */
@@ -541,20 +565,42 @@
     }
     .strategy-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       margin-top: 36px;
+    }
+    @media (max-width: 1024px) {
+      .strategy-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+    @media (max-width: 768px) {
+      .strategy-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 24px;
+      }
     }
     .strategy-card {
       background: #FFFFFF;
       border: 1px solid var(--border-card);
       border-radius: var(--radius-lg);
-      padding: 30px;
+      padding: 28px 24px;
       box-shadow: var(--shadow-sm);
       display: flex;
       flex-direction: column;
       gap: 12px;
       position: relative;
+      min-width: 0;
+      box-sizing: border-box;
+      overflow-wrap: break-word;
+      word-break: normal;
+    }
+    @media (max-width: 768px) {
+      .strategy-card {
+        padding: 20px 16px;
+      }
     }
     .strategy-num {
       width: 32px;
@@ -579,7 +625,9 @@
       color: var(--text-muted);
       line-height: 1.8;
       text-wrap: pretty;
-      word-break: keep-all;
+      word-break: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
     }
 
     /* Section 3: Pillars (7 Core Books with REAL COVERS) */
@@ -728,7 +776,9 @@
       color: var(--text-muted);
       line-height: 1.8;
       text-wrap: pretty;
-      word-break: keep-all;
+      word-break: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
     }
 
     .book-quote-box {
@@ -1204,12 +1254,12 @@
 
     /* Language-specific typographic priority for optimal CJK glyph rendering */
     html[lang="zh-TW"], :lang(zh-TW) {
-      --font-serif: -apple-system-ui-serif, "Playfair Display", "Noto Serif TC", "Songti TC", "Source Han Serif TC", "STSong", "PMingLiU", "Noto Serif SC", "Songti SC", serif;
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", "Source Han Sans TC", "Microsoft JhengHei", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      --font-serif: "Noto Serif TC", "Songti TC", "Source Han Serif TC", "STSong", "PMingLiU", "Noto Serif SC", "Songti SC", serif;
+      --font-sans: "Noto Sans TC", "PingFang TC", "Source Han Sans TC", "Microsoft JhengHei", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     html[lang="zh-CN"], :lang(zh-CN) {
-      --font-serif: -apple-system-ui-serif, "Playfair Display", "Noto Serif SC", "Songti SC", "Source Han Serif SC", "STSong", "SimSun", "Noto Serif TC", "Songti TC", serif;
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      --font-serif: "Noto Serif SC", "Songti SC", "Source Han Serif SC", "STSong", "SimSun", "Noto Serif TC", "Songti TC", serif;
+      --font-sans: "Noto Sans SC", "PingFang SC", "Source Han Sans SC", "Microsoft YaHei", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     html {
       text-rendering: optimizeLegibility;
@@ -1528,19 +1578,1227 @@
       }
     }
 
+  
+    /* ══════════════════════════════════════════════════════════════════════
+       READING-FIRST BULLET JOURNAL & DUAL FELINE DESIGN SYSTEM
+       瑞士解構 × 雙貓伴讀手帳體系 · 純粹為推廣閱讀服務 · 零多餘技術棧
+       ══════════════════════════════════════════════════════════════════════ */
+    :root {
+      --riso-rose: #C06C52;
+      --riso-sage: #3E6B56;
+      --riso-amber: #9E6234;
+      --bujo-dot: rgba(200, 190, 178, 0.4);
+      --washi-amber: rgba(192, 108, 82, 0.22);
+      --washi-sage: rgba(62, 107, 86, 0.22);
+    }
+
+    /* Paper Dot Grid Background (透氣手帳點陣紙紋，無出血大底圖，乾淨留白) */
+    body {
+      background-image: radial-gradient(var(--bujo-dot) 1px, transparent 1px);
+      background-size: 24px 24px;
+      background-position: 0 0;
+    }
+
+    /* SVG Icon Style System */
+    .bujo-icon {
+      width: 32px;
+      height: 32px;
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .bujo-icon-sm {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: -3px;
+      flex-shrink: 0;
+      margin-right: 4px;
+    }
+
+    /* Top Narrative Folio Section (The Master Reading Journal Spread) */
+    .bujo-folio-section {
+      padding: 36px 0 24px 0;
+      position: relative;
+    }
+    .bujo-binder-container {
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 38px 38px 42px 38px;
+      box-shadow: 0 8px 30px rgba(45, 41, 38, 0.05);
+      position: relative;
+      background-image: radial-gradient(rgba(215, 208, 198, 0.35) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* Washi Tape Strip at the Top */
+    .bujo-washi-tape-strip {
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-0.5deg);
+      width: 180px;
+      height: 26px;
+      background: var(--washi-amber);
+      border-left: 2px dashed rgba(192, 108, 82, 0.4);
+      border-right: 2px dashed rgba(192, 108, 82, 0.4);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Meta Header */
+    .bujo-meta-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+      border-bottom: 1px dashed var(--border-subtle);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+    .bujo-meta-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .bujo-log-number {
+      background: var(--accent-rose-light);
+      color: var(--accent-rose);
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: var(--radius-sm);
+    }
+    .bujo-rubber-stamp {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1.5px solid var(--accent-rose);
+      color: var(--accent-rose);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      transform: rotate(-1.5deg);
+      letter-spacing: 0.06em;
+    }
+
+    /* Dual Feline Specimen Polaroid Cards */
+    .feline-specimen-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 820px) {
+      .feline-specimen-grid { grid-template-columns: 1fr; }
+    }
+    .polaroid-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 18px 18px 22px 18px;
+      box-shadow: 0 4px 16px rgba(45, 41, 38, 0.06);
+      position: relative;
+      transition: transform 0.2s ease;
+    }
+    .polaroid-card:hover {
+      transform: translateY(-2px);
+    }
+    .polaroid-tape {
+      position: absolute;
+      top: -6px;
+      left: 24px;
+      width: 70px;
+      height: 18px;
+      background: var(--washi-sage);
+      border-left: 1px dashed rgba(62, 107, 86, 0.4);
+      border-right: 1px dashed rgba(62, 107, 86, 0.4);
+      z-index: 2;
+    }
+    .polaroid-tape.right {
+      left: auto;
+      right: 24px;
+      background: var(--washi-amber);
+      border-color: rgba(192, 108, 82, 0.4);
+    }
+    .polaroid-specimen-canvas {
+      width: 100%;
+      height: 220px;
+      border-radius: 6px;
+      background: #FAF6F0;
+      border: 1px solid var(--border-card);
+      margin-bottom: 14px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .cat-specimen-svg {
+      width: 90%;
+      height: 90%;
+      max-width: 280px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .polaroid-card:hover .cat-specimen-svg {
+      transform: scale(1.02);
+    }
+    .coord-tl, .coord-tr, .coord-bl, .coord-br {
+      position: absolute;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      color: var(--text-dim);
+      letter-spacing: 0.05em;
+      opacity: 0.75;
+      pointer-events: none;
+    }
+    .coord-tl { top: 8px; left: 10px; }
+    .coord-tr { top: 8px; right: 10px; }
+    .coord-bl { bottom: 8px; left: 10px; }
+    .coord-br { bottom: 8px; right: 10px; }
+    .grid-cross {
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      pointer-events: none;
+    }
+    .grid-cross::before, .grid-cross::after {
+      content: "";
+      position: absolute;
+      background: var(--text-dim);
+      opacity: 0.4;
+    }
+    .grid-cross::before { top: 3px; left: 0; width: 7px; height: 1px; }
+    .grid-cross::after { top: 0; left: 3px; width: 1px; height: 7px; }
+
+    /* Companion Philosophy Banner & Specimen Bar */
+    .bujo-motto-banner {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg-card-soft);
+      border: 1px dashed var(--border-highlight);
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .bujo-motto-banner .motto-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      background: var(--accent-rose);
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+    .bujo-motto-banner .motto-text {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: 0.02em;
+    }
+    .bujo-motto-banner .motto-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-left: auto;
+    }
+    @media (max-width: 640px) {
+      .bujo-motto-banner .motto-sub { margin-left: 0; width: 100%; }
+    }
+    .bujo-specimen-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-sm);
+      padding: 10px 18px;
+      margin-bottom: 22px;
+      overflow-x: auto;
+    }
+    .bujo-specimen-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .bujo-specimen-item svg {
+      flex-shrink: 0;
+    }
+    .subpage-bujo-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-rose);
+      background: var(--accent-rose-light);
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    .polaroid-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent-sage);
+      margin-bottom: 4px;
+      display: block;
+    }
+    .polaroid-card:nth-child(2) .polaroid-tag {
+      color: var(--accent-rose);
+    }
+    .polaroid-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .polaroid-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Purpose-Driven Reading Guide: Crisis to Book Index */
+    .bujo-reading-index-box {
+      background: var(--bg-card-soft);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+    }
+    .reading-index-header {
+      margin-bottom: 16px;
+    }
+    .reading-index-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--accent-sage);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .reading-index-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .reading-index-lead {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.6;
+    }
+    .crisis-index-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .crisis-index-btn {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      box-shadow: 0 1px 4px rgba(45, 41, 38, 0.02);
+    }
+    .crisis-index-btn:hover {
+      border-color: var(--accent-rose);
+      background: var(--accent-rose-light);
+      transform: translateX(2px);
+    }
+    .crisis-btn-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .crisis-state {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .crisis-book-target {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--accent-rose);
+    }
+    .crisis-index-btn span.arrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--text-dim);
+    }
+
+    /* Anchor Jump Target Smooth Highlighting */
+    .book-pillar-card:target {
+      scroll-margin-top: calc(var(--nav-height, 100px) + 24px);
+      box-shadow: 0 0 0 2px var(--accent-rose), 0 10px 32px rgba(192, 108, 82, 0.18);
+      border-color: var(--accent-rose);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Section Journal Indicator Tags */
+    .journal-log-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--accent-sage);
+      background: var(--accent-sage-light);
+      padding: 3px 10px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    /* Subtle Book Card Washi Tape Decorator */
+    .pillar-card {
+      position: relative;
+    }
+    .pillar-card::before {
+      content: "";
+      position: absolute;
+      top: -6px;
+      right: 32px;
+      width: 72px;
+      height: 16px;
+      background: var(--washi-sage);
+      border-left: 1px dashed rgba(62, 107, 86, 0.4);
+      border-right: 1px dashed rgba(62, 107, 86, 0.4);
+      z-index: 2;
+    }
+
+  
+    /* Botanical & Workplace Lifestyle Motifs (花草與生活辦公物件) */
+    .bujo-motif-glasses, .bujo-motif-coffee, .bujo-motif-sage, .bujo-motif-flower, .bujo-motif-pen {
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .bujo-corner-botanical {
+      position: absolute;
+      bottom: 16px;
+      right: 20px;
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+  
+    /* Compact Human-Centered Reading Folio (以人為本，貓咪縮小為功能性伴讀標記) */
+    .bujo-compact-folio {
+      padding: 24px 0 10px 0;
+    }
+    .bujo-compact-container {
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 24px 32px 28px 32px;
+      box-shadow: 0 4px 20px rgba(45, 41, 38, 0.04);
+      position: relative;
+      background-image: radial-gradient(rgba(215, 208, 198, 0.35) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .bujo-washi-tape-compact {
+      position: absolute;
+      top: -7px;
+      left: 48px;
+      width: 90px;
+      height: 18px;
+      background: var(--washi-amber);
+      border-left: 1px dashed rgba(192, 108, 82, 0.4);
+      border-right: 1px dashed rgba(192, 108, 82, 0.4);
+      z-index: 2;
+    }
+
+    /* Functional Dual-Track Strip (緊湊型雙軌伴讀指示條) */
+    .companion-track-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 780px) {
+      .companion-track-strip { grid-template-columns: 1fr; gap: 10px; }
+    }
+    .companion-track-item {
+      background: var(--bg-card-soft);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: all 0.2s ease;
+    }
+    .companion-track-item:hover {
+      border-color: var(--accent-rose);
+      background: #FFFFFF;
+    }
+    .companion-mini-mark {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+    }
+    .companion-track-text {
+      flex: 1;
+    }
+    .companion-track-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent-rose);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .companion-track-text strong {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--text-main);
+      line-height: 1.35;
+    }
+    .companion-track-text span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      display: block;
+      margin-top: 2px;
+    }
+
+  
+    /* ══════════════════════════════════════════════════════════════════════
+       FIXED AMBIENT BACKGROUND GUARDIAN CATS (固定兩側實體花紋守護貓咪)
+       白色橘背舒展貓 × 三花戴帽端坐貓 · 零高度佔用 · 寬屏清晰 · 手機端靜音防干擾
+       ══════════════════════════════════════════════════════════════════════ */
+    .ambient-cat-fixed {
+      position: fixed;
+      pointer-events: none;
+      z-index: 1; /* Behind main text containers (cards have z-index: 2 or background: #fff) */
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .ambient-cat-left {
+      bottom: 42px;
+      left: 24px;
+      width: 240px;
+      height: auto;
+      opacity: 0.88;
+    }
+    .ambient-cat-right {
+      bottom: 42px;
+      right: 24px;
+      width: 230px;
+      height: auto;
+      opacity: 0.88;
+    }
+    @media (max-width: 1360px) {
+      .ambient-cat-left {
+        width: 170px;
+        height: auto;
+        bottom: 30px;
+        left: 16px;
+        opacity: 0.22;
+      }
+      .ambient-cat-right {
+        width: 160px;
+        height: auto;
+        bottom: 30px;
+        right: 16px;
+        opacity: 0.22;
+      }
+    }
+    @media (max-width: 1024px) {
+      .ambient-cat-left {
+        width: 130px;
+        height: auto;
+        bottom: 24px;
+        left: 12px;
+        opacity: 0.12;
+      }
+      .ambient-cat-right {
+        width: 125px;
+        height: auto;
+        bottom: 24px;
+        right: 12px;
+        opacity: 0.12;
+      }
+    }
+    @media (max-width: 768px) {
+      .ambient-cat-fixed {
+        opacity: 0.04; /* Nearly imperceptible on small mobile screens to guarantee 100% reading focus */
+      }
+    }
+
+    /* ══════════════════════════════════════════════════════════════════════
+       CRISIS-TO-BOOK 10-VOLUME TRIAGE INDEX (十冊心靈急救檢索盤)
+       4 大受困情境 × 10 本必讀專書晶片 · 手機滑軌 Scroll-Snap · 零單字孤行折行
+       ══════════════════════════════════════════════════════════════════════ */
+    .hero-crisis-nav-wrap {
+      margin-top: 40px;
+      padding-top: 28px;
+      border-top: 1px dashed var(--border-subtle);
+      position: relative;
+      text-align: left;
+    }
+    .hero-crisis-header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .hero-crisis-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: var(--accent-sage);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+    }
+    .hero-crisis-hint {
+      font-size: 0.76rem;
+      color: var(--text-dim);
+      font-family: var(--font-sans);
+    }
+    .hero-crisis-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .hero-crisis-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      position: relative;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(45, 41, 38, 0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .hero-crisis-card:hover {
+      border-color: var(--accent-rose);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(192, 108, 82, 0.08);
+    }
+    .hero-crisis-card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .hero-crisis-icon-wrap {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: var(--bg-page);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .hero-crisis-question {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.5;
+      text-wrap: balance;
+      word-break: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      margin: 0;
+    }
+    .hero-crisis-tagline {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      display: block;
+      line-height: 1.4;
+    }
+    .hero-crisis-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .crisis-book-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 11px;
+      border-radius: 4px;
+      background: var(--bg-page);
+      color: var(--text-main);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border-subtle);
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .crisis-book-chip:hover {
+      background: var(--accent-rose-light);
+      border-color: var(--accent-rose);
+      color: var(--accent-rose);
+    }
+    .crisis-book-chip .chip-arrow {
+      font-size: 0.72rem;
+      color: var(--accent-rose);
+    }
+
+    @media (max-width: 768px) {
+      .hero-crisis-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 12px;
+        padding-bottom: 12px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .hero-crisis-card {
+        flex: 0 0 290px;
+        scroll-snap-align: start;
+        padding: 16px;
+      }
+      .hero-crisis-question {
+        font-size: 0.92rem;
+      }
+    }
+
   </style>
 </head>
 <body>
+  <!-- Embedded Risograph & Swiss Design SVG Symbol Sprite (Zero-CORS, Local file:// Compatible) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <defs>
+    <!-- Risograph Paper Texture Filter (Optional Micro Stipple) -->
+    <filter id="riso-stipple" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.07 0"/>
+      <feComposite in2="SourceGraphic" in="glitch" operator="in"/>
+    </filter>
+  </defs>
+  <symbol id="symbol-cat-amber-plate" viewBox="0 0 280 200">
+<g id="amber-cat-specimen-root">
+  <!-- Swiss Precision Construction Grid (Background Layer) -->
+  <rect x="0" y="0" width="280" height="200" fill="var(--riso-paper, #FAF8F5)" rx="6"/>
+  <rect x="12" y="12" width="256" height="176" fill="none" stroke="var(--riso-grid-line, rgba(45,41,38,0.12))" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <rect x="20" y="20" width="240" height="160" fill="none" stroke="var(--riso-grid-line, rgba(45,41,38,0.08))" stroke-width="0.6"/>
+
+  <!-- Technical Registration Crosshairs & Datum Lines -->
+  <!-- Top Left Registration Mark -->
+  <g transform="translate(24, 24)" stroke="var(--riso-rose, #C06C52)" stroke-width="0.8">
+    <circle cx="0" cy="0" r="4.5" fill="none"/>
+    <line x1="-7" y1="0" x2="7" y2="0"/>
+    <line x1="0" y1="-7" x2="0" y2="7"/>
+    <text x="9" y="3.5" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6.5" fill="var(--text-dim, #888077)" letter-spacing="0.08em" stroke="none">REG.MK 01-A // CH-01</text>
+  </g>
+
+  <!-- Top Right Micro Coordinates -->
+  <g transform="translate(256, 26)" text-anchor="end">
+    <text x="0" y="0" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="7" font-weight="700" fill="var(--riso-rose, #C06C52)" letter-spacing="0.1em">SPECIMEN 01 // E-01</text>
+    <text x="0" y="9" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" fill="var(--text-dim, #888077)" letter-spacing="0.06em">AXIS 0.0 · φ=1.618 · DE-FREEZING</text>
+  </g>
+
+  <!-- Bottom Left Baseline Annotation -->
+  <g transform="translate(24, 182)">
+    <text x="0" y="0" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" fill="var(--riso-sage, #3E6B56)" font-weight="600" letter-spacing="0.06em">PARASYMPATHETIC ACTIVATION · VAGUS NERVE TONE</text>
+  </g>
+
+  <!-- Bottom Right Scale & Grid Spec -->
+  <g transform="translate(256, 182)" text-anchor="end">
+    <text x="0" y="0" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" fill="var(--text-dim, #888077)" letter-spacing="0.05em">280×200MM // 24×24 SWISS DOT</text>
+  </g>
+
+  <!-- Ground Plane Datum Axis -->
+  <line x1="28" y1="148" x2="252" y2="148" stroke="var(--text-dim, #888077)" stroke-width="0.8" stroke-dasharray="2 3"/>
+  <circle cx="28" cy="148" r="1.5" fill="var(--text-dim, #888077)"/>
+  <circle cx="252" cy="148" r="1.5" fill="var(--text-dim, #888077)"/>
+
+  <!-- Construction Geometric Arcs & Tangents (Deconstructed Swiss Anatomy) -->
+  <!-- Concentric Torso Mass Guides -->
+  <circle cx="118" cy="122" r="38" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.7" stroke-dasharray="2 3" opacity="0.45"/>
+  <circle cx="118" cy="122" r="54" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.3"/>
+  <!-- Head Circle Guide -->
+  <circle cx="86" cy="102" r="22" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="0.7" stroke-dasharray="2 2" opacity="0.4"/>
+  <!-- Tangent Angle Vector for Hindlimb Extension -->
+  <line x1="140" y1="126" x2="228" y2="144" stroke="var(--riso-rose, #C06C52)" stroke-width="0.8" stroke-dasharray="2 2" opacity="0.6"/>
+  <text x="232" y="142" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" fill="var(--riso-rose, #C06C52)">∡ 12.8°</text>
+
+  <!-- RISOGRAPH LAYER 1 (Cool Sage Misregistration Shadow Layer - Offset dx=1.8, dy=-1.2) -->
+  <g transform="translate(1.8, -1.2)" opacity="0.32" style="mix-blend-mode: multiply;">
+    <!-- Cat Torso Silhouette Shift -->
+    <path d="M 68 128 C 66 98, 92 84, 126 90 C 152 94, 168 106, 172 124 C 174 136, 154 146, 124 147 C 94 147, 72 143, 68 128 Z" fill="var(--riso-sage, #3E6B56)"/>
+    <!-- Hind Leg Stretch Silhouette Shift -->
+    <path d="M 148 124 C 168 126, 196 135, 222 140 C 228 141, 230 145, 224 147 C 206 149, 176 148, 154 138 Z" fill="var(--riso-sage, #3E6B56)"/>
+    <!-- Head Shift -->
+    <circle cx="86" cy="102" r="20" fill="var(--riso-sage, #3E6B56)"/>
+    <!-- Tail Arc Shift -->
+    <path d="M 68 132 C 48 134, 38 144, 44 156 C 50 164, 64 162, 72 154" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="4.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- RISOGRAPH LAYER 2 (Warm Terracotta / Amber Primary Layer) -->
+  <g>
+    <!-- Cat Underbelly & Chest (Paper White Base Geometry) -->
+    <path d="M 70 128 C 68 100, 92 86, 126 92 C 150 96, 166 108, 170 124 C 172 136, 152 146, 122 146 C 94 146, 72 142, 70 128 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+
+    <!-- Amber Back & Dorsal Riso Inking Patch (The Classic Orange Cat Patch) -->
+    <path d="M 88 94 C 108 90, 134 94, 154 104 C 166 112, 170 120, 168 128 C 162 134, 148 130, 138 124 C 120 114, 102 110, 88 114 Z" fill="var(--riso-rose, #C06C52)" opacity="0.88"/>
+
+    <!-- Relaxed Extended Hind Leg (舒展後腿：放鬆、生理凍結瓦解之核心識別) -->
+    <path d="M 148 124 C 168 126, 196 135, 222 140 C 228 141, 230 145, 224 147 C 206 149, 176 148, 154 138 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+    <!-- Amber Patch on Stretched Leg Thigh -->
+    <path d="M 154 126 C 172 128, 190 134, 202 138 C 196 143, 178 143, 164 137 Z" fill="var(--riso-rose, #C06C52)" opacity="0.88"/>
+    <!-- Leg Toe Pads (Delicate Geometric Circles) -->
+    <circle cx="225" cy="142" r="1.8" fill="var(--riso-rose, #C06C52)"/>
+    <circle cx="228" cy="144" r="1.8" fill="var(--riso-rose, #C06C52)"/>
+    <circle cx="225" cy="146.5" r="1.8" fill="var(--riso-rose, #C06C52)"/>
+
+    <!-- Head & Ears (Serene, Dropped Shoulders) -->
+    <circle cx="86" cy="102" r="20" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4"/>
+    <!-- Amber Forehead & Ear Mask Patch -->
+    <path d="M 74 96 C 76 86, 84 84, 94 86 C 98 90, 96 98, 92 102 C 84 102, 76 100, 74 96 Z" fill="var(--riso-rose, #C06C52)" opacity="0.88"/>
+    <!-- Left Triangular Ear -->
+    <polygon points="72,90 78,70 88,86" fill="var(--riso-rose, #C06C52)" stroke="var(--text-main, #2D2926)" stroke-width="1.3" stroke-linejoin="round"/>
+    <polygon points="74,88 78,74 85,86" fill="#FFFFFF" opacity="0.4"/>
+    <!-- Right Triangular Ear -->
+    <polygon points="90,84 100,72 106,88" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.3" stroke-linejoin="round"/>
+    <polygon points="93,84 99,75 103,87" fill="var(--riso-rose, #C06C52)" opacity="0.75"/>
+
+    <!-- Serene Closed Sleeping/Relaxed Eye Arc (放鬆閉眼、安定沉著) -->
+    <path d="M 80 104 Q 85 108 90 104" fill="none" stroke="var(--text-main, #2D2926)" stroke-width="1.6" stroke-linecap="round"/>
+    <!-- Nose & Whisker Node -->
+    <polygon points="86,108 84.5,106.5 87.5,106.5" fill="var(--riso-rose, #C06C52)"/>
+    <line x1="88" y1="107" x2="98" y2="105" stroke="var(--text-main, #2D2926)" stroke-width="0.8" stroke-linecap="round"/>
+    <line x1="88" y1="109" x2="97" y2="110" stroke="var(--text-main, #2D2926)" stroke-width="0.8" stroke-linecap="round"/>
+
+    <!-- Lazy Curled Tail -->
+    <path d="M 70 132 C 48 134, 38 144, 44 156 C 50 164, 64 162, 72 154" fill="none" stroke="var(--text-main, #2D2926)" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M 44 156 C 48 162, 58 161, 66 156" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="4.5" stroke-linecap="round"/>
+
+    <!-- Front Paws (Folded Neatly Under Chest) -->
+    <ellipse cx="94" cy="144" rx="8" ry="4.5" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+    <line x1="94" y1="142" x2="94" y2="146.5" stroke="var(--text-main, #2D2926)" stroke-width="0.9"/>
+  </g>
+
+  <!-- Micro Typographic Overlay & Coordinates -->
+  <g transform="translate(148, 114)">
+    <rect x="0" y="0" width="46" height="13" fill="var(--riso-paper, #FAF8F5)" stroke="var(--riso-rose, #C06C52)" stroke-width="0.7"/>
+    <text x="4" y="9" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" font-weight="700" fill="var(--riso-rose, #C06C52)" letter-spacing="0.06em">CALM // 0.0</text>
+  </g>
+</g>
+  </symbol>
+  <symbol id="symbol-cat-calico-plate" viewBox="0 0 280 200">
+<g id="calico-cat-specimen-root">
+  <!-- Swiss Precision Construction Grid (Background Layer) -->
+  <rect x="0" y="0" width="280" height="200" fill="var(--riso-paper, #FAF8F5)" rx="6"/>
+  <rect x="12" y="12" width="256" height="176" fill="none" stroke="var(--riso-grid-line, rgba(45,41,38,0.12))" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <rect x="20" y="20" width="240" height="160" fill="none" stroke="var(--riso-grid-line, rgba(45,41,38,0.08))" stroke-width="0.6"/>
+
+  <!-- Technical Registration Crosshairs & Datum Lines -->
+  <!-- Top Left Registration Mark -->
+  <g transform="translate(24, 24)" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.8">
+    <circle cx="0" cy="0" r="4.5" fill="none"/>
+    <line x1="-7" y1="0" x2="7" y2="0"/>
+    <line x1="0" y1="-7" x2="0" y2="7"/>
+    <text x="9" y="3.5" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6.5" fill="var(--text-dim, #888077)" letter-spacing="0.08em" stroke="none">REG.MK 02-B // CH-02</text>
+  </g>
+
+  <!-- Top Right Micro Coordinates -->
+  <g transform="translate(256, 26)" text-anchor="end">
+    <text x="0" y="0" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="7" font-weight="700" fill="var(--riso-sage, #3E6B56)" letter-spacing="0.1em">SPECIMEN 02 // E-02</text>
+    <text x="0" y="9" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" fill="var(--text-dim, #888077)" letter-spacing="0.06em">AXIS 90.0° · ISOSCELES · SOLID BOUNDARIES</text>
+  </g>
+
+  <!-- Bottom Left Baseline Annotation -->
+  <g transform="translate(24, 182)">
+    <text x="0" y="0" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" fill="var(--riso-rose, #C06C52)" font-weight="600" letter-spacing="0.06em">ASSERTIVE POSTURE · ZERO REFLEXIVE APOLOGY</text>
+  </g>
+
+  <!-- Bottom Right Scale & Grid Spec -->
+  <g transform="translate(256, 182)" text-anchor="end">
+    <text x="0" y="0" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" fill="var(--text-dim, #888077)" letter-spacing="0.05em">280×200MM // 24×24 SWISS DOT</text>
+  </g>
+
+  <!-- Vertical Central Datum Axis (AXIS 90.0°) -->
+  <line x1="140" y1="16" x2="140" y2="184" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <circle cx="140" cy="16" r="1.5" fill="var(--riso-sage, #3E6B56)"/>
+  <circle cx="140" cy="184" r="1.5" fill="var(--riso-sage, #3E6B56)"/>
+
+  <!-- Master Isosceles Triangle Construction Line (堅定邊界構造骨架) -->
+  <polygon points="140,32 88,168 192,168" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="0.7" stroke-dasharray="2 3" opacity="0.45"/>
+  <text x="143" y="38" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" fill="var(--riso-rose, #C06C52)">APEX 72°</text>
+
+  <!-- Concentric Boundary Radial Waves (警醒雷達場) -->
+  <circle cx="140" cy="68" r="30" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.6" stroke-dasharray="3 3" opacity="0.4"/>
+  <circle cx="140" cy="68" r="48" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.3"/>
+  <circle cx="140" cy="68" r="66" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.4" stroke-dasharray="5 5" opacity="0.2"/>
+
+  <!-- Horizontal Ground Plane -->
+  <line x1="36" y1="168" x2="244" y2="168" stroke="var(--text-dim, #888077)" stroke-width="0.8" stroke-dasharray="2 3"/>
+
+  <!-- RISOGRAPH LAYER 1 (Terracotta Misregistration Shift Layer - dx=-1.5, dy=1.2) -->
+  <g transform="translate(-1.5, 1.2)" opacity="0.28" style="mix-blend-mode: multiply;">
+    <!-- Upright Body Silhouette Shift -->
+    <path d="M 124 74 L 112 110 L 98 168 H 182 L 168 110 L 156 74 Z" fill="var(--riso-rose, #C06C52)"/>
+    <!-- Head Shift -->
+    <circle cx="140" cy="68" r="19" fill="var(--riso-rose, #C06C52)"/>
+    <!-- Pointed Ears Shift -->
+    <polygon points="120,62 114,36 132,48" fill="var(--riso-rose, #C06C52)"/>
+    <polygon points="148,48 166,36 160,62" fill="var(--riso-rose, #C06C52)"/>
+  </g>
+
+  <!-- RISOGRAPH LAYER 2 (Primary Tri-Color Calico Vector Architecture) -->
+  <g>
+    <!-- Base Body Silhouette (Clean White Architectural Monolith) -->
+    <path d="M 126 76 C 122 96, 110 125, 100 168 H 180 C 170 125, 158 96, 154 76 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+
+    <!-- Calico Distinct Patch 1: Terracotta Flank & Shoulder (Warm Riso Ink) -->
+    <path d="M 100 168 L 108 132 C 114 136, 122 144, 126 168 Z" fill="var(--riso-rose, #C06C52)" opacity="0.88"/>
+    <!-- Calico Distinct Patch 2: Sage Green Chest & Shoulder (Cool Riso Ink) -->
+    <path d="M 154 76 C 158 96, 168 120, 180 168 L 166 168 C 158 140, 146 112, 142 94 Z" fill="var(--riso-sage, #3E6B56)" opacity="0.88"/>
+
+    <!-- Two Parallel Pillar Front Legs (挺拔如柱：雙前腿筆直並攏，基底穩如泰山) -->
+    <rect x="127" y="108" width="10" height="60" rx="4" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+    <rect x="143" y="108" width="10" height="60" rx="4" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+    <line x1="132" y1="160" x2="132" y2="167" stroke="var(--text-main, #2D2926)" stroke-width="0.8"/>
+    <line x1="148" y1="160" x2="148" y2="167" stroke="var(--text-main, #2D2926)" stroke-width="0.8"/>
+
+    <!-- Neatly Wrapped Tail Around Paws (收束防禦邊界，泰然自若) -->
+    <path d="M 180 166 C 196 166, 198 152, 186 144 C 174 138, 170 148, 160 156 C 148 165, 120 167, 102 167" fill="none" stroke="var(--text-main, #2D2926)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 186 144 C 192 148, 194 158, 182 165" fill="none" stroke="var(--riso-amber, #9E6234)" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Head Contour (Circle + Alert Cheeks) -->
+    <circle cx="140" cy="68" r="19" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4"/>
+    <!-- Head Calico Patch: Right Temple (Sage Green) -->
+    <path d="M 140 50 C 148 50, 158 56, 158 68 C 158 74, 152 78, 144 76 Z" fill="var(--riso-sage, #3E6B56)" opacity="0.88"/>
+    <!-- Head Calico Patch: Left Brow (Terracotta Rose) -->
+    <path d="M 122 64 C 122 54, 130 50, 140 50 L 138 62 C 132 64, 126 66, 122 64 Z" fill="var(--riso-rose, #C06C52)" opacity="0.88"/>
+
+    <!-- Upright Pointed Triangular Ears (雙耳高聳直立，警醒審視邊界) -->
+    <!-- Left Ear (With Terracotta inner) -->
+    <polygon points="121,62 115,36 133,48" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.3" stroke-linejoin="round"/>
+    <polygon points="122,58 118,41 130,49" fill="var(--riso-rose, #C06C52)" opacity="0.75"/>
+    <!-- Right Ear (With Sage inner) -->
+    <polygon points="147,48 165,36 159,62" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.3" stroke-linejoin="round"/>
+    <polygon points="150,49 162,41 158,58" fill="var(--riso-sage, #3E6B56)" opacity="0.75"/>
+
+    <!-- Alert Eyes (平視堅定眼神，不畏縮不退讓) -->
+    <!-- Left Almond Eye -->
+    <path d="M 126 68 Q 131 63 136 68 Q 131 73 126 68 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+    <circle cx="131" cy="68" r="2.2" fill="var(--text-main, #2D2926)"/>
+    <circle cx="132" cy="67" r="0.7" fill="#FFFFFF"/>
+    <!-- Right Almond Eye -->
+    <path d="M 144 68 Q 149 63 154 68 Q 149 73 144 68 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+    <circle cx="149" cy="68" r="2.2" fill="var(--text-main, #2D2926)"/>
+    <circle cx="150" cy="67" r="0.7" fill="#FFFFFF"/>
+
+    <!-- Geometric Muzzle & Whiskers -->
+    <polygon points="140,73 138,71 142,71" fill="var(--riso-rose, #C06C52)"/>
+    <!-- Left Whiskers (Straight, Firm) -->
+    <line x1="135" y1="73" x2="116" y2="70" stroke="var(--text-main, #2D2926)" stroke-width="0.8" stroke-linecap="round"/>
+    <line x1="135" y1="75" x2="118" y2="76" stroke="var(--text-main, #2D2926)" stroke-width="0.8" stroke-linecap="round"/>
+    <!-- Right Whiskers -->
+    <line x1="145" y1="73" x2="164" y2="70" stroke="var(--text-main, #2D2926)" stroke-width="0.8" stroke-linecap="round"/>
+    <line x1="145" y1="75" x2="162" y2="76" stroke="var(--text-main, #2D2926)" stroke-width="0.8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Technical Stamp Badge -->
+  <g transform="translate(86, 126)">
+    <rect x="0" y="0" width="30" height="12" fill="var(--riso-paper, #FAF8F5)" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.7"/>
+    <text x="3" y="8.5" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="5.5" font-weight="700" fill="var(--riso-sage, #3E6B56)" letter-spacing="0.06em">BOUNDS</text>
+  </g>
+</g>
+  </symbol>
+  <symbol id="symbol-brand-cat" viewBox="0 0 32 32">
+<g id="brand-cat-root">
+  <!-- Deconstructed Dual-Feline Geometric Brand Crest (Perfect Visual Center at 16, 16) -->
+  <!-- Left Triangular Ear Patch (Amber / Terracotta - Loaf Cat) -->
+  <polygon points="7,13 10.5,5.5 14,14" fill="var(--riso-rose, #C06C52)" stroke="var(--text-main, #2D2926)" stroke-width="1.1" stroke-linejoin="round"/>
+  
+  <!-- Right Triangular Ear Patch (Sage / Calico Sentinel) -->
+  <polygon points="18,14 21.5,5.5 25,13" fill="var(--riso-sage, #3E6B56)" stroke="var(--text-main, #2D2926)" stroke-width="1.1" stroke-linejoin="round"/>
+  
+  <!-- Feline Facial Arch Contour (Dropped Shoulders & Calm Posture) -->
+  <path d="M 5.5 23 L 7.5 13 L 13.5 17.5 C 15 16.8 17 16.8 18.5 17.5 L 24.5 13 L 26.5 23" fill="none" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Serene Eyes (Dual Balance) -->
+  <circle cx="12.5" cy="17.2" r="1.3" fill="var(--text-main, #2D2926)"/>
+  <circle cx="19.5" cy="17.2" r="1.3" fill="var(--text-main, #2D2926)"/>
+  
+  <!-- Minimal Nose Wedge -->
+  <polygon points="16,20 14.8,18.5 17.2,18.5" fill="var(--riso-rose, #C06C52)"/>
+  
+  <!-- Geometric Datum Base (Center Balanced) -->
+  <line x1="4.5" y1="25.5" x2="27.5" y2="25.5" stroke="var(--text-dim, #888077)" stroke-width="0.9" stroke-dasharray="1.8 1.8"/>
+  <circle cx="16" cy="25.5" r="1.3" fill="var(--riso-rose, #C06C52)"/>
+</g>
+  </symbol>
+  <symbol id="symbol-glasses" viewBox="0 0 32 32">
+<g id="icon-glasses-root">
+  <!-- Construction Optical Crosshairs -->
+  <line x1="10" y1="10" x2="10" y2="22" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.6" stroke-dasharray="1.5 1.5" opacity="0.5"/>
+  <line x1="22" y1="10" x2="22" y2="22" stroke="var(--riso-rose, #C06C52)" stroke-width="0.6" stroke-dasharray="1.5 1.5" opacity="0.5"/>
+  <!-- Left Lens (With Sage Tint) -->
+  <circle cx="10" cy="16" r="6.5" fill="var(--riso-sage, #3E6B56)" fill-opacity="0.14" stroke="var(--text-main, #2D2926)" stroke-width="1.4"/>
+  <!-- Right Lens (With Rose Tint) -->
+  <circle cx="22" cy="16" r="6.5" fill="var(--riso-rose, #C06C52)" fill-opacity="0.14" stroke="var(--text-main, #2D2926)" stroke-width="1.4"/>
+  <!-- Saddle Bridge Curve -->
+  <path d="M 16.5 16 C 16 13.5, 16 13.5, 15.5 16" fill="none" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 14.2 15 C 15 13.5 17 13.5 17.8 15" fill="none" stroke="var(--text-main, #2D2926)" stroke-width="1.3" stroke-linecap="round"/>
+  <!-- Left & Right Temples and Hinges -->
+  <line x1="3.5" y1="16" x2="1" y2="13.5" stroke="var(--text-main, #2D2926)" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="28.5" y1="16" x2="31" y2="13.5" stroke="var(--text-main, #2D2926)" stroke-width="1.3" stroke-linecap="round"/>
+  <!-- Micro Rivet Dots -->
+  <circle cx="3.8" cy="16" r="0.9" fill="var(--riso-rose, #C06C52)"/>
+  <circle cx="28.2" cy="16" r="0.9" fill="var(--riso-sage, #3E6B56)"/>
+</g>
+  </symbol>
+  <symbol id="symbol-coffee" viewBox="0 0 32 32">
+<g id="icon-coffee-root">
+  <!-- Rising Steam Harmonic Curves (Risograph Warm Rose) -->
+  <path d="M 10 9 C 9 6.5, 11.5 5, 10.5 2.5" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 15 8 C 14 5, 16.5 4, 15.5 1.5" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 20 9 C 19 6.5, 21.5 5, 20.5 2.5" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="1.4" stroke-linecap="round"/>
+  <!-- Cup Body Silhouette (Swiss Ceramic Cylindrical) -->
+  <path d="M 6 12 H 24 L 22.5 25 C 22 28, 19 29, 15 29 C 11 29, 8 28, 7.5 25 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Riso Offset Shadow (Terracotta Bottom Wedge) -->
+  <path d="M 8.5 23 C 11 27, 19 27, 21.5 23 L 22 25 C 21 28, 18 29, 15 29 C 11 29, 9 28, 8 25 Z" fill="var(--riso-rose, #C06C52)" opacity="0.85"/>
+  <!-- Internal Liquid Surface Level Line -->
+  <line x1="8" y1="16" x2="22" y2="16" stroke="var(--riso-amber, #9E6234)" stroke-width="1" stroke-dasharray="2 2"/>
+  <!-- Handle (Geometric Tangent D-Arc) -->
+  <path d="M 23.5 14.5 C 28 14.5, 28 22.5, 22.5 23.5" fill="none" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linecap="round"/>
+</g>
+  </symbol>
+  <symbol id="symbol-sage" viewBox="0 0 32 32">
+<g id="icon-sage-root">
+  <!-- Central Botanical Stem Axis -->
+  <line x1="16" y1="30" x2="16" y2="3" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- Leaf 1 (Bottom Left) -->
+  <path d="M 16 23 C 7 21, 6 14, 13 12 C 16 17, 16 23, 16 23 Z" fill="var(--riso-sage, #3E6B56)" fill-opacity="0.38" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- Leaf 2 (Bottom Right) -->
+  <path d="M 16 19 C 25 17, 26 10, 19 8 C 16 13, 16 19, 16 19 Z" fill="var(--riso-sage, #3E6B56)" fill-opacity="0.38" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- Leaf 3 (Mid Left) -->
+  <path d="M 16 13 C 9 11, 8 6, 14 4.5 C 16 8.5, 16 13, 16 13 Z" fill="var(--riso-sage, #3E6B56)" fill-opacity="0.5" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- Terminal Tip Bud -->
+  <path d="M 16 7 C 12 4, 14 1.5, 16 2.5 C 18 1.5, 20 4, 16 7 Z" fill="var(--riso-sage, #3E6B56)" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.1"/>
+  <!-- Riso Rose Pollen Accents -->
+  <circle cx="16" cy="13" r="1.2" fill="var(--riso-rose, #C06C52)"/>
+  <circle cx="16" cy="19" r="1.2" fill="var(--riso-rose, #C06C52)"/>
+</g>
+  </symbol>
+  <symbol id="symbol-chamomile" viewBox="0 0 32 32">
+<g id="icon-chamomile-root">
+  <!-- Concentric Petal Construction Circles -->
+  <circle cx="16" cy="15" r="12" fill="none" stroke="var(--riso-grid-line, rgba(45,41,38,0.12))" stroke-width="0.6" stroke-dasharray="1.5 2"/>
+  <!-- Geometric Radial Petals (12 Harmonious Arcs) -->
+  <g fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.1" stroke-linejoin="round">
+    <ellipse cx="16" cy="6" rx="2.2" ry="4.5"/>
+    <ellipse cx="16" cy="24" rx="2.2" ry="4.5"/>
+    <ellipse cx="7" cy="15" rx="4.5" ry="2.2"/>
+    <ellipse cx="25" cy="15" rx="4.5" ry="2.2"/>
+    <ellipse cx="9.6" cy="8.6" rx="2.2" ry="4.5" transform="rotate(-45 9.6 8.6)"/>
+    <ellipse cx="22.4" cy="21.4" rx="2.2" ry="4.5" transform="rotate(-45 22.4 21.4)"/>
+    <ellipse cx="22.4" cy="8.6" rx="2.2" ry="4.5" transform="rotate(45 22.4 8.6)"/>
+    <ellipse cx="9.6" cy="21.4" rx="2.2" ry="4.5" transform="rotate(45 9.6 21.4)"/>
+  </g>
+  <!-- Petal Shadow Shift (Riso Sage Offset) -->
+  <circle cx="16.8" cy="15.8" r="5" fill="var(--riso-sage, #3E6B56)" opacity="0.22"/>
+  <!-- Central Golden Amber Disc (Stippled Flower Core) -->
+  <circle cx="16" cy="15" r="5.2" fill="var(--riso-amber, #9E6234)" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+  <circle cx="16" cy="15" r="3.2" fill="none" stroke="#FFFFFF" stroke-width="0.8" stroke-dasharray="1.2 1.2"/>
+  <!-- Delicate Stem Tangent -->
+  <path d="M 16 27 V 31" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.4" stroke-linecap="round"/>
+</g>
+  </symbol>
+  <symbol id="symbol-pen" viewBox="0 0 32 32">
+<g id="icon-pen-root">
+  <!-- Nib Silhouette (Sharp Architectural Triangle) -->
+  <path d="M 10 28 L 10 21 C 10 16, 13.5 13, 16 3 C 18.5 13, 22 16, 22 21 L 22 28 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Tine Golden / Terracotta Inking Zone -->
+  <path d="M 12.8 17 C 14.5 12, 16 5, 16 5 C 16 5, 17.5 12, 19.2 17 Z" fill="var(--riso-rose, #C06C52)" opacity="0.85"/>
+  <!-- Circular Breather Hole -->
+  <circle cx="16" cy="16" r="2" fill="var(--riso-paper, #FAF8F5)" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+  <!-- Central Ink Slit Hairline -->
+  <line x1="16" y1="3" x2="16" y2="14" stroke="var(--text-main, #2D2926)" stroke-width="1.1"/>
+  <line x1="16" y1="18" x2="16" y2="24" stroke="var(--text-main, #2D2926)" stroke-width="0.9"/>
+  <!-- Collar Ring Line -->
+  <line x1="10" y1="25" x2="22" y2="25" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+  <!-- Left/Right Nib Shoulder Accent Arcs -->
+  <path d="M 12 21 C 13 18, 14 18, 14 21" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.9"/>
+  <path d="M 20 21 C 19 18, 18 18, 18 21" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.9"/>
+</g>
+  </symbol>
+  <symbol id="symbol-lightning" viewBox="0 0 32 32">
+<g id="icon-lightning-root">
+  <!-- Construction Guide Box -->
+  <rect x="6" y="4" width="20" height="24" fill="none" stroke="var(--riso-grid-line, rgba(45,41,38,0.12))" stroke-width="0.6" stroke-dasharray="2 2"/>
+  <!-- Riso Offset Shadow (Terracotta) -->
+  <polygon points="17,3 9,17 15,17 12,29 23,13 17,13" transform="translate(1.2, 0.8)" fill="var(--riso-rose, #C06C52)" opacity="0.3"/>
+  <!-- Main Crisp Lightning Bolt -->
+  <polygon points="17,3 9,17 15,17 12,29 23,13 17,13" fill="var(--riso-amber, #9E6234)" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+</g>
+  </symbol>
+  <symbol id="symbol-pill" viewBox="0 0 32 32">
+<g id="icon-pill-root">
+  <g transform="rotate(45 16 16)">
+    <!-- Capsule Body -->
+    <rect x="10" y="6" width="12" height="20" rx="6" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4"/>
+    <!-- Top Half (Terracotta Rose) -->
+    <path d="M 10 16 H 22 V 12 C 22 8.7, 19.3 6, 16 6 C 12.7 6, 10 8.7, 10 12 Z" fill="var(--riso-rose, #C06C52)"/>
+    <!-- Divider Line -->
+    <line x1="10" y1="16" x2="22" y2="16" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+    <!-- Reflective Gloss Highlight -->
+    <line x1="13" y1="9" x2="13" y2="13" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" opacity="0.8"/>
+  </g>
+</g>
+  </symbol>
+  <symbol id="symbol-book" viewBox="0 0 32 32">
+<g id="icon-book-root">
+  <!-- Left Page -->
+  <path d="M 16 8 C 12 7, 7 8, 4 9 V 25 C 7 24, 12 23, 16 24 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Right Page -->
+  <path d="M 16 8 C 20 7, 25 8, 28 9 V 25 C 25 24, 20 23, 16 24 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Sage Book Ribbon Bookmark -->
+  <path d="M 16 8 V 27 L 14.5 25.5 L 13 27 V 8" fill="var(--riso-sage, #3E6B56)" stroke="var(--text-main, #2D2926)" stroke-width="0.8"/>
+  <!-- Page Text Hairlines -->
+  <line x1="7" y1="13" x2="13" y2="12.5" stroke="var(--text-dim, #888077)" stroke-width="0.8"/>
+  <line x1="7" y1="17" x2="13" y2="16.5" stroke="var(--text-dim, #888077)" stroke-width="0.8"/>
+  <line x1="19" y1="12.5" x2="25" y2="13" stroke="var(--text-dim, #888077)" stroke-width="0.8"/>
+  <line x1="19" y1="16.5" x2="25" y2="17" stroke="var(--text-dim, #888077)" stroke-width="0.8"/>
+</g>
+  </symbol>
+  <symbol id="symbol-temple" viewBox="0 0 32 32">
+<g id="icon-temple-root">
+  <!-- Pediment Triangular Roof -->
+  <polygon points="16,4 4,11 28,11" fill="var(--riso-rose, #C06C52)" fill-opacity="0.25" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Architrave Beam -->
+  <rect x="5" y="11" width="22" height="3" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+  <!-- 4 Columns -->
+  <rect x="7" y="14" width="2.8" height="11" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.1"/>
+  <rect x="12" y="14" width="2.8" height="11" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.1"/>
+  <rect x="17.2" y="14" width="2.8" height="11" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.1"/>
+  <rect x="22.2" y="14" width="2.8" height="11" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.1"/>
+  <!-- Podium Stepped Base -->
+  <rect x="4" y="25" width="24" height="2.5" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+  <rect x="2" y="27.5" width="28" height="2.5" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+</g>
+  </symbol>
+  <symbol id="symbol-brain" viewBox="0 0 32 32">
+<g id="icon-brain-root">
+  <!-- Concentric Neural Convolutions -->
+  <!-- Left Hemisphere (Rose) -->
+  <path d="M 15 6 C 11 5, 6 8, 6 13 C 6 15, 8 16, 7 19 C 6 22, 9 26, 15 26" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 15 11 C 11 11, 10 14, 12 16 C 10 18, 12 21, 15 21" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="1.3" stroke-linecap="round"/>
+  <!-- Right Hemisphere (Sage) -->
+  <path d="M 17 6 C 21 5, 26 8, 26 13 C 26 15, 24 16, 25 19 C 26 22, 23 26, 17 26" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 17 11 C 21 11, 22 14, 20 16 C 22 18, 20 21, 17 21" fill="none" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.3" stroke-linecap="round"/>
+  <!-- Center Synaptic Axis -->
+  <line x1="16" y1="5" x2="16" y2="27" stroke="var(--text-main, #2D2926)" stroke-width="1" stroke-dasharray="2 2"/>
+</g>
+  </symbol>
+  <symbol id="symbol-shield" viewBox="0 0 32 32">
+<g id="icon-shield-root">
+  <!-- Outer Shield Contour -->
+  <path d="M 16 4 L 27 8 V 16 C 27 22, 22 26.5, 16 29 C 10 26.5, 5 22, 5 16 V 8 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Left Field (Terracotta Rose) -->
+  <path d="M 16 5.5 L 7 8.8 V 16 C 7 21.2, 11 24.8, 16 27 Z" fill="var(--riso-rose, #C06C52)" opacity="0.85"/>
+  <!-- Right Field (Forest Sage) -->
+  <path d="M 16 5.5 L 25 8.8 V 16 C 25 21.2, 21 24.8, 16 27 Z" fill="var(--riso-sage, #3E6B56)" opacity="0.85"/>
+  <!-- Center Vertical Razor Hairline -->
+  <line x1="16" y1="5.5" x2="16" y2="27" stroke="#FFFFFF" stroke-width="1.2"/>
+</g>
+  </symbol>
+  <symbol id="symbol-dove" viewBox="0 0 32 32">
+<g id="icon-dove-root">
+  <!-- Geometric Origami Flight Dove -->
+  <path d="M 5 21 C 9 20, 13 18, 17 15 L 27 7 C 27 10, 24 14, 20 17 L 26 21 L 21 21 L 17 25 L 14 25 L 15 21 Z" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Wing Riso Sage Accent -->
+  <polygon points="17,15 27,7 23,14 18,17" fill="var(--riso-sage, #3E6B56)" opacity="0.75"/>
+  <!-- Olive Branch in Beak -->
+  <path d="M 5 21 L 2 20" stroke="var(--riso-sage, #3E6B56)" stroke-width="1.2"/>
+  <circle cx="2" cy="19.5" r="1.2" fill="var(--riso-rose, #C06C52)"/>
+</g>
+  </symbol>
+  <symbol id="symbol-compass" viewBox="0 0 32 32">
+<g id="icon-compass-root">
+  <circle cx="16" cy="16" r="12" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.4"/>
+  <!-- Cardinal Tick Marks -->
+  <line x1="16" y1="4" x2="16" y2="7" stroke="var(--riso-rose, #C06C52)" stroke-width="1.2"/>
+  <line x1="16" y1="25" x2="16" y2="28" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+  <line x1="4" y1="16" x2="7" y2="16" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+  <line x1="25" y1="16" x2="28" y2="16" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+  <!-- North Arrow (Terracotta Rose) -->
+  <polygon points="16,8 18.5,16 16,15 13.5,16" fill="var(--riso-rose, #C06C52)" stroke="var(--text-main, #2D2926)" stroke-width="1"/>
+  <!-- South Arrow (Paper/Sumi) -->
+  <polygon points="16,24 18.5,16 16,17 13.5,16" fill="var(--text-main, #2D2926)"/>
+  <!-- Central Pivot -->
+  <circle cx="16" cy="16" r="1.8" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1"/>
+</g>
+  </symbol>
+  <symbol id="symbol-stamp" viewBox="0 0 32 32">
+<g id="icon-stamp-root">
+  <rect x="4" y="5" width="24" height="22" rx="3" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="1.5" stroke-dasharray="3 1.5"/>
+  <rect x="7" y="8" width="18" height="16" rx="2" fill="var(--riso-rose, #C06C52)" fill-opacity="0.12" stroke="var(--riso-rose, #C06C52)" stroke-width="0.8"/>
+  <path d="M 11 16 L 14.5 19.5 L 21 12" fill="none" stroke="var(--riso-rose, #C06C52)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+  </symbol>
+</svg>
+
 
   <!-- Navigation -->
     <!-- Top Navigation (Fixed, Blur, Smart Hide & Scroll Snap Chapter Bar) -->
   <header class="top-nav" id="topNav" aria-label="主要導航與板塊目錄">
     <div class="container top-nav-inner">
-      <a href="#" class="brand" aria-label="回頁首">
-        <div class="brand-icon">🏛️</div>
+      <a href="#" class="brand" aria-label="回手帳首頁">
+        <div class="brand-icon" aria-hidden="true">
+      <img src="img/brand-cat-38.png" alt="手帳伴讀雙貓圖標" width="38" height="38" style="width:100%;height:100%;display:block;border-radius:9px;object-fit:cover;">
+    </div>
         <div>
-          <span class="brand-title">心智自立書單</span>
-          <span class="brand-subtitle">Inner Power Reading</span>
+          <span class="brand-title">溫柔生長・手帳讀書誌</span>
+          <span class="brand-subtitle">Inner Power · Reading Journal</span>
         </div>
       </a>
       <ul class="nav-links">
@@ -1554,7 +2812,7 @@
       </ul>
       <div class="nav-actions">
         <button id="langToggleBtn" class="lang-btn" aria-label="切換繁簡中文">
-          <span>🌐</span> <span id="langText">简体中文</span>
+          <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> <span id="langText">简体中文</span>
         </button>
       </div>
     </div>
@@ -1563,13 +2821,14 @@
     <nav class="nav-chapter-bar" aria-label="板塊快速跳轉">
       <div class="container">
         <div class="chapter-nav-scroll" id="chapterNavScroll">
-          <a href="#persona" class="nav-chip"><span>💔</span> <span>受困圖景</span></a>
-          <a href="#ladder" class="nav-chip"><span>🪜</span> <span>演化階梯</span></a>
-          <a href="#pillars" class="nav-chip"><span>📚</span> <span>十大專書</span></a>
-          <a href="#companions" class="nav-chip"><span>🛡️</span> <span>互補矩陣</span></a>
-          <a href="#assessment" class="nav-chip"><span>⚡</span> <span>心智自測</span></a>
-          <a href="#playbook" class="nav-chip"><span>💊</span> <span>行動處方</span></a>
-          <a href="#downloads" class="nav-chip"><span>📥</span> <span>電子書庫</span></a>
+          <a href="#hero" class="nav-chip active"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>讀書扉頁</span></a>
+          <a href="#persona" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> <span>受困圖景</span></a>
+          <a href="#ladder" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> <span>演化階梯</span></a>
+          <a href="#pillars" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-book"></use></svg> <span>十大專書</span></a>
+          <a href="#companions" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> <span>互補矩陣</span></a>
+          <a href="#assessment" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> <span>心智自測</span></a>
+          <a href="#playbook" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-pill"></use></svg> <span>行動處方</span></a>
+          <a href="#downloads" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-book"></use></svg> <span>電子書庫</span></a>
         </div>
       </div>
     </nav>
@@ -1578,11 +2837,31 @@
   <!-- Main Content Wrapper (HTML5 Semantic) -->
   <main id="main-content">
 
+          <!-- 讀者選定之三大插圖之一 & 二：固定兩側守護貓咪 (純淨去背、無文字、融入手帳紙面) -->
+  <div class="ambient-cat-fixed ambient-cat-left" aria-hidden="true" title="身心放鬆·側伸後腿貓">
+    <img src="img/editorial/chosen-01-amber-stretch.png" alt="身心放鬆·白色橘頭側伸後腿貓" width="230" height="152" style="width:100%;height:auto;display:block;filter:drop-shadow(0 6px 14px rgba(45,41,38,0.08));">
+  </div>
+
+  <div class="ambient-cat-fixed ambient-cat-right" aria-hidden="true" title="堅定邊界·端坐編織提籃旁玳瑁貓">
+    <img src="img/editorial/chosen-03-sentinel-basket.png" alt="堅定邊界·端坐編織提籃旁玳瑁貓" width="210" height="187" style="width:100%;height:auto;display:block;filter:drop-shadow(0 6px 14px rgba(45,41,38,0.08));">
+  </div>
+
+  <!-- Top Bullet Journal Folio Section (Dual Feline Companions & Crisis-to-Book Reading Index) -->
+  
+  <!-- Top Bullet Journal Folio Section: Dual-Track Reading Guide (Practical, Zero Blueprint Noise) -->
+  
+  <!-- Top Bullet Journal Folio: Human-Centered Functional Guide (Compact, Non-Intrusive) -->
+  
+
+
+
+
   <!-- Hero Section -->
   <section class="hero" id="hero">
+    <div class="container" style="padding-top: 10px;"><div class="journal-log-indicator"><span>[ SPREAD 01 // CORE MANIFESTO & READIFY LIBRARY ]</span></div></div>
     <div class="container">
       <div class="hero-tag">
-        <span>⚡</span> <span>深度書單與心智自立行動手冊</span>
+        <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> <span>深度書單與心智自立行動手冊</span>
       </div>
       <h1 class="hero-title">
         <span class="hero-phrase">在權力不對等處立足</span><span class="hero-divider">：</span><br class="desktop-break">
@@ -1601,21 +2880,106 @@
         <a href="#pillars" class="btn btn-secondary">瀏覽十大專書真實封面與導讀</a>
         <a href="#downloads" class="btn btn-secondary">獲取 EPUB（支援 Readify AI）</a>
       </div>
+
+      <!-- CRISIS-TO-BOOK 10-VOLUME TRIAGE INDEX (十冊心靈急救檢索盤 · 完整覆蓋十本專書) -->
+      <div class="hero-crisis-nav-wrap">
+        <div class="hero-crisis-header-bar">
+          <div class="hero-crisis-title">
+            <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg>
+            <span>CRISIS-TO-BOOK 10-VOLUME INDEX // 依妳此刻最切身的困境，翻開對應專書：</span>
+          </div>
+          <span class="hero-crisis-hint">← 手機左右滑動檢索 4 大情境 →</span>
+        </div>
+
+        <div class="hero-crisis-grid">
+          <!-- Crisis 01: 會議妥協與不敢爭取權益 -->
+          <div class="hero-crisis-card">
+            <div class="hero-crisis-card-top">
+              <div class="hero-crisis-icon-wrap">
+                <svg class="bujo-motif-coffee" viewBox="0 0 28 28" width="18" height="18" fill="none"><g stroke="var(--text-main)" stroke-width="1.3" stroke-linecap="round"><path d="M 5 9 L 5 20 C 5 23 8 25 14 25 C 20 25 23 23 23 20 L 23 9 Z"/><path d="M 23 11 C 26 11 27 13 27 15 C 27 18 25 19 23 19"/><path d="M 9 3 C 8 5 10 6 9 8" stroke="var(--riso-rose)" stroke-width="1.2"/><path d="M 14 2 C 13 4 15 5 14 7" stroke="var(--riso-rose)" stroke-width="1.2"/></g></svg>
+              </div>
+              <div>
+                <h4 class="hero-crisis-question">剛開完會妥協退讓，不敢爭取權益？</h4>
+                <span class="hero-crisis-tagline">迷走神經凍結，過度道歉討好，誤以為展現影響力是不道德。</span>
+              </div>
+            </div>
+            <div class="hero-crisis-chips">
+              <a href="#book-power" class="crisis-book-chip">《懂權力》<span class="chip-arrow">↳</span></a>
+              <a href="#book-rules-of-power" class="crisis-book-chip">《精進權力》<span class="chip-arrow">↳</span></a>
+              <a href="#book-nice-girls" class="crisis-book-chip">《職場女性》<span class="chip-arrow">↳</span></a>
+            </div>
+          </div>
+
+          <!-- Crisis 02: 深夜重播對話與自責反芻 -->
+          <div class="hero-crisis-card">
+            <div class="hero-crisis-card-top">
+              <div class="hero-crisis-icon-wrap">
+                <svg class="bujo-motif-sage" viewBox="0 0 26 36" width="18" height="18" fill="none"><path d="M 13 32 L 13 4" stroke="var(--riso-sage)" stroke-width="1.4" stroke-linecap="round"/><path d="M 13 24 C 6 22 5 16 11 14 C 13 19 13 24 13 24 Z" fill="var(--riso-sage)" opacity="0.35" stroke="var(--riso-sage)" stroke-width="1.1"/></svg>
+              </div>
+              <div>
+                <h4 class="hero-crisis-question">深夜腦中反覆重播對話，陷入內耗自責？</h4>
+                <span class="hero-crisis-tagline">大腦神經預設模式網路（DMN）失控空轉，對微小評價極度敏感。</span>
+              </div>
+            </div>
+            <div class="hero-crisis-chips">
+              <a href="#book-chatter" class="crisis-book-chip">《自我對話習慣》<span class="chip-arrow">↳</span></a>
+              <a href="#book-donganli" class="crisis-book-chip">《鈍感力》<span class="chip-arrow">↳</span></a>
+            </div>
+          </div>
+
+          <!-- Crisis 03: 親情束縛與伴侶情緒勒索 -->
+          <div class="hero-crisis-card">
+            <div class="hero-crisis-card-top">
+              <div class="hero-crisis-icon-wrap">
+                <svg class="bujo-motif-glasses" viewBox="0 0 36 18" width="22" height="12" fill="none"><circle cx="10" cy="9" r="6.5" stroke="var(--text-main)" stroke-width="1.3"/><circle cx="26" cy="9" r="6.5" stroke="var(--text-main)" stroke-width="1.3"/><path d="M 16.5 9 C 19 7.5 20 7.5 22.5 9" stroke="var(--text-main)" stroke-width="1.3"/></svg>
+              </div>
+              <div>
+                <h4 class="hero-crisis-question">面對親情與伴侶勒索，總是難以拒絕？</h4>
+                <span class="hero-crisis-tagline">被恐懼、義務與罪惡感（FOG）綑綁，背負不屬於自己的代際創傷。</span>
+              </div>
+            </div>
+            <div class="hero-crisis-chips">
+              <a href="#book-emotional-blackmail" class="crisis-book-chip">《情緒勒索》<span class="chip-arrow">↳</span></a>
+              <a href="#book-immature-parents" class="crisis-book-chip">《如果父母情緒不成熟》<span class="chip-arrow">↳</span></a>
+            </div>
+          </div>
+
+          <!-- Crisis 04: 習慣默默苦幹卻被搶功與掏空 -->
+          <div class="hero-crisis-card">
+            <div class="hero-crisis-card-top">
+              <div class="hero-crisis-icon-wrap">
+                <svg class="bujo-motif-chamomile" viewBox="0 0 24 24" width="18" height="18" fill="none"><circle cx="12" cy="12" r="2.6" fill="var(--riso-amber)" stroke="none"/><circle cx="12" cy="7" r="2" stroke="var(--riso-amber)" stroke-width="1.1"/><circle cx="12" cy="17" r="2" stroke="var(--riso-amber)" stroke-width="1.1"/><circle cx="7" cy="12" r="2" stroke="var(--riso-amber)" stroke-width="1.1"/><circle cx="17" cy="12" r="2" stroke="var(--riso-amber)" stroke-width="1.1"/></svg>
+              </div>
+              <div>
+                <h4 class="hero-crisis-question">習慣默默苦幹討好，卻被掏空忽視？</h4>
+                <span class="hero-crisis-tagline">完美主義防禦與自我犧牲型給予，耗盡精力卻無法被組織正視。</span>
+              </div>
+            </div>
+            <div class="hero-crisis-chips">
+              <a href="#book-daring-greatly" class="crisis-book-chip">《不完美的禮物》<span class="chip-arrow">↳</span></a>
+              <a href="#book-overeffort" class="crisis-book-chip">《過度努力》<span class="chip-arrow">↳</span></a>
+              <a href="#book-give-and-take" class="crisis-book-chip">《給予》<span class="chip-arrow">↳</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="hero-badges">
-        <div class="hero-badge-item"><span>🏛️</span> 史丹佛與華頓商學院權力實戰</div>
-        <div class="hero-badge-item"><span>🧠</span> 密西根大學神經反芻腦科學</div>
-        <div class="hero-badge-item"><span>🛡️</span> 拒絕掠奪的高效付出者法則</div>
-        <div class="hero-badge-item"><span>🕊️</span> 成人假性孤兒臨床心理和解</div>
+        <div class="hero-badge-item"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-temple"></use></svg> 史丹佛與華頓商學院權力實戰</div>
+        <div class="hero-badge-item"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-brain"></use></svg> 密西根大學神經反芻腦科學</div>
+        <div class="hero-badge-item"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> 拒絕掠奪的高效付出者法則</div>
+        <div class="hero-badge-item"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-dove"></use></svg> 成人假性孤兒臨床心理和解</div>
       </div>
     </div>
   </section>
 
   <!-- Section 1: Persona Breakdown -->
   <section id="persona">
+    <div class="container" style="padding-top: 10px;"><div class="journal-log-indicator"><span>[ SPREAD 02 // ANATOMY SHEET · 受困圖景剖析 ]</span></div></div>
     <div class="container">
       <div class="section-header">
         <span class="section-tag">DIAGNOSIS & ANATOMY</span>
-        <h2 class="section-title">核心畫像解構：退讓與內耗的共謀機制</h2>
+        <h2 class="section-title"><svg class="bujo-motif-coffee" viewBox="0 0 28 28" width="22" height="22" fill="none"><g stroke="var(--text-main)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M 5 9 L 5 20 C 5 23 8 25 14 25 C 20 25 23 23 23 20 L 23 9 Z"/><path d="M 23 11 C 26 11 27 13 27 15 C 27 18 25 19 23 19"/><path d="M 9 3 C 8 5 10 6 9 8" stroke="var(--riso-rose)" stroke-width="1.2"/><path d="M 14 2 C 13 4 15 5 14 7" stroke="var(--riso-rose)" stroke-width="1.2"/><path d="M 19 3 C 18 5 20 6 19 8" stroke="var(--riso-rose)" stroke-width="1.2"/></g></svg> 核心畫像解構：退讓與內耗的共謀機制</h2>
         <p class="section-desc">
           在職場高壓會議與過往家庭生活中，面對強勢者時習慣妥協退讓，獨處時卻反覆重播自責。<br>
           當場妥協與事後反芻，源於神經防禦機制的代償錯位，與個人意志力強弱無涉。
@@ -1623,34 +2987,34 @@
       </div>
       <div class="persona-grid">
         <article class="persona-card">
-          <div class="persona-icon">🥶</div>
+          <div class="persona-icon"><svg class="bujo-icon" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" stroke="var(--border-subtle)" stroke-width="0.8" stroke-dasharray="2 2"/><g transform="translate(-0.8, 0.8)" opacity="0.4" stroke="var(--riso-sage)" stroke-width="1.2"><path d="M 16 7 L 16 25 M 7 16 L 25 16 M 10 10 L 22 22 M 10 22 L 22 10"/></g><g stroke="var(--riso-rose)" stroke-width="1.5" stroke-linecap="round"><path d="M 16 8 L 16 24 M 8 16 L 24 16"/><circle cx="16" cy="16" r="2.5" fill="var(--text-main)"/></g><circle cx="16" cy="8" r="1.2" fill="var(--riso-sage)"/><circle cx="16" cy="24" r="1.2" fill="var(--riso-sage)"/></svg></div>
           <span class="persona-tag">即時機轉 · 生理防衛</span>
-          <h3 class="persona-title">迷走神經凍結與討好反應</h3>
+          <h3 class="persona-title"><svg class="bujo-icon-sm" viewBox="0 0 28 28" fill="none"><g stroke="var(--text-main)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M 5 9 L 5 20 C 5 23 8 25 14 25 C 20 25 23 23 23 20 L 23 9 Z"/><path d="M 23 11 C 26 11 27 13 27 15 C 27 18 25 19 23 19"/><path d="M 9 3 C 8 5 10 6 9 8" stroke="var(--riso-rose)" stroke-width="1.2"/><path d="M 14 2 C 13 4 15 5 14 7" stroke="var(--riso-rose)" stroke-width="1.2"/><path d="M 19 3 C 18 5 20 6 19 8" stroke="var(--riso-rose)" stroke-width="1.2"/></g></svg> 迷走神經凍結與討好反應：現場暫停呼吸</h3>
           <p class="persona-desc">
             身處權力嚴重傾斜的場合，人體背側迷走神經會迅速觸發「凍結反應（Freeze）」或「討好反應（Fawn）」。大腦前額葉皮質血液暫時被抽離，理智思考受阻，容易本能地點頭、道歉或接受不合理要求。這是個體面對強大威脅時的自我保護本能，與意志力強弱無關。
           </p>
         </article>
 
         <article class="persona-card">
-          <div class="persona-icon">🔄</div>
+          <div class="persona-icon"><svg class="bujo-icon" viewBox="0 0 32 32" fill="none"><g transform="translate(0.8, -0.6)" opacity="0.4" stroke="var(--riso-rose)" stroke-width="1.2"><path d="M 23 11 C 21 8 18 7 15 8 C 11 9 9 13 10 17 C 11 21 15 24 19 23 C 23 21 24 17 22 14"/></g><g stroke="var(--text-main)" stroke-width="1.5" stroke-linecap="round"><path d="M 22 10 C 20 7 17 6 14 7 C 10 8 8 12 9 16 C 10 20 14 23 18 22 C 22 20 23 16 21 13"/><polyline points="23,7 23,11 19,11"/></g><circle cx="15" cy="14" r="1.5" fill="var(--riso-sage)"/></svg></div>
           <span class="persona-tag">事後折磨 · 神經反芻</span>
-          <h3 class="persona-title">反芻風暴與失控自我對話</h3>
+          <h3 class="persona-title"><svg class="bujo-icon-sm" viewBox="0 0 26 36" fill="none"><path d="M 13 32 L 13 4" stroke="var(--riso-sage)" stroke-width="1.4" stroke-linecap="round"/><path d="M 13 24 C 6 22 5 16 11 14 C 13 19 13 24 13 24 Z" fill="var(--riso-sage)" opacity="0.35" stroke="var(--riso-sage)" stroke-width="1.1"/><path d="M 13 18 C 20 16 21 10 15 8 C 13 13 13 18 13 18 Z" fill="var(--riso-sage)" opacity="0.35" stroke="var(--riso-sage)" stroke-width="1.1"/><path d="M 13 10 C 9 6 11 2 13 3 C 15 2 17 6 13 10 Z" fill="var(--riso-sage)" opacity="0.45" stroke="var(--riso-sage)" stroke-width="1.1"/></svg> 反芻風暴與失控自我對話：心理降溫抽離</h3>
           <p class="persona-desc">
             離開衝突現場後，神經反芻機制正式啟動。伊森·克洛斯（Ethan Kross）研究證實：單憑邏輯思考平復情緒衝擊，極易陷入反芻陷阱。大腦以極快語速反覆播放：「剛剛為何沒有反駁？」「對方是否認為我軟弱？」「為何我又退讓了？」。對外部不公的壓抑情緒，最終全部轉化為對自我的嚴厲審訊與反覆消耗。
           </p>
         </article>
 
         <article class="persona-card">
-          <div class="persona-icon">⚖️</div>
+          <div class="persona-icon"><svg class="bujo-icon" viewBox="0 0 32 32" fill="none"><g transform="translate(-0.8, 0.6)" opacity="0.4" stroke="var(--riso-sage)" stroke-width="1.2"><line x1="8" y1="12" x2="24" y2="12"/><path d="M 8 12 L 5 19 C 5 21 11 21 11 19 Z"/><path d="M 24 12 L 21 17 C 21 19 27 19 27 17 Z"/></g><g stroke="var(--text-main)" stroke-width="1.5" stroke-linecap="round"><line x1="16" y1="6" x2="16" y2="26"/><line x1="12" y1="26" x2="20" y2="26"/><line x1="8" y1="11" x2="24" y2="11"/><path d="M 8 11 L 5 18 C 5 20 11 20 11 18 Z"/><path d="M 24 11 L 21 16 C 21 18 27 18 27 16 Z"/></g><circle cx="16" cy="11" r="2" fill="var(--riso-rose)"/></svg></div>
           <span class="persona-tag">認知盲區 · 道德潔癖</span>
-          <h3 class="persona-title">公正世界假說與弱勢執念</h3>
+          <h3 class="persona-title"><svg class="bujo-icon-sm" viewBox="0 0 24 24" fill="none"><g stroke="var(--riso-amber)" stroke-width="1.1"><circle cx="12" cy="7" r="2.5"/><circle cx="17" cy="12" r="2.5"/><circle cx="12" cy="17" r="2.5"/><circle cx="7" cy="12" r="2.5"/><circle cx="8.5" cy="8.5" r="2.2"/><circle cx="15.5" cy="8.5" r="2.2"/><circle cx="15.5" cy="15.5" r="2.2"/><circle cx="8.5" cy="15.5" r="2.2"/></g><circle cx="12" cy="12" r="2.6" fill="var(--riso-amber)" stroke="none"/></svg> 公正世界假說與弱勢執念：放下討好執念</h3>
           <p class="persona-desc">
             傑夫瑞·菲佛（Jeffrey Pfeffer）指出，習慣妥協者常抱持「公正世界假說（Just-World Fallacy）」，深信只要工作成果踏實、為人誠懇，自然會獲得公平對待。若將權力視為負面手段並刻意迴避，將直接失去話語權，任由組織規則被強勢索取者單向決定。
           </p>
         </article>
 
         <article class="persona-card">
-          <div class="persona-icon">⛓️</div>
+          <div class="persona-icon"><svg class="riso-icon-lg" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg></div>
           <span class="persona-tag">童年印記 · 情感代償</span>
           <h3 class="persona-title">情緒不成熟環境下的過度努力</h3>
           <p class="persona-desc">
@@ -1663,6 +3027,7 @@
 
   <!-- Section 2: Adversarial Review -->
   <section id="adversarial">
+    <div class="container" style="padding-top: 10px;"><div class="journal-log-indicator"><span>[ SPREAD 03 // COGNITIVE REFRAMING · 認知盲區重構 ]</span></div></div>
     <div class="container">
       <div class="section-header">
         <span class="section-tag">CRITICAL ADVERSARIAL REVIEW</span>
@@ -1681,14 +3046,14 @@
         <div class="blindspot-grid">
           <div class="blindspot-card">
             <div class="blindspot-col">
-              <span class="blindspot-tag tag-danger">⚠️ 直覺盲點一：創傷先行的崩潰風險</span>
+              <span class="blindspot-tag tag-danger"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 直覺盲點一：創傷先行的崩潰風險</span>
               <h4 class="blindspot-title">一開始就要求剖析童年創傷與深層痛點</h4>
               <p class="blindspot-text">
                 當當事人正處於職場高壓被剝削、夜間反芻失眠的狀態時，神經系統早已超載。此時強行挖掘童年創傷，容易引發習得性無助與更深層的自我懷疑，甚至讓身心狀態進一步惡化。
               </p>
             </div>
             <div class="blindspot-col">
-              <span class="blindspot-tag tag-solution">🛡️ 破局對策：止血抗耗先行</span>
+              <span class="blindspot-tag tag-solution"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> 破局對策：止血抗耗先行</span>
               <h4 class="blindspot-title">優先切斷大腦夜間反芻迴路</h4>
               <p class="blindspot-text">
                 第一步必須先建立心理防線。先讀《強大內心的自我對話習慣》掌握第三人稱抽離技術與時間透視法，搭配《鈍感力》的神經鈍化練習，在數日內阻斷夜間反芻迴路，讓皮質醇平穩下降，恢復理性決策能量。
@@ -1698,14 +3063,14 @@
 
           <div class="blindspot-card">
             <div class="blindspot-col">
-              <span class="blindspot-tag tag-danger">⚠️ 直覺盲點二：權力污名化與盲目推遲</span>
+              <span class="blindspot-tag tag-danger"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 直覺盲點二：權力污名化與盲目推遲</span>
               <h4 class="blindspot-title">認為權力學過於冷峻無情，主張完全避讀</h4>
               <p class="blindspot-text">
                 此舉將使當事人持續以道德幻想面對現實利益爭端，隨時承受被邊緣化或被掠奪的代價，並忽視了葛倫費德在《懂權力》中強調的角色承擔價值。
               </p>
             </div>
             <div class="blindspot-col">
-              <span class="blindspot-tag tag-solution">🛡️ 破局對策：雙軌權力認知重構</span>
+              <span class="blindspot-tag tag-solution"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> 破局對策：雙軌權力認知重構</span>
               <h4 class="blindspot-title">菲佛與葛倫費德雙軌並進</h4>
               <p class="blindspot-text">
                 菲佛負責瓦解不切實際的幻想，看清組織資源分配與籌碼運作機制；葛倫費德則提供角色權力視角，說明權力實為承擔責任所需的資源與工具，而非壓迫他人的特權。配合格蘭特《給予》確立明確界限。
@@ -1715,14 +3080,14 @@
 
           <div class="blindspot-card">
             <div class="blindspot-col">
-              <span class="blindspot-tag tag-danger">⚠️ 直覺盲點三：常規溝通術在權力失衡下的失效</span>
+              <span class="blindspot-tag tag-danger"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 直覺盲點三：常規溝通術在權力失衡下的失效</span>
               <h4 class="blindspot-title">在地位懸殊且對方缺乏同理心時坦露脆弱</h4>
               <p class="blindspot-text">
                 面對自戀型主管或惡意索取者，主動表露受傷與委屈容易被對方視為破綻，成為後續情感施壓與責任轉嫁的施力點。
               </p>
             </div>
             <div class="blindspot-col">
-              <span class="blindspot-tag tag-solution">🛡️ 破局對策：客觀抽離的非情感邊界</span>
+              <span class="blindspot-tag tag-solution"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> 破局對策：客觀抽離的非情感邊界</span>
               <h4 class="blindspot-title">完全聚焦於事實、成果與責任邊界</h4>
               <p class="blindspot-text">
                 借鏡吉普森的客觀觀察者立場，放棄對強勢者的情感期待；對話完全聚焦於客觀事實、交付成果與責任邊界，將《關鍵對話》的對比確認法作為防禦工具，堅守專業底線。
@@ -1792,10 +3157,12 @@
 
   <!-- Section: Reading Psychology Strategy -->
   <section id="reading-strategy">
+    <div id="ladder" style="position:relative; top:-20px; scroll-margin-top: calc(var(--nav-height) + 20px);"></div>
+    <div class="container" style="padding-top: 10px;"><div class="journal-log-indicator"><span>[ SPREAD 04 // EVOLUTION LADDER · 四階成長路徑 ]</span></div></div>
     <div class="container">
       <div class="section-header">
         <span class="section-tag">READING PSYCHOLOGY</span>
-        <h2 class="section-title">為什麼妳應該翻開原書？五大心智鬆綁與閱讀啟動指南</h2>
+        <h2 class="section-title">為什麼妳應該翻開原書？六大心智鬆綁與閱讀啟動指南</h2>
         <p class="section-desc">
           許多習慣退讓與內耗的人遲遲無法開卷，往往源於精力枯竭與防禦性自責。<br>
           運用心理學機制卸下防禦，把閱讀轉化為溫和奪回自我主權的日常微習慣。
@@ -1837,6 +3204,14 @@
 
         <div class="strategy-card">
           <div class="strategy-num">5</div>
+          <h3 class="strategy-title">認知解離與邊界去敏：關閉過度共情的情緒雷達</h3>
+          <p class="strategy-text">
+            習慣退讓的人往往具備高度敏銳的共情天賦，容易本能替對方的冷淡或怒氣承擔過多責任。翻開《情緒勒索》與《鈍感力》，旨在建立健康的認知解離：當他人的負面情緒襲來，在心底劃清清晰界線，明白那是對方的內在功課，無須由自己概括承受。為內心裝上一面單向透光玻璃，學會客觀觀察，不再讓自己成為無端受損的情緒海綿。
+          </p>
+        </div>
+
+        <div class="strategy-card">
+          <div class="strategy-num">6</div>
           <h3 class="strategy-title">If-Then 執行意向：建立睡前充電定錨儀式</h3>
           <p class="strategy-text">
             建立清晰的行為公式：<strong>如果</strong>今晚大腦又開始重播白天的會議衝突，<strong>那麼</strong>我就打開 Readify AI，點開《強大內心的自我對話習慣》第 2 章〈工具箱〉中的第三人稱抽離練習，跟隨內文做一次思維重置，以客觀平靜替代孤獨自責。
@@ -1848,6 +3223,7 @@
 
   <!-- Section 3: 7 Core Books (Pillars with REAL COVERS) -->
   <section id="pillars">
+    <div class="container" style="padding-top: 10px;"><div class="journal-log-indicator"><span>[ SPREAD 05 // THE 10-BOOK MARGINALIA · 十大專書手帳摘記 ]</span></div></div>
     <div class="container">
       <div class="section-header">
         <span class="section-tag">THE 10 CORE PILLARS</span>
@@ -1875,6 +3251,7 @@
           </div>
           <div class="book-content-panel">
             <div>
+              <div class="subpage-bujo-tag">[ 專書手帳 01 // 權力破局 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-amber">核心定位：重構權力認知</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">史丹佛 MBA 爆棚選修課</span>
@@ -1885,14 +3262,14 @@
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span>🎯</span> 直擊痛點：面對上位者不由自主自卑萎縮</div>
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：面對上位者不由自主自卑萎縮</div>
                 <div class="book-block-text">
                   許多人在權威面前習慣將自己縮小，聲音變細、視線閃爍、過度道歉。內心誤以為展現強勢就是霸凌他人，寧可扮演受害者也不願承擔領導責任。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span>💡</span> 破局心法：如演員般切換「高權力」與「低權力」姿態</div>
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：如演員般切換「高權力」與「低權力」姿態</div>
                 <div class="book-block-text">
                   權力如同舞台上的角色外衣。當團隊需要決策與方向時，你必須穿上高權力姿態定調；當需要傾聽與協作時，再靈活切換至低權力姿態。權力的本質在於推進團隊目標與承擔決策責任，旨在服務集體成果。
                 </div>
@@ -1926,6 +3303,7 @@
           </div>
           <div class="book-content-panel">
             <div>
+              <div class="subpage-bujo-tag">[ 專書手帳 02 // 規則拆解 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-rose">核心定位：拆除組織天真</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">史丹佛權力學權威巨作</span>
@@ -1936,14 +3314,14 @@
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span>🎯</span> 直擊痛點：埋頭苦幹卻總被搶功，淪為隱形工具人</div>
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：埋頭苦幹卻總被搶功，淪為隱形工具人</div>
                 <div class="book-block-text">
                   堅信「只要我做得夠好，老闆自然會看見」，結果功勞被善於表現者搶走，升遷被善於建立關係者拿走，自己只剩下做不完的雜務與滿腔委屈。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span>💡</span> 破局心法：主動呈現工作成果，建立專業合作人脈</div>
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：主動呈現工作成果，建立專業合作人脈</div>
                 <div class="book-block-text">
                   主動呈現工作成果屬於正當且必要的職業責任，能有效建立不可替代的專業節點。學習菲佛的法則：成為不可替代的資源節點，將自身價值清晰傳達給決策者，在合規前提下打破陳規以推進目標。
                 </div>
@@ -1977,6 +3355,7 @@
           </div>
           <div class="book-content-panel">
             <div>
+              <div class="subpage-bujo-tag">[ 專書手帳 03 // 習慣覺察 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-rose">核心定位：微觀職場除魅</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">全球暢銷 20 年女性職涯經典</span>
@@ -1987,14 +3366,14 @@
               </div>
 
               <div class="book-section-block">
-                <h4 class="book-section-subtitle">🎯 直擊痛點：職場中無意識出賣權力的細節</h4>
+                <h4 class="book-section-subtitle"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：職場中無意識出賣權力的細節</h4>
                 <p class="book-section-text">
                   發言前習慣先道歉「對不起我插一句」、主動替大家張羅茶水退化成辦公室老媽子、在會議室挑角落坐、把手藏在桌下、難以開口拒絕雜務。
                 </p>
               </div>
 
               <div class="book-section-block">
-                <h4 class="book-section-subtitle">💡 破局心法：從「乖巧女孩」向「成熟專業者」的轉身</h4>
+                <h4 class="book-section-subtitle"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：從「乖巧女孩」向「成熟專業者」的轉身</h4>
                 <p class="book-section-text">
                   <strong>零道歉溝通：</strong>刪除軟化前綴，直接陳述要點與專業建議；<br>
                   <strong>佔據物理空間：</strong>提前進場入座會議長桌中央，身體挺直，雙手自然置於桌面；<br>
@@ -2035,6 +3414,7 @@
           </div>
           <div class="book-content-panel">
             <div>
+              <div class="subpage-bujo-tag">[ 專書手帳 04 // 邊界給予 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-sage">核心定位：防索取護盾</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">華頓商學院最年輕終身教授</span>
@@ -2045,14 +3425,14 @@
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span>🎯</span> 直擊痛點：不懂得拒絕別人，淪為職場受氣包</div>
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：不懂得拒絕別人，淪為職場受氣包</div>
                 <div class="book-block-text">
                   總是優先滿足他人的要求，甚至犧牲自己的專案進度與休息時間。害怕說「不」會被討厭，結果累得精疲力竭，績效與身心雙雙落入谷底。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span>💡</span> 破局心法：從「自我犧牲型付出者」轉型為「策略型保護付出者」</div>
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：從「自我犧牲型付出者」轉型為「策略型保護付出者」</div>
                 <div class="book-block-text">
                   給予必須設立邊界與時間配額。對待真誠合作者保持慷慨；面對掠奪型的索取者（Takers），立即切換為條件式互惠（Tit-for-Tat），守護自己的能量與時間。
                 </div>
@@ -2086,6 +3466,7 @@
           </div>
           <div class="book-content-panel">
             <div>
+              <div class="subpage-bujo-tag">[ 專書手帳 05 // 勒索防禦 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-blue">核心定位：拆解罪惡感綁架</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">台灣破億心理諮商現象級專著</span>
@@ -2096,14 +3477,14 @@
               </div>
 
               <div class="book-section-block">
-                <h4 class="book-section-subtitle">🎯 直擊痛點：被勒索者的四個心理按鈕</h4>
+                <h4 class="book-section-subtitle"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：被勒索者的四個心理按鈕</h4>
                 <p class="book-section-text">
                   渴望獲得認同、害怕衝突摩擦、過度在乎他人感受、習慣性自我懷疑。勒索者精準利用妳的善良與責任感，讓妳誤以為妥協才是「懂事」與「負責任」。
                 </p>
               </div>
 
               <div class="book-section-block">
-                <h4 class="book-section-subtitle">💡 破局心法：建立情緒界限的「停、看、應」法則</h4>
+                <h4 class="book-section-subtitle"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：建立情緒界限的「停、看、應」法則</h4>
                 <p class="book-section-text">
                   <strong>停：</strong>當場面對施壓不即時承諾，以緩衝句果斷離開現場；<br>
                   <strong>看：</strong>覺察自己的恐懼與罪惡感，區分「對方的責任」與「我的界限」；<br>
@@ -2144,6 +3525,7 @@
           </div>
           <div class="book-content-panel">
             <div>
+              <div class="subpage-bujo-tag">[ 專書手帳 06 // 內在對話 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-blue">核心定位：終結神經反芻</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">全球情緒實驗室權威專著</span>
@@ -2154,16 +3536,16 @@
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span>🎯</span> 直擊痛點：深夜失眠，腦中不斷重播衝突現場與後悔自責</div>
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：深夜失眠，腦中不斷重播衝突現場與後悔自責</div>
                 <div class="book-block-text">
                   白天妥協後，夜間大腦持續陷入內耗循環，反覆質問「我當時為什麼不反駁？」「他是不是看扁我了？」，導致心律加速、皮質醇飆升、長期失眠。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span>💡</span> 破局心法：執行「第三人稱自言自語」與「時間透視抽離」</div>
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：執行「第三人稱自言自語」與「時間透視抽離」</div>
                 <div class="book-block-text">
-                  在心裡直呼自己的全名進行對話，將大腦從沉浸的威脅中拉開；接著啟動五年透視法：「五年後看今天這件事，還重要嗎？」，迅速平復情緒風暴。
+                  在心裡直呼自己的全名展開對話，將大腦從沉浸的威脅中拉開；接著啟動五年透視法：「五年後看今天這件事，還重要嗎？」，迅速平復情緒風暴。
                 </div>
               </div>
 
@@ -2195,6 +3577,7 @@
           </div>
           <div class="book-content-panel">
             <div>
+              <div class="subpage-bujo-tag">[ 專書手帳 07 // 鈍感生長 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-amber">核心定位：過度敏感抗體</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">現代職場高敏救贖指南</span>
@@ -2205,14 +3588,14 @@
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span>🎯</span> 直擊痛點：對主管的一句話或一個眼神過度解讀</div>
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：對主管的一句話或一個眼神過度解讀</div>
                 <div class="book-block-text">
                   別人隨口一句評價或冷淡表情，高敏感者會在心中咀嚼三天，懷疑自己做錯了什麼，陷入長期的焦慮與自我懷疑中。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span>💡</span> 破局心法：練習「聽過即忘」的過濾智慧</div>
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：練習「聽過即忘」的過濾智慧</div>
                 <div class="book-block-text">
                   將他人的情緒化批評視為「雨滴落在防水雨衣上」，任其自然滑落而不滲透到心靈內部。專注於長期的健康與核心目標，對枝節瑣事保持健康的遲鈍。
                 </div>
@@ -2246,6 +3629,7 @@
           </div>
           <div class="book-content-panel">
             <div>
+              <div class="subpage-bujo-tag">[ 專書手帳 08 // 原生解綁 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-rose">核心定位：破除情感內疚</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">成人情感獨立實踐聖經</span>
@@ -2256,14 +3640,14 @@
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span>🎯</span> 直擊痛點：面對權威時產生強烈的「假性孤兒」恐懼與自責</div>
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：面對權威時產生強烈的「假性孤兒」恐懼與自責</div>
                 <div class="book-block-text">
                   從小習慣察言觀色、承接長輩情緒。長大後將這種模式轉移至職場，一旦主管不高興，便立刻感到恐慌與自責，認為是自己的錯。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span>💡</span> 破局心法：轉換為「客觀觀察者視角」，建立清晰情感邊界</div>
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：轉換為「客觀觀察者視角」，建立清晰情感邊界</div>
                 <div class="book-block-text">
                   將情緒不成熟的主管或長輩視為「只有三歲心理年齡的個體」。停止尋求他們的認同與同理，將互動嚴格限定在事務層面，不再交出自己的情感主權。
                 </div>
@@ -2297,6 +3681,7 @@
           </div>
           <div class="book-content-panel">
             <div>
+              <div class="subpage-bujo-tag">[ 專書手帳 09 // 停止消耗 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-amber">核心定位：卸下防禦性完美</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">暢銷 20 萬冊深度心靈剖析</span>
@@ -2307,14 +3692,14 @@
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span>🎯</span> 直擊痛點：停不下來的自責與緊繃，無法接納自己的放鬆</div>
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：停不下來的自責與緊繃，無法接納自己的放鬆</div>
                 <div class="book-block-text">
                   即便事情已經做得很好，依然害怕只要稍有鬆懈就會被拋棄或否定。把所有的疲憊都歸咎於「自己還不夠努力」。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span>💡</span> 破局心法：看見努力背後的傷口，重新擁抱真實自我</div>
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：看見努力背後的傷口，重新擁抱真實自我</div>
                 <div class="book-block-text">
                   停下腳步，認清努力是為了生活，而非為了向世界證明自己的存在資格。學會對自己寬容，允許自己擁有弱點，卸下沉重的心理防禦。
                 </div>
@@ -2348,6 +3733,7 @@
           </div>
           <div class="book-content-panel">
             <div>
+              <div class="subpage-bujo-tag">[ 專書手帳 10 // 接納真實 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-green">核心定位：清理毒性羞恥感</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">全球心靈覺醒奠基之作</span>
@@ -2358,14 +3744,14 @@
               </div>
 
               <div class="book-section-block">
-                <h4 class="book-section-subtitle">🎯 直擊痛點：毒性羞恥感與完美主義防禦盔甲</h4>
+                <h4 class="book-section-subtitle"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：毒性羞恥感與完美主義防禦盔甲</h4>
                 <p class="book-section-text">
                   內疚是「我做錯了一件事」，羞恥是「我這個人是有缺陷的」。習慣退讓者常把所有的外在摩擦歸因為自身無能，並用完美主義來武裝自己，陷入筋疲力竭。
                 </p>
               </div>
 
               <div class="book-section-block">
-                <h4 class="book-section-subtitle">💡 破局心法：全心生活的三個指南針</h4>
+                <h4 class="book-section-subtitle"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：全心生活的三個指南針</h4>
                 <p class="book-section-text">
                   <strong>日常勇氣：</strong>傾吐真實感受，坦露自己的極限，不再假裝堅強；<br>
                   <strong>自我慈悲：</strong>停下內心嚴酷法官的審判，像對待摯友般接納自己的不完美；<br>
@@ -2397,6 +3783,7 @@
 
   <!-- Section 4: Companions Matrix -->
   <section id="companions">
+    <div class="container" style="padding-top: 10px;"><div class="journal-log-indicator"><span>[ SPREAD 06 // RESILIENCE MATRIX · 互補防護矩陣 ]</span></div></div>
     <div class="container">
       <div class="section-header">
         <span class="section-tag">TACTICAL TOOLKIT</span>
@@ -2413,11 +3800,11 @@
             <span class="companion-author">Kerry Patterson 等著</span>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-pos">✅ 適用戰場</span>
+            <span class="companion-field-label label-pos"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> 適用戰場</span>
             <p class="companion-field-text">利害關係高、雙方情緒緊繃但具有共同利益的商業或職場協商。運用對比說明法（Contrasting）維持對話安全感。</p>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-neg">🚫 禁用警訊</span>
+            <span class="companion-field-label label-neg"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 禁用警訊</span>
             <p class="companion-field-text">對方處於極端自戀、惡意霸凌或完全不講理的狀態時，切勿單向試圖說服對方，否則只會被拖入泥潭。</p>
           </div>
         </article>
@@ -2428,11 +3815,11 @@
             <span class="companion-author">Marshall B. Rosenberg 著</span>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-pos">✅ 適用戰場</span>
+            <span class="companion-field-label label-pos"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> 適用戰場</span>
             <p class="companion-field-text">將情緒提煉為「觀察、感受、需要、請求」，向具備善意的合作者提出精確具體的行動指標。</p>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-neg">🚫 禁用警訊</span>
+            <span class="companion-field-label label-neg"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 禁用警訊</span>
             <p class="companion-field-text">嚴禁對惡意掠奪者暴露內心深層的脆弱感受，否則容易成為對方施壓與操控的切入點。</p>
           </div>
         </article>
@@ -2443,11 +3830,11 @@
             <span class="companion-author">Kristin Neff 著</span>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-pos">✅ 適用戰場</span>
+            <span class="companion-field-label label-pos"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> 適用戰場</span>
             <p class="companion-field-text">當內心產生嚴苛的自我評判與罪惡感時，以對待摯友的溫和視角取代批判，中斷負面內耗。</p>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-neg">🚫 禁用警訊</span>
+            <span class="companion-field-label label-neg"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 禁用警訊</span>
             <p class="companion-field-text">不可將自我慈悲作為逃避現實職場問題的藉口；必須與客觀的邊界防守及權力分析結合使用。</p>
           </div>
         </article>
@@ -2458,11 +3845,11 @@
             <span class="companion-author">武志紅 著</span>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-pos">✅ 適用戰場</span>
+            <span class="companion-field-label label-pos"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> 適用戰場</span>
             <p class="companion-field-text">看清成年後在職場中面對權威時的過度服從與恐懼，溯源其在原生家庭投射中的心理機制。</p>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-neg">🚫 禁用警訊</span>
+            <span class="companion-field-label label-neg"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 禁用警訊</span>
             <p class="companion-field-text">避免在身心極度疲憊時將所有問題歸咎於家庭，陷入受害者心態；重在認清模式並建立當下邊界。</p>
           </div>
         </article>
@@ -2473,11 +3860,11 @@
             <span class="companion-author">岸見一郎、古賀史健 著</span>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-pos">✅ 適用戰場</span>
+            <span class="companion-field-label label-pos"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> 適用戰場</span>
             <p class="companion-field-text">執行阿德勒心理學的「課題分離」：對方的評價是對方的課題，守護底線是自己的課題。</p>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-neg">🚫 禁用警訊</span>
+            <span class="companion-field-label label-neg"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 禁用警訊</span>
             <p class="companion-field-text">課題分離並非盲目孤立或拒絕合作；在組織協作中仍須維持專業成果的交付與必要結盟。</p>
           </div>
         </article>
@@ -2488,6 +3875,7 @@
   <!-- Section 5: Assessment -->
     <!-- Section 5: Assessment -->
   <section id="assessment">
+    <div class="container" style="padding-top: 10px;"><div class="journal-log-indicator"><span>[ SPREAD 07 // SELF-REFLECTION CHECK-IN · 心理自測評估盤 ]</span></div></div>
     <div class="container">
       <div class="section-header">
         <span class="section-tag">SELF-ASSESSMENT TOOL</span>
@@ -2561,28 +3949,28 @@
           <div class="assessment-meters" id="assessmentMeters">
             <div class="meter-row">
               <div class="meter-label-row">
-                <span>🧠 急性神經反芻與迷走凍結 (R)</span>
+                <span><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-brain"></use></svg> 急性神經反芻與迷走凍結 (R)</span>
                 <span class="meter-score" id="scoreR">0%</span>
               </div>
               <div class="meter-track"><div class="meter-fill meter-r" id="fillR"></div></div>
             </div>
             <div class="meter-row">
               <div class="meter-label-row">
-                <span>⚡ 權力博弈盲區與能見度阻滯 (P)</span>
+                <span><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-temple"></use></svg> 權力博弈盲區與能見度阻滯 (P)</span>
                 <span class="meter-score" id="scoreP">0%</span>
               </div>
               <div class="meter-track"><div class="meter-fill meter-p" id="fillP"></div></div>
             </div>
             <div class="meter-row">
               <div class="meter-label-row">
-                <span>🛡️ 邊界失守與過度利他透支 (B)</span>
+                <span><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> 邊界失守與過度利他透支 (B)</span>
                 <span class="meter-score" id="scoreB">0%</span>
               </div>
               <div class="meter-track"><div class="meter-fill meter-b" id="fillB"></div></div>
             </div>
             <div class="meter-row">
               <div class="meter-label-row">
-                <span>🌱 童年代償與努力過度強迫 (O)</span>
+                <span><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> 童年代償與努力過度強迫 (O)</span>
                 <span class="meter-score" id="scoreO">0%</span>
               </div>
               <div class="meter-track"><div class="meter-fill meter-o" id="fillO"></div></div>
@@ -2592,7 +3980,7 @@
           <div id="resultBody" class="result-body"></div>
           <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;">
             <a id="resultLink" href="#pillars" class="btn btn-primary">前往推薦專書 ➔</a>
-            <a id="resultDownload" href="#downloads" class="btn btn-secondary">直接領取對應 EPUB 電子書 📥</a>
+            <a id="resultDownload" href="#downloads" class="btn btn-secondary">直接領取對應 EPUB 電子書 <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-book"></use></svg></a>
           </div>
         </div>
       </div>
@@ -2601,6 +3989,7 @@
 
   <!-- Section 6: In-Situ Playbook (Expanded with Citations) -->
   <section id="playbook">
+    <div class="container" style="padding-top: 10px;"><div class="journal-log-indicator"><span>[ SPREAD 08 // ACTION PLAYBOOK · 實戰手帳處方 ]</span></div></div>
     <div class="container">
       <div class="section-header">
         <span class="section-tag">IN-SITU PLAYBOOK</span>
@@ -2698,7 +4087,7 @@
             當腦中失控重播白天衝突、心跳加速失眠時，執行克洛斯實驗室證實有效的「第三人稱自語與時間透視法」。
           </p>
           <div class="playbook-script-box">
-            「[直呼自己的全名]，你今天已經完成了當下能做出的最安全應對。五年之後，今天這場談話不會對你的人生造成任何本質傷害。」
+            「[直呼自己的全名]，你今天已經完成當下最妥善的應對。五年之後，今天這場談話不會對你的人生造成任何本質傷害。」
           </div>
         </article>
       </div>
@@ -2707,6 +4096,7 @@
 
   <!-- Section 7: Downloads & Readify AI Integration -->
   <section id="downloads">
+    <div class="container" style="padding-top: 10px;"><div class="journal-log-indicator"><span>[ SPREAD 09 // EPUB LIBRARY ARCHIVE · 數位檔案總覽 ]</span></div></div>
     <div class="container">
       <div class="section-header">
         <span class="section-tag">DOWNLOAD CENTER</span>
@@ -2719,7 +4109,7 @@
 
       <!-- Readify AI Banner -->
       <div class="readify-banner">
-        <div class="readify-icon">📱</div>
+        <div class="readify-icon"><svg class="riso-icon-md" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-glasses"></use></svg></div>
         <div class="readify-content">
           <h3>首選閱讀載體推薦：Readify AI App</h3>
           <p>
@@ -2866,12 +4256,36 @@
 
   </main>
 
+  <!-- Section: Bedtime Reset & Radical Surrender (獨立晚安放鬆定錨區塊 · 手繪原版畫片完整展開) -->
+  <section id="bedtime-reset" style="background-color: var(--bg-page-alt, #FAF7F2); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 72px 0 64px 0;">
+    <div class="container" style="padding-top: 10px;"><div class="journal-log-indicator"><span>[ SPREAD 10 // RADICAL SURRENDER · 晚安充電儀式 ]</span></div></div>
+    <div class="container" style="text-align: center; max-width: 820px;">
+      <div class="section-header" style="text-align: center; margin-bottom: 28px;">
+        <span class="section-tag">BEDTIME RESET &amp; RADICAL SURRENDER</span>
+        <h2 class="section-title">合上手帳：今晚把所有防衛與過度思慮，全然卸下</h2>
+        <p class="section-desc" style="margin: 0 auto; max-width: 580px;">
+          讀完全書，不必強求自己立刻變得無懈可擊。<br>
+          像牠一樣，把緊繃的肢體與重量全然託付給桌面。今晚安心翻肚、好好休息。
+        </p>
+      </div>
+
+      <!-- 讀者選定原版手繪藝術畫片 (完整保留和紙底色、桌面切線與原版微型文字，零截斷) -->
+      <div class="bedtime-cat-plate-frame" style="margin: 28px auto 16px; max-width: 640px; border-radius: 12px; overflow: hidden; box-shadow: 0 14px 36px rgba(45, 41, 38, 0.09), 0 2px 8px rgba(45, 41, 38, 0.04); border: 1px solid rgba(224, 217, 206, 0.6); background: #FAF7F2; line-height: 0;">
+        <img src="img/editorial/chosen-05-total-surrender-plate.png" alt="全然臣服·升降桌四腳朝天徹底放鬆貓 (手繪原版畫片)" width="1024" height="686" style="width: 100%; height: auto; display: block;">
+      </div>
+
+      <p style="font-size: 0.82rem; color: var(--text-muted); letter-spacing: 0.04em; margin-top: 14px;">
+        FIG. 05 · TOTAL SURRENDER // RADICAL REST &amp; RESET · 升降桌前的全然臣服
+      </p>
+    </div>
+  </section>
+
   <!-- Footer -->
   </main>
 
   <footer>
     <div class="container">
-      <div class="footer-inner">
+    <div class="footer-inner">
         <div class="footer-brand">
           <div class="footer-title">在權力不對等處立足 · 心智自立書單</div>
           <p class="footer-desc">
@@ -3156,7 +4570,7 @@
       };
 
       if (isComposite) {
-        badge.textContent = `⚡ 雙重複合受困診斷：${profileNames[topKey]} × ${profileNames[secondKey]}`;
+        badge.textContent = `雙重複合受困診斷：${profileNames[topKey]} × ${profileNames[secondKey]}`;
         title.textContent = `複合型態：大腦內耗與行為阻滯的雙重拉扯（${pct[topKey]}% / ${pct[secondKey]}%）`;
 
         let compositeAnalysis = '';
@@ -3164,19 +4578,19 @@
         let targetBookName = '十大專書';
 
         if ((topKey === 'R' && secondKey === 'P') || (topKey === 'P' && secondKey === 'R')) {
-          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：白日面對權威或衝突時不敢確立專業能見度與邊界（權力盲區），當場退讓妥協；入夜後大腦神經反芻機制全面失控重播自責（神經反芻）。<br><strong>🚨 雙軌突破處方：</strong>第一優先研讀<strong>《強大內心的自我對話習慣》</strong>拉開心理距離、平息自責；隨後研讀<strong>《懂權力》</strong>與<strong>《精進權力》</strong>，建立角色責任意識與身體高權力姿態，杜絕下一次無謂退讓。';
+          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：白日面對權威或衝突時不敢確立專業能見度與邊界（權力盲區），當場退讓妥協；入夜後大腦神經反芻機制全面失控重播自責（神經反芻）。<br><strong>【雙軌突破處方】：</strong>第一優先研讀<strong>《強大內心的自我對話習慣》</strong>拉開心理距離、平息自責；隨後研讀<strong>《懂權力》</strong>與<strong>《精進權力》</strong>，建立角色責任意識與身體高權力姿態，杜絕下一次無謂退讓。';
           targetAnchor = '#book-power';
           targetBookName = '《懂權力》與《自我對話》';
         } else if ((topKey === 'B' && secondKey === 'O') || (topKey === 'O' && secondKey === 'B')) {
-          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：童年時期作為懂事的假性孤兒承擔過多照護責任，內化了「只有表現優秀、體貼退讓才配被愛」的信條，導致成年後在職場中徹底失去拒絕能力，任由索取者榨取。<br><strong>🚨 雙軌突破處方：</strong>先讀<strong>《如果父母情緒不成熟》</strong>確立內在心理主權，再讀<strong>《過度努力》</strong>看清努力背後的傷；隨後以<strong>《給予》</strong>建立保護型利他護欄，學會向索取者堅定說「不」。';
+          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：童年時期作為懂事的假性孤兒承擔過多照護責任，內化了「只有表現優秀、體貼退讓才配被愛」的信條，導致成年後在職場中徹底失去拒絕能力，任由索取者榨取。<br><strong>【雙軌突破處方】：</strong>先讀<strong>《如果父母情緒不成熟》</strong>確立內在心理主權，再讀<strong>《過度努力》</strong>看清努力背後的傷；隨後以<strong>《給予》</strong>建立保護型利他護欄，學會向索取者堅定說「不」。';
           targetAnchor = '#book-immature-parents';
           targetBookName = '《如果父母情緒不成熟》與《給予》';
         } else if ((topKey === 'R' && secondKey === 'O') || (topKey === 'O' && secondKey === 'R')) {
-          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：將「自我價值」與「完美成果」極端綁定。只要遭遇些微挫折或冷淡，童年被否定的創傷記憶瞬間被喚醒，轉化為大腦無休止的嚴厲自我審查與失眠。<br><strong>🚨 雙軌突破處方：</strong>研讀<strong>《過度努力》</strong>卸下防禦盔甲，隨後閱讀<strong>《鈍感力》</strong>過濾外界惡意噪音，守護自律神經與內在平靜。';
+          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：將「自我價值」與「完美成果」極端綁定。只要遭遇些微挫折或冷淡，童年被否定的創傷記憶瞬間被喚醒，轉化為大腦無休止的嚴厲自我審查與失眠。<br><strong>【雙軌突破處方】：</strong>研讀<strong>《過度努力》</strong>卸下防禦盔甲，隨後閱讀<strong>《鈍感力》</strong>過濾外界惡意噪音，守護自律神經與內在平靜。';
           targetAnchor = '#book-overeffort';
           targetBookName = '《過度努力》與《鈍感力》';
         } else {
-          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：深陷道德潔癖與自我犧牲的泥潭，誤以為只要老實付出就會獲得公正回報，卻在現實權力博弈中屢屢受挫被邊緣化。<br><strong>🚨 雙軌突破處方：</strong>閱讀<strong>《精進權力》</strong>打破公正世界假設，隨後研讀<strong>《關鍵對話》</strong>開展防禦性協商，守護自身勞動成果。';
+          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：深陷道德潔癖與自我犧牲的泥潭，誤以為只要老實付出就會獲得公正回報，卻在現實權力博弈中屢屢受挫被邊緣化。<br><strong>【雙軌突破處方】：</strong>閱讀<strong>《精進權力》</strong>打破公正世界假設，隨後研讀<strong>《關鍵對話》</strong>開展防禦性協商，守護自身勞動成果。';
           targetAnchor = '#book-rules-of-power';
           targetBookName = '《精進權力》與《關鍵對話》';
         }
@@ -3186,26 +4600,26 @@
         link.textContent = `深入研讀：${targetBookName} ➔`;
         dlLink.href = '#downloads';
       } else {
-        badge.textContent = `🎯 單一主導受困型態：${profileNames[topKey]}（${pct[topKey]}%）`;
+        badge.textContent = `單一主導受困型態：${profileNames[topKey]}（${pct[topKey]}%）`;
 
         if (topKey === 'R') {
           title.textContent = '主導型態：急性神經反芻型（大腦自我評判過載）';
-          body.innerHTML = '你的核心消耗在於「事後的持續自責與大腦小對話」。面對衝突後，大腦前額葉將抑鬱全部轉化為對自我的嚴厲審判。<br><strong>🚨 破局處方：</strong>立即進入<strong>階梯 I 止血急救</strong>。首選精讀<strong>《強大內心的自我對話習慣》</strong>，以「抽離式自言自語」中斷大腦反芻；輔以<strong>《鈍感力》</strong>鈍化神經信號，迅速恢復情緒清明。';
+          body.innerHTML = '你的核心消耗在於「事後的持續自責與大腦小對話」。面對衝突後，大腦前額葉將抑鬱全部轉化為對自我的嚴厲審判。<br><strong>【破局處方】：</strong>立即進入<strong>階梯 I 止血急救</strong>。首選精讀<strong>《強大內心的自我對話習慣》</strong>，以「抽離式自言自語」中斷大腦反芻；輔以<strong>《鈍感力》</strong>鈍化神經信號，迅速恢復情緒清明。';
           link.href = '#book-chatter';
           link.textContent = '開始研讀《強大內心的自我對話習慣》➔';
         } else if (topKey === 'P') {
           title.textContent = '主導型態：權力認知潔癖型（被動等待公正迷思）';
-          body.innerHTML = '你的核心障礙在於「對權力懷有道德潔癖」。深信公正世界假設，害怕展現強勢會傷害關係，導致在資源分配時主動退讓被邊緣化。<br><strong>🚨 破局處方：</strong>進入<strong>階梯 III 權力重構</strong>。首選精讀<strong>《懂權力，在每個角色上發光》</strong>將權力視為責任資源；搭配<strong>《職場女性：別讓這些細節絆住你》</strong>戒斷發言先道歉與邊緣化習慣，進階研讀<strong>《精進權力》</strong>建立專業能見度。';
+          body.innerHTML = '你的核心障礙在於「對權力懷有道德潔癖」。深信公正世界假設，害怕展現強勢會傷害關係，導致在資源分配時主動退讓被邊緣化。<br><strong>【破局處方】：</strong>進入<strong>階梯 III 權力重構</strong>。首選精讀<strong>《懂權力，在每個角色上發光》</strong>將權力視為責任資源；搭配<strong>《職場女性：別讓這些細節絆住你》</strong>戒斷發言先道歉與邊緣化習慣，進階研讀<strong>《精進權力》</strong>建立專業能見度。';
           link.href = '#book-power';
           link.textContent = '開始研讀《懂權力》與《精進權力》➔';
         } else if (topKey === 'B') {
           title.textContent = '主導型態：邊界失守犧牲型（過度付出受害者）';
-          body.innerHTML = '你的核心特質為真誠溫暖，但缺乏防範索取者的心理護欄，容易承擔過多不屬於自己的責任與情緒。<br><strong>🚨 破局處方：</strong>進入<strong>階梯 II 防禦邊界</strong>。首選精讀<strong>《情緒勒索》</strong>識破恐懼、責任與罪惡感操控；配合<strong>《給予》</strong>建立保護型利他護欄，從盲目退讓轉型為擁有防護線的成熟實踐者。';
+          body.innerHTML = '你的核心特質為真誠溫暖，但缺乏防範索取者的心理護欄，容易承擔過多不屬於自己的責任與情緒。<br><strong>【破局處方】：</strong>進入<strong>階梯 II 防禦邊界</strong>。首選精讀<strong>《情緒勒索》</strong>識破恐懼、責任與罪惡感操控；配合<strong>《給予》</strong>建立保護型利他護欄，從盲目退讓轉型為擁有防護線的成熟實踐者。';
           link.href = '#book-give-and-take';
           link.textContent = '開始研讀《給予》➔';
         } else {
           title.textContent = '主導型態：童年創傷代償型（假性孤兒與過度努力）';
-          body.innerHTML = '你的過度謹慎與退讓根源於童年時期照護者的情緒不穩定，被迫成為懂事的假性孤兒，內化了討好信條。<br><strong>🚨 破局處方：</strong>進入<strong>階梯 IV 源頭解咒</strong>。首選精讀<strong>《如果父母情緒不成熟》</strong>劃清心理代溝；隨後閱讀<strong>《過度努力》</strong>與<strong>《不完美的禮物》</strong>，卸下完美主義盔甲，全然接納真實的自己。';
+          body.innerHTML = '你的過度謹慎與退讓根源於童年時期照護者的情緒不穩定，被迫成為懂事的假性孤兒，內化了討好信條。<br><strong>【破局處方】：</strong>進入<strong>階梯 IV 源頭解咒</strong>。首選精讀<strong>《如果父母情緒不成熟》</strong>劃清心理代溝；隨後閱讀<strong>《過度努力》</strong>與<strong>《不完美的禮物》</strong>，卸下完美主義盔甲，全然接納真實的自己。';
           link.href = '#book-immature-parents';
           link.textContent = '開始研讀《如果父母情緒不成熟》與《過度努力》➔';
         }
@@ -3254,5 +4668,11 @@
 
 </script>
   <script src="js/chinese-convert.js"></script>
+  <script>
+    try {
+      sessionStorage.setItem("reading_preview", "bujo");
+      localStorage.setItem("last_reading_mode", "bujo");
+    } catch(e) {}
+  </script>
 </body>
 </html>

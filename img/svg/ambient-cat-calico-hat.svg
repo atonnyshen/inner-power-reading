@@ -1,0 +1,87 @@
+<svg viewBox="0 0 220 260" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Boundary Construction Triangle & Axis (堅定邊界骨架) -->
+  <polygon points="110,38 48,220 172,220" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.35"/>
+  <circle cx="110" cy="88" r="42" stroke="var(--riso-rose, #D95D50)" stroke-width="0.6" stroke-dasharray="2 4" opacity="0.25"/>
+  <line x1="18" y1="220" x2="202" y2="220" stroke="var(--border-subtle, #DDD2C4)" stroke-width="0.8" stroke-dasharray="4 4"/>
+
+  <!-- LAYER 1: Riso Calico Misregistration Shift Layer (-1.5px, +1.2px) -->
+  <g transform="translate(-1.5, 1.2)" opacity="0.4">
+    <path d="M 94 92 L 78 140 L 68 220 H 152 L 142 140 L 126 92 Z" fill="var(--riso-sage, #3E6B56)"/>
+    <circle cx="110" cy="86" r="20" fill="var(--riso-rose, #D95D50)"/>
+  </g>
+
+  <!-- LAYER 2: Calico Sentinel Core (三花黑、橘、白拼接架構) -->
+  <g stroke="var(--text-main, #2D2926)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- White Body Base (挺拔如松的主體) -->
+    <path d="M 96 94 C 92 118, 80 156, 70 220 H 150 C 140 156, 128 118, 124 94 Z" fill="#FFFFFF"/>
+
+    <!-- CALICO PATCH 1: Left Flank / Shoulder Terracotta Orange (溫暖赤橘斑) -->
+    <path d="M 70 220 L 78 174 C 86 178, 96 186, 98 220 Z" fill="var(--riso-rose, #D95D50)" stroke="none"/>
+    <path d="M 96 94 C 94 110, 88 126, 82 142 C 90 138, 96 128, 98 112 Z" fill="var(--riso-amber, #D48834)" stroke="none"/>
+
+    <!-- CALICO PATCH 2: Right Flank / Shoulder Deep Ink / Sage (冷靜深黑/深綠斑) -->
+    <path d="M 124 94 C 128 116, 138 148, 150 220 L 138 220 C 130 186, 120 152, 116 128 Z" fill="var(--riso-sage, #3E6B56)" stroke="none"/>
+
+    <!-- Two Parallel Pillar Front Legs (筆直並攏的雙前足 · 端坐自持) -->
+    <rect x="97" y="150" width="11" height="68" rx="4.5" fill="#FFFFFF"/>
+    <rect x="112" y="150" width="11" height="68" rx="4.5" fill="#FFFFFF"/>
+    <line x1="102.5" y1="210" x2="102.5" y2="217" stroke-width="1"/>
+    <line x1="117.5" y1="210" x2="117.5" y2="217" stroke-width="1"/>
+
+    <!-- Neatly Wrapped Tail Around Paws (端坐環抱的尾巴 · 帶有三花色斑) -->
+    <path d="M 150 218 C 168 218, 172 200, 160 190 C 146 182, 140 196, 130 206 C 118 216, 90 219, 72 219" fill="none" stroke="var(--text-main, #2D2926)" stroke-width="4.5"/>
+    <path d="M 160 190 C 166 196, 168 208, 154 216" fill="none" stroke="var(--riso-amber, #D48834)" stroke-width="4.5"/>
+
+    <!-- Head & Cheeks -->
+    <circle cx="110" cy="86" r="20" fill="#FFFFFF"/>
+    
+    <!-- Head Calico Patch: Left Brow (Terracotta Rose) -->
+    <path d="M 92 82 C 92 70, 102 66, 110 66 L 108 80 C 102 82, 96 84, 92 82 Z" fill="var(--riso-rose, #D95D50)" stroke="none"/>
+    <!-- Head Calico Patch: Right Cheek (Deep Sage/Ink) -->
+    <path d="M 110 66 C 118 66, 128 72, 128 86 C 128 92, 122 96, 114 94 Z" fill="var(--riso-sage, #3E6B56)" stroke="none"/>
+
+    <!-- Upright Pointed Ears (雙耳直立警醒) -->
+    <polygon points="91,80 84,54 102,66" fill="#FFFFFF"/>
+    <polygon points="92,76 87,59 99,67" fill="var(--riso-rose, #D95D50)" stroke="none"/>
+    <polygon points="118,66 136,54 129,80" fill="#FFFFFF"/>
+    <polygon points="121,67 133,59 128,76" fill="var(--riso-sage, #3E6B56)" stroke="none"/>
+
+    <!-- ★ THE PARTY / WIZARD CONE HAT (三花頭頂的小帽子！) ★ -->
+    <!-- Cone Body (帶有俏皮條紋的小尖帽) -->
+    <g id="calico-hat">
+      <!-- Hat Background -->
+      <polygon points="110,24 99,62 121,62" fill="var(--riso-amber, #D48834)" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linejoin="round"/>
+      <!-- Hat Riso Stripes (雙色斜紋) -->
+      <polygon points="107,34 103,46 117,46 113,34" fill="var(--riso-rose, #D95D50)" stroke="none"/>
+      <polygon points="101,52 99,58 121,58 119,52" fill="var(--riso-sage, #3E6B56)" stroke="none"/>
+      <!-- Hat Rim (帽簷底圈) -->
+      <ellipse cx="110" cy="62" rx="12" ry="3" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+      <!-- Pom-Pom Star / Ball on Top (帽尖金黃毛球/微型星標) -->
+      <circle cx="110" cy="22" r="3.5" fill="#FFFFFF" stroke="var(--text-main, #2D2926)" stroke-width="1.2"/>
+      <circle cx="110" cy="22" r="1.8" fill="var(--riso-amber, #D48834)" stroke="none"/>
+    </g>
+
+    <!-- Alert, Clear Almond Eyes (平視堅定眼神 · 拒絕反射性道歉) -->
+    <!-- Left Almond Eye -->
+    <path d="M 96 86 Q 101 81 106 86 Q 101 91 96 86 Z" fill="#FFFFFF" stroke-width="1.2"/>
+    <circle cx="101" cy="86" r="2.2" fill="var(--text-main, #2D2926)"/>
+    <circle cx="102" cy="85" r="0.7" fill="#FFFFFF"/>
+    <!-- Right Almond Eye -->
+    <path d="M 114 86 Q 119 81 124 86 Q 119 91 114 86 Z" fill="#FFFFFF" stroke-width="1.2"/>
+    <circle cx="119" cy="86" r="2.2" fill="var(--text-main, #2D2926)"/>
+    <circle cx="120" cy="85" r="0.7" fill="#FFFFFF"/>
+
+    <!-- Nose & Firm Whiskers -->
+    <polygon points="110,91 108,89 112,89" fill="var(--riso-rose, #D95D50)" stroke="none"/>
+    <line x1="105" y1="91" x2="86" y2="88" stroke-width="0.8"/>
+    <line x1="105" y1="93" x2="88" y2="94" stroke-width="0.8"/>
+    <line x1="115" y1="91" x2="134" y2="88" stroke-width="0.8"/>
+    <line x1="115" y1="93" x2="132" y2="94" stroke-width="0.8"/>
+  </g>
+
+  <!-- Technical Specimen Metadata Label -->
+  <g transform="translate(56, 178)">
+    <rect x="0" y="0" width="66" height="14" fill="var(--paper-cream, #FAF6F0)" stroke="var(--riso-sage, #3E6B56)" stroke-width="0.8" rx="2"/>
+    <text x="4" y="9.5" font-family="'JetBrains Mono', monospace" font-size="6" font-weight="700" fill="var(--riso-sage, #3E6B56)" letter-spacing="0.05em">CALICO · HAT // 02</text>
+  </g>
+</svg>

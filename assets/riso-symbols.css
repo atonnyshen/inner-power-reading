@@ -1,0 +1,120 @@
+/* ══════════════════════════════════════════════════════════════════════
+   SWISS DECONSTRUCTED RISOGRAPH VECTOR SYMBOL SYSTEM
+   Standard: Unified House Style & Bullet Journal Reading Suite
+   Colors: Terracotta Rose (#C06C52) · Forest Sage (#3E6B56) · Amber (#9E6234)
+   ══════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Risograph Authentic Color Drums */
+  --riso-ink: #2D2926;
+  --riso-rose: #C06C52;
+  --riso-rose-shift: #D96B43;
+  --riso-rose-tint: rgba(192, 108, 82, 0.16);
+  --riso-sage: #3E6B56;
+  --riso-sage-shift: #2F5D50;
+  --riso-sage-tint: rgba(62, 107, 86, 0.16);
+  --riso-amber: #9E6234;
+  --riso-amber-tint: rgba(158, 98, 52, 0.16);
+  --riso-paper: #FAF8F5;
+  --riso-paper-alt: #F4EFEA;
+  --riso-grid-line: rgba(45, 41, 38, 0.12);
+  --riso-construction: rgba(62, 107, 86, 0.28);
+  --riso-datum: rgba(192, 108, 82, 0.35);
+
+  /* Standard Icon Sizes (Physical Scale Consistency) */
+  --icon-size-xs: 14px;
+  --icon-size-sm: 18px;
+  --icon-size-md: 22px;
+  --icon-size-lg: 28px;
+  --icon-size-xl: 34px;
+}
+
+/* Dark Mode Token Adaptation (WCAG AA Strict Contrast) */
+[data-theme="night"],
+@media (prefers-color-scheme: dark) {
+  :root {
+    --riso-ink: #E8E5DE;
+    --riso-paper: #181B1E;
+    --riso-paper-alt: #22262B;
+    --riso-rose: #E2856E;
+    --riso-sage: #6EA98F;
+    --riso-amber: #C98A55;
+    --riso-grid-line: rgba(232, 229, 222, 0.12);
+    --riso-construction: rgba(110, 169, 143, 0.35);
+    --riso-datum: rgba(226, 133, 110, 0.4);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   SVG RENDERING & PHYSICAL SCALE CLASSES
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* General Riso Vector Icon */
+.riso-icon {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.riso-icon-xs { width: var(--icon-size-xs); height: var(--icon-size-xs); }
+.riso-icon-sm { width: var(--icon-size-sm); height: var(--icon-size-sm); vertical-align: -3px; }
+.riso-icon-md { width: var(--icon-size-md); height: var(--icon-size-md); }
+.riso-icon-lg { width: var(--icon-size-lg); height: var(--icon-size-lg); }
+.riso-icon-xl { width: var(--icon-size-xl); height: var(--icon-size-xl); }
+
+/* Top Navigation Brand Mark */
+.riso-brand-mark {
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   SPECIMEN PLATE CONTAINERS (Replaces Realistic Photo Polaroids)
+   ══════════════════════════════════════════════════════════════════════ */
+
+.bujo-specimen-plate {
+  width: 100%;
+  aspect-ratio: 280 / 200;
+  background: var(--riso-paper, #FAF8F5);
+  border: 1px solid var(--border-card, #EFE8DE);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5), 0 2px 8px rgba(45, 41, 38, 0.04);
+}
+
+.bujo-specimen-plate svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  shape-rendering: geometricPrecision;
+}
+
+/* Risograph Mechanical Misregistration Shift Effect on Hover */
+.polaroid-card:hover .bujo-specimen-plate svg [style*="mix-blend-mode: multiply"],
+.bujo-specimen-plate:hover svg [style*="mix-blend-mode: multiply"] {
+  transform: translate(2.5px, -1.8px) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Risograph Color Blending */
+.riso-multiply {
+  mix-blend-mode: multiply;
+}
+
+/* Micro Technical Label */
+.tech-label-mono {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
