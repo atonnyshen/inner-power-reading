@@ -455,7 +455,8 @@
     .adversarial-header {
       margin-bottom: 30px;
     }
-    .adversarial-header h3 {
+    .adversarial-header h3,
+    .adversarial-card-title {
       font-family: var(--font-serif);
       font-size: 1.55rem;
       font-weight: 800;
@@ -506,16 +507,17 @@
       word-wrap: break-word;
     }
 
-    /* Evolution Table */
+    /* Evolution Table (電腦端大器對比表格 · 手機端極致階梯卡片化) */
     .table-wrapper {
-      overflow-x: auto;
       background: #FFFFFF;
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-card);
       box-shadow: var(--shadow-sm);
+      overflow-x: auto;
     }
     .evolution-table {
       width: 100%;
+      min-width: 820px; /* 電腦端保證欄位充裕大器，不再窄小擠壓 */
       border-collapse: collapse;
       text-align: left;
       font-size: 0.95rem;
@@ -534,6 +536,73 @@
       color: var(--text-muted);
       vertical-align: top;
       line-height: 1.7;
+    }
+
+    /* 手機端顛覆性排版: 告別痛苦的橫向滑動表格，轉換為垂直沉浸式「階梯進階卡片」 */
+    @media (max-width: 768px) {
+      .table-wrapper {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        overflow: visible;
+      }
+      .evolution-table, 
+      .evolution-table tbody, 
+      .evolution-table tr, 
+      .evolution-table td {
+        display: block;
+        width: 100% !important;
+        box-sizing: border-box;
+      }
+      .evolution-table thead {
+        display: none; /* 手機端隱藏死板的表頭 */
+      }
+      .evolution-table tr {
+        background: #FFFFFF;
+        border: 1px solid var(--border-card);
+        border-radius: var(--radius-lg);
+        padding: 20px 18px;
+        margin-bottom: 16px;
+        box-shadow: var(--shadow-sm);
+      }
+      .evolution-table td {
+        padding: 10px 0;
+        border-bottom: 1px dashed rgba(45, 41, 38, 0.08);
+      }
+      .evolution-table td:first-child {
+        padding-top: 0;
+        border-bottom: 1px solid var(--border-subtle);
+        padding-bottom: 12px;
+      }
+      .evolution-table td:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      /* 為手機端卡片標記清晰的語意引導 */
+      .evolution-table td:nth-child(2)::before {
+        content: '🎯 階段核心目標：';
+        display: block;
+        font-weight: 700;
+        color: var(--text-main);
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+      }
+      .evolution-table td:nth-child(3)::before {
+        content: '📚 主力攻堅書目：';
+        display: block;
+        font-weight: 700;
+        color: var(--text-main);
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+      }
+      .evolution-table td:nth-child(4)::before {
+        content: '✅ 達成檢核指標：';
+        display: block;
+        font-weight: 700;
+        color: var(--accent-sage, #5C7A68);
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+      }
     }
     .stage-badge {
       display: inline-block;
@@ -3041,7 +3110,7 @@
 
       <div class="adversarial-box">
         <div class="adversarial-header">
-          <h3>常規推薦盲點審查與破局校準</h3>
+          <h3 class="adversarial-card-title">常規盲點審查與破局校準</h3>
           <p>針對常見直覺建議中隱藏的二次傷害風險，建立清晰因果防護。</p>
         </div>
         <div class="blindspot-grid">
