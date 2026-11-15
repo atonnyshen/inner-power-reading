@@ -2280,16 +2280,15 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">SELF-ASSESSMENT TOOL</span>
-        <h2 class="section-title">3 分鐘受困心智自測：四維向量全變數診斷</h2>
+        <h2 class="section-title">3 分鐘受困心智自測：精準定位核心卡點</h2>
         <p class="section-desc">
-          勾選在日常人際或職場中符合的典型反應。系統將即時計算四大心理學維度負荷，給予複合型態深度處方與第一起手書單。
+          勾選在日常人際或職場中符合的真實反應，協助釐清當前心理負荷與適合切入的專屬閱讀路徑。
         </p>
       </div>
 
       <div class="assessment-card">
         <p class="assessment-intro">
-          <strong>檢測指標（請勾選符合現狀的項目，可多選）：</strong><br>
-          系統採用 R（反芻）、P（權力）、B（邊界）、O（童年）多維加權向量演算法，全面反映真實受困維度。
+          <strong>檢測指標（請勾選符合現狀的項目，可多選）：</strong>
         </p>
         <div class="assessment-options" id="assessmentOptions">
           <!-- 12 題情境選項動態/靜態渲染 -->
@@ -2344,7 +2343,7 @@
         </div>
 
         <div id="assessmentResult" class="assessment-result">
-          <div id="resultBadge" class="composite-badge">四維全變數計算完成</div>
+          <div id="resultBadge" class="composite-badge">評估結果</div>
           <h3 id="resultTitle" class="result-title">複合型態診斷分析</h3>
 
           <!-- 四維視覺進度條 -->
@@ -2381,7 +2380,7 @@
 
           <div id="resultBody" class="result-body"></div>
           <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;">
-            <a id="resultLink" href="#pillars" class="btn btn-primary">前往專屬推薦書單 ➔</a>
+            <a id="resultLink" href="#pillars" class="btn btn-primary">前往推薦專書 ➔</a>
             <a id="resultDownload" href="#downloads" class="btn btn-secondary">直接領取對應 EPUB 電子書 📥</a>
           </div>
         </div>
@@ -2666,14 +2665,11 @@
   </footer>
 
   <!-- Floating Quick Nav Pill (Back to Top & Quick Assessment) -->
-  <aside class="floating-quick-nav" id="floatingQuickNav" aria-label="快捷導航懸浮列">
+    <!-- Floating Back to Top Button -->
+  <aside class="floating-quick-nav" id="floatingQuickNav" aria-label="快速回頂部">
     <button type="button" class="quick-nav-btn" id="btnBackToTop" aria-label="快速回到頂部導覽列" onclick="scrollToTopNav()">
       <span>▲</span> <span>回頂部</span>
     </button>
-    <span class="quick-nav-divider"></span>
-    <a href="#assessment" class="quick-nav-btn" aria-label="前往心智自測">
-      <span>⚡</span> <span>自測</span>
-    </a>
   </aside>
 
   <!-- Lightbox Modal Overlay (Award-Winning Web Craft Pillar 6) -->
@@ -2863,7 +2859,7 @@
         return;
       }
 
-      // 累積四維向量分數
+      // 統計維度得分
       const scores = { R: 0, P: 0, B: 0, O: 0 };
       checked.forEach(cb => {
         const idx = parseInt(cb.value, 10);
@@ -2915,7 +2911,7 @@
         let targetBookName = '七大專書';
 
         if ((topKey === 'R' && secondKey === 'P') || (topKey === 'P' && secondKey === 'R')) {
-          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：白日面對權威或衝突時不敢確立專業能見度與邊界（權力盲區），當場退讓妥協；入夜後大腦神經反芻機制全面失控重播自責（神經反芻）。<br><strong>🚨 雙軌突破處方：</strong>第一優先攻讀<strong>《強大內心的自我對話習慣》</strong>拉開心理距離、平息自責；隨後研讀<strong>《懂權力》</strong>與<strong>《精進權力》</strong>，建立角色責任意識與身體高權力姿態，杜絕下一次無謂退讓。';
+          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：白日面對權威或衝突時不敢確立專業能見度與邊界（權力盲區），當場退讓妥協；入夜後大腦神經反芻機制全面失控重播自責（神經反芻）。<br><strong>🚨 雙軌突破處方：</strong>第一優先研讀<strong>《強大內心的自我對話習慣》</strong>拉開心理距離、平息自責；隨後研讀<strong>《懂權力》</strong>與<strong>《精進權力》</strong>，建立角色責任意識與身體高權力姿態，杜絕下一次無謂退讓。';
           targetAnchor = '#book-power';
           targetBookName = '《懂權力》與《自我對話》';
         } else if ((topKey === 'B' && secondKey === 'O') || (topKey === 'O' && secondKey === 'B')) {
@@ -2934,7 +2930,7 @@
 
         body.innerHTML = compositeAnalysis;
         link.href = targetAnchor;
-        link.textContent = `前往攻讀首選書單：${targetBookName} ➔`;
+        link.textContent = `深入研讀：${targetBookName} ➔`;
         dlLink.href = '#downloads';
       } else {
         badge.textContent = `🎯 單一主導受困型態：${profileNames[topKey]}（${pct[topKey]}%）`;
@@ -2943,22 +2939,22 @@
           title.textContent = '主導型態：急性神經反芻型（大腦自我評判過載）';
           body.innerHTML = '你的核心消耗在於「事後的持續自責與大腦小對話」。面對衝突後，大腦前額葉將抑鬱全部轉化為對自我的嚴厲審判。<br><strong>🚨 破局處方：</strong>立即進入<strong>階梯 I 止血急救</strong>。首選精讀<strong>《強大內心的自我對話習慣》</strong>，以「抽離式自言自語」中斷大腦反芻；輔以<strong>《鈍感力》</strong>鈍化神經信號，迅速恢復情緒清明。';
           link.href = '#book-chatter';
-          link.textContent = '前往攻讀《強大內心的自我對話習慣》➔';
+          link.textContent = '開始研讀《強大內心的自我對話習慣》➔';
         } else if (topKey === 'P') {
           title.textContent = '主導型態：權力認知潔癖型（被動等待公正迷思）';
           body.innerHTML = '你的核心障礙在於「對權力懷有道德潔癖」。深信公正世界假設，害怕展現強勢會傷害關係，導致在資源分配時主動退讓被邊緣化。<br><strong>🚨 破局處方：</strong>進入<strong>階梯 III 權力重構</strong>。首選精讀<strong>《懂權力，在每個角色上發光》</strong>將權力視為責任資源；隨後閱讀<strong>《精進權力》</strong>拆除職場天真盲點，主動建立專業能見度。';
           link.href = '#book-power';
-          link.textContent = '前往攻讀《懂權力》與《精進權力》➔';
+          link.textContent = '開始研讀《懂權力》與《精進權力》➔';
         } else if (topKey === 'B') {
           title.textContent = '主導型態：邊界失守犧牲型（過度付出受害者）';
           body.innerHTML = '你的核心特質為真誠溫暖，但缺乏防範索取者的心理護欄，容易承擔過多不屬於自己的責任與情緒。<br><strong>🚨 破局處方：</strong>進入<strong>階梯 II 防禦邊界</strong>。首選精讀<strong>《給予》</strong>，學會辨識索取者並設立精力配額；輔以<strong>《關鍵對話》</strong>掌握防禦性溝通技巧，從自我犧牲轉型為具備護欄的保護型給予者。';
           link.href = '#book-give-and-take';
-          link.textContent = '前往攻讀《給予》➔';
+          link.textContent = '開始研讀《給予》➔';
         } else {
           title.textContent = '主導型態：童年創傷代償型（假性孤兒與過度努力）';
           body.innerHTML = '你的過度謹慎與退讓根源於童年時期照護者的情緒不穩定，被迫成為懂事的假性孤兒，內化了討好信條。<br><strong>🚨 破局處方：</strong>進入<strong>階梯 IV 源頭解咒</strong>。首選精讀<strong>《如果父母情緒不成熟》</strong>確立心理主權；隨後閱讀周慕姿<strong>《過度努力》</strong>，看清努力背後的傷，接納真實的自己。';
           link.href = '#book-immature-parents';
-          link.textContent = '前往攻讀《如果父母情緒不成熟》與《過度努力》➔';
+          link.textContent = '開始研讀《如果父母情緒不成熟》與《過度努力》➔';
         }
       }
     }
