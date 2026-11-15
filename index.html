@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>在權力不對等處立足：終結事後反芻與心理內耗｜心智自立書單與行動手冊</title>
   <meta name="description" content="面對職場與家庭權力失衡，當場妥協退讓、事後反芻自責？融合史丹佛組織權力學、認知神經科學與系統分化理論，為習慣妥協者建立不可撼動的心智防禦機制。">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Cross-Platform Noto Serif & Noto Sans Web Fonts -->
+  <link rel=preconnect href=https://fonts.googleapis.com>
+  <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
 
     /* Fixed Top Navigation Guard */
@@ -3251,75 +3252,7 @@
     });
 
 
-// 5. Traditional / Simplified Chinese Switcher
-    const T2S_DICT = {
-      '權': '权', '力': '力', '在': '在', '每': '每', '個': '个', '角': '角', '色': '色', '上': '上', '發': '发', '光': '光',
-      '精': '精', '進': '进', '史': '史', '丹': '丹', '佛': '佛', '教': '教', '授': '授', '的': '的', '大': '大', '法': '法',
-      '則': '则', '帶': '带', '你': '你', '打': '打', '破': '破', '常': '常', '規': '规', '取': '取', '得': '得', '優': '优',
-      '勢': '势', '成': '成', '功': '功', '完': '完', '目': '目', '標': '标', '給': '给', '予': '予', '華': '华', '頓': '顿',
-      '商': '商', '學': '学', '院': '院', '最': '最', '啟': '启', '人': '人', '心': '心', '堂': '堂', '課': '课', '強': '强',
-      '內': '内', '自': '自', '我': '我', '對': '对', '話': '话', '習': '习', '慣': '惯', '緊': '紧', '張': '张', '下': '下',
-      '維': '维', '持': '持', '專': '专', '注': '注', '混': '混', '亂': '乱', '中': '中', '清': '清', '楚': '楚', '思': '思',
-      '考': '考', '身': '身', '陷': '陷', '困': '困', '難': '难', '不': '不', '被': '被', '負': '负', '面': '面', '情': '情',
-      '緒': '绪', '拖': '拖', '垮': '垮', '任': '任', '何': '何', '時': '时', '刻': '刻', '都': '都', '水': '水', '準': '准',
-      '表': '表', '現': '现', '鈍': '钝', '感': '感', '如': '如', '果': '果', '父': '父', '母': '母', '成': '成', '熟': '熟',
-      '和': '和', '解': '解', '從': '从', '假': '假', '性': '性', '孤': '孤', '兒': '儿', '邁': '迈', '向': '向', '獨': '独',
-      '立': '立', '過': '过', '度': '度', '努': '努', '傷': '伤', '證': '证', '明': '明', '終': '终', '結': '结', '事': '事',
-      '後': '后', '反': '反', '芻': '刍', '與': '与', '耗': '耗', '重': '重', '構': '构', '邊': '边', '界': '界', '畫': '画',
-      '像': '像', '退': '退', '讓': '让', '對': '对', '抗': '抗', '審': '审', '查': '查', '盲': '盲', '點': '点', '演': '演',
-      '化': '化', '階': '阶', '梯': '梯', '矩': '矩', '陣': '阵', '載': '载', '閱': '阅', '讀': '读', '處': '处', '方': '方',
-      '體': '体', '簡': '简', '繁': '繁', '創': '创', '傷': '伤', '實': '实', '踐': '践', '線': '线', '結': '结', '點': '点',
-      '網': '网', '頁': '页', '長': '长', '類': '类', '諮': '咨', '筆': '笔', '記': '记', '資': '资', '源': '源', '寶': '宝',
-      '瓶': '瓶', '文': '文', '誌': '志', '天': '天', '下': '下', '雜': '杂', '總': '总', '結': '结', '無': '无', '數': '数',
-      '點': '点', '頭': '头', '道': '道', '歉': '歉', '協': '协', '作': '作', '獲': '获', '取': '取', '難': '难', '題': '题',
-      '導': '导', '師': '师', '檢': '检', '測': '测', '診': '诊', '斷': '断', '評': '评', '估': '估', '指': '指', '標': '标',
-      '責': '责', '任': '任', '時': '时', '程': '程', '階': '阶', '段': '段', '穩': '稳', '定': '定', '隨': '随', '時': '时',
-      '電': '电', '子': '子', '書': '书', '檔': '档', '案': '案', '庫': '库', '確': '确', '認': '认', '軟': '软', '弱': '弱'
-    };
-
-    const S2T_DICT = {};
-    for (const [k, v] of Object.entries(T2S_DICT)) {
-      S2T_DICT[v] = k;
-    }
-
-    let isSimplified = false;
-
-    function convertText(node, toSimp) {
-      if (node.nodeType === Node.TEXT_NODE) {
-        const text = node.nodeValue;
-        let converted = '';
-        const dict = toSimp ? T2S_DICT : S2T_DICT;
-        for (let i = 0; i < text.length; i++) {
-          const char = text[i];
-          converted += dict[char] || char;
-        }
-        node.nodeValue = converted;
-      } else if (node.nodeType === Node.ELEMENT_NODE) {
-        if (node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE') {
-          node.childNodes.forEach(child => convertText(child, toSimp));
-        }
-      }
-    }
-
-    function toggleLang() {
-      isSimplified = !isSimplified;
-      convertText(document.body, isSimplified);
-      const btnText = document.getElementById('langText');
-      if (btnText) {
-        btnText.textContent = isSimplified ? '繁體中文' : '简体中文';
-      }
-      localStorage.setItem('inner_power_lang', isSimplified ? 's' : 't');
-      showToast(isSimplified ? '已切換為簡體中文' : '已切換為繁體中文');
-    }
-
-    document.getElementById('langToggleBtn').addEventListener('click', toggleLang);
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const saved = localStorage.getItem('inner_power_lang');
-      if (saved === 's') {
-        toggleLang();
-      }
-    });
-  </script>
+</script>
+  <script src="js/chinese-convert.js"></script>
 </body>
 </html>
