@@ -1003,27 +1003,67 @@
       align-items: flex-start;
       gap: 14px;
       padding: 16px 20px;
-      border: 1px solid var(--border-subtle);
+      border: 1.5px solid var(--border-subtle);
       border-radius: var(--radius-md);
       background: var(--bg-card-soft);
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
     }
-    .assessment-opt-label:hover {
+    .assessment-opt-label:hover,
+    .assessment-opt-label:active {
       border-color: var(--accent-rose);
       background: #FFFFFF;
     }
     .assessment-opt-label input[type="checkbox"] {
-      margin-top: 4px;
-      width: 18px;
-      height: 18px;
-      accent-color: var(--accent-rose);
+      -webkit-appearance: none;
+      appearance: none;
+      margin: 3px 0 0 0;
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      min-height: 22px;
+      border: 2px solid var(--accent-rose, #C06C52);
+      border-radius: 6px;
+      background: #FFFFFF;
       cursor: pointer;
+      display: inline-grid;
+      place-content: center;
+      flex-shrink: 0;
+      outline: none;
+      box-shadow: inset 0 1px 2px rgba(45, 41, 38, 0.05);
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .assessment-opt-label input[type="checkbox"]::after {
+      content: "";
+      width: 11px;
+      height: 6px;
+      border-left: 2.4px solid #FFFFFF;
+      border-bottom: 2.4px solid #FFFFFF;
+      transform: rotate(-45deg) translateY(-1px) scale(0);
+      transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .assessment-opt-label input[type="checkbox"]:checked {
+      background: var(--accent-rose, #C06C52);
+      border-color: var(--accent-rose, #C06C52);
+      box-shadow: 0 2px 8px rgba(192, 108, 82, 0.32);
+    }
+    .assessment-opt-label input[type="checkbox"]:checked::after {
+      transform: rotate(-45deg) translateY(-1px) scale(1);
+    }
+    .assessment-opt-label:has(input[type="checkbox"]:checked) {
+      border-color: var(--accent-rose, #C06C52);
+      background: #FFFFFF;
+      box-shadow: 0 4px 16px rgba(192, 108, 82, 0.09);
     }
     .assessment-opt-text {
       font-size: 0.95rem;
       color: var(--text-main);
       line-height: 1.65;
+    }
+    .companion-swipe-tip {
+      display: none;
     }
 
     .assessment-result {
@@ -2544,7 +2584,9 @@
         margin-top: 8px !important;
       }
 
-      /* 十大專書刊頭：左右緊湊排列，終結手機端 500px 巨圖滾動疲乏 */
+      /* ══════════════════════════════════════════════════════════════════
+         十大專書深度導讀：書封與規格垂直居中、字體粗細一致化、呼吸感出版排版
+         ══════════════════════════════════════════════════════════════════ */
       .book-pillars-list {
         display: flex;
         flex-direction: column;
@@ -2561,22 +2603,36 @@
         display: grid !important;
         grid-template-columns: 104px 1fr !important;
         gap: 14px !important;
-        align-items: start !important;
+        align-items: center !important; /* 書封與右側規格上下置中對齊 */
       }
       .book-real-cover-box {
         width: 104px !important;
         aspect-ratio: 1 / 1.44 !important;
         border-radius: 8px !important;
         box-shadow: 0 6px 16px rgba(45, 41, 38, 0.14) !important;
-        margin: 0 !important;
+        margin: auto 0 !important;
+        align-self: center !important; /* 書封自體置中，不向上浮起 */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      .book-real-cover-img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: 8px !important;
+        display: block !important;
       }
       .book-meta-list {
-        padding: 10px 12px !important;
+        padding: 12px 14px !important;
         font-size: 0.78rem !important;
-        gap: 4px !important;
-        border-radius: 8px !important;
-        line-height: 1.4 !important;
-        background: var(--bg-card-soft);
+        gap: 5px !important;
+        border-radius: 10px !important;
+        line-height: 1.45 !important;
+        background: var(--bg-card-soft) !important;
+        align-self: center !important; /* 規格自體置中 */
+        margin: 0 !important;
+        border: 1px solid var(--border-subtle) !important;
       }
       .book-meta-item {
         font-size: 0.76rem !important;
@@ -2603,126 +2659,331 @@
         padding: 3px 10px !important;
       }
       .book-main-title {
+        font-family: var(--font-serif) !important;
         font-size: 1.35rem !important;
-        line-height: 1.35 !important;
+        font-weight: 700 !important;
+        line-height: 1.38 !important;
+        color: var(--text-main) !important;
         margin-bottom: 8px !important;
+        text-wrap: balance !important;
+        word-break: break-word !important;
       }
       .book-core-axiom {
-        font-size: 0.92rem !important;
-        line-height: 1.6 !important;
+        font-family: var(--font-sans) !important;
+        font-size: 0.9rem !important;
+        font-weight: 500 !important;
+        line-height: 1.62 !important;
         padding: 10px 12px !important;
         background: var(--accent-rose-light) !important;
         border-left: 3px solid var(--accent-rose) !important;
         border-radius: 0 8px 8px 0 !important;
-        margin-bottom: 10px !important;
+        margin-bottom: 12px !important;
         color: var(--accent-rose) !important;
       }
+      /* 清除小段落內部繁瑣的嵌套灰底卡片，改為呼吸感出版排版 */
       .book-section-block {
-        margin-bottom: 8px !important;
-        padding: 12px 14px !important;
-        background: var(--bg-card-soft) !important;
-        border-radius: 10px !important;
-        border: 1px solid var(--border-subtle) !important;
+        margin-bottom: 12px !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
       }
       .book-block-label {
-        font-size: 0.88rem !important;
+        font-family: var(--font-sans) !important;
+        font-size: 0.92rem !important;
         font-weight: 700 !important;
+        color: var(--text-main) !important;
         margin-bottom: 4px !important;
-        display: flex;
-        align-items: center;
-        gap: 6px;
+        display: block !important; /* 確保無圖標縮進，文字左緣 100% 齊平 */
+        line-height: 1.45 !important;
+        text-wrap: balance !important;
+      }
+      .book-block-label svg {
+        display: none !important; /* 隱藏行內圖標，達成 100% 左邊緣齊平 */
       }
       .book-block-text {
-        font-size: 0.86rem !important;
-        line-height: 1.65 !important;
+        font-family: var(--font-sans) !important;
+        font-size: 0.88rem !important;
+        font-weight: 400 !important;
+        line-height: 1.72 !important;
         color: var(--text-muted) !important;
+        text-align: justify !important;
+        text-justify: inter-ideograph !important;
+        margin: 0 0 4px 0 !important;
       }
       .book-quote-box {
-        padding: 12px 14px !important;
-        font-size: 0.88rem !important;
-        line-height: 1.65 !important;
+        font-family: var(--font-serif) !important;
+        padding: 14px 16px !important;
+        font-size: 0.9rem !important;
+        font-weight: 500 !important;
+        line-height: 1.68 !important;
         border-radius: 10px !important;
-        margin: 8px 0 !important;
+        margin: 12px 0 8px 0 !important;
+        background: var(--bg-card-soft) !important;
+        border-left: 3px solid var(--accent-amber) !important;
       }
       .book-quote-box .copy-quote-btn {
         margin-top: 8px !important;
         font-size: 0.76rem !important;
         padding: 3px 8px !important;
       }
-      .book-card-actions {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        margin-top: 4px;
+      .book-action-bar {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        margin-top: 14px !important;
       }
-      .book-card-actions .btn {
+      .book-action-bar .btn,
+      .book-action-bar .btn-detail-link {
         width: 100% !important;
         justify-content: center !important;
-        padding: 11px 16px !important;
-        font-size: 0.9rem !important;
+        text-align: center !important;
+        padding: 12px 16px !important;
+        font-size: 0.92rem !important;
+        font-weight: 600 !important;
+        border-radius: var(--radius-md) !important;
       }
 
-      /* 受困圖景卡片 (Persona) */
+      /* ══════════════════════════════════════════════════════════════════
+         受困圖景剖析 (Persona)：小標題與內文對齊，消除孤行斷行
+         ══════════════════════════════════════════════════════════════════ */
       .persona-grid {
         grid-template-columns: 1fr !important;
-        gap: 14px !important;
+        gap: 16px !important;
       }
       .persona-card {
-        padding: 18px 16px !important;
-        border-radius: 14px !important;
+        padding: 20px 16px !important;
+        border-radius: 16px !important;
+        background: #FFFFFF !important;
+        border: 1px solid var(--border-card) !important;
+        box-shadow: 0 4px 16px rgba(45, 41, 38, 0.06) !important;
       }
       .persona-icon {
         width: 40px !important;
         height: 40px !important;
-        margin-bottom: 10px !important;
+        margin-bottom: 12px !important;
+      }
+      .persona-tag {
+        display: inline-block !important;
+        margin-bottom: 8px !important;
+        font-size: 0.8rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.04em !important;
       }
       .persona-title {
+        font-family: var(--font-serif) !important;
         font-size: 1.15rem !important;
-        line-height: 1.38 !important;
-        margin-bottom: 6px !important;
+        font-weight: 700 !important;
+        line-height: 1.42 !important;
+        margin-bottom: 8px !important;
+        color: var(--text-main) !important;
+        text-wrap: balance !important;
+        word-break: break-word !important;
+        width: 100% !important;
       }
       .persona-desc {
         font-size: 0.88rem !important;
-        line-height: 1.68 !important;
+        line-height: 1.72 !important;
+        color: var(--text-muted) !important;
+        text-align: justify !important;
+        text-justify: inter-ideograph !important;
+        margin: 0 !important;
+        width: 100% !important;
       }
 
-      /* 盲點對照 (Blindspots) */
+      /* ══════════════════════════════════════════════════════════════════
+         盲點審查與破局對策 (Blindspots)：扁平化結構，釋放寶貴寬度
+         ══════════════════════════════════════════════════════════════════ */
+      .adversarial-box {
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+      }
+      .adversarial-header {
+        margin-bottom: 16px !important;
+      }
+      .adversarial-card-title {
+        font-size: 1.35rem !important;
+        line-height: 1.35 !important;
+        margin-bottom: 6px !important;
+        text-wrap: balance !important;
+      }
+      .blindspot-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+      }
       .blindspot-card {
-        padding: 14px !important;
-        gap: 14px !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
       }
       .blindspot-col {
-        padding: 12px 14px;
-        background: #FFFFFF;
-        border-radius: 10px;
-        border: 1px solid var(--border-subtle);
+        background: #FFFFFF !important;
+        border: 1px solid var(--border-card) !important;
+        border-radius: 14px !important;
+        padding: 16px !important;
+        box-shadow: 0 2px 10px rgba(45, 41, 38, 0.05) !important;
+      }
+      .blindspot-col:first-child {
+        border-left: 4px solid #C0392B !important; /* 直覺盲點警示色 */
+      }
+      .blindspot-col:last-child {
+        border-left: 4px solid #3E6B56 !important; /* 破局對策生機綠 */
+      }
+      .blindspot-tag {
+        font-size: 0.78rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 6px !important;
+        display: inline-block !important;
       }
       .blindspot-title {
+        font-family: var(--font-serif) !important;
         font-size: 1.05rem !important;
-        line-height: 1.4 !important;
+        font-weight: 700 !important;
+        line-height: 1.42 !important;
+        color: var(--text-main) !important;
+        margin-bottom: 8px !important;
+        text-wrap: balance !important;
+        word-break: break-word !important;
       }
       .blindspot-text {
         font-size: 0.86rem !important;
-        line-height: 1.65 !important;
+        line-height: 1.68 !important;
+        color: var(--text-muted) !important;
+        text-align: justify !important;
+        margin: 0 !important;
       }
 
-      /* 互補矩陣 (Companions) */
+      /* ══════════════════════════════════════════════════════════════════
+         互補矩陣 (Companions)：橫向滑動輪播軌道，告別縱向 1500px 巨幅堆疊
+         ══════════════════════════════════════════════════════════════════ */
+      .companion-swipe-tip {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        font-size: 0.82rem !important;
+        color: var(--accent-rose) !important;
+        font-weight: 600 !important;
+        margin-bottom: 12px !important;
+        letter-spacing: 0.04em !important;
+      }
       .companion-grid {
-        grid-template-columns: 1fr !important;
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
         gap: 14px !important;
+        padding: 6px 16px 20px 16px !important;
+        margin-left: -16px !important;
+        margin-right: -16px !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+      }
+      .companion-grid::-webkit-scrollbar {
+        display: none !important;
       }
       .companion-card {
-        padding: 16px 14px !important;
+        flex: 0 0 82vw !important;
+        max-width: 310px !important;
+        min-width: 270px !important;
+        scroll-snap-align: center !important;
+        padding: 20px 16px !important;
+        margin-bottom: 0 !important;
+        border-radius: 16px !important;
+        box-shadow: 0 4px 16px rgba(45, 41, 38, 0.08) !important;
+        background: #FFFFFF !important;
+        border: 1px solid var(--border-card) !important;
       }
       .companion-title {
+        font-family: var(--font-serif) !important;
         font-size: 1.15rem !important;
+        line-height: 1.38 !important;
       }
       .companion-field {
         margin-top: 10px !important;
       }
       .companion-field-text {
         font-size: 0.86rem !important;
-        line-height: 1.62 !important;
+        line-height: 1.68 !important;
+        text-align: justify !important;
+      }
+
+      /* ══════════════════════════════════════════════════════════════════
+         3 分鐘心智自測 (Assessment)：高質感方塊勾選框，極致互動暗示
+         ══════════════════════════════════════════════════════════════════ */
+      .assessment-card {
+        padding: 20px 16px !important;
+        border-radius: 16px !important;
+      }
+      .assessment-intro {
+        font-size: 0.88rem !important;
+        margin-bottom: 16px !important;
+      }
+      .assessment-options {
+        gap: 12px !important;
+        margin-bottom: 20px !important;
+      }
+      .assessment-opt-label {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        padding: 14px 14px !important;
+        border-radius: 12px !important;
+        background: var(--bg-card-soft) !important;
+        border: 1.5px solid var(--border-subtle) !important;
+        cursor: pointer !important;
+        -webkit-tap-highlight-color: transparent !important;
+      }
+      .assessment-opt-label input[type="checkbox"] {
+        -webkit-appearance: none !important;
+        appearance: none !important;
+        margin: 2px 0 0 0 !important;
+        width: 22px !important;
+        height: 22px !important;
+        min-width: 22px !important;
+        min-height: 22px !important;
+        border: 2px solid var(--accent-rose, #C06C52) !important;
+        border-radius: 6px !important;
+        background: #FFFFFF !important;
+        cursor: pointer !important;
+        display: inline-grid !important;
+        place-content: center !important;
+        flex-shrink: 0 !important;
+        outline: none !important;
+        box-shadow: inset 0 1px 2px rgba(45, 41, 38, 0.05) !important;
+        transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+      .assessment-opt-label input[type="checkbox"]::after {
+        content: "" !important;
+        width: 11px !important;
+        height: 6px !important;
+        border-left: 2.4px solid #FFFFFF !important;
+        border-bottom: 2.4px solid #FFFFFF !important;
+        transform: rotate(-45deg) translateY(-1px) scale(0) !important;
+        transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+      .assessment-opt-label input[type="checkbox"]:checked {
+        background: var(--accent-rose, #C06C52) !important;
+        border-color: var(--accent-rose, #C06C52) !important;
+        box-shadow: 0 2px 8px rgba(192, 108, 82, 0.32) !important;
+      }
+      .assessment-opt-label input[type="checkbox"]:checked::after {
+        transform: rotate(-45deg) translateY(-1px) scale(1) !important;
+      }
+      .assessment-opt-label:has(input[type="checkbox"]:checked) {
+        border-color: var(--accent-rose, #C06C52) !important;
+        background: #FFFFFF !important;
+        box-shadow: 0 4px 16px rgba(192, 108, 82, 0.09) !important;
+      }
+      .assessment-opt-text {
+        font-size: 0.88rem !important;
+        line-height: 1.65 !important;
+        color: var(--text-main) !important;
       }
 
       /* 處方卡片 (Playbook) */
@@ -3430,7 +3691,7 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">DIAGNOSIS & ANATOMY</span>
-        <h2 class="section-title"><svg class="bujo-motif-coffee" viewBox="0 0 28 28" width="22" height="22" fill="none"><g stroke="var(--text-main)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M 5 9 L 5 20 C 5 23 8 25 14 25 C 20 25 23 23 23 20 L 23 9 Z"/><path d="M 23 11 C 26 11 27 13 27 15 C 27 18 25 19 23 19"/><path d="M 9 3 C 8 5 10 6 9 8" stroke="var(--riso-rose)" stroke-width="1.2"/><path d="M 14 2 C 13 4 15 5 14 7" stroke="var(--riso-rose)" stroke-width="1.2"/><path d="M 19 3 C 18 5 20 6 19 8" stroke="var(--riso-rose)" stroke-width="1.2"/></g></svg> 核心畫像解構：退讓與內耗的共謀機制</h2>
+        <h2 class="section-title">核心畫像解構：退讓與內耗的共謀機制</h2>
         <p class="section-desc">
           在職場高壓會議與過往家庭生活中，面對強勢者時習慣妥協退讓，獨處時卻反覆重播自責。<br>
           當場妥協與事後反芻，源於神經防禦機制的代償錯位，與個人意志力強弱無涉。
@@ -3440,7 +3701,7 @@
         <article class="persona-card">
           <div class="persona-icon"><svg class="bujo-icon" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" stroke="var(--border-subtle)" stroke-width="0.8" stroke-dasharray="2 2"/><g transform="translate(-0.8, 0.8)" opacity="0.4" stroke="var(--riso-sage)" stroke-width="1.2"><path d="M 16 7 L 16 25 M 7 16 L 25 16 M 10 10 L 22 22 M 10 22 L 22 10"/></g><g stroke="var(--riso-rose)" stroke-width="1.5" stroke-linecap="round"><path d="M 16 8 L 16 24 M 8 16 L 24 16"/><circle cx="16" cy="16" r="2.5" fill="var(--text-main)"/></g><circle cx="16" cy="8" r="1.2" fill="var(--riso-sage)"/><circle cx="16" cy="24" r="1.2" fill="var(--riso-sage)"/></svg></div>
           <span class="persona-tag">即時機轉 · 生理防衛</span>
-          <h3 class="persona-title"><svg class="bujo-icon-sm" viewBox="0 0 28 28" fill="none"><g stroke="var(--text-main)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M 5 9 L 5 20 C 5 23 8 25 14 25 C 20 25 23 23 23 20 L 23 9 Z"/><path d="M 23 11 C 26 11 27 13 27 15 C 27 18 25 19 23 19"/><path d="M 9 3 C 8 5 10 6 9 8" stroke="var(--riso-rose)" stroke-width="1.2"/><path d="M 14 2 C 13 4 15 5 14 7" stroke="var(--riso-rose)" stroke-width="1.2"/><path d="M 19 3 C 18 5 20 6 19 8" stroke="var(--riso-rose)" stroke-width="1.2"/></g></svg> 迷走神經凍結與討好反應：現場暫停呼吸</h3>
+          <h3 class="persona-title">迷走神經凍結與討好反應：現場暫停呼吸</h3>
           <p class="persona-desc">
             身處權力嚴重傾斜的場合，人體背側迷走神經會迅速觸發「凍結反應（Freeze）」或「討好反應（Fawn）」。大腦前額葉皮質血液暫時被抽離，理智思考受阻，容易本能地點頭、道歉或接受不合理要求。這是個體面對強大威脅時的自我保護本能，與意志力強弱無關。
           </p>
@@ -3449,7 +3710,7 @@
         <article class="persona-card">
           <div class="persona-icon"><svg class="bujo-icon" viewBox="0 0 32 32" fill="none"><g transform="translate(0.8, -0.6)" opacity="0.4" stroke="var(--riso-rose)" stroke-width="1.2"><path d="M 23 11 C 21 8 18 7 15 8 C 11 9 9 13 10 17 C 11 21 15 24 19 23 C 23 21 24 17 22 14"/></g><g stroke="var(--text-main)" stroke-width="1.5" stroke-linecap="round"><path d="M 22 10 C 20 7 17 6 14 7 C 10 8 8 12 9 16 C 10 20 14 23 18 22 C 22 20 23 16 21 13"/><polyline points="23,7 23,11 19,11"/></g><circle cx="15" cy="14" r="1.5" fill="var(--riso-sage)"/></svg></div>
           <span class="persona-tag">事後折磨 · 神經反芻</span>
-          <h3 class="persona-title"><svg class="bujo-icon-sm" viewBox="0 0 26 36" fill="none"><path d="M 13 32 L 13 4" stroke="var(--riso-sage)" stroke-width="1.4" stroke-linecap="round"/><path d="M 13 24 C 6 22 5 16 11 14 C 13 19 13 24 13 24 Z" fill="var(--riso-sage)" opacity="0.35" stroke="var(--riso-sage)" stroke-width="1.1"/><path d="M 13 18 C 20 16 21 10 15 8 C 13 13 13 18 13 18 Z" fill="var(--riso-sage)" opacity="0.35" stroke="var(--riso-sage)" stroke-width="1.1"/><path d="M 13 10 C 9 6 11 2 13 3 C 15 2 17 6 13 10 Z" fill="var(--riso-sage)" opacity="0.45" stroke="var(--riso-sage)" stroke-width="1.1"/></svg> 反芻風暴與失控自我對話：心理降溫抽離</h3>
+          <h3 class="persona-title">反芻風暴與失控自我對話：心理降溫抽離</h3>
           <p class="persona-desc">
             離開衝突現場後，神經反芻機制正式啟動。伊森·克洛斯（Ethan Kross）研究證實：單憑邏輯思考平復情緒衝擊，極易陷入反芻陷阱。大腦以極快語速反覆播放：「剛剛為何沒有反駁？」「對方是否認為我軟弱？」「為何我又退讓了？」。對外部不公的壓抑情緒，最終全部轉化為對自我的嚴厲審訊與反覆消耗。
           </p>
@@ -3458,7 +3719,7 @@
         <article class="persona-card">
           <div class="persona-icon"><svg class="bujo-icon" viewBox="0 0 32 32" fill="none"><g transform="translate(-0.8, 0.6)" opacity="0.4" stroke="var(--riso-sage)" stroke-width="1.2"><line x1="8" y1="12" x2="24" y2="12"/><path d="M 8 12 L 5 19 C 5 21 11 21 11 19 Z"/><path d="M 24 12 L 21 17 C 21 19 27 19 27 17 Z"/></g><g stroke="var(--text-main)" stroke-width="1.5" stroke-linecap="round"><line x1="16" y1="6" x2="16" y2="26"/><line x1="12" y1="26" x2="20" y2="26"/><line x1="8" y1="11" x2="24" y2="11"/><path d="M 8 11 L 5 18 C 5 20 11 20 11 18 Z"/><path d="M 24 11 L 21 16 C 21 18 27 18 27 16 Z"/></g><circle cx="16" cy="11" r="2" fill="var(--riso-rose)"/></svg></div>
           <span class="persona-tag">認知盲區 · 道德潔癖</span>
-          <h3 class="persona-title"><svg class="bujo-icon-sm" viewBox="0 0 24 24" fill="none"><g stroke="var(--riso-amber)" stroke-width="1.1"><circle cx="12" cy="7" r="2.5"/><circle cx="17" cy="12" r="2.5"/><circle cx="12" cy="17" r="2.5"/><circle cx="7" cy="12" r="2.5"/><circle cx="8.5" cy="8.5" r="2.2"/><circle cx="15.5" cy="8.5" r="2.2"/><circle cx="15.5" cy="15.5" r="2.2"/><circle cx="8.5" cy="15.5" r="2.2"/></g><circle cx="12" cy="12" r="2.6" fill="var(--riso-amber)" stroke="none"/></svg> 公正世界假說與弱勢執念：放下討好執念</h3>
+          <h3 class="persona-title">公正世界假說與弱勢執念：放下討好執念</h3>
           <p class="persona-desc">
             傑夫瑞·菲佛（Jeffrey Pfeffer）指出，習慣妥協者常抱持「公正世界假說（Just-World Fallacy）」，深信只要工作成果踏實、為人誠懇，自然會獲得公平對待。若將權力視為負面手段並刻意迴避，將直接失去話語權，任由組織規則被強勢索取者單向決定。
           </p>
@@ -3467,7 +3728,7 @@
         <article class="persona-card">
           <div class="persona-icon"><svg class="riso-icon-lg" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg></div>
           <span class="persona-tag">童年印記 · 情感代償</span>
-          <h3 class="persona-title">情緒不成熟環境下的過度努力</h3>
+          <h3 class="persona-title">童年印記與過度努力代償：重獲心理主權</h3>
           <p class="persona-desc">
             琳賽·吉普森（Lindsay Gibson）與周慕姿共同指出：童年時期若家庭照護者情緒不穩定、易怒或冷漠，敏銳的孩子往往被迫承擔照顧大人情緒的角色。為了維持安全感，孩子內化了「唯有表現優秀、懂事退讓，才配被愛」的信條，並在成年後將此模式完整複製到職場關係中。
           </p>
@@ -3729,7 +3990,7 @@
             </div>
 
             <div class="book-action-bar">
-              <a href="book-power.html" class="btn-detail-link">閱讀專屬獨立長頁 ➔</a>
+              <a href="book-power.html" class="btn btn-primary">閱讀專屬獨立長頁 ➔</a>
               <a href="books/懂權力_在每個角色上發光_黛博拉·葛倫費德.epub" class="btn btn-secondary" onclick="handleBookDownload('懂權力')" download>下載 EPUB (1.4MB)</a>
             </div>
           </div>
@@ -3780,7 +4041,7 @@
             </div>
 
             <div class="book-action-bar">
-              <a href="book-rules-of-power.html" class="btn-detail-link">閱讀專屬獨立長頁 ➔</a>
+              <a href="book-rules-of-power.html" class="btn btn-primary">閱讀專屬獨立長頁 ➔</a>
               <a href="books/精進權力_7大權力法則_傑夫瑞·菲佛.epub" class="btn btn-secondary" onclick="handleBookDownload('精進權力')" download>下載 EPUB (2.2MB)</a>
             </div>
           </div>
@@ -3793,8 +4054,8 @@
               <img src="covers/nice-girls.jpg" alt="職場女性 官方書封" class="book-real-cover-img" loading="lazy">
             </div>
             <div class="book-meta-list">
-              <div class="book-meta-item"><span>作者：</span><span>【美】洛伊斯·弗蘭克爾（楊銘 譯）</span></div>
-              <div class="book-meta-item"><span>出版：</span><span>中央編譯出版社（青豆書坊，2022 簡中版）</span></div>
+              <div class="book-meta-item"><span>作者：</span><span>Lois P. Frankel</span></div>
+              <div class="book-meta-item"><span>出版：</span><span>高寶書版 (2020)</span></div>
               <div class="book-meta-item"><span>原名：</span><span>Nice Girls Don't Get the Corner Office</span></div>
               <div class="book-meta-item"><span>領域：</span><span>女性職場權力與微觀行為</span></div>
             </div>
@@ -3811,34 +4072,27 @@
               </div>
 
               <div class="book-section-block">
-                <h4 class="book-section-subtitle"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：職場中無意識出賣權力的細節</h4>
-                <p class="book-section-text">
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：職場中無意識出賣權力的細節</div>
+                <div class="book-block-text">
                   發言前習慣先道歉「對不起我插一句」、主動替大家張羅茶水退化成辦公室老媽子、在會議室挑角落坐、把手藏在桌下、難以開口拒絕雜務。
-                </p>
+                </div>
               </div>
 
               <div class="book-section-block">
-                <h4 class="book-section-subtitle"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：從「乖巧女孩」向「成熟專業者」的轉身</h4>
-                <p class="book-section-text">
-                  <strong>零道歉溝通：</strong>刪除軟化前綴，直接陳述要點與專業建議；<br>
-                  <strong>佔據物理空間：</strong>提前進場入座會議長桌中央，身體挺直，雙手自然置於桌面；<br>
-                  <strong>能見度責任：</strong>確立向上彙報成果是保護自身勞動成果最清醒的防線。
-                </p>
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：從「乖巧女孩」向「成熟專業者」的轉身</div>
+                <div class="book-block-text">
+                  零道歉溝通：刪除軟化前綴，直接陳述要點與專業建議；佔據物理空間：提前進場入座會議長桌中央，身體挺直，雙手自然置於桌面；確立向上彙報成果是保護自身勞動成果最清醒的防線。
+                </div>
               </div>
 
-              <div class="book-quote-card">
-                <p class="book-quote-text">
-                  「女孩總希望每個人都喜歡她，而成熟的職場女性懂得：贏得專業尊重，遠比被大家當成老好人更具實質力量。」
-                </p>
-                <div class="book-quote-meta">
-                  <span>出處：第二章 競爭心態</span>
-                  <button class="btn-copy" onclick="copyQuote(this, '女孩總希望每個人都喜歡她，而成熟的職場女性懂得：贏得專業尊重，遠比被大家當成老好人更具實質力量。')">複製金句</button>
-                </div>
+              <div class="book-quote-box">
+                「女孩總希望每個人都喜歡她，而成熟的職場女性懂得：贏得專業尊重，遠比被大家當成老好人更具實質力量。」
+                <button class="copy-quote-btn" onclick="copyQuote(this, '女孩總希望每個人都喜歡她，而成熟的職場女性懂得：贏得專業尊重，遠比被大家當成老好人更具實質力量。')">複製金句</button>
               </div>
             </div>
 
             <div class="book-action-bar">
-              <a href="book-nice-girls.html" class="btn-detail-link">閱讀專屬獨立長頁 ➔</a>
+              <a href="book-nice-girls.html" class="btn btn-primary">閱讀專屬獨立長頁 ➔</a>
               <a href="books/職場女性_別讓這些細節絆住你_洛伊斯弗蘭克爾.epub" class="btn btn-secondary" onclick="handleBookDownload('職場女性')" download>下載 EPUB (1.3MB)</a>
             </div>
           </div>
@@ -3889,7 +4143,7 @@
             </div>
 
             <div class="book-action-bar">
-              <a href="book-give-and-take.html" class="btn-detail-link">閱讀專屬獨立長頁 ➔</a>
+              <a href="book-give-and-take.html" class="btn btn-primary">閱讀專屬獨立長頁 ➔</a>
               <a href="books/給予_華頓商學院最啟發人心的一堂課_亞當·格蘭特.epub" class="btn btn-secondary" onclick="handleBookDownload('給予')" download>下載 EPUB (885KB)</a>
             </div>
           </div>
@@ -3905,7 +4159,7 @@
               <div class="book-meta-item"><span>作者：</span><span>周慕姿</span></div>
               <div class="book-meta-item"><span>出版：</span><span>寶瓶文化 (2017)</span></div>
               <div class="book-meta-item"><span>原名：</span><span>Emotional Blackmail</span></div>
-              <div class="book-meta-item"><span>領域：</span><span>關係邊界與防禦心理學</span></div>
+              <div class="book-meta-item"><span>領域：</span><span>關係界限與防禦心理學</span></div>
             </div>
           </div>
           <div class="book-content-panel">
@@ -3920,34 +4174,27 @@
               </div>
 
               <div class="book-section-block">
-                <h4 class="book-section-subtitle"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：被勒索者的四個心理按鈕</h4>
-                <p class="book-section-text">
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：被勒索者的四個心理按鈕</div>
+                <div class="book-block-text">
                   渴望獲得認同、害怕衝突摩擦、過度在乎他人感受、習慣性自我懷疑。勒索者精準利用妳的善良與責任感，讓妳誤以為妥協才是「懂事」與「負責任」。
-                </p>
+                </div>
               </div>
 
               <div class="book-section-block">
-                <h4 class="book-section-subtitle"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：建立情緒界限的「停、看、應」法則</h4>
-                <p class="book-section-text">
-                  <strong>停：</strong>當場面對施壓不即時承諾，以緩衝句果斷離開現場；<br>
-                  <strong>看：</strong>覺察自己的恐懼與罪惡感，區分「對方的責任」與「我的界限」；<br>
-                  <strong>應：</strong>溫和而堅定地表達底線，不爭辯、不掉入對方的道德審判陷阱。
-                </p>
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：建立情緒界限的「停、看、應」法則</div>
+                <div class="book-block-text">
+                  停：當場面對施壓不即時承諾，以緩衝句果斷離開現場；看：覺察自己的恐懼與罪惡感，區分「對方的責任」與「我的界限」；應：溫和而堅定地表達底線，不爭辯、不掉入對方的道德審判陷阱。
+                </div>
               </div>
 
-              <div class="book-quote-card">
-                <p class="book-quote-text">
-                  「我們之所以會被情緒勒索，往往是因為我們害怕成為別人眼中不負責任、不體貼的人。但我們唯一必須負全責的，是自己的人生。」
-                </p>
-                <div class="book-quote-meta">
-                  <span>出處：輯二 自我價值篇</span>
-                  <button class="btn-copy" onclick="copyQuote(this, '我們之所以會被情緒勒索，往往是因為我們害怕成為別人眼中不負責任、不體貼的人。但我們唯一必須負全責的，是自己的人生。')">複製金句</button>
-                </div>
+              <div class="book-quote-box">
+                「我們之所以會被情緒勒索，往往是因為我們害怕成為別人眼中不負責任、不體貼的人。但我們唯一必須負全責的，是自己的人生。」
+                <button class="copy-quote-btn" onclick="copyQuote(this, '我們之所以會被情緒勒索，往往是因為我們害怕成為別人眼中不負責任、不體貼的人。但我們唯一必須負全責的，是自己的人生。')">複製金句</button>
               </div>
             </div>
 
             <div class="book-action-bar">
-              <a href="book-emotional-blackmail.html" class="btn-detail-link">閱讀專屬獨立長頁 ➔</a>
+              <a href="book-emotional-blackmail.html" class="btn btn-primary">閱讀專屬獨立長頁 ➔</a>
               <a href="books/情緒勒索_那些在伴侶親子職場間最讓人窒息的相處_周慕姿.epub" class="btn btn-secondary" onclick="handleBookDownload('情緒勒索')" download>下載 EPUB (1.3MB)</a>
             </div>
           </div>
@@ -3998,7 +4245,7 @@
             </div>
 
             <div class="book-action-bar">
-              <a href="book-chatter.html" class="btn-detail-link">閱讀專屬獨立長頁 ➔</a>
+              <a href="book-chatter.html" class="btn btn-primary">閱讀專屬獨立長頁 ➔</a>
               <a href="books/強大內心的自我對話習慣_伊森·克洛斯.epub" class="btn btn-secondary" onclick="handleBookDownload('自我對話習慣')" download>下載 EPUB (811KB)</a>
             </div>
           </div>
@@ -4049,7 +4296,7 @@
             </div>
 
             <div class="book-action-bar">
-              <a href="book-donganli.html" class="btn-detail-link">閱讀專屬獨立長頁 ➔</a>
+              <a href="book-donganli.html" class="btn btn-primary">閱讀專屬獨立長頁 ➔</a>
               <a href="books/鈍感力_渡邊淳一_青島出版社版.epub" class="btn btn-secondary" onclick="handleBookDownload('鈍感力')" download>下載 EPUB (251KB)</a>
             </div>
           </div>
@@ -4100,7 +4347,7 @@
             </div>
 
             <div class="book-action-bar">
-              <a href="book-immature-parents.html" class="btn-detail-link">閱讀專屬獨立長頁 ➔</a>
+              <a href="book-immature-parents.html" class="btn btn-primary">閱讀專屬獨立長頁 ➔</a>
               <a href="books/如果父母情緒不成熟_和內在父母和解_琳賽·吉普森.epub" class="btn btn-secondary" onclick="handleBookDownload('如果父母情緒不成熟')" download>下載 EPUB (2.8MB)</a>
             </div>
           </div>
@@ -4151,7 +4398,7 @@
             </div>
 
             <div class="book-action-bar">
-              <a href="book-overeffort.html" class="btn-detail-link">閱讀專屬獨立長頁 ➔</a>
+              <a href="book-overeffort.html" class="btn btn-primary">閱讀專屬獨立長頁 ➔</a>
               <a href="books/過度努力_每個過度都是傷的證明_周慕姿.epub" class="btn btn-secondary" onclick="handleBookDownload('過度努力')" download>下載 EPUB (353KB)</a>
             </div>
           </div>
@@ -4165,7 +4412,7 @@
             </div>
             <div class="book-meta-list">
               <div class="book-meta-item"><span>作者：</span><span>Brené Brown</span></div>
-              <div class="book-meta-item"><span>出版：</span><span>心靈工坊／浙江人民</span></div>
+              <div class="book-meta-item"><span>出版：</span><span>心靈工坊 (2013)</span></div>
               <div class="book-meta-item"><span>原名：</span><span>The Gifts of Imperfection</span></div>
               <div class="book-meta-item"><span>領域：</span><span>羞恥感韌性與全心生活</span></div>
             </div>
@@ -4182,34 +4429,27 @@
               </div>
 
               <div class="book-section-block">
-                <h4 class="book-section-subtitle"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：毒性羞恥感與完美主義防禦盔甲</h4>
-                <p class="book-section-text">
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> 直擊痛點：毒性羞恥感與完美主義防禦盔甲</div>
+                <div class="book-block-text">
                   內疚是「我做錯了一件事」，羞恥是「我這個人是有缺陷的」。習慣退讓者常把所有的外在摩擦歸因為自身無能，並用完美主義來武裝自己，陷入筋疲力竭。
-                </p>
+                </div>
               </div>
 
               <div class="book-section-block">
-                <h4 class="book-section-subtitle"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：全心生活的三個指南針</h4>
-                <p class="book-section-text">
-                  <strong>日常勇氣：</strong>傾吐真實感受，坦露自己的極限，不再假裝堅強；<br>
-                  <strong>自我慈悲：</strong>停下內心嚴酷法官的審判，像對待摯友般接納自己的不完美；<br>
-                  <strong>真實聯結：</strong>放下討好偽裝，在被真實看見中建立深層安全感。
-                </p>
+                <div class="book-block-label"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 破局心法：全心生活的三個指南針</div>
+                <div class="book-block-text">
+                  日常勇氣：傾吐真實感受，坦露自己的極限，不再假裝堅強；自我慈悲：停下內心嚴酷法官的審判，像對待摯友般接納自己的不完美；真實聯結：放下討好偽裝，在被真實看見中建立深層安全感。
+                </div>
               </div>
 
-              <div class="book-quote-card">
-                <p class="book-quote-text">
-                  「擁有自己的人生，愛上不完美的自己，是我們所能做出的最勇敢決定。當妳敢於展示真實，便無人能以評價將妳擊垮。」
-                </p>
-                <div class="book-quote-meta">
-                  <span>出處：前言 全心生活</span>
-                  <button class="btn-copy" onclick="copyQuote(this, '擁有自己的人生，愛上不完美的自己，是我們所能做出的最勇敢決定。當妳敢於展示真實，便無人能以評價將妳擊垮。')">複製金句</button>
-                </div>
+              <div class="book-quote-box">
+                「擁有自己的人生，愛上不完美的自己，是我們所能做出的最勇敢決定。當妳敢於展示真實，便無人能以評價將妳擊垮。」
+                <button class="copy-quote-btn" onclick="copyQuote(this, '擁有自己的人生，愛上不完美的自己，是我們所能做出的最勇敢決定。當妳敢於展示真實，便無人能以評價將妳擊垮。')">複製金句</button>
               </div>
             </div>
 
             <div class="book-action-bar">
-              <a href="book-daring-greatly.html" class="btn-detail-link">閱讀專屬獨立長頁 ➔</a>
+              <a href="book-daring-greatly.html" class="btn btn-primary">閱讀專屬獨立長頁 ➔</a>
               <a href="books/脆弱的力量_布琳布朗.epub" class="btn btn-secondary" onclick="handleBookDownload('不完美的禮物')" download>下載 EPUB (701KB)</a>
             </div>
           </div>
@@ -4230,6 +4470,7 @@
         </p>
       </div>
 
+      <div class="companion-swipe-tip"><span class="swipe-arrow">⟵</span> 左右滑動切換 5 本互補專書 <span class="swipe-arrow">⟶</span></div>
       <div class="companion-grid">
         <article class="companion-card">
           <div class="companion-header">
