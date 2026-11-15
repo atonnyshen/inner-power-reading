@@ -541,42 +541,64 @@
     /* 手機端顛覆性排版: 告別痛苦的橫向滑動表格，轉換為垂直沉浸式「階梯進階卡片」 */
     @media (max-width: 768px) {
       .table-wrapper {
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        overflow: visible;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+      }
+      .evolution-table {
+        min-width: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
       }
       .evolution-table, 
       .evolution-table tbody, 
       .evolution-table tr, 
       .evolution-table td {
-        display: block;
+        display: block !important;
         width: 100% !important;
-        box-sizing: border-box;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        white-space: normal !important;
       }
       .evolution-table thead {
-        display: none; /* 手機端隱藏死板的表頭 */
+        display: none !important; /* 手機端隱藏死板的表頭 */
       }
       .evolution-table tr {
-        background: #FFFFFF;
-        border: 1px solid var(--border-card);
-        border-radius: var(--radius-lg);
-        padding: 20px 18px;
-        margin-bottom: 16px;
-        box-shadow: var(--shadow-sm);
+        background: #FFFFFF !important;
+        border: 1px solid var(--border-card) !important;
+        border-radius: var(--radius-lg) !important;
+        padding: 20px 18px !important;
+        margin-bottom: 16px !important;
+        box-shadow: var(--shadow-sm) !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
       }
       .evolution-table td {
-        padding: 10px 0;
-        border-bottom: 1px dashed rgba(45, 41, 38, 0.08);
+        padding: 10px 0 !important;
+        border-bottom: 1px dashed rgba(45, 41, 38, 0.08) !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        white-space: normal !important;
+        line-height: 1.68 !important;
+        font-size: 0.92rem !important;
+        color: var(--text-muted) !important;
       }
       .evolution-table td:first-child {
-        padding-top: 0;
-        border-bottom: 1px solid var(--border-subtle);
-        padding-bottom: 12px;
+        padding-top: 0 !important;
+        border-bottom: 1px solid var(--border-subtle) !important;
+        padding-bottom: 12px !important;
       }
       .evolution-table td:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
       }
       /* 為手機端卡片標記清晰的語意引導 */
       .evolution-table td:nth-child(2)::before {
@@ -1359,40 +1381,78 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 64px;
-      gap: 16px;
+      height: 52px;
+      gap: 12px;
     }
 
-    /* Chapter Scroll Snap Bar inside Header */
+    /* Chapter Scroll Snap Bar inside Header (專屬書籤導航列 · 高階滑動隱喻) */
     .nav-chapter-bar {
-      border-top: 1px solid rgba(45, 41, 38, 0.06);
-      background: rgba(253, 251, 247, 0.85);
-      padding: 6px 0;
+      border-top: 1px solid rgba(45, 41, 38, 0.05);
+      background: rgba(253, 251, 247, 0.94);
+      padding: 6px 0 8px 0;
       position: relative;
+    }
+    .nav-chapter-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    /* 右側向內漸變淡出遮罩 + 微型箭羽提示 (暗示右方有隱藏內容可滑動) */
+    .nav-chapter-wrapper::after {
+      content: '›';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 6px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--accent-rose, #C06C52);
+      background: linear-gradient(to right, rgba(253, 251, 247, 0) 0%, rgba(253, 251, 247, 0.96) 55%, rgba(253, 251, 247, 1) 100%);
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+    }
+    .nav-chapter-wrapper.scrolled-end::after {
+      opacity: 0;
     }
     .chapter-nav-scroll {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding: 2px 8px;
+      padding: 2px 42px 2px 4px;
       white-space: nowrap;
       flex-wrap: nowrap;
-      mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent);
+      width: 100%;
     }
     .chapter-nav-scroll::-webkit-scrollbar {
       display: none;
+    }
+    /* 首次載入時微動態輕彈示範 (300ms 微動彈簧) */
+    @keyframes scrollHintNudge {
+      0% { transform: translateX(0); }
+      30% { transform: translateX(-16px); }
+      60% { transform: translateX(4px); }
+      100% { transform: translateX(0); }
+    }
+    .chapter-nav-scroll.animate-nudge {
+      animation: scrollHintNudge 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     }
     .nav-chip {
       scroll-snap-align: start;
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      padding: 4px 12px;
+      padding: 5px 13px;
       border-radius: var(--radius-full);
       font-size: 0.82rem;
       font-weight: 600;
@@ -1402,6 +1462,14 @@
       transition: all 0.2s ease;
       text-decoration: none;
       flex-shrink: 0;
+      box-shadow: 0 1px 3px rgba(45, 41, 38, 0.03);
+    }
+    /* 手機上精算寬度，確保最後一個晶片露出一半 (Peeking Card Rule) */
+    @media (max-width: 480px) {
+      .nav-chip {
+        padding: 5px 11px;
+        font-size: 0.80rem;
+      }
     }
     .nav-chip:hover, .nav-chip.active {
       color: var(--accent-rose);
@@ -2344,9 +2412,372 @@
       }
     }
 
+    /* Top Reading Progress Bar (頂部極細閱讀進度條 · 隨滾動即時提示閱讀深度) */
+    .reading-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-rose, #C06C52), #E0896E, #3E6B56);
+      z-index: 9999;
+      pointer-events: none;
+      transition: width 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Mobile Chapter Quick-Drawer (TOC 抽屜式導航) */
+    .toc-drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(45, 41, 38, 0.45);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 9998;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.28s ease, visibility 0.28s;
+    }
+    .toc-drawer-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .toc-drawer-sheet {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      max-height: 84vh;
+      background: #FAF8F5;
+      border-radius: 20px 20px 0 0;
+      box-shadow: 0 -8px 32px rgba(45, 41, 38, 0.18);
+      z-index: 9999;
+      transform: translateY(100%);
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .toc-drawer-overlay.active .toc-drawer-sheet {
+      transform: translateY(0);
+    }
+    .toc-drawer-header {
+      padding: 16px 20px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-subtle);
+      background: #FFFFFF;
+    }
+    .toc-drawer-title {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .toc-drawer-close {
+      background: none;
+      border: none;
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+    .toc-drawer-body {
+      padding: 14px 16px 36px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .toc-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .toc-item:active {
+      background: var(--accent-rose-light);
+      border-color: var(--accent-rose);
+      color: var(--accent-rose);
+    }
+    .toc-item-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-dim);
+      background: var(--bg-card-soft);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    /* 手機端深層閱讀與排版調優 (@media max-width: 768px) */
+    @media (max-width: 768px) {
+      .container {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+      section {
+        padding: 44px 0 !important;
+      }
+      .section-header {
+        margin: 0 auto 28px auto !important;
+      }
+      .section-title {
+        font-size: clamp(1.35rem, 5.2vw, 1.7rem) !important;
+        line-height: 1.35 !important;
+      }
+      .section-desc {
+        font-size: 0.88rem !important;
+        line-height: 1.65 !important;
+        margin-top: 8px !important;
+      }
+
+      /* 十大專書刊頭：左右緊湊排列，終結手機端 500px 巨圖滾動疲乏 */
+      .book-pillars-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .book-pillar-card {
+        grid-template-columns: 1fr !important;
+        padding: 18px 14px !important;
+        gap: 14px !important;
+        border-radius: 16px !important;
+        margin-bottom: 8px !important;
+      }
+      .book-cover-panel {
+        display: grid !important;
+        grid-template-columns: 104px 1fr !important;
+        gap: 14px !important;
+        align-items: start !important;
+      }
+      .book-real-cover-box {
+        width: 104px !important;
+        aspect-ratio: 1 / 1.44 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 6px 16px rgba(45, 41, 38, 0.14) !important;
+        margin: 0 !important;
+      }
+      .book-meta-list {
+        padding: 10px 12px !important;
+        font-size: 0.78rem !important;
+        gap: 4px !important;
+        border-radius: 8px !important;
+        line-height: 1.4 !important;
+        background: var(--bg-card-soft);
+      }
+      .book-meta-item {
+        font-size: 0.76rem !important;
+        flex-direction: column !important;
+        gap: 1px !important;
+      }
+      .book-meta-item span:first-child {
+        font-size: 0.7rem;
+        color: var(--text-dim);
+      }
+      .book-meta-item span:last-child {
+        font-weight: 600;
+        color: var(--text-main);
+      }
+
+      .book-content-panel {
+        gap: 12px !important;
+      }
+      .book-header-line {
+        margin-bottom: 6px !important;
+      }
+      .card-highlight-tag {
+        font-size: 0.78rem !important;
+        padding: 3px 10px !important;
+      }
+      .book-main-title {
+        font-size: 1.35rem !important;
+        line-height: 1.35 !important;
+        margin-bottom: 8px !important;
+      }
+      .book-core-axiom {
+        font-size: 0.92rem !important;
+        line-height: 1.6 !important;
+        padding: 10px 12px !important;
+        background: var(--accent-rose-light) !important;
+        border-left: 3px solid var(--accent-rose) !important;
+        border-radius: 0 8px 8px 0 !important;
+        margin-bottom: 10px !important;
+        color: var(--accent-rose) !important;
+      }
+      .book-section-block {
+        margin-bottom: 8px !important;
+        padding: 12px 14px !important;
+        background: var(--bg-card-soft) !important;
+        border-radius: 10px !important;
+        border: 1px solid var(--border-subtle) !important;
+      }
+      .book-block-label {
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 4px !important;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .book-block-text {
+        font-size: 0.86rem !important;
+        line-height: 1.65 !important;
+        color: var(--text-muted) !important;
+      }
+      .book-quote-box {
+        padding: 12px 14px !important;
+        font-size: 0.88rem !important;
+        line-height: 1.65 !important;
+        border-radius: 10px !important;
+        margin: 8px 0 !important;
+      }
+      .book-quote-box .copy-quote-btn {
+        margin-top: 8px !important;
+        font-size: 0.76rem !important;
+        padding: 3px 8px !important;
+      }
+      .book-card-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 4px;
+      }
+      .book-card-actions .btn {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 11px 16px !important;
+        font-size: 0.9rem !important;
+      }
+
+      /* 受困圖景卡片 (Persona) */
+      .persona-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+      }
+      .persona-card {
+        padding: 18px 16px !important;
+        border-radius: 14px !important;
+      }
+      .persona-icon {
+        width: 40px !important;
+        height: 40px !important;
+        margin-bottom: 10px !important;
+      }
+      .persona-title {
+        font-size: 1.15rem !important;
+        line-height: 1.38 !important;
+        margin-bottom: 6px !important;
+      }
+      .persona-desc {
+        font-size: 0.88rem !important;
+        line-height: 1.68 !important;
+      }
+
+      /* 盲點對照 (Blindspots) */
+      .blindspot-card {
+        padding: 14px !important;
+        gap: 14px !important;
+      }
+      .blindspot-col {
+        padding: 12px 14px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        border: 1px solid var(--border-subtle);
+      }
+      .blindspot-title {
+        font-size: 1.05rem !important;
+        line-height: 1.4 !important;
+      }
+      .blindspot-text {
+        font-size: 0.86rem !important;
+        line-height: 1.65 !important;
+      }
+
+      /* 互補矩陣 (Companions) */
+      .companion-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+      }
+      .companion-card {
+        padding: 16px 14px !important;
+      }
+      .companion-title {
+        font-size: 1.15rem !important;
+      }
+      .companion-field {
+        margin-top: 10px !important;
+      }
+      .companion-field-text {
+        font-size: 0.86rem !important;
+        line-height: 1.62 !important;
+      }
+
+      /* 處方卡片 (Playbook) */
+      .playbook-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+      }
+      .playbook-card {
+        padding: 16px 14px !important;
+        border-radius: 14px !important;
+      }
+      .playbook-title {
+        font-size: 1.15rem !important;
+        line-height: 1.38 !important;
+      }
+      .playbook-desc {
+        font-size: 0.86rem !important;
+        line-height: 1.65 !important;
+      }
+      .playbook-script-box {
+        padding: 12px 14px !important;
+        font-size: 0.88rem !important;
+        line-height: 1.65 !important;
+        border-radius: 10px !important;
+      }
+
+      /* 電子書下載 (Downloads) */
+      .download-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+      .download-card {
+        padding: 14px !important;
+      }
+
+      /* 雙鍵浮動操作島 (Floating Quick Capsule) */
+      .floating-quick-nav {
+        bottom: 20px !important;
+        right: 16px !important;
+        padding: 4px 6px !important;
+        border-radius: 9999px !important;
+        display: inline-flex !important;
+        gap: 2px !important;
+      }
+      .quick-nav-btn {
+        padding: 7px 12px !important;
+        font-size: 0.82rem !important;
+      }
+    }
+
   </style>
 </head>
 <body>
+  <!-- Top Reading Progress Bar (隨滾動即時指示全頁深度) -->
+  <div id="readingProgressBar" class="reading-progress-bar" aria-hidden="true"></div>
   <!-- Embedded Risograph & Swiss Design SVG Symbol Sprite (Zero-CORS, Local file:// Compatible) -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <defs>
@@ -2838,15 +3269,6 @@
           <span class="brand-subtitle">Inner Power · Reading Journal</span>
         </div>
       </a>
-      <ul class="nav-links">
-        <li><a href="#persona">受困剖析</a></li>
-        <li><a href="#ladder">演化階梯</a></li>
-        <li><a href="#pillars">十大專書</a></li>
-        <li><a href="#companions">互補矩陣</a></li>
-        <li><a href="#assessment">受困自測</a></li>
-        <li><a href="#playbook">防身處方</a></li>
-        <li><a href="#downloads">電子書庫</a></li>
-      </ul>
       <div class="nav-actions">
         <button id="langToggleBtn" class="lang-btn" aria-label="切換繁簡中文">
           <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> <span id="langText">简体中文</span>
@@ -2854,10 +3276,11 @@
       </div>
     </div>
 
-    <!-- Integrated Horizontal Scroll Snap Chapter Bar -->
+    <!-- Integrated Horizontal Scroll Snap Chapter Bar (單一書籤導航 · 具備右緣漸變與滑動提示) -->
     <nav class="nav-chapter-bar" aria-label="板塊快速跳轉">
       <div class="container">
-        <div class="chapter-nav-scroll" id="chapterNavScroll">
+        <div class="nav-chapter-wrapper" id="navChapterWrapper">
+          <div class="chapter-nav-scroll" id="chapterNavScroll">
           <a href="#hero" class="nav-chip active"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>讀書扉頁</span></a>
           <a href="#persona" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> <span>受困圖景</span></a>
           <a href="#ladder" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> <span>演化階梯</span></a>
@@ -2866,6 +3289,7 @@
           <a href="#assessment" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> <span>心智自測</span></a>
           <a href="#playbook" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-pill"></use></svg> <span>行動處方</span></a>
           <a href="#downloads" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-book"></use></svg> <span>電子書庫</span></a>
+        </div>
         </div>
       </div>
     </nav>
@@ -2997,11 +3421,6 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="hero-badge-item"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-brain"></use></svg> 密西根大學神經反芻腦科學</div>
-        <div class="hero-badge-item"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> 拒絕掠奪的高效付出者法則</div>
-        <div class="hero-badge-item"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-dove"></use></svg> 成人假性孤兒臨床心理和解</div>
       </div>
     </div>
   </section>
@@ -3280,7 +3699,6 @@
           </div>
           <div class="book-content-panel">
             <div>
-              <div class="subpage-bujo-tag">[ 專書手帳 01 // 權力破局 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-amber">核心定位：重構權力認知</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">史丹佛 MBA 爆棚選修課</span>
@@ -3332,7 +3750,6 @@
           </div>
           <div class="book-content-panel">
             <div>
-              <div class="subpage-bujo-tag">[ 專書手帳 02 // 規則拆解 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-rose">核心定位：拆除組織天真</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">史丹佛權力學權威巨作</span>
@@ -3384,7 +3801,6 @@
           </div>
           <div class="book-content-panel">
             <div>
-              <div class="subpage-bujo-tag">[ 專書手帳 03 // 習慣覺察 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-rose">核心定位：微觀職場除魅</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">全球暢銷 20 年女性職涯經典</span>
@@ -3443,7 +3859,6 @@
           </div>
           <div class="book-content-panel">
             <div>
-              <div class="subpage-bujo-tag">[ 專書手帳 04 // 邊界給予 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-sage">核心定位：防索取護盾</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">華頓商學院最年輕終身教授</span>
@@ -3495,7 +3910,6 @@
           </div>
           <div class="book-content-panel">
             <div>
-              <div class="subpage-bujo-tag">[ 專書手帳 05 // 勒索防禦 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-blue">核心定位：拆解罪惡感綁架</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">台灣破億心理諮商現象級專著</span>
@@ -3554,7 +3968,6 @@
           </div>
           <div class="book-content-panel">
             <div>
-              <div class="subpage-bujo-tag">[ 專書手帳 06 // 內在對話 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-blue">核心定位：終結神經反芻</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">全球情緒實驗室權威專著</span>
@@ -3606,7 +4019,6 @@
           </div>
           <div class="book-content-panel">
             <div>
-              <div class="subpage-bujo-tag">[ 專書手帳 07 // 鈍感生長 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-amber">核心定位：過度敏感抗體</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">現代職場高敏救贖指南</span>
@@ -3658,7 +4070,6 @@
           </div>
           <div class="book-content-panel">
             <div>
-              <div class="subpage-bujo-tag">[ 專書手帳 08 // 原生解綁 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-rose">核心定位：破除情感內疚</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">成人情感獨立實踐聖經</span>
@@ -3710,7 +4121,6 @@
           </div>
           <div class="book-content-panel">
             <div>
-              <div class="subpage-bujo-tag">[ 專書手帳 09 // 停止消耗 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-amber">核心定位：卸下防禦性完美</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">暢銷 20 萬冊深度心靈剖析</span>
@@ -3762,7 +4172,6 @@
           </div>
           <div class="book-content-panel">
             <div>
-              <div class="subpage-bujo-tag">[ 專書手帳 10 // 接納真實 ]</div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-green">核心定位：清理毒性羞恥感</span>
                 <span style="font-size: 0.85rem; color: var(--text-dim);">全球心靈覺醒奠基之作</span>
@@ -4353,13 +4762,74 @@
     </div>
   </footer>
 
-  <!-- Floating Quick Nav Pill (Back to Top & Quick Assessment) -->
-    <!-- Floating Back to Top Button -->
-  <aside class="floating-quick-nav" id="floatingQuickNav" aria-label="快速回頂部">
-    <button type="button" class="quick-nav-btn" id="btnBackToTop" aria-label="快速回到頂部導覽列" onclick="scrollToTopNav()">
-      <span>▲</span> <span>回頂部</span>
+  <!-- Floating Dual-Action Quick Capsule (目錄 & 頂部) -->
+  <aside class="floating-quick-nav" id="floatingQuickNav" aria-label="快捷目錄與回頂部">
+    <button type="button" class="quick-nav-btn" id="btnTocDrawer" aria-label="展開章節目錄" onclick="toggleTocDrawer(true)">
+      <span>📑</span> <span>目錄</span>
+    </button>
+    <div class="quick-nav-divider" aria-hidden="true" style="width: 1px; height: 16px; background: var(--border-subtle);"></div>
+    <button type="button" class="quick-nav-btn" id="btnBackToTop" aria-label="快速回到頂部" onclick="scrollToTopNav()">
+      <span>▲</span> <span>頂部</span>
     </button>
   </aside>
+
+  <!-- Mobile Chapter Quick-Drawer (TOC 抽屜) -->
+  <div class="toc-drawer-overlay" id="tocDrawerOverlay" onclick="toggleTocDrawer(false)" aria-modal="true" role="dialog" aria-label="章節目錄跳轉">
+    <div class="toc-drawer-sheet" onclick="event.stopPropagation()">
+      <div class="toc-drawer-header">
+        <div class="toc-drawer-title">
+          <span>📑</span> <span>讀書誌章節導航</span>
+        </div>
+        <button type="button" class="toc-drawer-close" onclick="toggleTocDrawer(false)" aria-label="關閉目錄">✕</button>
+      </div>
+      <div class="toc-drawer-body">
+        <a href="#hero" class="toc-item" onclick="toggleTocDrawer(false)">
+          <span>📖 讀書扉頁 &amp; 急救檢索</span>
+          <span class="toc-item-tag">首頁</span>
+        </a>
+        <a href="#persona" class="toc-item" onclick="toggleTocDrawer(false)">
+          <span>⚡ 受困圖景剖析</span>
+          <span class="toc-item-tag">診斷</span>
+        </a>
+        <a href="#adversarial" class="toc-item" onclick="toggleTocDrawer(false)">
+          <span>🔍 常規盲點破局</span>
+          <span class="toc-item-tag">審查</span>
+        </a>
+        <a href="#ladder" class="toc-item" onclick="toggleTocDrawer(false)">
+          <span>🪜 演化階梯進階</span>
+          <span class="toc-item-tag">階梯</span>
+        </a>
+        <a href="#reading-strategy" class="toc-item" onclick="toggleTocDrawer(false)">
+          <span>💡 六大心智鬆綁指南</span>
+          <span class="toc-item-tag">心法</span>
+        </a>
+        <a href="#pillars" class="toc-item" onclick="toggleTocDrawer(false)">
+          <span>📚 十大核心專書導讀</span>
+          <span class="toc-item-tag">專書</span>
+        </a>
+        <a href="#companions" class="toc-item" onclick="toggleTocDrawer(false)">
+          <span>🛡️ 支援工具書互補矩陣</span>
+          <span class="toc-item-tag">矩陣</span>
+        </a>
+        <a href="#assessment" class="toc-item" onclick="toggleTocDrawer(false)">
+          <span>🧭 3 分鐘受困心智自測</span>
+          <span class="toc-item-tag">測驗</span>
+        </a>
+        <a href="#playbook" class="toc-item" onclick="toggleTocDrawer(false)">
+          <span>💊 現場應急防身處方庫</span>
+          <span class="toc-item-tag">處方</span>
+        </a>
+        <a href="#downloads" class="toc-item" onclick="toggleTocDrawer(false)">
+          <span>📥 電子書下載中心</span>
+          <span class="toc-item-tag">EPUB</span>
+        </a>
+        <a href="#bedtime-reset" class="toc-item" onclick="toggleTocDrawer(false)">
+          <span>🌙 睡前全然放鬆定錨</span>
+          <span class="toc-item-tag">晚安</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- Lightbox Modal Overlay (Award-Winning Web Craft Pillar 6) -->
   <div id="lightbox-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="圖片放大檢視" onclick="closeLightboxModal(event)">
@@ -4465,6 +4935,26 @@
         } else {
           floatingNav.classList.remove('active');
         }
+      }
+
+      // Update Reading Progress Bar
+      const progressBar = document.getElementById('readingProgressBar');
+      if (progressBar && maxScrollY > 0) {
+        const progress = Math.min(100, Math.max(0, (clampedY / maxScrollY) * 100));
+        progressBar.style.width = progress + '%';
+      }
+    }
+
+    // Toggle Mobile TOC Drawer
+    function toggleTocDrawer(open) {
+      const overlay = document.getElementById('tocDrawerOverlay');
+      if (!overlay) return;
+      if (open === undefined) {
+        overlay.classList.toggle('active');
+      } else if (open) {
+        overlay.classList.add('active');
+      } else {
+        overlay.classList.remove('active');
       }
     }
 
@@ -4696,5 +5186,33 @@
       localStorage.setItem("last_reading_mode", "bujo");
     } catch(e) {}
   </script>
+<script>
+  // 橫向滑動選單滑動隱喻與動態互動
+  (function initChapterScrollAffordance() {
+    var wrapper = document.getElementById('navChapterWrapper');
+    var scrollContainer = document.getElementById('chapterNavScroll');
+    if (!wrapper || !scrollContainer) return;
+
+    // 滑動邊界監聽
+    scrollContainer.addEventListener('scroll', function() {
+      var maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+      if (scrollContainer.scrollLeft >= maxScroll - 15) {
+        wrapper.classList.add('scrolled-end');
+      } else {
+        wrapper.classList.remove('scrolled-end');
+      }
+    }, { passive: true });
+
+    // 首次載入微輕彈 (示範可滑動)
+    setTimeout(function() {
+      if (scrollContainer.scrollWidth > scrollContainer.clientWidth) {
+        scrollContainer.classList.add('animate-nudge');
+        setTimeout(function() {
+          scrollContainer.classList.remove('animate-nudge');
+        }, 700);
+      }
+    }, 600);
+  })();
+</script>
 </body>
 </html>
