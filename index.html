@@ -45,8 +45,8 @@
       --radius-md: 14px;
       --radius-lg: 20px;
       --radius-full: 9999px;
-      --font-serif: "Noto Serif TC", "Songti SC", "Source Han Serif TC", "STSong", serif;
-      --font-sans: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Microsoft YaHei", sans-serif;
+      --font-serif: -apple-system-ui-serif, "Playfair Display", "Noto Serif TC", "Noto Serif SC", "Songti TC", "Songti SC", "Source Han Serif TC", "Source Han Serif SC", "STSong", "SimSun", "PMingLiU", serif;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "PingFang SC", "Noto Sans TC", "Noto Sans SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
       color-scheme: light;
     }
 
@@ -54,6 +54,24 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+
+    /* Language-specific typographic priority for optimal CJK glyph rendering */
+    html[lang="zh-TW"], :lang(zh-TW) {
+      --font-serif: -apple-system-ui-serif, "Playfair Display", "Noto Serif TC", "Songti TC", "Source Han Serif TC", "STSong", "PMingLiU", "Noto Serif SC", "Songti SC", serif;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", "Source Han Sans TC", "Microsoft JhengHei", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    }
+    html[lang="zh-CN"], :lang(zh-CN) {
+      --font-serif: -apple-system-ui-serif, "Playfair Display", "Noto Serif SC", "Songti SC", "Source Han Serif SC", "STSong", "SimSun", "Noto Serif TC", "Songti TC", serif;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    }
+    html {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-synthesis: none;
+      font-feature-settings: "palt" 1;
     }
 
     body {
@@ -971,7 +989,7 @@
       font-size: 0.93rem;
       color: var(--text-main);
       line-height: 1.7;
-      font-style: italic;
+      font-style: normal;
     }
 
     /* Section 7: Downloads & Readify AI */
@@ -1182,6 +1200,24 @@
       scroll-behavior: smooth;
       scroll-padding-top: calc(var(--nav-height, 80px) + 20px);
     }
+
+    /* Language-specific typographic priority for optimal CJK glyph rendering */
+    html[lang="zh-TW"], :lang(zh-TW) {
+      --font-serif: -apple-system-ui-serif, "Playfair Display", "Noto Serif TC", "Songti TC", "Source Han Serif TC", "STSong", "PMingLiU", "Noto Serif SC", "Songti SC", serif;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", "Source Han Sans TC", "Microsoft JhengHei", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    }
+    html[lang="zh-CN"], :lang(zh-CN) {
+      --font-serif: -apple-system-ui-serif, "Playfair Display", "Noto Serif SC", "Songti SC", "Source Han Serif SC", "STSong", "SimSun", "Noto Serif TC", "Songti TC", serif;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    }
+    html {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-synthesis: none;
+      font-feature-settings: "palt" 1;
+    }
+
     body {
       overflow-x: hidden;
       width: 100%;
@@ -1509,7 +1545,7 @@
       <ul class="nav-links">
         <li><a href="#persona">受困剖析</a></li>
         <li><a href="#ladder">演化階梯</a></li>
-        <li><a href="#pillars">七大專書</a></li>
+        <li><a href="#pillars">十大專書</a></li>
         <li><a href="#companions">互補矩陣</a></li>
         <li><a href="#assessment">受困自測</a></li>
         <li><a href="#playbook">防身處方</a></li>
@@ -1528,7 +1564,7 @@
         <div class="chapter-nav-scroll" id="chapterNavScroll">
           <a href="#persona" class="nav-chip"><span>💔</span> <span>受困圖景</span></a>
           <a href="#ladder" class="nav-chip"><span>🪜</span> <span>演化階梯</span></a>
-          <a href="#pillars" class="nav-chip"><span>📚</span> <span>七大專書</span></a>
+          <a href="#pillars" class="nav-chip"><span>📚</span> <span>十大專書</span></a>
           <a href="#companions" class="nav-chip"><span>🛡️</span> <span>互補矩陣</span></a>
           <a href="#assessment" class="nav-chip"><span>⚡</span> <span>心智自測</span></a>
           <a href="#playbook" class="nav-chip"><span>💊</span> <span>行動處方</span></a>
@@ -1561,7 +1597,7 @@
       </div>
       <div class="hero-actions">
         <a href="#assessment" class="btn btn-primary">開始 3 分鐘心理受困自測</a>
-        <a href="#pillars" class="btn btn-secondary">瀏覽七大專書真實封面與導讀</a>
+        <a href="#pillars" class="btn btn-secondary">瀏覽十大專書真實封面與導讀</a>
         <a href="#downloads" class="btn btn-secondary">獲取 EPUB（支援 Readify AI）</a>
       </div>
       <div class="hero-badges">
@@ -1710,42 +1746,42 @@
             <tr>
               <td>
                 <span class="stage-badge">階梯 I</span>
-                <strong style="display:block; color:var(--text-main);">止血抗耗</strong>
-                <small style="color:var(--text-dim);">Acute Hemostasis</small>
+                <strong style="display:block; color:var(--text-main);">止血急救</strong>
+                <small style="color:var(--text-dim);">神經反芻與生理調控</small>
               </td>
-              <td>建立心理防線，中斷大腦反芻對話，恢復睡眠與身心平靜。</td>
-              <td>《強大內心的自我對話習慣》<br>《鈍感力》<br><small style="color:var(--text-dim);">支援：《自我慈悲》</small></td>
-              <td>遭遇衝突後，反芻重播時長縮短至 30 分鐘以內，夜間睡眠不受干擾。</td>
+              <td>建立心理防線，中斷大腦反芻對話，平息迷走神經凍結，恢復身心平靜。</td>
+              <td>《強大內心的自我對話習慣》<br>《鈍感力》<br><small style="color:var(--text-dim);">互補支援：《自我慈悲》</small></td>
+              <td>衝突後反芻縮短至 30 分鐘內，終結入睡前反覆重播。</td>
             </tr>
             <tr>
               <td>
                 <span class="stage-badge">階梯 II</span>
-                <strong style="display:block; color:var(--text-main);">權力醒悟</strong>
-                <small style="color:var(--text-dim);">Power Awakening</small>
+                <strong style="display:block; color:var(--text-main);">防禦邊界</strong>
+                <small style="color:var(--text-dim);">識破勒索與保護利他</small>
               </td>
-              <td>打破好人道德潔癖與公正世界迷思，掌握角色權力槓桿與防索取界線。</td>
-              <td>《懂權力，在每個角色上發光》<br>《精進權力》<br>《給予》<br><small style="color:var(--text-dim);">支援：《被討厭的勇氣》</small></td>
-              <td>能坦然爭取自身合法利益與工作資源，不再產生自責或自私感。</td>
+              <td>辨識索取者與 FOG 罪惡感操控，掌握「停、看、應」實戰防身術。</td>
+              <td>《給予》<br><strong>《情緒勒索》</strong><br><small style="color:var(--text-dim);">互補支援：《關鍵對話》</small></td>
+              <td>面對不合理要求能在當場平靜拒絕，不再產生自責與罪惡感。</td>
             </tr>
             <tr>
               <td>
                 <span class="stage-badge">階梯 III</span>
-                <strong style="display:block; color:var(--text-main);">當下防禦</strong>
-                <small style="color:var(--text-dim);">In-Situ Defense</small>
+                <strong style="display:block; color:var(--text-main);">權力重構</strong>
+                <small style="color:var(--text-dim);">角色博弈與除魅實戰</small>
               </td>
-              <td>面對高壓衝突時不再僵住，能冷靜劃界並核對客觀事實。</td>
-              <td>《如果父母情緒不成熟》<br><small style="color:var(--text-dim);">支援：《關鍵對話》《非暴力溝通》</small></td>
-              <td>現場被臨時加碼或不合理甩鍋時，能在數秒內定錨並給出邊界回應。</td>
+              <td>打破好女孩道德潔癖與公正迷思，掌握角色權力槓桿與高權力肢體姿態。</td>
+              <td>《懂權力，在每個角色上發光》<br>《精進權力》<br><strong>《職場女性：別讓細節絆住你》</strong></td>
+              <td>主動建立專業能見度，會議坐上核心長桌，戒斷發言先道歉。</td>
             </tr>
             <tr>
               <td>
                 <span class="stage-badge">階梯 IV</span>
                 <strong style="display:block; color:var(--text-main);">源頭解咒</strong>
-                <small style="color:var(--text-dim);">Root Liberation</small>
+                <small style="color:var(--text-dim);">心理主權與自尊重建</small>
               </td>
-              <td>梳理童年假性孤兒與討好模式，放下過度努力，確立內在主權。</td>
-              <td>《過度努力》<br><small style="color:var(--text-dim);">支援：《為什麼家會傷人》</small></td>
-              <td>不再藉由過度承擔與追求完美來確認存在價值，接納自主節奏。</td>
+              <td>走出假性孤兒陰影，卸下完美主義防禦盔甲，確立不可撼動的自尊。</td>
+              <td>《如果父母情緒不成熟》<br>《過度努力》<br><strong>《不完美的禮物》</strong></td>
+              <td>接納自身精力極限，深信自己「已經足夠好」，全然接納不完美。</td>
             </tr>
           </tbody>
         </table>
@@ -1813,8 +1849,8 @@
   <section id="pillars">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">THE 7 CORE PILLARS</span>
-        <h2 class="section-title">七大核心專書深度導讀與金句庫</h2>
+        <span class="section-tag">THE 10 CORE PILLARS</span>
+        <h2 class="section-title">十大核心專書深度導讀與金句庫</h2>
         <p class="section-desc">
           結合史丹佛與華頓商學院的組織權力洞察，以及認知神經科學與臨床心理學。<br>
           全面換裝官方真實正版書封，每本書均配備痛點剖析、破局心法、高光金句與專屬長頁。
@@ -1925,6 +1961,64 @@
           </div>
         </article>
 
+        <!-- Book 7: 職場女性 -->
+        <article class="book-pillar-card" id="book-nice-girls">
+          <div class="book-cover-panel">
+            <div class="book-real-cover-box">
+              <img src="covers/nice-girls.jpg" alt="職場女性 官方書封" class="book-real-cover-img" loading="lazy">
+            </div>
+            <div class="book-meta-list">
+              <div class="book-meta-item"><span>作者：</span><span>Lois P. Frankel</span></div>
+              <div class="book-meta-item"><span>出版：</span><span>中央編譯／高寶出版</span></div>
+              <div class="book-meta-item"><span>原名：</span><span>Nice Girls Don't Get the Corner Office</span></div>
+              <div class="book-meta-item"><span>領域：</span><span>女性職場權力與微觀行為</span></div>
+            </div>
+          </div>
+          <div class="book-content-panel">
+            <div>
+              <div class="book-header-line">
+                <span class="card-highlight-tag tag-rose">核心定位：微觀職場除魅</span>
+                <span style="font-size: 0.85rem; color: var(--text-dim);">全球暢銷 20 年女性職涯經典</span>
+              </div>
+              <h3 class="book-main-title">職場女性：別讓這些細節絆住你（好女孩得不到角落辦公室）</h3>
+              <div class="book-core-axiom">
+                核心公理：把童年「乖巧討喜」模式帶入職場，只會成為被過度索取的免洗勞動力。成熟的職業素養需要主動爭取能見度與佔據空間。
+              </div>
+
+              <div class="book-section-block">
+                <h4 class="book-section-subtitle">🎯 直擊痛點：職場中無意識出賣權力的細節</h4>
+                <p class="book-section-text">
+                  發言前習慣先道歉「對不起我插一句」、主動替大家張羅茶水退化成辦公室老媽子、在會議室挑角落坐、把手藏在桌下、難以開口拒絕雜務。
+                </p>
+              </div>
+
+              <div class="book-section-block">
+                <h4 class="book-section-subtitle">💡 破局心法：從「乖巧女孩」向「成熟專業者」的轉身</h4>
+                <p class="book-section-text">
+                  <strong>零道歉溝通：</strong>刪除軟化前綴，直接陳述要點與專業建議；<br>
+                  <strong>佔據物理空間：</strong>提前進場入座會議長桌中央，身體挺直，雙手自然置於桌面；<br>
+                  <strong>能見度責任：</strong>確立向上彙報成果是保護自身勞動成果最清醒的防線。
+                </p>
+              </div>
+
+              <div class="book-quote-card">
+                <p class="book-quote-text">
+                  「女孩總希望每個人都喜歡她，而成熟的職場女性懂得：贏得專業尊重，遠比被大家當成老好人更具實質力量。」
+                </p>
+                <div class="book-quote-meta">
+                  <span>出處：第二章 競爭心態</span>
+                  <button class="btn-copy" onclick="copyQuote(this, '女孩總希望每個人都喜歡她，而成熟的職場女性懂得：贏得專業尊重，遠比被大家當成老好人更具實質力量。')">複製金句</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-action-bar">
+              <a href="book-nice-girls.html" class="btn-detail-link">閱讀專屬獨立長頁 ➔</a>
+              <a href="books/職場女性_別讓這些細節絆住你_洛伊斯弗蘭克爾.epub" class="btn btn-secondary" onclick="handleBookDownload('職場女性')" download>下載 EPUB (1.3MB)</a>
+            </div>
+          </div>
+        </article>
+
         <!-- Book 3: 給予 -->
         <article class="book-pillar-card" id="book-give-and-take">
           <div class="book-cover-panel">
@@ -1972,6 +2066,64 @@
             <div class="book-action-bar">
               <a href="book-give-and-take.html" class="btn-detail-link">閱讀專屬獨立長頁 ➔</a>
               <a href="books/給予_華頓商學院最啟發人心的一堂課_亞當·格蘭特.epub" class="btn btn-secondary" onclick="handleBookDownload('給予')" download>下載 EPUB (885KB)</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Book 4: 情緒勒索 -->
+        <article class="book-pillar-card" id="book-emotional-blackmail">
+          <div class="book-cover-panel">
+            <div class="book-real-cover-box">
+              <img src="covers/emotional-blackmail.jpg" alt="情緒勒索 官方書封" class="book-real-cover-img" loading="lazy">
+            </div>
+            <div class="book-meta-list">
+              <div class="book-meta-item"><span>作者：</span><span>周慕姿</span></div>
+              <div class="book-meta-item"><span>出版：</span><span>寶瓶文化 (2017)</span></div>
+              <div class="book-meta-item"><span>原名：</span><span>Emotional Blackmail</span></div>
+              <div class="book-meta-item"><span>領域：</span><span>關係邊界與防禦心理學</span></div>
+            </div>
+          </div>
+          <div class="book-content-panel">
+            <div>
+              <div class="book-header-line">
+                <span class="card-highlight-tag tag-blue">核心定位：拆解罪惡感綁架</span>
+                <span style="font-size: 0.85rem; color: var(--text-dim);">台灣破億心理諮商現象級專著</span>
+              </div>
+              <h3 class="book-main-title">情緒勒索：那些在伴侶、親子、職場間，最讓人窒息的相處</h3>
+              <div class="book-core-axiom">
+                核心公理：情緒勒索者利用 FOG（恐懼、責任、罪惡感）讓妳動彈不得。建立情緒界限的「停、看、應」，是找回自我價值的護身符。
+              </div>
+
+              <div class="book-section-block">
+                <h4 class="book-section-subtitle">🎯 直擊痛點：被勒索者的四個心理按鈕</h4>
+                <p class="book-section-text">
+                  渴望獲得認同、害怕衝突摩擦、過度在乎他人感受、習慣性自我懷疑。勒索者精準利用妳的善良與責任感，讓妳誤以為妥協才是「懂事」與「負責任」。
+                </p>
+              </div>
+
+              <div class="book-section-block">
+                <h4 class="book-section-subtitle">💡 破局心法：建立情緒界限的「停、看、應」法則</h4>
+                <p class="book-section-text">
+                  <strong>停：</strong>當場面對施壓不即時承諾，以緩衝句果斷離開現場；<br>
+                  <strong>看：</strong>覺察自己的恐懼與罪惡感，區分「對方的責任」與「我的界限」；<br>
+                  <strong>應：</strong>溫和而堅定地表達底線，不爭辯、不掉入對方的道德審判陷阱。
+                </p>
+              </div>
+
+              <div class="book-quote-card">
+                <p class="book-quote-text">
+                  「我們之所以會被情緒勒索，往往是因為我們害怕成為別人眼中不負責任、不體貼的人。但我們唯一必須負全責的，是自己的人生。」
+                </p>
+                <div class="book-quote-meta">
+                  <span>出處：輯二 自我價值篇</span>
+                  <button class="btn-copy" onclick="copyQuote(this, '我們之所以會被情緒勒索，往往是因為我們害怕成為別人眼中不負責任、不體貼的人。但我們唯一必須負全責的，是自己的人生。')">複製金句</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-action-bar">
+              <a href="book-emotional-blackmail.html" class="btn-detail-link">閱讀專屬獨立長頁 ➔</a>
+              <a href="books/情緒勒索_那些在伴侶親子職場間最讓人窒息的相處_周慕姿.epub" class="btn btn-secondary" onclick="handleBookDownload('情緒勒索')" download>下載 EPUB (1.3MB)</a>
             </div>
           </div>
         </article>
@@ -2176,6 +2328,64 @@
             <div class="book-action-bar">
               <a href="book-overeffort.html" class="btn-detail-link">閱讀專屬獨立長頁 ➔</a>
               <a href="books/過度努力_每個過度都是傷的證明_周慕姿.epub" class="btn btn-secondary" onclick="handleBookDownload('過度努力')" download>下載 EPUB (353KB)</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Book 10: 不完美的禮物 -->
+        <article class="book-pillar-card" id="book-daring-greatly">
+          <div class="book-cover-panel">
+            <div class="book-real-cover-box">
+              <img src="covers/daring-greatly.jpg" alt="不完美的禮物 官方書封" class="book-real-cover-img" loading="lazy">
+            </div>
+            <div class="book-meta-list">
+              <div class="book-meta-item"><span>作者：</span><span>Brené Brown</span></div>
+              <div class="book-meta-item"><span>出版：</span><span>心靈工坊／浙江人民</span></div>
+              <div class="book-meta-item"><span>原名：</span><span>The Gifts of Imperfection</span></div>
+              <div class="book-meta-item"><span>領域：</span><span>羞恥感韌性與全心生活</span></div>
+            </div>
+          </div>
+          <div class="book-content-panel">
+            <div>
+              <div class="book-header-line">
+                <span class="card-highlight-tag tag-green">核心定位：清理毒性羞恥感</span>
+                <span style="font-size: 0.85rem; color: var(--text-dim);">全球心靈覺醒奠基之作</span>
+              </div>
+              <h3 class="book-main-title">不完美的禮物：放下「以為自己該成為的樣子」，擁抱「真實的自己」</h3>
+              <div class="book-core-axiom">
+                核心公理：反芻自責的底層是對「我不夠好」的恐懼。放下完美主義盔甲，在不確定性中展現真實，才能獲得不可撼動的自尊。
+              </div>
+
+              <div class="book-section-block">
+                <h4 class="book-section-subtitle">🎯 直擊痛點：毒性羞恥感與完美主義防禦盔甲</h4>
+                <p class="book-section-text">
+                  內疚是「我做錯了一件事」，羞恥是「我這個人是有缺陷的」。習慣退讓者常把所有的外在摩擦歸因為自身無能，並用完美主義來武裝自己，陷入筋疲力竭。
+                </p>
+              </div>
+
+              <div class="book-section-block">
+                <h4 class="book-section-subtitle">💡 破局心法：全心生活的三個指南針</h4>
+                <p class="book-section-text">
+                  <strong>日常勇氣：</strong>傾吐真實感受，坦露自己的極限，不再假裝堅強；<br>
+                  <strong>自我慈悲：</strong>停下內心嚴酷法官的審判，像對待摯友般接納自己的不完美；<br>
+                  <strong>真實聯結：</strong>放下討好偽裝，在被真實看見中建立深層安全感。
+                </p>
+              </div>
+
+              <div class="book-quote-card">
+                <p class="book-quote-text">
+                  「擁有自己的人生，愛上不完美的自己，是我們所能做出的最勇敢決定。當妳敢於展示真實，便無人能以評價將妳擊垮。」
+                </p>
+                <div class="book-quote-meta">
+                  <span>出處：前言 全心生活</span>
+                  <button class="btn-copy" onclick="copyQuote(this, '擁有自己的人生，愛上不完美的自己，是我們所能做出的最勇敢決定。當妳敢於展示真實，便無人能以評價將妳擊垮。')">複製金句</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-action-bar">
+              <a href="book-daring-greatly.html" class="btn-detail-link">閱讀專屬獨立長頁 ➔</a>
+              <a href="books/脆弱的力量_布琳布朗.epub" class="btn btn-secondary" onclick="handleBookDownload('不完美的禮物')" download>下載 EPUB (701KB)</a>
             </div>
           </div>
         </article>
@@ -2501,7 +2711,7 @@
         <span class="section-tag">DOWNLOAD CENTER</span>
         <h2 class="section-title">電子書資源下載中心</h2>
         <p class="section-desc">
-          精選 7 部完整正規 EPUB 電子書，均已完成校驗。<br>
+          精選 10 部完整正規 EPUB 電子書，均已完成校驗。<br>
           全面推薦搭配專用 AI 伴讀工具 <strong>Readify AI</strong>，享受深層對話與有聲導讀。
         </p>
       </div>
@@ -2610,6 +2820,45 @@
             <span>⬇️</span> <span>下載 EPUB（支援 Readify AI）</span>
           </a>
         </div>
+      
+        <div class="download-card">
+          <div class="download-info-top">
+            <img src="covers/emotional-blackmail.jpg" alt="情緒勒索" class="download-thumb">
+            <div>
+              <h4 class="download-card-title">情緒勒索</h4>
+              <p class="download-card-meta">建立界限指南 · 1.3 MB · 寶瓶文化</p>
+            </div>
+          </div>
+          <a href="books/情緒勒索_那些在伴侶親子職場間最讓人窒息的相處_周慕姿.epub" class="download-btn" onclick="handleBookDownload('情緒勒索')" download>
+            <span>⬇️</span> <span>下載 EPUB（支援 Readify AI）</span>
+          </a>
+        </div>
+
+        <div class="download-card">
+          <div class="download-info-top">
+            <img src="covers/nice-girls.jpg" alt="職場女性" class="download-thumb">
+            <div>
+              <h4 class="download-card-title">職場女性：別讓細節絆住你</h4>
+              <p class="download-card-meta">好女孩打破魔咒 · 1.3 MB · 中央編譯</p>
+            </div>
+          </div>
+          <a href="books/職場女性_別讓這些細節絆住你_洛伊斯弗蘭克爾.epub" class="download-btn" onclick="handleBookDownload('職場女性')" download>
+            <span>⬇️</span> <span>下載 EPUB（支援 Readify AI）</span>
+          </a>
+        </div>
+
+        <div class="download-card">
+          <div class="download-info-top">
+            <img src="covers/daring-greatly.jpg" alt="不完美的禮物" class="download-thumb">
+            <div>
+              <h4 class="download-card-title">不完美的禮物（脆弱的力量）</h4>
+              <p class="download-card-meta">擁抱真實自我 · 701 KB · 心靈工坊</p>
+            </div>
+          </div>
+          <a href="books/脆弱的力量_布琳布朗.epub" class="download-btn" onclick="handleBookDownload('不完美的禮物')" download>
+            <span>⬇️</span> <span>下載 EPUB（支援 Readify AI）</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -2631,14 +2880,17 @@
         </div>
         <div class="footer-nav">
           <div class="footer-nav-col">
-            <h5>七大專書獨立長頁</h5>
+            <h5>十大專書獨立長頁</h5>
             <a href="book-power.html">懂權力</a>
             <a href="book-rules-of-power.html">精進權力</a>
+            <a href="book-nice-girls.html">職場女性</a>
             <a href="book-give-and-take.html">給予</a>
+            <a href="book-emotional-blackmail.html">情緒勒索</a>
             <a href="book-chatter.html">自我對話習慣</a>
             <a href="book-donganli.html">鈍感力</a>
             <a href="book-immature-parents.html">如果父母情緒不成熟</a>
             <a href="book-overeffort.html">過度努力</a>
+            <a href="book-daring-greatly.html">不完美的禮物</a>
           </div>
           <div class="footer-nav-col">
             <h5>實戰架構</h5>
@@ -2908,7 +3160,7 @@
 
         let compositeAnalysis = '';
         let targetAnchor = '#pillars';
-        let targetBookName = '七大專書';
+        let targetBookName = '十大專書';
 
         if ((topKey === 'R' && secondKey === 'P') || (topKey === 'P' && secondKey === 'R')) {
           compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：白日面對權威或衝突時不敢確立專業能見度與邊界（權力盲區），當場退讓妥協；入夜後大腦神經反芻機制全面失控重播自責（神經反芻）。<br><strong>🚨 雙軌突破處方：</strong>第一優先研讀<strong>《強大內心的自我對話習慣》</strong>拉開心理距離、平息自責；隨後研讀<strong>《懂權力》</strong>與<strong>《精進權力》</strong>，建立角色責任意識與身體高權力姿態，杜絕下一次無謂退讓。';
@@ -2942,17 +3194,17 @@
           link.textContent = '開始研讀《強大內心的自我對話習慣》➔';
         } else if (topKey === 'P') {
           title.textContent = '主導型態：權力認知潔癖型（被動等待公正迷思）';
-          body.innerHTML = '你的核心障礙在於「對權力懷有道德潔癖」。深信公正世界假設，害怕展現強勢會傷害關係，導致在資源分配時主動退讓被邊緣化。<br><strong>🚨 破局處方：</strong>進入<strong>階梯 III 權力重構</strong>。首選精讀<strong>《懂權力，在每個角色上發光》</strong>將權力視為責任資源；隨後閱讀<strong>《精進權力》</strong>拆除職場天真盲點，主動建立專業能見度。';
+          body.innerHTML = '你的核心障礙在於「對權力懷有道德潔癖」。深信公正世界假設，害怕展現強勢會傷害關係，導致在資源分配時主動退讓被邊緣化。<br><strong>🚨 破局處方：</strong>進入<strong>階梯 III 權力重構</strong>。首選精讀<strong>《懂權力，在每個角色上發光》</strong>將權力視為責任資源；搭配<strong>《職場女性：別讓這些細節絆住你》</strong>戒斷發言先道歉與邊緣化習慣，進階研讀<strong>《精進權力》</strong>建立專業能見度。';
           link.href = '#book-power';
           link.textContent = '開始研讀《懂權力》與《精進權力》➔';
         } else if (topKey === 'B') {
           title.textContent = '主導型態：邊界失守犧牲型（過度付出受害者）';
-          body.innerHTML = '你的核心特質為真誠溫暖，但缺乏防範索取者的心理護欄，容易承擔過多不屬於自己的責任與情緒。<br><strong>🚨 破局處方：</strong>進入<strong>階梯 II 防禦邊界</strong>。首選精讀<strong>《給予》</strong>，學會辨識索取者並設立精力配額；輔以<strong>《關鍵對話》</strong>掌握防禦性溝通技巧，從自我犧牲轉型為具備護欄的保護型給予者。';
+          body.innerHTML = '你的核心特質為真誠溫暖，但缺乏防範索取者的心理護欄，容易承擔過多不屬於自己的責任與情緒。<br><strong>🚨 破局處方：</strong>進入<strong>階梯 II 防禦邊界</strong>。首選精讀<strong>《情緒勒索》</strong>識破恐懼、責任與罪惡感操控；配合<strong>《給予》</strong>建立保護型利他護欄，從盲目退讓轉型為擁有防護線的成熟實踐者。';
           link.href = '#book-give-and-take';
           link.textContent = '開始研讀《給予》➔';
         } else {
           title.textContent = '主導型態：童年創傷代償型（假性孤兒與過度努力）';
-          body.innerHTML = '你的過度謹慎與退讓根源於童年時期照護者的情緒不穩定，被迫成為懂事的假性孤兒，內化了討好信條。<br><strong>🚨 破局處方：</strong>進入<strong>階梯 IV 源頭解咒</strong>。首選精讀<strong>《如果父母情緒不成熟》</strong>確立心理主權；隨後閱讀周慕姿<strong>《過度努力》</strong>，看清努力背後的傷，接納真實的自己。';
+          body.innerHTML = '你的過度謹慎與退讓根源於童年時期照護者的情緒不穩定，被迫成為懂事的假性孤兒，內化了討好信條。<br><strong>🚨 破局處方：</strong>進入<strong>階梯 IV 源頭解咒</strong>。首選精讀<strong>《如果父母情緒不成熟》</strong>劃清心理代溝；隨後閱讀<strong>《過度努力》</strong>與<strong>《不完美的禮物》</strong>，卸下完美主義盔甲，全然接納真實的自己。';
           link.href = '#book-immature-parents';
           link.textContent = '開始研讀《如果父母情緒不成熟》與《過度努力》➔';
         }

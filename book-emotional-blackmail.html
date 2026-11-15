@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>《情緒勒索：那些在伴侶、親子、職場間，最讓人窒息的相處》深度專頁 · 溫柔生長讀書誌</title>
+  <meta name="description" content="懂權力，在每個角色上發光 深度導讀、8大原著金句庫、職場家庭情境自處指南與實踐微習慣。">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+  <style>
+
+    /* === Award-Winning Web Craft Standards === */
+    header.top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(253, 251, 247, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-card);
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    header.top-nav.nav-hidden {
+      transform: translateY(-100%);
+    }
+    html {
+      overflow-x: hidden;
+      width: 100%;
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-height, 80px) + 20px);
+    }
+
+    /* Language-specific typographic priority for optimal CJK glyph rendering */
+    html[lang="zh-TW"], :lang(zh-TW) {
+      --font-serif: -apple-system-ui-serif, "Playfair Display", "Noto Serif TC", "Songti TC", "Source Han Serif TC", "STSong", "PMingLiU", "Noto Serif SC", "Songti SC", serif;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", "Source Han Sans TC", "Microsoft JhengHei", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    }
+    html[lang="zh-CN"], :lang(zh-CN) {
+      --font-serif: -apple-system-ui-serif, "Playfair Display", "Noto Serif SC", "Songti SC", "Source Han Serif SC", "STSong", "SimSun", "Noto Serif TC", "Songti TC", serif;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    }
+    html {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-synthesis: none;
+      font-feature-settings: "palt" 1;
+    }
+
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      min-width: 0;
+      position: relative;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      min-width: 0;
+    }
+
+    /* Chapter Scroll Snap Bar */
+    .nav-chapter-bar {
+      border-top: 1px solid rgba(45, 41, 38, 0.06);
+      background: rgba(253, 251, 247, 0.85);
+      padding: 6px 0;
+    }
+    .chapter-nav-scroll {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 2px 8px;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent);
+    }
+    .chapter-nav-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .nav-chip {
+      scroll-snap-align: start;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .nav-chip:hover {
+      color: var(--accent-rose);
+      border-color: var(--accent-rose);
+    }
+
+    /* Floating Quick Nav Pill */
+    .floating-quick-nav {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      z-index: 990;
+      display: inline-flex;
+      align-items: center;
+      background: rgba(253, 251, 247, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-full);
+      box-shadow: 0 10px 28px rgba(45, 41, 38, 0.16);
+      padding: 4px 8px;
+      gap: 4px;
+      opacity: 0;
+      transform: translateY(16px);
+      pointer-events: none;
+      transition: opacity 0.28s ease, transform 0.28s ease;
+    }
+    .floating-quick-nav.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .quick-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      border: none;
+      background: transparent;
+      color: var(--text-main);
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .quick-nav-btn:hover {
+      background: var(--accent-rose-light);
+      color: var(--accent-rose);
+    }
+    .quick-nav-divider {
+      width: 1px;
+      height: 16px;
+      background: var(--border-subtle);
+      margin: 0 2px;
+    }
+
+    /* Lightbox Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2000;
+      background: rgba(20, 18, 16, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      cursor: zoom-out;
+      opacity: 0;
+      transition: opacity 0.28s ease;
+      pointer-events: none;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-box {
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      cursor: default;
+    }
+    .modal-img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+      object-fit: contain;
+    }
+    .modal-caption {
+      margin-top: 14px;
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      color: #FDFBF7;
+      text-align: center;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+    .modal-close {
+      position: absolute;
+      top: -44px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #FFFFFF;
+      font-size: 1.2rem;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    /* Dark Mode & Reduced Motion */
+    @media (prefers-color-scheme: dark) {
+      [data-theme="dark"], [data-theme="night"] {
+        --bg-page: #1A1816;
+        --bg-page-alt: #221F1C;
+        --bg-card: #282421;
+        --bg-card-soft: #302B27;
+        --text-main: #F5F2EB;
+        --text-muted: #D1C9BD;
+        --text-dim: #9E9486;
+        --border-card: #3D3732;
+        --border-subtle: #4A433D;
+        --accent-rose: #E08269;
+        --accent-rose-light: rgba(224, 130, 105, 0.18);
+      }
+    }
+    [data-theme="dark"], [data-theme="night"] {
+      --bg-page: #1A1816;
+      --bg-page-alt: #221F1C;
+      --bg-card: #282421;
+      --bg-card-soft: #302B27;
+      --text-main: #F5F2EB;
+      --text-muted: #D1C9BD;
+      --text-dim: #9E9486;
+      --border-card: #3D3732;
+      --border-subtle: #4A433D;
+      --accent-rose: #E08269;
+      --accent-rose-light: rgba(224, 130, 105, 0.18);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+
+    :root {
+      --bg-page: #FAF8F5;
+      --bg-page-alt: #F4EFEA;
+      --bg-card: #FFFFFF;
+      --bg-card-soft: #FDFBF8;
+      --border-subtle: #E8E1D7;
+      --border-card: #EFE8DE;
+      --border-highlight: #C06C52;
+      --text-main: #2D2926;
+      --text-muted: #5E5852;
+      --text-dim: #8C847B;
+      --accent-rose: #C06C52;
+      --accent-rose-light: #FBEBE6;
+      --accent-sage: #4F7564;
+      --accent-sage-light: #EEF4F1;
+      --accent-amber: #A36A36;
+      --accent-amber-light: #FAF2E8;
+      --accent-blue: #4A6B82;
+      --accent-blue-light: #EBF1F5;
+      --shadow-sm: 0 2px 8px rgba(45, 41, 38, 0.04);
+      --shadow-md: 0 6px 20px rgba(45, 41, 38, 0.06);
+      --shadow-lg: 0 12px 36px rgba(45, 41, 38, 0.08);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --font-serif: -apple-system-ui-serif, "Playfair Display", "Noto Serif TC", "Noto Serif SC", "Songti TC", "Songti SC", "Source Han Serif TC", "Source Han Serif SC", "STSong", "SimSun", "PMingLiU", serif;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "PingFang SC", "Noto Sans TC", "Noto Sans SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      overflow-wrap: anywhere;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Modern Web Guidance: Balanced headlines & pretty paragraph wrapping */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-serif);
+      color: var(--text-main);
+      font-weight: 600;
+      line-height: 1.35;
+      text-wrap: balance;
+    }
+
+    p, blockquote, li {
+      text-wrap: pretty;
+      color: var(--text-muted);
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      max-width: 72ch;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--accent-rose);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    a:hover {
+      color: #9C523B;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header / Navbar */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 248, 245, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: background 0.3s ease;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .nav-brand-tag {
+      font-size: 0.75rem;
+      background: var(--accent-rose-light);
+      color: var(--accent-rose);
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-weight: 500;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 0.4rem 0.6rem;
+      border-radius: var(--radius-sm);
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--accent-rose);
+    }
+
+    .btn-lang-toggle {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      padding: 0.4rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+
+    .btn-lang-toggle:hover {
+      border-color: var(--accent-rose);
+      color: var(--accent-rose);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--accent-rose);
+      color: #FFFFFF !important;
+      padding: 0.75rem 1.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.95rem;
+      font-weight: 500;
+      box-shadow: 0 4px 14px rgba(192, 108, 82, 0.28);
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: #A8573E;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(192, 108, 82, 0.36);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--bg-card);
+      color: var(--text-main) !important;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-full);
+      font-size: 0.95rem;
+      font-weight: 500;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-rose);
+      color: var(--accent-rose) !important;
+      background: var(--bg-card-soft);
+    }
+
+    /* Hero */
+    .hero-section {
+      padding: 4.5rem 0 3.5rem;
+      text-align: center;
+      background: radial-gradient(circle at 50% 20%, rgba(192, 108, 82, 0.06), transparent 70%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent-rose-light);
+      color: var(--accent-rose);
+      padding: 0.35rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 1.5rem + 2.5vw, 3.25rem);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
+
+    .hero-desc {
+      font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.2rem);
+      max-width: 68ch;
+      margin: 0 auto 2rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 4.5rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .section-alt {
+      background-color: var(--bg-page-alt);
+    }
+
+    .section-header {
+      margin-bottom: 2.75rem;
+      text-align: center;
+    }
+
+    .section-tag {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-rose);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 1.25rem + 1.2vw, 2.3rem);
+      margin-bottom: 0.85rem;
+    }
+
+    .section-subtitle {
+      max-width: 65ch;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-subtle);
+    }
+
+    /* Book Pillars Grid on Index */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .book-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .book-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: #DFD7CB;
+    }
+
+    .book-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1rem;
+    }
+
+    .tag-rose { background: var(--accent-rose-light); color: var(--accent-rose); }
+    .tag-amber { background: var(--accent-amber-light); color: var(--accent-amber); }
+    .tag-sage { background: var(--accent-sage-light); color: var(--accent-sage); }
+    .tag-blue { background: var(--accent-blue-light); color: var(--accent-blue); }
+
+    .book-card-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .book-card-author {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      margin-bottom: 1.1rem;
+      display: block;
+    }
+
+    .book-card-axiom {
+      font-style: normal;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      padding-left: 0.85rem;
+      border-left: 3px solid var(--accent-rose);
+      background: var(--bg-card-soft);
+      padding: 0.75rem 0.85rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .book-card-intro {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .book-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.25rem;
+      margin-top: auto;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    /* Quotes Grid */
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .quote-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .quote-text {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-main);
+    }
+
+    .quote-text::before {
+      content: "“";
+      font-size: 2.2rem;
+      line-height: 1;
+      color: var(--accent-rose);
+      opacity: 0.4;
+      display: block;
+      margin-bottom: -0.5rem;
+    }
+
+    /* Copy Button (MWG copy-button compliant) */
+    .copy-btn-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+
+    .btn-copy {
+      background: var(--bg-page-alt);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-copy:hover {
+      border-color: var(--accent-rose);
+      color: var(--accent-rose);
+      background: var(--bg-card);
+    }
+
+    .live-status {
+      font-size: 0.75rem;
+      color: var(--accent-sage);
+      font-weight: 500;
+    }
+
+    /* Scenario Accordion / List */
+    .scenario-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .scenario-title {
+      font-size: 1.25rem;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .dialogue-comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .dialogue-comparison {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .dialogue-box {
+      padding: 1.2rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.93rem;
+      line-height: 1.75;
+    }
+
+    .box-before {
+      background: #FBF1F0;
+      border-left: 3px solid #E07A5F;
+    }
+
+    .box-after {
+      background: #F0F6F2;
+      border-left: 3px solid var(--accent-sage);
+    }
+
+    .box-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .scenario-principle {
+      background: var(--bg-page-alt);
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-page-alt);
+      border-top: 1px solid var(--border-subtle);
+      padding: 3.5rem 0 2rem;
+      margin-top: auto;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-copy {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+    }
+
+    /* Forced colors support (MWG color guideline) */
+    @media (forced-colors: active) {
+      .btn-primary, .btn-secondary, .card, .book-card, .quote-box {
+        border: 1px solid ButtonText;
+      }
+      .book-card-axiom {
+        border-left: 3px solid Highlight;
+      }
+    }
+
+  
+    /* Editorial Showcase Header */
+    .editorial-header {
+      background: linear-gradient(180deg, var(--bg-page) 0%, var(--bg-page-alt) 100%);
+      padding: 40px 0 48px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-bottom: 24px;
+    }
+    .breadcrumb-nav a {
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .breadcrumb-nav a:hover {
+      color: var(--accent-rose);
+    }
+    .editorial-showcase {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .editorial-showcase {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .showcase-cover-box {
+        max-width: 200px;
+        margin: 0 auto 12px auto;
+      }
+    }
+    .showcase-cover-box {
+      width: 100%;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(45, 41, 38, 0.18);
+      border: 1px solid rgba(45, 41, 38, 0.08);
+      background: #FFFFFF;
+      aspect-ratio: 1 / 1.44;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .showcase-cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .showcase-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .showcase-content {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .showcase-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      background: var(--accent-rose-light);
+      color: var(--accent-rose);
+      font-size: 0.8rem;
+      font-weight: 700;
+      width: fit-content;
+      border: 1px solid rgba(192, 108, 82, 0.2);
+    }
+    .showcase-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.85rem, 3.2vw, 2.45rem);
+      font-weight: 900;
+      color: var(--text-main);
+      line-height: 1.32;
+      margin: 0;
+      text-wrap: balance;
+    }
+    .showcase-subtitle {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: var(--accent-rose);
+      line-height: 1.6;
+      margin: 0;
+      text-wrap: pretty;
+      word-break: keep-all;
+    }
+    .showcase-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      margin-top: 4px;
+    }
+    .showcase-chip {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 4px 10px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .showcase-chip strong {
+      color: var(--text-main);
+    }
+    .editorial-quote-box {
+      margin-top: 14px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-left: 4px solid var(--accent-rose);
+      border-radius: var(--radius-sm);
+      padding: 18px 22px;
+      box-shadow: var(--shadow-sm);
+      text-align: left;
+    }
+    .editorial-quote-text {
+      font-family: var(--font-serif);
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--text-main);
+      margin: 0;
+      text-wrap: pretty;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      font-style: normal;
+    }
+    
+</style>
+</head>
+<body>
+    <!-- Top Navigation (Fixed, Blur, Smart Hide & Scroll Snap Chapter Bar) -->
+  <header class="top-nav site-nav" id="topNav" aria-label="全站導航">
+    <div class="container nav-inner" style="display: flex; align-items: center; justify-content: space-between; height: 60px;">
+      <a href="index.html" class="nav-brand" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 700; color: var(--text-main);">
+        <span>🏛️</span>
+        <span>心智自立書單</span>
+        <span class="nav-brand-tag" style="font-size: 0.75rem; background: var(--accent-rose-light); color: var(--accent-rose); padding: 2px 8px; border-radius: 999px;">專題精讀</span>
+      </a>
+      <ul class="nav-menu" style="display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; align-items: center;">
+        <li><a href="index.html" class="nav-link" style="color: var(--text-muted); font-size: 0.88rem;">← 回首頁書單</a></li>
+        <li><a href="index.html#pillars" class="nav-link" style="color: var(--text-muted); font-size: 0.88rem;">十大專書</a></li>
+        <li><a href="index.html#downloads" class="nav-link" style="color: var(--text-muted); font-size: 0.88rem;">全書庫</a></li>
+      </ul>
+    </div>
+    <nav class="nav-chapter-bar" aria-label="板塊快速跳轉">
+      <div class="container">
+        <div class="chapter-nav-scroll">
+          <a href="#overview" class="nav-chip"><span>📖</span> <span>圖書概述</span></a>
+          <a href="#pain-points" class="nav-chip"><span>🎯</span> <span>直擊痛點</span></a>
+          <a href="#strategies" class="nav-chip"><span>💡</span> <span>破局心法</span></a>
+          <a href="#quotes" class="nav-chip"><span>💬</span> <span>核心金句</span></a>
+          <a href="#action-plan" class="nav-chip"><span>⚡</span> <span>行動清單</span></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <!-- Editorial Showcase Header -->
+  <header class="editorial-header">
+    <div class="container">
+      <nav class="breadcrumb-nav" aria-label="路徑導航">
+        <a href="index.html">首頁</a>
+        <span>/</span>
+        <a href="index.html#pillars">十大核心專書</a>
+        <span>/</span>
+        <span>《情緒勒索》</span>
+      </nav>
+
+      <div class="editorial-showcase">
+        <div class="showcase-cover-col">
+          <div class="showcase-cover-box">
+            <img src="covers/emotional-blackmail.jpg" alt="《情緒勒索》 官方封面" class="showcase-cover-img" loading="eager">
+          </div>
+          <div class="showcase-actions">
+            <a href="books/情緒勒索_那些在伴侶親子職場間最讓人窒息的相處_周慕姿.epub" class="btn btn-primary" style="width: 100%; padding: 8px 14px; font-size: 0.88rem;" download>
+              <span>⬇️</span> <span>下載 EPUB (1.3 MB)</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="showcase-content">
+          <span class="showcase-badge">🛡️ 心理防禦邊界 · 破解 FOG 迷霧</span>
+          <h1 class="showcase-title">《情緒勒索》</h1>
+          <p class="showcase-subtitle">那些在伴侶、親子、職場間最讓人窒息的相處：建立健康界線，重獲關係自主</p>
+
+          <div class="showcase-chips">
+            <span class="showcase-chip"><span>作者：</span><strong>周慕姿 (諮商心理師)</strong></span>
+            <span class="showcase-chip"><span>出版：</span>寶瓶文化事業股份有限公司</span>
+            <span class="showcase-chip"><span>核心：</span>FOG 迷霧剖析（恐懼、責任、罪惡感）</span>
+            <span class="showcase-chip"><span>實戰：</span>停、看、應三步驟防禦迴路</span>
+          </div>
+
+          <div class="editorial-quote-box">
+            <p class="editorial-quote-text">
+              妳不需要為了證明自己的善良，而對所有掠奪與勒索全盤買單。守護自己的心理邊界，是生而為人不可讓渡的尊嚴。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Section 1: Overview -->
+    <section id="overview">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">CORE AXIOM</span>
+          <h2 class="section-title">核心公理：情緒勒索的本質與心理運作機制</h2>
+        </div>
+        <div class="content-box">
+          <h3>勒索並非始於強大，而是始於受害者的自我懷疑</h3>
+          <p>
+            情緒勒索（Emotional Blackmail）屬於一種極具破壞力的人際互動模式。操控者善於利用被勒索者內心深處的「恐懼（Fear）」、「責任感（Obligation）」與「罪惡感（Guilt）」——心理學上簡稱為 FOG（迷霧）。勒索者透過製造威脅或扮演受害者，將自身的負面情緒全數傾倒在對方身上，逼迫對方以退讓妥協來換取短暫的和平。
+          </p>
+          <p>
+            在華人社會中，「孝順」、「懂事」、「以和為貴」與「為大局著想」的文化標籤，常被扭曲為最沉重的情緒枷鎖。當一個人習慣把別人的感受看得比自己重要時，內心便會逐漸枯竭，失去設立界線的能力。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Pain Points -->
+    <section id="pain-points">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">DIAGNOSIS</span>
+          <h2 class="section-title">直擊痛點：被勒索者的四個心理按鈕</h2>
+        </div>
+        <div class="content-box">
+          <h3>為什麼被勒索的人總是我？</h3>
+          <p>
+            情緒勒索者絕非隨機挑選對象，他們往往能精準嗅出那些具備「特定心理按鈕」的人：
+          </p>
+          <p>
+            <strong>1. 渴望獲得認同者：</strong>深信唯有達到他人的期待與讚賞，自己才有存在的價值。一旦他人顯露不滿或冷淡，便立刻陷入自我懷疑。<br>
+            <strong>2. 害怕衝突與摩擦者：</strong>對人際緊張氣氛有著極度的恐懼，寧願吞下委屈自己受損，也不敢正面捍衛權益。<br>
+            <strong>3. 過度在乎他人感受者：</strong>習慣扮演照顧者角色，本能地把同仁、伴侶或長輩的不愉快當成是自己沒有做好的責任。<br>
+            <strong>4. 習慣性自我評判者：</strong>只要關係出現裂痕，第一時間不是檢視客觀事實，而是習慣性自省「是不是我哪裡做錯了」。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Strategies -->
+    <section id="strategies">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">BREAKTHROUGH</span>
+          <h2 class="section-title">破局心法：擺脫情緒勒索的「停、看、應」黃金法則</h2>
+        </div>
+        <div class="content-box">
+          <h3>切斷反射神經，為情緒爭取緩衝時空</h3>
+          <p>
+            面對勒索者的強烈施壓時，被勒索者的大腦往往會立刻陷入恐慌，迅速給出「好，我都答應你」的順從回應。要終結這個惡性循環，必須在刺激與反應之間建立神聖的物理緩衝：
+          </p>
+          <p>
+            <strong>第一步：停（Stop）——中止對話，爭取緩衝：</strong><br>
+            絕不在當場給出承諾。使用預先準備的緩衝句（例如：「這件事影響層面較廣，我需要充分思考後明天上午回覆你」），果斷離開高壓現場或結束對話，中斷反射性妥協。
+          </p>
+          <p>
+            <strong>第二步：看（See）——覺察內在，檢視真相：</strong><br>
+            在安全的時空中，靜下心來辨識自己當下的感受：我現在是感到害怕？還是深深的罪惡感？看清楚對方的手段究竟是威脅還是扮演受害者，釐清哪些是對方的課題，哪些才是自己的界限。
+          </p>
+          <p>
+            <strong>第三步：應（Respond）——擬定對策，堅定表達：</strong><br>
+            練習以平靜、溫和但不可撼動的語調表達自身決定。只陳述事實與自身底線，不辯解、不長篇大論、不掉入對方的道德辯論泥潭。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Chapters -->
+    <section id="chapters">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">TOC & SYNOPSIS</span>
+          <h2 class="section-title">原書章節導航與研讀指南</h2>
+        </div>
+        <div class="content-box">
+          <h3>輯一：「情緒勒索」的樣貌（第 1~5 章）</h3>
+          <p>
+            詳細拆解勒索者常用的四種典型面具（施暴者、自虐者、悲者、試探者），並深刻剖析被勒索者內心「責任與你應該」的枷鎖。推薦重點精讀<strong>《為什麼我會動彈不得？》</strong>一節。
+          </p>
+          <h3>輯二：「自我價值感」提升，是避免被勒索的護身符（第 6~10 章）</h3>
+          <p>
+            界定「自信」與「自我價值感」的本質差異。深入探討童年經驗與華人文化對自我評價的深層影響，指出唯有在內在確立不依賴外界評價的自尊，才能免疫勒索。
+          </p>
+          <h3>輯三：如何擺脫情緒勒索──實戰指南（第 11~14 章）</h3>
+          <p>
+            全書核心精華所在。完整傳授「停、看、應」的實作步驟、面對威脅時的自我心理建設，以及如何在親密關係與職場權力關係中逐步立下健康的情緒界限。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Quotes -->
+    <section id="quotes">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">CORE QUOTES</span>
+          <h2 class="section-title">原書核心金句精選</h2>
+        </div>
+        <div class="quotes-grid">
+          <div class="quote-card">
+            <p class="quote-text">「妳的感受，是妳最重要的指南針；妳不需要為了維持任何一段關係，而委屈自己去承受別人的情緒垃圾。」</p>
+            <div class="quote-footer">
+              <span>出處：輯二 自我價值篇</span>
+              <button class="btn-copy" onclick="copyQuote(this, '妳的感受，是妳最重要的指南針；妳不需要為了維持任何一段關係，而委屈自己去承受別人的情緒垃圾。')">複製金句</button>
+            </div>
+          </div>
+          <div class="quote-card">
+            <p class="quote-text">「當妳為了避免對方的憤怒而選擇妥協時，妳其實正在教會對方：只要發脾氣，就能得到他想要的一切。」</p>
+            <div class="quote-footer">
+              <span>出處：輯一 勒索樣貌篇</span>
+              <button class="btn-copy" onclick="copyQuote(this, '當妳為了避免對方的憤怒而選擇妥協時，妳其實正在教會對方：只要發脾氣，就能得到他想要的一切。')">複製金句</button>
+            </div>
+          </div>
+          <div class="quote-card">
+            <p class="quote-text">「拒絕別人的不合理要求，並不代表妳是個冷酷無情的人；這只代表妳有足夠的自尊，懂得保護自己的精力與尊嚴。」</p>
+            <div class="quote-footer">
+              <span>出處：輯三 實戰策略篇</span>
+              <button class="btn-copy" onclick="copyQuote(this, '拒絕別人的不合理要求，並不代表妳是個冷酷無情的人；這只代表妳有足夠的自尊，懂得保護自己的精力與尊嚴。')">複製金句</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Action Plan -->
+    <section id="action-plan">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">PRACTICE PROTOCOL</span>
+          <h2 class="section-title">防身行動清單：面對勒索時的具體防線</h2>
+        </div>
+        <ul class="checklist">
+          <li class="checklist-item">
+            <span class="checklist-icon">🛑</span>
+            <div class="checklist-content">
+              <strong>準備三句防禦性緩衝金句</strong>
+              <p>熟練背誦：「這件事牽涉甚廣，我需要充分評估後再答覆」、「現在時間較緊迫，我們先按原定流程處理」、「我明白這對你很重要，但今天我確實無法承接」。在對方施壓當下冷靜說出並結束對話。</p>
+            </div>
+          </li>
+          <li class="checklist-item">
+            <span class="checklist-icon">🧘‍♀️</span>
+            <div class="checklist-content">
+              <strong>執行課題分離的情感斷崖練習</strong>
+              <p>當對方露出失望、冷漠或憤怒表情時，在心中默念：「這是他的情緒反應，他有權力不開心，但我沒有義務為他的情緒負責」。分清楚「我的界限」與「他的反應」。</p>
+            </div>
+          </li>
+          <li class="checklist-item">
+            <span class="checklist-icon">🌱</span>
+            <div class="checklist-content">
+              <strong>建立自我價值的「微拒絕」紀錄本</strong>
+              <p>每天從小事開始練習一次拒絕（如拒絕一次不必要的聚餐、拒絕順手幫忙跑腿），體會拒絕後世界並沒有崩塌，逐步強化心理韌性。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.35rem;">溫柔生長 · 內在自立讀書誌</h4>
+          <p class="footer-copy">在不對等的關係裡，給善良穿上鎧甲，讓溫柔擁有平靜的底氣。</p>
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <a href="index.html" class="nav-link">回首頁</a>
+          <a href="https://github.com/atonnyshen/inner-power-reading" target="_blank" class="nav-link">GitHub 開源專案</a>
+        </div>
+      </div>
+      <div style="text-align: center; border-top: 1px solid var(--border-subtle); padding-top: 1.5rem; font-size: 0.82rem; color: var(--text-dim);">
+        遵循 Modern Web Guidance 規範建置 · 支援無障礙閱讀與純客戶端繁簡切換 · 免翻牆高速訪問
+      </div>
+    </div>
+        <p class="copyright-notice" style="font-size: 0.85rem; color: var(--text-dim); margin-top: 14px; line-height: 1.7;">
+        本站內容專注於女性成長、心理學與組織博弈之非營利學術探討與數位共讀推廣，尊重正版知識產權。推薦讀者支持正版紙本書與官方電子書。
+      </p>
+      <p class="takedown-notice" style="font-size: 0.85rem; color: var(--text-dim); margin-top: 8px; line-height: 1.7;">
+        <strong>【權利人優先下架條款 (Notice & Takedown)】</strong>：若版權方或權利人對本站引證或內容有任何異議，請隨時透過聯繫管道通報，我們將於 24 小時內即時核實並立即移除相關內容。聯繫通報窗口：<code>contact@inner-power-reading.pages.dev</code>
+      </p>
+  </footer>
+
+  <!-- Floating Quick Nav Pill -->
+    <!-- Floating Back to Top Button -->
+  <aside class="floating-quick-nav" id="floatingQuickNav" aria-label="快速回頂部">
+    <button type="button" class="quick-nav-btn" id="btnBackToTop" aria-label="快速回到頂部導覽列" onclick="scrollToTopNav()">
+      <span>▲</span> <span>回頂部</span>
+    </button>
+  </aside>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="圖片放大檢視" onclick="closeLightboxModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button type="button" class="modal-close" id="modalClose" aria-label="關閉圖片檢視" onclick="closeLightboxModal()">✕</button>
+      <img id="modalImg" src="" alt="放大檢視封面" class="modal-img">
+      <p id="modalCaption" class="modal-caption"></p>
+    </div>
+  </div>
+
+  <script>
+
+    // Character translation tables (MWG clean fast client-side i18n)
+    const T_STR = "並乾亞來係倉個們倫側傑備傷傾僅價償優儲兒內兩冊凍別則剛剝創劃動務勝勢匯區協卻厭厲員問啟單嗎嚴國圖團執堅報場壓夠夥奪奮婦學實審寫寶將專尋對導尷屜層屬島師帶幫庫廣張強後徑從復徵徹悅惡愛態慣憊憤懇應懷懸懼戀戰拋拚採換揮摯撫擁擊擋擔據擺攬敗數斷於時暢暫書會東桿條棄業極構槓樂標樣機檔檢檻權歷歸殺毀氣決淪測湯準溝溫滅滯滿潑潔潛潰濟濾瀏灣為無煉熱爭爾牆狀猶獨獲獻現環畫異當療癒發皺盡盤盧確碼礙禦種稱窮競筆節範簡籌約紅納紐紙級紛紮細終組結絕絞絡給統絲綁經維網緊緒線緣緩練縮總績繃織繹繼續罰義習聰聲聶職脅脫腦腳臨臺與興芻華葉薦藥蘭處虛蝕術衛衝裝裡複襲見規視親覺覽觀觸訂計訊討記訪設許訴診試話該詳誌認語誠誤說誰課調談請論諮諷謀講證譏識譯議護讀變讓負責貴貶費賀資賞賦質賴賽踐躍軌軟載輕輩輪輯轉辦辯迴這連週進運過達遠適遲遷選還邊邏醫釁針鈍鉤銷鋒錄錨錯鍋鍵鎖鎧鏈鐘長門閉開間閱閹關陣陸隊階際險隱雙雜離難雲電靈靜韌響頁頂項順須頓領頭題額願類顧風飆馬駁驗骯髒體鬆鬥麼點齊";
+    const S_STR = "并干亚来系仓个们伦侧杰备伤倾仅价偿优储儿内两册冻别则刚剥创划动务胜势汇区协却厌厉员问启单吗严国图团执坚报场压够伙夺奋妇学实审写宝将专寻对导尴屉层属岛师带帮库广张强后径从复征彻悦恶爱态惯惫愤恳应怀悬惧恋战抛拼采换挥挚抚拥击挡担据摆揽败数断于时畅暂书会东杆条弃业极构杠乐标样机档检槛权历归杀毁气决沦测汤准沟温灭滞满泼洁潜溃济滤浏湾为无炼热争尔墙状犹独获献现环画异当疗愈发皱尽盘卢确码碍御种称穷竞笔节范简筹约红纳纽纸级纷扎细终组结绝绞络给统丝绑经维网紧绪线缘缓练缩总绩绷织绎继续罚义习聪声聂职胁脱脑脚临台与兴刍华叶荐药兰处虚蚀术卫冲装里复袭见规视亲觉览观触订计讯讨记访设许诉诊试话该详志认语诚误说谁课调谈请论咨讽谋讲证讥识议护读变让负责贵贬费贺资赏赋质赖赛践跃轨软载轻辈轮辑转办辩回这连周进运过达远适迟迁选还边逻医衅针钝钩销锋录锚错锅键锁铠链钟长门闭开间阅阉关阵陆队阶际险隐双杂离难云电灵静韧响页顶项顺须顿领头题额愿类顾风飙马驳验肮脏体松斗么点齐";
+    const T2S = {};
+    const S2T = {};
+    for (let i = 0; i < T_STR.length; i++) {
+      T2S[T_STR[i]] = S_STR[i];
+      S2T[S_STR[i]] = T_STR[i];
+    }
+
+    let currentLang = localStorage.getItem('site_lang') || 'zh-TW';
+
+    function walkText(node, map) {
+      if (node.nodeType === Node.TEXT_NODE) {
+        let text = node.nodeValue;
+        let res = '';
+        for (let i = 0; i < text.length; i++) {
+          const c = text[i];
+          res += map[c] || c;
+        }
+        node.nodeValue = res;
+      } else {
+        node.childNodes.forEach(child => walkText(child, map));
+      }
+    }
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('site_lang', lang);
+      const label = document.getElementById('lang-label');
+      if (lang === 'zh-CN') {
+        walkText(document.body, T2S);
+        document.documentElement.lang = 'zh-CN';
+        if (label) label.innerText = '简 / 繁';
+      } else {
+        walkText(document.body, S2T);
+        document.documentElement.lang = 'zh-TW';
+        if (label) label.innerText = '繁 / 簡';
+      }
+    }
+
+    function toggleLanguage() {
+      applyLanguage(currentLang === 'zh-TW' ? 'zh-CN' : 'zh-TW');
+    }
+
+    // Accessible Copy Function (MWG copy-button compliant)
+    async function copyQuote(text, statusId) {
+      try {
+        await navigator.clipboard.writeText(text);
+        const statusEl = document.getElementById(statusId);
+        if (statusEl) {
+          statusEl.innerText = '✓ 已複製';
+          setTimeout(() => { statusEl.innerText = ''; }, 2500);
+        }
+      } catch (err) {
+        // Fallback for older browsers
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        const statusEl = document.getElementById(statusId);
+        if (statusEl) {
+          statusEl.innerText = '✓ 已複製';
+          setTimeout(() => { statusEl.innerText = ''; }, 2500);
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (currentLang === 'zh-CN') {
+        applyLanguage('zh-CN');
+      }
+    });
+
+  
+    /* === Web Craft Interactive Engines === */
+    const topNav = document.getElementById('topNav');
+    if (topNav && window.ResizeObserver) {
+      const ro = new ResizeObserver(entries => {
+        for (const entry of entries) {
+          const navH = Math.round(entry.contentRect.height);
+          document.documentElement.style.setProperty('--nav-height', `${navH}px`);
+        }
+      });
+      ro.observe(topNav);
+    }
+
+    let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    let accumulatedDelta = 0;
+    let isNavigating = false;
+    const floatingNav = document.getElementById('floatingQuickNav');
+
+    window.addEventListener('scroll', function() {
+      if (isNavigating) return;
+      const rawY = window.pageYOffset || document.documentElement.scrollTop;
+      const maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
+      const clampedY = Math.max(0, Math.min(rawY, maxScrollY));
+
+      const diff = clampedY - lastScrollY;
+      lastScrollY = clampedY;
+
+      if (diff > 0) {
+        accumulatedDelta = accumulatedDelta > 0 ? accumulatedDelta + diff : diff;
+      } else {
+        accumulatedDelta = accumulatedDelta < 0 ? accumulatedDelta + diff : diff;
+      }
+
+      if (clampedY > 100 && accumulatedDelta > 20) {
+        if (topNav && !topNav.classList.contains('nav-hidden')) topNav.classList.add('nav-hidden');
+      } else if (accumulatedDelta < -10 || clampedY <= 40) {
+        if (topNav && topNav.classList.contains('nav-hidden')) topNav.classList.remove('nav-hidden');
+      }
+
+      if (floatingNav) {
+        if (clampedY > 280) floatingNav.classList.add('active');
+        else floatingNav.classList.remove('active');
+      }
+    }, { passive: true });
+
+    function scrollToTopNav() {
+      isNavigating = true;
+      if (topNav) topNav.classList.remove('nav-hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => {
+        isNavigating = false;
+        accumulatedDelta = 0;
+      }, 850);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        const targetEl = document.querySelector(targetId);
+        if (!targetEl) return;
+
+        e.preventDefault();
+        isNavigating = true;
+        if (topNav) topNav.classList.remove('nav-hidden');
+
+        const navH = topNav ? topNav.offsetHeight : 72;
+        const targetOffset = targetEl.getBoundingClientRect().top + window.pageYOffset - (navH + 20);
+
+        window.scrollTo({
+          top: Math.max(0, targetOffset),
+          behavior: 'smooth'
+        });
+
+        setTimeout(() => {
+          const currentGap = targetEl.getBoundingClientRect().top;
+          const deviation = currentGap - (navH + 20);
+          if (Math.abs(deviation) > 3) {
+            window.scrollBy({ top: deviation, behavior: 'smooth' });
+          }
+          isNavigating = false;
+          accumulatedDelta = 0;
+        }, 850);
+      });
+    });
+
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const modalImg = document.getElementById('modalImg');
+    const modalCaption = document.getElementById('modalCaption');
+
+    function openLightboxModal(src, captionText) {
+      if (!lightboxModal || !modalImg) return;
+      modalImg.src = src;
+      modalCaption.textContent = captionText || '官方圖書封面檢視';
+      lightboxModal.classList.add('active');
+      lightboxModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightboxModal() {
+      if (!lightboxModal) return;
+      lightboxModal.classList.remove('active');
+      setTimeout(() => {
+        lightboxModal.style.display = 'none';
+        if (modalImg) modalImg.src = '';
+      }, 200);
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.showcase-cover-img, img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', function() {
+        openLightboxModal(this.src, this.alt || '圖書插圖');
+      });
+    });
+
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) {
+        closeLightboxModal();
+      }
+    });
+
+  </script>
+</body>
+</html>
