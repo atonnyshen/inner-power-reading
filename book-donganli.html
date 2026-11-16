@@ -4,16 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>《鈍感力》深度專頁 · 溫柔生長讀書誌</title>
-  <meta name="description" content="鈍感力 深度導讀、8大原著金句庫、職場家庭情境自處指南與實踐微習慣。">
+  <meta name="description" content="鈍感力 深度導讀、8 則編輯閱讀摘記、職場家庭情境自處指南與實踐微習慣。">
   <link rel="icon" type="image/svg+xml" href="assets/favicon-cat.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="溫柔生長"><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23C06C52%22/><circle cx=%2216%22 cy=%2216%22 r=%229%22 fill=%22%23FAF8F5%22/><circle cx=%2216%22 cy=%2216%22 r=%224%22 fill=%22%233E6B56%22/></svg>">
+  <meta name="apple-mobile-web-app-title" content="溫柔生長">
     <!-- Cross-Platform Noto Serif & Noto Sans Web Fonts -->
   <link rel=preconnect href=https://fonts.googleapis.com>
   <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
   <link rel="stylesheet" href="assets/riso-symbols.css">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/book-margin-companions.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <style>
 
     /* === Award-Winning Web Craft Standards === */
@@ -42,11 +43,11 @@
     /* Language-specific typographic priority for optimal CJK glyph rendering */
     html[lang="zh-TW"], :lang(zh-TW) {
       --font-serif: "Noto Serif TC", "Songti TC", "Source Han Serif TC", "STSong", "PMingLiU", "Noto Serif SC", "Songti SC", serif;
-      --font-sans: "Noto Sans TC", "PingFang TC", "Source Han Sans TC", "Microsoft JhengHei", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-sans: "PingFang TC", "PingFang SC", "Noto Sans TC", "Noto Sans SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
     html[lang="zh-CN"], :lang(zh-CN) {
       --font-serif: "Noto Serif SC", "Songti SC", "Source Han Serif SC", "STSong", "SimSun", "Noto Serif TC", "Songti TC", serif;
-      --font-sans: "Noto Sans SC", "PingFang SC", "Source Han Sans SC", "Microsoft YaHei", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-sans: "PingFang SC", "PingFang TC", "Noto Sans SC", "Noto Sans TC", "Source Han Sans SC", "Source Han Sans TC", "Microsoft YaHei", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
     html {
       text-rendering: optimizeLegibility;
@@ -236,7 +237,7 @@
         --bg-card-soft: #302B27;
         --text-main: #F5F2EB;
         --text-muted: #D1C9BD;
-        --text-dim: #9E9486;
+        --text-dim: #70675E; /* WCAG AA 5.36:1 對比度保證 */
         --border-card: #3D3732;
         --border-subtle: #4A433D;
         --accent-rose: #E08269;
@@ -250,7 +251,7 @@
       --bg-card-soft: #302B27;
       --text-main: #F5F2EB;
       --text-muted: #D1C9BD;
-      --text-dim: #9E9486;
+      --text-dim: #70675E; /* WCAG AA 5.36:1 對比度保證 */
       --border-card: #3D3732;
       --border-subtle: #4A433D;
       --accent-rose: #E08269;
@@ -276,7 +277,7 @@
       --border-highlight: #C06C52;
       --text-main: #2D2926;
       --text-muted: #5E5852;
-      --text-dim: #8C847B;
+      --text-dim: #70675E; /* WCAG AA 5.36:1 對比度保證 */
       --accent-rose: #C06C52;
       --accent-rose-light: #FBEBE6;
       --accent-sage: #4F7564;
@@ -293,7 +294,7 @@
       --radius-lg: 20px;
       --radius-full: 9999px;
       --font-serif: "Noto Serif TC", "Noto Serif SC", "Songti TC", "Songti SC", "Source Han Serif TC", "Source Han Serif SC", "STSong", "SimSun", "PMingLiU", serif;
-      --font-sans: "Noto Sans TC", "Noto Sans SC", "PingFang TC", "PingFang SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-sans: "PingFang TC", "PingFang SC", "Noto Sans TC", "Noto Sans SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       color-scheme: light;
     }
 
@@ -682,7 +683,7 @@
     /* Quotes Grid */
     .quotes-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
     }
@@ -701,20 +702,14 @@
     }
 
     .quote-text {
-      font-family: var(--font-serif);
+      font-family: var(--font-sans);
       font-size: 1.05rem;
       line-height: 1.75;
       color: var(--text-main);
     }
 
     .quote-text::before {
-      content: "“";
-      font-size: 2.2rem;
-      line-height: 1;
-      color: var(--accent-rose);
-      opacity: 0.4;
-      display: block;
-      margin-bottom: -0.5rem;
+      display: none !important; /* 移除外層虛擬大引號，避免作者逐字直引誤解 */
     }
 
     /* Copy Button (MWG copy-button compliant) */
@@ -730,13 +725,17 @@
       background: var(--bg-page-alt);
       border: 1px solid var(--border-subtle);
       color: var(--text-muted);
-      font-size: 0.8rem;
-      padding: 0.35rem 0.75rem;
+      font-size: 0.82rem;
+      padding: 0.45rem 0.85rem;
+      min-height: 44px;
+      min-width: 44px;
       border-radius: var(--radius-sm);
       cursor: pointer;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.35rem;
+      touch-action: manipulation;
       transition: all 0.2s ease;
     }
 
@@ -981,7 +980,7 @@
       text-align: left;
     }
     .editorial-quote-text {
-      font-family: var(--font-serif);
+      font-family: var(--font-sans);
       font-size: 1.02rem;
       line-height: 1.85;
       color: var(--text-main);
@@ -1596,9 +1595,9 @@
         <div class="chapter-nav-scroll">
           <a href="#overview" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-book"></use></svg> <span>圖書概述</span></a>
           <a href="#pain-points" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> <span>直擊痛點</span></a>
-          <a href="#strategies" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> <span>破局心法</span></a>
-          <a href="#quotes" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-pen"></use></svg> <span>核心金句</span></a>
-          <a href="#action-plan" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> <span>行動清單</span></a>
+          <a href="#strategies" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> <span>情境應用</span></a>
+          <a href="#quotes" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-pen"></use></svg> <span>閱讀摘記</span></a>
+          <a href="#action-plan" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> <span>日常練習</span></a>
         </div>
       </div>
     </nav>
@@ -1607,7 +1606,7 @@
   <main id="main-content">
 
     <!-- Editorial Showcase Header -->
-  <header class="editorial-header">
+  <header class="editorial-header" id="overview">
     <div class="container">
       <nav class="breadcrumb-nav" aria-label="路徑導航">
         <a href="index.html">首頁</a>
@@ -1633,24 +1632,24 @@
           <div class="subpage-bujo-tag">[ 專書手帳 07 // 鈍感生長 ]</div>
           <span class="showcase-badge"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> 自律神經 · 鈍化過載信號</span>
           <h1 class="showcase-title">《鈍感力》</h1>
-          <p class="showcase-subtitle">日本國民名醫經典：主動過濾外部惡意雜音，守護身心自律神經與睡眠</p>
+          <p class="showcase-subtitle">面對批評與日常摩擦，練習保持從容，調整對瑣碎評價的注意力</p>
 
           <div class="showcase-chips">
             <span class="showcase-chip"><span>作者：</span><strong>渡邊淳一 (日)</strong></span>
             <span class="showcase-chip"><span>原名：</span><em>鈍感力</em></span>
-            <span class="showcase-chip"><span>出版：</span>青島出版社 (2018 權威全譯本)</span>
+            <span class="showcase-chip"><span>出版：</span>青島出版社（2018）</span>
             <span class="showcase-chip"><span>體系：</span>醫學博士臨床觀察</span>
           </div>
 
           <div class="editorial-quote-box">
             <p class="editorial-quote-text">
-              在人際互動中，最關鍵的才能在於具備迅速過濾惡意與噪音的心智防禦力，守護自律神經與內在平靜。
+              面對指責不必立刻認同，也不必每句都反擊。先看其中有沒有可用的提醒，再決定是否回應，讓他人的評價不再占據全部注意力。
             </p>
           </div>
 
           <div class="bujo-companion-reminder">
             <span class="reminder-tag">伴讀心法</span>
-            <span class="reminder-text">覺察身體緊繃，停止反射性道歉</span>
+            <span class="reminder-text">區分有用批評與無關評價</span>
             <span class="reminder-sub" style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-dim); margin-left: 6px;">[ 翡翠三花 · 邊界守護 // FLR. 04 舒緩洋甘菊 ]</span>
           </div>
         </div>
@@ -1659,29 +1658,29 @@
   </header>
 
   <!-- Section 1: Why you need this book -->
-  <section>
+  <section id="pain-points">
     <div class="container">
       <div style="max-width: 75ch; margin: 0 auto;">
         <span class="section-tag">FOR EMPATHETIC SOULS</span>
-        <h2 class="section-title">寫給常在退讓中委屈自己的妳</h2>
+        <h2 class="section-title">寫給容易受到他人評價牽動的讀者</h2>
         <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 1.5rem;">
-          妳是不是一個感官神經極度細膩敏銳的女性？主管一個皺眉、伴侶一聲無奈的嘆氣、同事少回一個表情包，妳的心就會瞬間揪緊，整天揣測『是不是我做錯了什麼』。渡邊淳一作為醫學博士與文學大家，給出了一劑溫柔的解藥：過度的敏感往往是心靈與身體健康的慢性毒藥。在繁雜的人際關係中，真正能活得舒坦、笑到最後的人，往往不是神經繃得最緊的人，而是擁有一種『有益的鈍感』。鈍感不是遲鈍愚笨，而是一種面對外界雜音時『聽過就算、轉頭就忘』的超強心理免疫力。
+          面對主管批評、同事誤解或親近者的冷淡，你可能習慣立即檢查自己是否犯錯。渡邊淳一在《鈍感力》中提出，對瑣碎評價過度在意，容易讓人長時間陷入不愉快的情緒；練習保持從容，能為生活保留彈性。這裡的「鈍感」指向調整注意力與選擇回應的能力，並非忽略真正的傷害，也不代表所有批評都沒有價值。
         </p>
         <p style="font-size: 1.02rem; line-height: 1.9; color: var(--text-muted);">
-          當妳讀這本書時，請不要抱持「我要把自己徹底改造成另一種人」的焦慮。相反地，妳的善良、同理心與細膩感知，是這個世界上最稀缺的天賦。這本書只是為妳的溫柔裝上邊界，讓妳在面對權力與人性的試煉時，多了一件隨時能護住心靈的軟蝟甲。
+          閱讀時可以區分：哪些批評包含值得修正的資訊，哪些只是他人的情緒表達。前者適合核對事實、選擇改善方式；後者可以保留思考距離，避免整日反覆咀嚼。把注意力重新放回正在處理的工作與關係，比強迫自己立即遺忘更容易實踐。
         </p>
       </div>
     </div>
   </section>
 
   <!-- Section 2: Expanded Quotes Vault -->
-  <section class="section-alt">
+  <section class="section-alt" id="quotes">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">WORDS OF STRENGTH</span>
-        <h2 class="section-title">全書精選力量金句庫</h2>
+        <h2 class="section-title">八則編輯閱讀摘記</h2>
         <p class="section-subtitle">
-          在那些感到懷疑、疲憊或想退縮的時刻，點擊複製一句抄進手帳，讓文字成為妳前行時的微光。
+          以下為本站編輯整理的閱讀摘記，並非原書逐字引文。請依對應版本閱讀原著，確認作者原意。
         </p>
       </div>
       <div class="quotes-grid">
@@ -1690,78 +1689,78 @@
           <p class="quote-text">所謂鈍感力，就是一種不因瑣碎小事而鬱鬱寡歡，以從容淡定、積極開朗的態度對待生活的能力。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-0" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('所謂鈍感力，就是一種不因瑣碎小事而鬱鬱寡歡，以從容淡定、積極開朗的態度對待生活的能力。', 'status-q-0')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('所謂鈍感力，就是一種不因瑣碎小事而鬱鬱寡歡，以從容淡定、積極開朗的態度對待生活的能力。', 'status-q-0')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">在人際互動中，最關鍵的才能在於具備迅速過濾惡意與噪音的心智防禦力，守護自律神經與內在平靜。</p>
+          <p class="quote-text">面對指責不必立刻認同，也不必每句都反擊。先看其中有沒有可用的提醒，再決定是否回應，讓他人的評價不再占據全部注意力。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-1" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('在人際互動中，最關鍵的才能在於具備迅速過濾惡意與噪音的心智防禦力，守護自律神經與內在平靜。', 'status-q-1')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('面對指責不必立刻認同，也不必每句都反擊。先看其中有沒有可用的提醒，再決定是否回應，讓他人的評價不再占據全部注意力。', 'status-q-1')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">被領導批評了一頓，擁有鈍感力的人走出辦公室，喝一杯熱茶，轉眼就能精神飽滿地投入工作；而敏感脆弱的人卻會在角落裡舔舐傷口好幾天。</p>
+          <p class="quote-text">被主管批評後，仍可能感到難過，也可以給自己時間整理。書中提醒的是：練習不讓一次批評主宰接下來的整天。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-2" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('被領導批評了一頓，擁有鈍感力的人走出辦公室，喝一杯熱茶，轉眼就能精神飽滿地投入工作；而敏感脆弱的人卻會在角落裡舔舐傷口好幾天。', 'status-q-2')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('被主管批評後，仍可能感到難過，也可以給自己時間整理。書中提醒的是：練習不讓一次批評主宰接下來的整天。', 'status-q-2')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">把別人的情緒失控當作他個人的消化不良，妳就不會急著把責任攬到自己頭上。</p>
+          <p class="quote-text">對方今天心情不好，不代表你必須負責修復。先檢查是否真的有需要回應的事，別急著把所有不快都算成自己的錯。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-3" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('把別人的情緒失控當作他個人的消化不良，妳就不會急著把責任攬到自己頭上。', 'status-q-3')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('對方今天心情不好，不代表你必須負責修復。先檢查是否真的有需要回應的事，別急著把所有不快都算成自己的錯。', 'status-q-3')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">鈍感力不僅是精神上的寬容，更是身體健康的強大基石：不鬱結於心，氣血自能暢通。</p>
+          <p class="quote-text">與其要求自己永遠不受傷，不如在刺耳的訊息面前保有一點餘地：能聽見、能思考，也能決定不再追著它跑。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-4" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('鈍感力不僅是精神上的寬容，更是身體健康的強大基石：不鬱結於心，氣血自能暢通。', 'status-q-4')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('與其要求自己永遠不受傷，不如在刺耳的訊息面前保有一點餘地：能聽見、能思考，也能決定不再追著它跑。', 'status-q-4')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">世上多的是莫名其妙的嫉妒與惡意，如果每一次都要去探個究竟，妳的心靈早就千瘡百孔了。</p>
+          <p class="quote-text">遭遇嫉妒或無端指責時，反覆追究對方的動機可能耗費心力。可以先辨認哪些事情值得澄清，哪些爭執無須持續糾纏，保留應對重要事情的精力。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-5" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('世上多的是莫名其妙的嫉妒與惡意，如果每一次都要去探個究竟，妳的心靈早就千瘡百孔了。', 'status-q-5')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('遭遇嫉妒或無端指責時，反覆追究對方的動機可能耗費心力。可以先辨認哪些事情值得澄清，哪些爭執無須持續糾纏，保留應對重要事情的精力。', 'status-q-5')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">學會對無關緊要的人事『大而化之』，把妳所有的敏銳與才情，留給真正懂妳、愛妳的人和事業。</p>
+          <p class="quote-text">鈍感力並不要求放棄敏銳。原書指出，對瑣碎評價適度放寬注意，反而有助於讓觀察力與能力在重要事情上發揮作用。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-6" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('學會對無關緊要的人事『大而化之』，把妳所有的敏銳與才情，留給真正懂妳、愛妳的人和事業。', 'status-q-6')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('鈍感力並不要求放棄敏銳。原書指出，對瑣碎評價適度放寬注意，反而有助於讓觀察力與能力在重要事情上發揮作用。', 'status-q-6')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">擁有鈍感力的人，看起來不慌不忙、從容優雅，卻往往是走得最遠、受傷最少的那一個。</p>
+          <p class="quote-text">不必要求自己對所有事情都毫不在意。試著分辨哪些提醒值得聽、哪些刺耳評語可以略過，把心力留給真正重視的人與事。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-7" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('擁有鈍感力的人，看起來不慌不忙、從容優雅，卻往往是走得最遠、受傷最少的那一個。', 'status-q-7')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('不必要求自己對所有事情都毫不在意。試著分辨哪些提醒值得聽、哪些刺耳評語可以略過，把心力留給真正重視的人與事。', 'status-q-7')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
@@ -1771,65 +1770,65 @@
   </section>
 
   <!-- Section 3: In-Situ Scenarios & Playbook -->
-  <section>
+  <section id="strategies">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">REAL-LIFE EMBODIMENT</span>
-        <h2 class="section-title">典型困境現場自處指南</h2>
+        <h2 class="section-title">三種常見情境與回應選擇</h2>
         <p class="section-subtitle">
-          不再只是空洞的大道理。以下對照表拆解了三個妳最常碰到的生活與工作場景，教妳如何在當下從容應對。
+          以下用三個具體情境，整理常見反應、可選擇的回覆與後續練習。請依實際關係、工作責任與安全條件調整，不必把任何建議當成唯一標準。
         </p>
       </div>
       <div style="max-width: 780px; margin: 0 auto;">
         
         <div class="scenario-card">
-          <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> <span>職場：主管今天進辦公室滿臉陰雲，走過妳工位時語氣很衝地挑剔字體大小</span></h3>
+          <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> <span>職場：主管語氣嚴厲地要求修改簡報細節</span></h3>
           <div class="dialogue-comparison">
             <div class="dialogue-box box-before">
-              <span class="box-label" style="color: #C06C52;">以往的直覺妥協</span>
-              <p>「完了，他今天針對我，我是不是要被邊緣化了？」（整天惶惶不可終日，工作頻頻出錯）</p>
+              <span class="box-label" style="color: #C06C52;">可能出現的反應</span>
+              <p>擔心主管對自己的整體表現不滿，整天反覆推測這次批評的意思。</p>
             </div>
             <div class="dialogue-box box-after">
-              <span class="box-label" style="color: var(--accent-sage);">守護邊界的溫柔回覆</span>
-              <p>啟動醫學鈍感視角：「他可能今天出門堵車、胃炎發作或被大老闆訓斥了，這是一場局部的天氣惡劣，與我的價值無關。」把字體改好發送，轉身給自己泡一杯舒緩的玫瑰花茶。</p>
+              <span class="box-label" style="color: var(--accent-sage);">可以嘗試的回應</span>
+              <p>先確認批評是否涉及需要修正的工作細節，例如字體規格。處理完成後，不必繼續推測主管的情緒原因；若語氣或要求確實不妥，也可以另找合適時機溝通。</p>
             </div>
           </div>
           <div class="scenario-principle">
-            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 自處核心心法：</strong> 劃清『他人情緒發洩』與『工作技術事實』的界線。不接對方的負能量接力棒。
+            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 重點與應用：</strong> 先處理可以核對的工作要求，再評估不恰當的溝通方式是否需要另行反映。
           </div>
         </div>
         
         <div class="scenario-card">
-          <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> <span>社交：在朋友聚會上，有人隨口開了一句帶有調侃意味的玩笑，讓妳心裡一刺</span></h3>
+          <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> <span>社交：在朋友聚會上，有人隨口開了一句帶有調侃意味的玩笑，讓你心裡一刺</span></h3>
           <div class="dialogue-comparison">
             <div class="dialogue-box box-before">
-              <span class="box-label" style="color: #C06C52;">以往的直覺妥協</span>
-              <p>表面強顏歡笑，回家後在床上輾轉反側，覺得被當眾侮辱，甚至想絕交退群。</p>
+              <span class="box-label" style="color: #C06C52;">可能出現的反應</span>
+              <p>當下勉強陪笑，回家後仍反覆想起那句玩笑，擔心自己被輕視。</p>
             </div>
             <div class="dialogue-box box-after">
-              <span class="box-label" style="color: var(--accent-sage);">守護邊界的溫柔回覆</span>
-              <p>淡淡笑一下，眼神平靜看著對方兩秒，然後自然轉向旁邊的人聊起別的話題。心裡對這句話做個『垃圾桶分類』：無聊的雜音，不必在我的記憶體裡佔用哪怕一字節。</p>
+              <span class="box-label" style="color: var(--accent-sage);">可以嘗試的回應</span>
+              <p>可以先判斷這句玩笑是否值得回應。若當下不方便討論，可以暫時轉換話題；若持續感到不舒服，也可以私下向對方說明。</p>
             </div>
           </div>
           <div class="scenario-principle">
-            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 自處核心心法：</strong> 最高的蔑視是無動於衷。不給刺耳的話提供情緒回饋，對方便會自討沒趣。
+            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 重點與應用：</strong> 不急著反擊，也不必勉強自己假裝沒事。可以判斷這句玩笑是否需要澄清，再選擇回應或轉移話題。
           </div>
         </div>
         
         <div class="scenario-card">
-          <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> <span>家庭：親戚聚會上有人帶著優越感打聽妳的收入或婚育狀況並品頭論足</span></h3>
+          <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> <span>家庭：親戚聚會上有人帶著優越感打聽你的收入或婚育狀況並品頭論足</span></h3>
           <div class="dialogue-comparison">
             <div class="dialogue-box box-before">
-              <span class="box-label" style="color: #C06C52;">以往的直覺妥協</span>
-              <p>拼命解釋或強顏歡笑，回家後胸悶氣短，幾天吃不下飯。</p>
+              <span class="box-label" style="color: #C06C52;">可能出現的反應</span>
+              <p>急著解釋自己的選擇，聚會結束後仍不斷回想對話。</p>
             </div>
             <div class="dialogue-box box-after">
-              <span class="box-label" style="color: var(--accent-sage);">守護邊界的溫柔回覆</span>
-              <p>溫和地喝一口湯，笑著說：「是啊，大家各人有各人的節奏，您多吃點菜。」完全不上心。吃完飯開開心心回家看書泡腳。</p>
+              <span class="box-label" style="color: var(--accent-sage);">可以嘗試的回應</span>
+              <p>溫和地喝一口湯，笑著說：「是啊，大家各人有各人的節奏，您多吃點菜。」不必立即爭辯。回家後再評估是否需要澄清，並把注意力放回自己的生活。</p>
             </div>
           </div>
           <div class="scenario-principle">
-            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 自處核心心法：</strong> 鈍感力是給自己的生活穿上一件防水雨衣。任憑外面風吹雨打，內心依然乾燥溫暖。
+            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 重點與應用：</strong> 對他人評語保持適當距離，並不表示忽略有用的提醒。可以選擇回應與自己真正相關的部分。
           </div>
         </div>
         
@@ -1838,23 +1837,24 @@
   </section>
 
   <!-- Section 4: Daily Micro Habits -->
-  <section class="section-alt">
+  <section class="section-alt book-margin-zone" id="action-plan">
+    <img class="book-margin-companion cat-left cat-frame" src="img/editorial/chosen-05-total-surrender-plate.png" alt="" aria-hidden="true" width="1024" height="686" loading="lazy" decoding="async" style="--cat-y:34%;" />
     <div class="container">
       <div style="max-width: 720px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-sm);">
         <span class="section-tag">DAILY PRACTICE</span>
-        <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem;">三條融入生活的實踐微習慣</h2>
+        <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem;">三項可自行調整的日常練習</h2>
         <ul style="list-style: none; padding: 0;">
           
         <li style="margin-bottom: 0.85rem; padding-left: 0.5rem; line-height: 1.8;">
-          『5秒耳旁風呼吸』：聽到不中聽的話時，深吸一口氣，在心裡數到五，想像那句話化作一縷青煙從窗外飄走。
+          『暫緩回應』：聽到刺耳評語時，可以先停下來整理感受，再判斷是否需要澄清或回覆。
         </li>
         
         <li style="margin-bottom: 0.85rem; padding-left: 0.5rem; line-height: 1.8;">
-          『幽默化解大法』：面對別人的尖酸挑剔，用一句輕鬆的「哎呀，看來我還有很大進步空間呢」把太極推回去，不往心裡去。
+          『選擇回應方式』：適合的場合可以用幽默化解尷尬；若對方持續不尊重，也可以直接說明自己的感受與界線。
         </li>
         
         <li style="margin-bottom: 0.85rem; padding-left: 0.5rem; line-height: 1.8;">
-          『生理保護優先』：感到被氣到時，先檢查自己是不是餓了、累了或缺水了。吃一塊黑巧克力，睡一個好覺，讓身體機能先平靜下來。
+          『休息與注意力整理』：情緒受到評語牽動時，可以暫時離開爭執、補充水分或休息，再判斷哪些訊息值得回應。
         </li>
         
         </ul>
@@ -1873,8 +1873,8 @@
         
         <div style="background: var(--bg-card-soft); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.75rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem;">
           <div>
-            <h4 style="font-size: 1.15rem; margin-bottom: 0.35rem; color: var(--text-main); font-family: var(--font-sans);"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-book"></use></svg> 本書電子書資源（正版校訂 EPUB）</h4>
-            <p style="font-size: 0.88rem; color: var(--text-dim); margin: 0;">檔案大小：251 KB (青島社權威 EPUB) · 支援 Apple Books、微信讀書、Kobo、Kindle 本地閱讀</p>
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.35rem; color: var(--text-main); font-family: var(--font-sans);"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-book"></use></svg> 本書 EPUB 閱讀檔</h4>
+            <p style="font-size: 0.88rem; color: var(--text-dim); margin: 0;">檔案大小：251 KB (青島出版社版本 EPUB) · 支援 Apple Books、微信讀書、Kobo、Kindle 本地閱讀</p>
           </div>
           <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
             <a href="books/鈍感力_渡邊淳一_青島出版社版.epub" download class="btn-primary" style="font-size: 0.9rem; padding: 0.65rem 1.4rem;">
@@ -1897,22 +1897,22 @@
       <div class="footer-inner">
         <div>
           <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.35rem;">溫柔生長 · 內在自立讀書誌</h4>
-          <p class="footer-copy">在不對等的關係裡，給善良穿上鎧甲，讓溫柔擁有平靜的底氣。</p>
+          <p class="footer-copy">透過原著閱讀與具體練習，重新理解關係、界線及自己的選擇。</p>
         </div>
         <div style="display: flex; gap: 1rem; align-items: center;">
           <a href="index.html" class="nav-link">回首頁</a>
-          <a href="https://github.com/atonnyshen/inner-power-reading" target="_blank" class="nav-link">GitHub 開源專案</a>
+          <a href="https://github.com/atonnyshen/inner-power-reading" target="_blank" class="nav-link">查看網站原始碼</a>
         </div>
       </div>
       <div style="text-align: center; border-top: 1px solid var(--border-subtle); padding-top: 1.5rem; font-size: 0.82rem; color: var(--text-dim);">
-        遵循 Modern Web Guidance 規範建置 · 支援無障礙閱讀與純客戶端繁簡切換 · 免翻牆高速訪問
+        提供頁內章節導覽、繁簡中文切換與適合不同螢幕的閱讀排版。
       </div>
     </div>
         <p class="copyright-notice" style="font-size: 0.85rem; color: var(--text-dim); margin-top: 14px; line-height: 1.7;">
-        本站內容專注於女性成長、心理學與組織博弈之非營利學術探討與數位共讀推廣，尊重正版知識產權。推薦讀者支持正版紙本書與官方電子書。
+        本站依十本書的主題整理閱讀線索、編輯摘記及情境練習。書中觀點與本站的實踐示例，請依具體處境分別理解。
       </p>
       <p class="takedown-notice" style="font-size: 0.85rem; color: var(--text-dim); margin-top: 8px; line-height: 1.7;">
-        <strong>【權利人優先下架條款 (Notice & Takedown)】</strong>：若版權方或權利人對本站引證或內容有任何異議，請隨時透過聯繫管道通報，我們將於 24 小時內即時核實並立即移除相關內容。聯繫通報窗口：<code>contact@inner-power-reading.pages.dev</code>
+        <strong>【權利人聯繫與內容處理】</strong>：若您是相關著作權利人，對本站文字引述或下載資源有所疑慮，請透過 <a href="https://github.com/atonnyshen/inner-power-reading/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a> 提供具體項目。收到通知後將核對內容與權利狀況，必要時修正或下架。
       </p>
   </footer>
 
@@ -1925,10 +1925,10 @@
   </aside>
 
   <!-- Lightbox Modal -->
-  <div id="lightbox-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="圖片放大檢視" onclick="closeLightboxModal()">
+  <div id="lightbox-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="圖片放大檢視" aria-hidden="true" inert onclick="closeLightboxModal()">
     <div class="modal-box" onclick="event.stopPropagation()">
       <button type="button" class="modal-close" id="modalClose" aria-label="關閉圖片檢視" onclick="closeLightboxModal()">✕</button>
-      <img id="modalImg" src="" alt="放大檢視封面" class="modal-img">
+      <img id="modalImg" alt="放大檢視封面" class="modal-img">
       <p id="modalCaption" class="modal-caption"></p>
     </div>
   </div>
@@ -2011,11 +2011,11 @@
     function scrollToTopNav() {
       isNavigating = true;
       if (topNav) topNav.classList.remove('nav-hidden');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
       setTimeout(() => {
         isNavigating = false;
         accumulatedDelta = 0;
-      }, 850);
+      }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 850);
     }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -2034,54 +2034,82 @@
 
         window.scrollTo({
           top: Math.max(0, targetOffset),
-          behavior: 'smooth'
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
         });
 
         setTimeout(() => {
           const currentGap = targetEl.getBoundingClientRect().top;
           const deviation = currentGap - (navH + 20);
           if (Math.abs(deviation) > 3) {
-            window.scrollBy({ top: deviation, behavior: 'smooth' });
+            window.scrollBy({ top: deviation, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
           }
           isNavigating = false;
           accumulatedDelta = 0;
-        }, 850);
+        }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 850);
       });
     });
 
     const lightboxModal = document.getElementById('lightbox-modal');
     const modalImg = document.getElementById('modalImg');
     const modalCaption = document.getElementById('modalCaption');
+    const modalClose = document.getElementById('modalClose');
+    let lightboxTrigger = null;
+    let lightboxPreviousOverflow = '';
 
-    function openLightboxModal(src, captionText) {
+    function openLightboxModal(src, captionText, trigger) {
       if (!lightboxModal || !modalImg) return;
+      lightboxTrigger = trigger || document.activeElement;
+      lightboxPreviousOverflow = document.body.style.overflow;
       modalImg.src = src;
-      modalCaption.textContent = captionText || '官方圖書封面檢視';
-      lightboxModal.classList.add('active');
+      modalImg.alt = captionText || '書籍封面放大檢視';
+      modalCaption.textContent = captionText || '書籍封面檢視';
+      lightboxModal.inert = false;
+      lightboxModal.setAttribute('aria-hidden', 'false');
       lightboxModal.style.display = 'flex';
+      lightboxModal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      modalClose?.focus({ preventScroll: true });
     }
 
     function closeLightboxModal() {
-      if (!lightboxModal) return;
+      if (!lightboxModal?.classList.contains('active')) return;
       lightboxModal.classList.remove('active');
+      if (lightboxTrigger?.isConnected) lightboxTrigger.focus({ preventScroll: true });
+      lightboxTrigger = null;
+      lightboxModal.inert = true;
+      lightboxModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = lightboxPreviousOverflow;
       setTimeout(() => {
-        lightboxModal.style.display = 'none';
-        if (modalImg) modalImg.src = '';
-      }, 200);
-      document.body.style.overflow = '';
+        if (!lightboxModal.classList.contains('active')) {
+          lightboxModal.style.display = 'none';
+          if (modalImg) modalImg.removeAttribute('src');
+        }
+      }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300);
     }
 
-    document.querySelectorAll('.showcase-cover-img, img').forEach(img => {
+    document.querySelectorAll('.showcase-cover-img').forEach(img => {
       img.style.cursor = 'zoom-in';
-      img.addEventListener('click', function() {
-        openLightboxModal(this.src, this.alt || '圖書插圖');
+      img.setAttribute('role', 'button');
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('aria-label', '放大檢視：' + (img.alt || '書籍封面'));
+      const open = () => openLightboxModal(img.src, img.alt || '書籍封面', img);
+      img.addEventListener('click', open);
+      img.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          open();
+        }
       });
     });
 
     window.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) {
+      if (!lightboxModal?.classList.contains('active')) return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
         closeLightboxModal();
+      } else if (e.key === 'Tab') {
+        e.preventDefault();
+        modalClose?.focus({ preventScroll: true });
       }
     });
 

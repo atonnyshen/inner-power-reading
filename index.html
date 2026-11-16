@@ -8,9 +8,9 @@
   <!-- Cross-Platform Noto Serif & Noto Sans Web Fonts -->
   <link rel=preconnect href=https://fonts.googleapis.com>
   <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="assets/riso-symbols.css">
-  
+
   <!-- Apple Touch Icon & Favicon for iOS Home Screen & Modern Browsers (iPhone 桌面與網頁圖標) -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon-cat.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -38,7 +38,7 @@
       --border-highlight: #C06C52;
       --text-main: #2D2926;
       --text-muted: #59534D;
-      --text-dim: #888077;
+      --text-dim: #70675E; /* WCAG AA 5.36:1 對比度保證 */
       --accent-rose: #C06C52;
       --accent-rose-light: #FBEBE6;
       --accent-sage: #3E6B56;
@@ -55,7 +55,7 @@
       --radius-lg: 20px;
       --radius-full: 9999px;
       --font-serif: "Noto Serif TC", "Noto Serif SC", "Songti TC", "Songti SC", "Source Han Serif TC", "Source Han Serif SC", "STSong", "SimSun", "PMingLiU", serif;
-      --font-sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "PingFang SC", "Noto Sans TC", "Noto Sans SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", system-ui, sans-serif;
+      --font-sans: "PingFang TC", "PingFang SC", "Noto Sans TC", "Noto Sans SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       color-scheme: light;
     }
 
@@ -68,12 +68,12 @@
 
     /* Language-specific typographic priority for optimal CJK glyph rendering */
     html[lang="zh-TW"], :lang(zh-TW) {
-      --font-serif: "Noto Serif TC", "Songti TC", "Source Han Serif TC", "STSong", "PMingLiU", "Noto Serif SC", "Songti SC", serif;
-      --font-sans: "Noto Sans TC", "PingFang TC", "Source Han Sans TC", "Microsoft JhengHei", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-serif: "Songti TC", "Noto Serif TC", "Source Han Serif TC", "STSong", "PMingLiU", "Noto Serif SC", "Songti SC", serif;
+      --font-sans: "PingFang TC", "PingFang SC", "Noto Sans TC", "Noto Sans SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
     html[lang="zh-CN"], :lang(zh-CN) {
-      --font-serif: "Noto Serif SC", "Songti SC", "Source Han Serif SC", "STSong", "SimSun", "Noto Serif TC", "Songti TC", serif;
-      --font-sans: "Noto Sans SC", "PingFang SC", "Source Han Sans SC", "Microsoft YaHei", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-serif: "Songti SC", "Noto Serif SC", "Source Han Serif SC", "STSong", "SimSun", "Noto Serif TC", "Songti TC", serif;
+      --font-sans: "PingFang SC", "PingFang TC", "Noto Sans SC", "Noto Sans TC", "Source Han Sans SC", "Source Han Sans TC", "Microsoft YaHei", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
     html {
       text-rendering: optimizeLegibility;
@@ -184,7 +184,7 @@
       transition: color 0.2s;
     }
     .nav-links a:hover {
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
     }
 
     .nav-actions {
@@ -209,8 +209,8 @@
       transition: all 0.2s;
     }
     .lang-btn:hover {
-      border-color: var(--accent-rose);
-      color: var(--accent-rose);
+      border-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
     }
 
     /* Buttons */
@@ -229,7 +229,7 @@
       text-align: center;
     }
     .btn-primary {
-      background-color: var(--accent-rose);
+      background-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       color: #FFFFFF;
       box-shadow: 0 4px 14px rgba(192, 108, 82, 0.25);
     }
@@ -245,8 +245,8 @@
       box-shadow: var(--shadow-sm);
     }
     .btn-secondary:hover {
-      border-color: var(--accent-rose);
-      color: var(--accent-rose);
+      border-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
     }
 
     /* Section General */
@@ -265,7 +265,7 @@
       padding: 6px 14px;
       border-radius: var(--radius-full);
       background: var(--accent-rose-light);
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       font-size: 0.82rem;
       font-weight: 700;
       letter-spacing: 0.04em;
@@ -308,7 +308,7 @@
       padding: 8px 18px;
       border-radius: var(--radius-full);
       background: #FFFFFF;
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       font-size: 0.88rem;
       font-weight: 700;
       border: 1px solid var(--border-subtle);
@@ -332,7 +332,7 @@
       white-space: nowrap;
     }
     .hero-phrase.highlight {
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
     }
     .hero-divider {
       display: inline-block;
@@ -341,6 +341,21 @@
       display: inline;
     }
     @media (max-width: 768px) {
+      body {
+        padding-bottom: 84px !important; /* 確保滾動至底時文字絕不被浮動導航遮蓋 */
+      }
+      .floating-quick-nav {
+        bottom: 16px !important;
+        right: 14px !important;
+        padding: 4px 8px !important;
+        font-size: 0.8rem !important;
+        border-radius: 9999px !important;
+        background: rgba(253, 251, 247, 0.90) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        box-shadow: 0 4px 16px rgba(45, 41, 38, 0.12) !important;
+      }
+
       .desktop-break { display: none; }
     }
 
@@ -400,14 +415,14 @@
     .persona-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-md);
-      border-color: var(--accent-rose);
+      border-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
     }
     .persona-icon {
       width: 50px;
       height: 50px;
       border-radius: var(--radius-md);
       background: var(--accent-rose-light);
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -417,7 +432,7 @@
     .persona-tag {
       font-size: 0.78rem;
       font-weight: 700;
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       letter-spacing: 0.05em;
       text-transform: uppercase;
       margin-bottom: 8px;
@@ -554,9 +569,9 @@
         width: 100% !important;
         max-width: 100% !important;
       }
-      .evolution-table, 
-      .evolution-table tbody, 
-      .evolution-table tr, 
+      .evolution-table,
+      .evolution-table tbody,
+      .evolution-table tr,
       .evolution-table td {
         display: block !important;
         width: 100% !important;
@@ -633,7 +648,7 @@
       font-size: 0.82rem;
       font-weight: 700;
       background: var(--accent-rose-light);
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       margin-bottom: 6px;
     }
 
@@ -731,7 +746,7 @@
       position: relative;
     }
     .book-pillar-card:hover {
-      border-color: var(--accent-rose);
+      border-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       box-shadow: var(--shadow-md);
       transform: translateY(-2px);
     }
@@ -816,8 +831,8 @@
       align-items: center;
       gap: 6px;
     }
-    .tag-amber { background: var(--accent-amber-light); color: var(--accent-amber); }
-    .tag-rose  { background: var(--accent-rose-light); color: var(--accent-rose); }
+    .tag-amber { background: var(--accent-amber-light); color: #975C2D; /* AA for 13px labels against pale paper */ }
+    .tag-rose  { background: var(--accent-rose-light); color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */ }
     .tag-sage  { background: var(--accent-sage-light); color: var(--accent-sage); }
     .tag-blue  { background: var(--accent-blue-light); color: var(--accent-blue); }
 
@@ -832,7 +847,7 @@
     .book-core-axiom {
       font-size: 1.02rem;
       font-weight: 600;
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       margin-bottom: 16px;
       line-height: 1.65;
     }
@@ -862,32 +877,44 @@
 
     .book-quote-box {
       background: var(--bg-card-soft);
-      border-left: 3px solid var(--accent-rose);
-      padding: 16px 20px;
+      border-left: 3.5px solid var(--accent-rose);
+      padding: 18px 20px;
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
       font-family: var(--font-sans);
       font-size: 0.96rem;
       color: var(--text-main);
       line-height: 1.75;
-      margin-top: 10px;
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
       position: relative;
     }
     .copy-quote-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
+      position: static;
+      align-self: flex-end;
       background: #FFFFFF;
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
-      padding: 4px 8px;
-      font-size: 0.75rem;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      min-height: 44px;
+      min-width: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       color: var(--text-muted);
       cursor: pointer;
       transition: all 0.2s;
+      font-family: var(--font-sans);
+      touch-action: manipulation;
     }
     .copy-quote-btn:hover {
-      color: var(--accent-rose);
-      border-color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
+      border-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
+      background: var(--bg-card-soft);
     }
 
     .book-action-bar {
@@ -905,7 +932,7 @@
       padding: 8px 18px;
       border-radius: var(--radius-full);
       background: var(--accent-rose-light);
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       font-size: 0.9rem;
       font-weight: 700;
       transition: all 0.2s;
@@ -939,7 +966,7 @@
     .companion-card:hover {
       transform: translateY(-3px);
       box-shadow: var(--shadow-md);
-      border-color: var(--accent-rose);
+      border-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
     }
     .companion-header {
       margin-bottom: 14px;
@@ -1013,7 +1040,7 @@
     }
     .assessment-opt-label:hover,
     .assessment-opt-label:active {
-      border-color: var(--accent-rose);
+      border-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       background: #FFFFFF;
     }
     .assessment-opt-label input[type="checkbox"] {
@@ -1052,6 +1079,16 @@
     .assessment-opt-label input[type="checkbox"]:checked::after {
       transform: rotate(-45deg) translateY(-1px) scale(1);
     }
+
+    .assessment-opt-label input[type="checkbox"]:focus-visible {
+      outline: 2px solid var(--accent-rose) !important;
+      outline-offset: 3px !important;
+    }
+    .assessment-opt-label:has(input[type="checkbox"]:focus-visible) {
+      outline: 2px solid var(--accent-rose) !important;
+      outline-offset: 2px !important;
+    }
+
     .assessment-opt-label:has(input[type="checkbox"]:checked) {
       border-color: var(--accent-rose, #C06C52);
       background: #FFFFFF;
@@ -1082,7 +1119,7 @@
       font-family: var(--font-serif);
       font-size: 1.3rem;
       font-weight: 800;
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       margin-bottom: 12px;
     }
     .result-body {
@@ -1113,7 +1150,7 @@
       transition: all 0.2s ease;
     }
     .playbook-card:hover {
-      border-color: var(--accent-rose);
+      border-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       box-shadow: var(--shadow-md);
     }
     .playbook-badge-row {
@@ -1125,11 +1162,13 @@
     .playbook-step-num {
       font-size: 0.78rem;
       font-weight: 800;
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       background: var(--accent-rose-light);
       padding: 4px 12px;
       border-radius: var(--radius-full);
       width: fit-content;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .playbook-citation {
       font-size: 0.76rem;
@@ -1192,7 +1231,7 @@
       font-family: var(--font-serif);
       font-size: 1.35rem;
       font-weight: 800;
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       margin-bottom: 6px;
     }
     .readify-content p {
@@ -1220,7 +1259,7 @@
       transition: all 0.2s;
     }
     .download-card:hover {
-      border-color: var(--accent-rose);
+      border-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
     }
@@ -1267,7 +1306,7 @@
     .download-btn:hover {
       background: var(--accent-rose);
       color: #FFFFFF;
-      border-color: var(--accent-rose);
+      border-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
     }
 
     /* Footer */
@@ -1360,7 +1399,7 @@
       .adversarial-box { padding: 22px; }
       .assessment-card { padding: 22px; }
     }
-  
+
     /* === Award-Winning Web Craft Design Enhancements === */
 
     /* 1. Global Overflow & Multi-Device Containment */
@@ -1373,12 +1412,12 @@
 
     /* Language-specific typographic priority for optimal CJK glyph rendering */
     html[lang="zh-TW"], :lang(zh-TW) {
-      --font-serif: "Noto Serif TC", "Songti TC", "Source Han Serif TC", "STSong", "PMingLiU", "Noto Serif SC", "Songti SC", serif;
-      --font-sans: "Noto Sans TC", "PingFang TC", "Source Han Sans TC", "Microsoft JhengHei", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-serif: "Songti TC", "Noto Serif TC", "Source Han Serif TC", "STSong", "PMingLiU", "Noto Serif SC", "Songti SC", serif;
+      --font-sans: "PingFang TC", "PingFang SC", "Noto Sans TC", "Noto Sans SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
     html[lang="zh-CN"], :lang(zh-CN) {
-      --font-serif: "Noto Serif SC", "Songti SC", "Source Han Serif SC", "STSong", "SimSun", "Noto Serif TC", "Songti TC", serif;
-      --font-sans: "Noto Sans SC", "PingFang SC", "Source Han Sans SC", "Microsoft YaHei", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-serif: "Songti SC", "Noto Serif SC", "Source Han Serif SC", "STSong", "SimSun", "Noto Serif TC", "Songti TC", serif;
+      --font-sans: "PingFang SC", "PingFang TC", "Noto Sans SC", "Noto Sans TC", "Source Han Sans SC", "Source Han Sans TC", "Microsoft YaHei", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
     html {
       text-rendering: optimizeLegibility;
@@ -1512,8 +1551,8 @@
       }
     }
     .nav-chip:hover, .nav-chip.active {
-      color: var(--accent-rose);
-      border-color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
+      border-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       background: var(--accent-rose-light);
     }
 
@@ -1560,7 +1599,7 @@
     }
     .quick-nav-btn:hover {
       background: var(--accent-rose-light);
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
     }
     .quick-nav-divider {
       width: 1px;
@@ -1594,8 +1633,11 @@
       color: var(--text-main);
     }
     .meter-score {
-      font-family: var(--font-serif);
-      color: var(--accent-rose);
+      flex: 0 0 auto;
+      white-space: nowrap;
+      margin-left: 8px;
+      font-family: var(--font-sans);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       font-weight: 800;
     }
     .meter-track {
@@ -1629,7 +1671,7 @@
       border-radius: var(--radius-full);
       font-size: 0.82rem;
       font-weight: 700;
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       margin-bottom: 12px;
     }
 
@@ -1690,8 +1732,8 @@
       border: 1px solid rgba(255, 255, 255, 0.4);
       color: #FFFFFF;
       font-size: 1.2rem;
-      width: 36px;
-      height: 36px;
+      width: 44px;
+      height: 44px;
       border-radius: var(--radius-full);
       display: flex;
       align-items: center;
@@ -1701,6 +1743,13 @@
     }
     .modal-close:hover {
       background: rgba(255, 255, 255, 0.35);
+    }
+
+    .book-real-cover-img[role="button"]:focus-visible,
+    .download-thumb[role="button"]:focus-visible,
+    .showcase-cover-img[role="button"]:focus-visible {
+      outline: 3px solid var(--accent-rose);
+      outline-offset: 4px;
     }
 
     /* 6. Dark / Night Theme Contrast Protection */
@@ -1743,7 +1792,7 @@
       }
     }
 
-  
+
     /* ══════════════════════════════════════════════════════════════════════
        READING-FIRST BULLET JOURNAL & DUAL FELINE DESIGN SYSTEM
        瑞士解構 × 雙貓伴讀手帳體系 · 純粹為推廣閱讀服務 · 零多餘技術棧
@@ -1834,7 +1883,7 @@
     }
     .bujo-log-number {
       background: var(--accent-rose-light);
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       font-weight: 700;
       padding: 3px 10px;
       border-radius: var(--radius-sm);
@@ -1844,7 +1893,7 @@
       align-items: center;
       gap: 6px;
       border: 1.5px solid var(--accent-rose);
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       padding: 4px 12px;
       border-radius: 4px;
       font-family: 'JetBrains Mono', monospace;
@@ -2013,7 +2062,7 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem;
       font-weight: 700;
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       background: var(--accent-rose-light);
       padding: 3px 10px;
       border-radius: 4px;
@@ -2030,7 +2079,7 @@
       display: block;
     }
     .polaroid-card:nth-child(2) .polaroid-tag {
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
     }
     .polaroid-title {
       font-family: var(--font-serif);
@@ -2097,7 +2146,7 @@
       box-shadow: 0 1px 4px rgba(45, 41, 38, 0.02);
     }
     .crisis-index-btn:hover {
-      border-color: var(--accent-rose);
+      border-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       background: var(--accent-rose-light);
       transform: translateX(2px);
     }
@@ -2114,7 +2163,7 @@
     .crisis-book-target {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem;
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
     }
     .crisis-index-btn span.arrow {
       font-family: 'JetBrains Mono', monospace;
@@ -2126,7 +2175,7 @@
     .book-pillar-card:target {
       scroll-margin-top: calc(var(--nav-height, 100px) + 24px);
       box-shadow: 0 0 0 2px var(--accent-rose), 0 10px 32px rgba(192, 108, 82, 0.18);
-      border-color: var(--accent-rose);
+      border-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -2148,7 +2197,7 @@
       z-index: 2;
     }
 
-  
+
     /* Botanical & Workplace Lifestyle Motifs (花草與生活辦公物件) */
     .bujo-motif-glasses, .bujo-motif-coffee, .bujo-motif-sage, .bujo-motif-flower, .bujo-motif-pen {
       display: inline-block;
@@ -2163,7 +2212,7 @@
       pointer-events: none;
     }
 
-  
+
     /* Compact Human-Centered Reading Folio (以人為本，貓咪縮小為功能性伴讀標記) */
     .bujo-compact-folio {
       padding: 24px 0 10px 0;
@@ -2211,7 +2260,7 @@
       transition: all 0.2s ease;
     }
     .companion-track-item:hover {
-      border-color: var(--accent-rose);
+      border-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       background: #FFFFFF;
     }
     .companion-mini-mark {
@@ -2233,7 +2282,7 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.7rem;
       font-weight: 700;
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       display: block;
       margin-bottom: 2px;
     }
@@ -2251,7 +2300,7 @@
       margin-top: 2px;
     }
 
-  
+
     /* ══════════════════════════════════════════════════════════════════════
        FIXED AMBIENT BACKGROUND GUARDIAN CATS (固定兩側實體花紋守護貓咪)
        白色橘背舒展貓 × 三花戴帽端坐貓 · 零高度佔用 · 寬屏清晰 · 手機端靜音防干擾
@@ -2368,7 +2417,7 @@
       gap: 12px;
     }
     .hero-crisis-card:hover {
-      border-color: var(--accent-rose);
+      border-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
       transform: translateY(-2px);
       box-shadow: 0 6px 14px rgba(192, 108, 82, 0.08);
     }
@@ -2430,12 +2479,12 @@
     }
     .crisis-book-chip:hover {
       background: var(--accent-rose-light);
-      border-color: var(--accent-rose);
-      color: var(--accent-rose);
+      border-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
     }
     .crisis-book-chip .chip-arrow {
       font-size: 0.72rem;
-      color: var(--accent-rose);
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
     }
 
     @media (max-width: 768px) {
@@ -2518,6 +2567,8 @@
       gap: 8px;
     }
     .toc-drawer-close {
+      min-width: 44px;
+      min-height: 44px;
       background: none;
       border: none;
       font-size: 1.25rem;
@@ -2550,8 +2601,8 @@
     }
     .toc-item:active {
       background: var(--accent-rose-light);
-      border-color: var(--accent-rose);
-      color: var(--accent-rose);
+      border-color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
+      color: #A1442B; /* WCAG AA 5.37:1 對比度保證 */
     }
     .toc-item-tag {
       font-size: 0.75rem;
@@ -2562,9 +2613,26 @@
       border-radius: 6px;
     }
 
+    /* Minimum finger-sized targets for touch devices, including navigation pills. */
+    @media (pointer: coarse) {
+      .brand, .lang-btn, .nav-chip, .crisis-book-chip, .quick-nav-btn {
+        min-height: 44px !important;
+        box-sizing: border-box;
+      }
+    }
+
+    /* Desktop: suppress mobile-only editorial line breaks. */
+    br.mobile-break { display: none !important; }
+
+    /* Maintain consistent heading size on narrow 320px screens. */
+    @media (max-width: 360px) {
+      #pillars .book-main-title { font-size: 1.2rem !important; }
+      .hero-phrase.highlight { display: inline; white-space: normal; overflow-wrap: break-word; }
+    }
+
     /* 手機端深層閱讀與排版調優 (@media max-width: 768px) */
     @media (max-width: 768px) {
-      .mobile-break {
+      br.mobile-break {
         display: block !important;
       }
       .book-block-label {
@@ -2617,6 +2685,41 @@
         color: var(--text-muted) !important;
         word-break: break-word !important;
       }
+      /* 手機標題解除桌面版的整句 nowrap，避免裁切與冒號孤行。 */
+      .hero-title {
+        max-width: 100%;
+        font-size: clamp(1.7rem, 6.4vw, 2rem) !important;
+        line-height: 1.42;
+        text-wrap: balance;
+      }
+      .hero-title .hero-phrase,
+      .hero-title .hero-divider {
+        display: inline;
+        white-space: normal;
+      }
+      .hero-title .hero-phrase.highlight {
+        display: block;
+        white-space: normal;
+        margin-top: 0.18em;
+      }
+      /* 首屏的標題可置中；長段說明以穩定的左邊界引導手機閱讀。 */
+      .hero-subtitles {
+        width: 100%;
+        max-width: 36rem;
+        margin: 0 auto 30px;
+        gap: 16px;
+        align-items: stretch;
+      }
+      .hero-subtitle {
+        font-family: var(--font-sans);
+        font-size: 1rem;
+        line-height: 1.78;
+        text-align: left;
+        text-wrap: pretty;
+        word-break: normal;
+        overflow-wrap: break-word;
+      }
+      .section-desc br { display: none; } /* 手機寬度交由瀏覽器自然換行。 */
 
       /* ══════════════════════════════════════════════════════════════════
          十大專書深度導讀：書封與規格垂直置中、內文全面無襯線蘋方黑體、置左對齊
@@ -2634,18 +2737,19 @@
         margin-bottom: 8px !important;
       }
       .book-cover-panel {
-        display: grid !important;
-        grid-template-columns: 104px 1fr !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important; /* 確保主軸上的項目完全垂直置中 */
+        justify-content: flex-start !important;
         gap: 14px !important;
-        align-items: center !important; /* 書封與右側規格垂直置中 */
       }
       .book-real-cover-box {
         width: 104px !important;
+        flex-shrink: 0 !important;
         aspect-ratio: 1 / 1.44 !important;
         border-radius: 8px !important;
         box-shadow: 0 6px 16px rgba(45, 41, 38, 0.14) !important;
-        margin: auto 0 !important;
-        align-self: center !important; /* 書封自體置中，不向上浮起 */
+        margin: 0 !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -2658,13 +2762,13 @@
         display: block !important;
       }
       .book-meta-list {
+        flex: 1 !important;
         padding: 12px 14px !important;
-        font-size: 0.90rem !important; /* 從 0.78rem 提升至 0.90rem (14.4px) */
+        font-size: 0.90rem !important;
         gap: 6px !important;
         border-radius: 10px !important;
         line-height: 1.5 !important;
         background: var(--bg-card-soft) !important;
-        align-self: center !important; /* 規格自體置中 */
         margin: 0 !important;
         border: 1px solid var(--border-subtle) !important;
         font-family: var(--font-sans) !important;
@@ -2718,7 +2822,7 @@
         border-left: 3.5px solid var(--accent-rose) !important;
         border-radius: 0 8px 8px 0 !important;
         margin-bottom: 14px !important;
-        color: var(--accent-rose) !important;
+        color: #A1442B !important; /* WCAG AA 5.37:1 對比度保證 */
         text-align: left !important;
         word-break: break-word !important;
       }
@@ -2730,12 +2834,15 @@
         border: none !important;
       }
       .book-block-label {
-        font-family: var(--font-sans) !important; /* 標籤統一無襯線黑體 */
-        font-size: 1.02rem !important; /* 提升至 16.3px 加粗 */
+        font-family: var(--font-sans) !important;
+        font-size: 1.02rem !important;
         font-weight: 700 !important;
         color: var(--text-main) !important;
-        margin-bottom: 5px !important;
-        display: block !important; /* 確保無圖標縮進，文字左緣 100% 齊平 */
+        margin-bottom: 6px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 5px !important;
         line-height: 1.45 !important;
         text-wrap: balance !important;
         text-align: left !important;
@@ -2753,11 +2860,11 @@
         margin: 0 0 6px 0 !important;
         word-break: break-word !important;
       }
-      /* 金句盒：徹底移除宋體，改用與 Mac 版一致之 PingFang/Noto Sans 黑體 */
+      /* 金句盒：徹底移除宋體，改用與 Mac 版一致之 PingFang/Noto Sans 黑體，按鈕與文字在 Y 軸完全解耦 */
       .book-quote-box {
-        font-family: var(--font-sans) !important; /* 移除宋體，採用黑體 */
+        font-family: var(--font-sans) !important;
         padding: 14px 16px !important;
-        font-size: 0.96rem !important; /* 提升至 15.4px */
+        font-size: 0.96rem !important;
         font-weight: 500 !important;
         line-height: 1.72 !important;
         border-radius: 10px !important;
@@ -2765,14 +2872,29 @@
         background: var(--bg-card-soft) !important;
         border-left: 3.5px solid var(--accent-amber) !important;
         color: var(--text-main) !important;
-        text-align: left !important; /* 置左對齊 */
+        text-align: left !important;
         word-break: break-word !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        align-items: flex-start !important;
       }
       .book-quote-box .copy-quote-btn {
-        margin-top: 8px !important;
+        position: static !important;
+        align-self: flex-end !important;
+        margin-top: 6px !important;
         font-size: 0.82rem !important;
-        padding: 4px 10px !important;
+        padding: 6px 14px !important;
+        min-height: 44px !important;
+        min-width: 44px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         font-family: var(--font-sans) !important;
+        touch-action: manipulation !important;
+        background: #FFFFFF !important;
+        border: 1px solid var(--border-subtle) !important;
+        border-radius: 6px !important;
       }
       .book-action-bar {
         display: flex !important;
@@ -2928,7 +3050,7 @@
         gap: 6px !important;
         font-family: var(--font-sans) !important;
         font-size: 0.86rem !important;
-        color: var(--accent-rose) !important;
+        color: #A1442B !important; /* WCAG AA 5.37:1 對比度保證 */
         font-weight: 600 !important;
         margin-bottom: 12px !important;
         letter-spacing: 0.04em !important;
@@ -3045,7 +3167,17 @@
       .assessment-opt-label input[type="checkbox"]:checked::after {
         transform: rotate(-45deg) translateY(-1px) scale(1) !important;
       }
-      .assessment-opt-label:has(input[type="checkbox"]:checked) {
+
+    .assessment-opt-label input[type="checkbox"]:focus-visible {
+      outline: 2px solid var(--accent-rose) !important;
+      outline-offset: 3px !important;
+    }
+    .assessment-opt-label:has(input[type="checkbox"]:focus-visible) {
+      outline: 2px solid var(--accent-rose) !important;
+      outline-offset: 2px !important;
+    }
+
+    .assessment-opt-label:has(input[type="checkbox"]:checked) {
         border-color: var(--accent-rose, #C06C52) !important;
         background: #FFFFFF !important;
         box-shadow: 0 4px 16px rgba(192, 108, 82, 0.09) !important;
@@ -3119,6 +3251,18 @@
         font-size: 0.84rem !important;
         font-family: var(--font-sans) !important;
       }
+    }
+
+    /* Keyboard focus must be visible even where input defaults suppress outlines. */
+    #assessment .assessment-opt-label input[type="checkbox"]:focus-visible {
+      outline: 3px solid #A1442B !important;
+      outline-offset: 3px !important;
+      transition-property: background-color, border-color, box-shadow, transform !important;
+    }
+    #assessment .assessment-opt-label:has(input[type="checkbox"]:focus-visible) {
+      outline: 2px solid #A1442B !important;
+      outline-offset: 3px !important;
+      transition-property: background-color, border-color, box-shadow !important;
     }
 
   </style>
@@ -3373,20 +3517,20 @@
   <!-- Deconstructed Dual-Feline Geometric Brand Crest (Perfect Visual Center at 16, 16) -->
   <!-- Left Triangular Ear Patch (Amber / Terracotta - Loaf Cat) -->
   <polygon points="7,13 10.5,5.5 14,14" fill="var(--riso-rose, #C06C52)" stroke="var(--text-main, #2D2926)" stroke-width="1.1" stroke-linejoin="round"/>
-  
+
   <!-- Right Triangular Ear Patch (Sage / Calico Sentinel) -->
   <polygon points="18,14 21.5,5.5 25,13" fill="var(--riso-sage, #3E6B56)" stroke="var(--text-main, #2D2926)" stroke-width="1.1" stroke-linejoin="round"/>
-  
+
   <!-- Feline Facial Arch Contour (Dropped Shoulders & Calm Posture) -->
   <path d="M 5.5 23 L 7.5 13 L 13.5 17.5 C 15 16.8 17 16.8 18.5 17.5 L 24.5 13 L 26.5 23" fill="none" stroke="var(--text-main, #2D2926)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-  
+
   <!-- Serene Eyes (Dual Balance) -->
   <circle cx="12.5" cy="17.2" r="1.3" fill="var(--text-main, #2D2926)"/>
   <circle cx="19.5" cy="17.2" r="1.3" fill="var(--text-main, #2D2926)"/>
-  
+
   <!-- Minimal Nose Wedge -->
   <polygon points="16,20 14.8,18.5 17.2,18.5" fill="var(--riso-rose, #C06C52)"/>
-  
+
   <!-- Geometric Datum Base (Center Balanced) -->
   <line x1="4.5" y1="25.5" x2="27.5" y2="25.5" stroke="var(--text-dim, #888077)" stroke-width="0.9" stroke-dasharray="1.8 1.8"/>
   <circle cx="16" cy="25.5" r="1.3" fill="var(--riso-rose, #C06C52)"/>
@@ -3631,11 +3775,11 @@
           <div class="chapter-nav-scroll" id="chapterNavScroll">
           <a href="#hero" class="nav-chip active"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>讀書扉頁</span></a>
           <a href="#persona" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> <span>受困圖景</span></a>
-          <a href="#ladder" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> <span>演化階梯</span></a>
+          <a href="#ladder" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> <span>閱讀階梯</span></a>
           <a href="#pillars" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-book"></use></svg> <span>十大專書</span></a>
-          <a href="#companions" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> <span>互補矩陣</span></a>
-          <a href="#assessment" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> <span>心智自測</span></a>
-          <a href="#playbook" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-pill"></use></svg> <span>行動處方</span></a>
+          <a href="#companions" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> <span>補充書目</span></a>
+          <a href="#assessment" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> <span>閱讀探索</span></a>
+          <a href="#playbook" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-pill"></use></svg> <span>回應練習</span></a>
           <a href="#downloads" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-book"></use></svg> <span>電子書庫</span></a>
         </div>
         </div>
@@ -3656,11 +3800,11 @@
   </div>
 
   <!-- Top Bullet Journal Folio Section (Dual Feline Companions & Crisis-to-Book Reading Index) -->
-  
+
   <!-- Top Bullet Journal Folio Section: Dual-Track Reading Guide (Practical, Zero Blueprint Noise) -->
-  
+
   <!-- Top Bullet Journal Folio: Human-Centered Functional Guide (Compact, Non-Intrusive) -->
-  
+
 
 
 
@@ -3672,19 +3816,19 @@
         <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> <span>深度書單與心智自立行動手冊</span>
       </div>
       <h1 class="hero-title">
-        <span class="hero-phrase">在權力不對等處立足</span><span class="hero-divider">：</span><br class="desktop-break">
-        <span class="hero-phrase highlight">終結事後反芻與心理內耗</span>
+        <span class="hero-phrase">面對權力落差，練習站穩立場</span><span class="hero-divider">：</span><br class="desktop-break">
+        <span class="hero-phrase highlight">整理事後反芻與心理內耗</span>
       </h1>
       <div class="hero-subtitles">
         <p class="hero-subtitle">
-          當場退讓只是權力失衡的表象，深夜反覆重播與自我歸因，才是持續吞噬心力的核心機制。
+          面對強勢要求，有時一時難以回應；事情過後，卻仍反覆回想當時的對話。理解這些反應，可以從辨認眼前的壓力與選擇開始。
         </p>
         <p class="hero-subtitle">
-          融合史丹佛組織權力學、認知神經科學與系統分化理論，為習慣退讓者建立不可撼動的心智護城河。
+          這裡整理十本書，陪你看清關係裡的權力、放下反覆自責，練習更清楚地表達自己的需要。
         </p>
       </div>
       <div class="hero-actions">
-        <a href="#assessment" class="btn btn-primary">開始 3 分鐘心理受困自測</a>
+        <a href="#assessment" class="btn btn-primary">開始閱讀起點探索</a>
         <a href="#pillars" class="btn btn-secondary">瀏覽十大專書真實封面與導讀</a>
         <a href="#downloads" class="btn btn-secondary">獲取 EPUB（支援 Readify AI）</a>
       </div>
@@ -3694,7 +3838,7 @@
         <div class="hero-crisis-header-bar">
           <div class="hero-crisis-title">
             <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg>
-            <span>心靈急救專書檢索：依妳此刻最切身的困境，翻開對應專書</span>
+            <span>依目前最困擾的情境，選擇適合的專書</span>
           </div>
         </div>
 
@@ -3707,7 +3851,7 @@
               </div>
               <div>
                 <h4 class="hero-crisis-question">剛開完會妥協退讓，不敢爭取權益？</h4>
-                <span class="hero-crisis-tagline">迷走神經凍結，過度道歉討好，誤以為展現影響力是不道德。</span>
+                <span class="hero-crisis-tagline">面對強勢者時一時難以回應，可能先選擇道歉或退讓。</span>
               </div>
             </div>
             <div class="hero-crisis-chips">
@@ -3725,7 +3869,7 @@
               </div>
               <div>
                 <h4 class="hero-crisis-question">深夜腦中反覆重播對話，陷入內耗自責？</h4>
-                <span class="hero-crisis-tagline">大腦神經預設模式網路（DMN）失控空轉，對微小評價極度敏感。</span>
+                <span class="hero-crisis-tagline">事後反覆思考對話與評價，容易增加焦慮與疲憊。</span>
               </div>
             </div>
             <div class="hero-crisis-chips">
@@ -3741,8 +3885,8 @@
                 <svg class="bujo-motif-glasses" viewBox="0 0 36 18" width="22" height="12" fill="none"><circle cx="10" cy="9" r="6.5" stroke="var(--text-main)" stroke-width="1.3"/><circle cx="26" cy="9" r="6.5" stroke="var(--text-main)" stroke-width="1.3"/><path d="M 16.5 9 C 19 7.5 20 7.5 22.5 9" stroke="var(--text-main)" stroke-width="1.3"/></svg>
               </div>
               <div>
-                <h4 class="hero-crisis-question">面對親情與伴侶勒索，總是難以拒絕？</h4>
-                <span class="hero-crisis-tagline">被恐懼、義務與罪惡感（FOG）綑綁，背負不屬於自己的代際創傷。</span>
+                <h4 class="hero-crisis-question">面對家人或伴侶的要求，常因罪惡感難以拒絕？</h4>
+                <span class="hero-crisis-tagline">擔心拒絕會影響關係，於是承擔超出自己能力或意願的責任。</span>
               </div>
             </div>
             <div class="hero-crisis-chips">
@@ -3759,11 +3903,11 @@
               </div>
               <div>
                 <h4 class="hero-crisis-question">習慣默默苦幹討好，卻被掏空忽視？</h4>
-                <span class="hero-crisis-tagline">完美主義防禦與自我犧牲型給予，耗盡精力卻無法被組織正視。</span>
+                <span class="hero-crisis-tagline">長期過度承擔工作，可能影響休息，也讓自己的需要被忽略。</span>
               </div>
             </div>
             <div class="hero-crisis-chips">
-              <a href="#book-daring-greatly" class="crisis-book-chip">《不完美的禮物》<span class="chip-arrow">↳</span></a>
+              <a href="#book-daring-greatly" class="crisis-book-chip">《脆弱的力量》<span class="chip-arrow">↳</span></a>
               <a href="#book-overeffort" class="crisis-book-chip">《過度努力》<span class="chip-arrow">↳</span></a>
               <a href="#book-give-and-take" class="crisis-book-chip">《給予》<span class="chip-arrow">↳</span></a>
             </div>
@@ -3777,47 +3921,50 @@
   <section id="persona">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">DIAGNOSIS & ANATOMY</span>
-        <h2 class="section-title">核心畫像解構：退讓與內耗的共謀機制</h2>
+        <span class="section-tag">STRESS / RELATIONSHIPS / POWER</span>
+        <h2 class="section-title">核心畫像解構：壓力反應、關係與職場規則</h2>
         <p class="section-desc">
           在職場高壓會議與過往家庭生活中，面對強勢者時習慣妥協退讓，獨處時卻反覆重播自責。<br>
-          當場妥協與事後反芻，源於神經防禦機制的代償錯位，與個人意志力強弱無涉。
+          當場退讓與事後反芻，可能與壓力、過往經驗及所處關係有關；值得分開理解與處理。
         </p>
       </div>
       <div class="persona-grid">
         <article class="persona-card">
           <div class="persona-icon"><svg class="bujo-icon" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" stroke="var(--border-subtle)" stroke-width="0.8" stroke-dasharray="2 2"/><g transform="translate(-0.8, 0.8)" opacity="0.4" stroke="var(--riso-sage)" stroke-width="1.2"><path d="M 16 7 L 16 25 M 7 16 L 25 16 M 10 10 L 22 22 M 10 22 L 22 10"/></g><g stroke="var(--riso-rose)" stroke-width="1.5" stroke-linecap="round"><path d="M 16 8 L 16 24 M 8 16 L 24 16"/><circle cx="16" cy="16" r="2.5" fill="var(--text-main)"/></g><circle cx="16" cy="8" r="1.2" fill="var(--riso-sage)"/><circle cx="16" cy="24" r="1.2" fill="var(--riso-sage)"/></svg></div>
-          <span class="persona-tag">即時機轉 · 生理防衛</span>
-          <h3 class="persona-title">迷走神經凍結與討好反應：<br class="mobile-break">現場暫停呼吸</h3>
+          <span class="persona-tag">威脅反應 · 人際應對</span>
+          <h3 class="persona-title">面對壓力的僵住與討好：<br class="mobile-break">分辨生理與互動反應</h3>
           <p class="persona-desc">
-            身處權力嚴重傾斜的場合，人體背側迷走神經會迅速觸發「凍結反應（Freeze）」或「討好反應（Fawn）」。大腦前額葉皮質血液暫時被抽離，理智思考受阻，容易本能地點頭、道歉或接受不合理要求。這是個體面對強大威脅時的自我保護本能，與意志力強弱無關。
+            遇到當眾斥責或強勢施壓，身體可能出現心率變化、肌肉緊繃，以及短暫停止動作。威脅研究將其中一類反應稱為「防衛性僵住」（freezing），涉及自主神經對警覺與行動準備的協調。先道歉、附和或接受要求，則可能是為了降低衝突而採取的人際應對，不能直接視為同一種神經反射。<a href="#book-chatter">《強大內心的自我對話習慣》</a>協助整理事後反芻，<a href="#book-immature-parents">《如果父母情緒不成熟》</a>提供辨認既有互動習慣的角度。你可以先爭取回應時間，再重新確認立場。
+          </p>
+          <p class="persona-desc" style="font-size: .78rem; margin-top: .7rem;">
+            研究參照：<a href="https://pubmed.ncbi.nlm.nih.gov/35760906/" target="_blank" rel="noopener noreferrer">威脅下的防衛性僵住與自主神經協調（2022）</a>。
           </p>
         </article>
 
         <article class="persona-card">
           <div class="persona-icon"><svg class="bujo-icon" viewBox="0 0 32 32" fill="none"><g transform="translate(0.8, -0.6)" opacity="0.4" stroke="var(--riso-rose)" stroke-width="1.2"><path d="M 23 11 C 21 8 18 7 15 8 C 11 9 9 13 10 17 C 11 21 15 24 19 23 C 23 21 24 17 22 14"/></g><g stroke="var(--text-main)" stroke-width="1.5" stroke-linecap="round"><path d="M 22 10 C 20 7 17 6 14 7 C 10 8 8 12 9 16 C 10 20 14 23 18 22 C 22 20 23 16 21 13"/><polyline points="23,7 23,11 19,11"/></g><circle cx="15" cy="14" r="1.5" fill="var(--riso-sage)"/></svg></div>
-          <span class="persona-tag">事後折磨 · 神經反芻</span>
+          <span class="persona-tag">事後反覆回想 · 自責難停</span>
           <h3 class="persona-title">反芻風暴與失控自我對話：<br class="mobile-break">心理降溫抽離</h3>
           <p class="persona-desc">
-            離開衝突現場後，神經反芻機制正式啟動。伊森·克洛斯（Ethan Kross）研究證實：單憑邏輯思考平復情緒衝擊，極易陷入反芻陷阱。大腦以極快語速反覆播放：「剛剛為何沒有反駁？」「對方是否認為我軟弱？」「為何我又退讓了？」。對外部不公的壓抑情緒，最終全部轉化為對自我的嚴厲審訊與反覆消耗。
+            離開衝突現場後，有些人會反覆回想：「剛剛為何沒有反駁？」「對方是否認為我軟弱？」「為何我又退讓了？」伊森·克洛斯（Ethan Kross）在《強大內心的自我對話習慣》中討論這類反覆自我對話，以及如何透過心理距離調整思考角度。試著像安慰朋友一樣對自己說話，讓注意力從無休止的責備回到可以採取的下一步。
           </p>
         </article>
 
         <article class="persona-card">
           <div class="persona-icon"><svg class="bujo-icon" viewBox="0 0 32 32" fill="none"><g transform="translate(-0.8, 0.6)" opacity="0.4" stroke="var(--riso-sage)" stroke-width="1.2"><line x1="8" y1="12" x2="24" y2="12"/><path d="M 8 12 L 5 19 C 5 21 11 21 11 19 Z"/><path d="M 24 12 L 21 17 C 21 19 27 19 27 17 Z"/></g><g stroke="var(--text-main)" stroke-width="1.5" stroke-linecap="round"><line x1="16" y1="6" x2="16" y2="26"/><line x1="12" y1="26" x2="20" y2="26"/><line x1="8" y1="11" x2="24" y2="11"/><path d="M 8 11 L 5 18 C 5 20 11 20 11 18 Z"/><path d="M 24 11 L 21 16 C 21 18 27 18 27 16 Z"/></g><circle cx="16" cy="11" r="2" fill="var(--riso-rose)"/></svg></div>
-          <span class="persona-tag">認知盲區 · 道德潔癖</span>
-          <h3 class="persona-title">公正世界假說與弱勢執念：<br class="mobile-break">放下討好執念</h3>
+          <span class="persona-tag">公平期待 · 權力認知</span>
+          <h3 class="persona-title">公正世界信念與職場資源：<br class="mobile-break">看清資源分配規則</h3>
           <p class="persona-desc">
-            傑夫瑞·菲佛（Jeffrey Pfeffer）指出，習慣妥協者常抱持「公正世界假說（Just-World Fallacy）」，深信只要工作成果踏實、為人誠懇，自然會獲得公平對待。若將權力視為負面手段並刻意迴避，將直接失去話語權，任由組織規則被強勢索取者單向決定。
+            「公正世界信念」容易讓人預期努力與善意終會獲得合理回報。傑夫瑞·菲佛在《精進權力》中提醒，組織資源的分配還涉及關係網絡、成果能見度與決策影響力。若只等待他人主動肯定，可能錯過表達貢獻與爭取支持的時機。可以開始辨認決策流程、合作關係及資源分配方式，讓努力轉化為可見的專業貢獻。
           </p>
         </article>
 
         <article class="persona-card">
           <div class="persona-icon"><svg class="riso-icon-lg" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg></div>
-          <span class="persona-tag">童年印記 · 情感代償</span>
-          <h3 class="persona-title">童年印記與過度努力代償：<br class="mobile-break">重獲心理主權</h3>
+          <span class="persona-tag">早年互動 · 界線調整</span>
+          <h3 class="persona-title">早年互動經驗與過度努力：<br class="mobile-break">重新調整關係界線</h3>
           <p class="persona-desc">
-            琳賽·吉普森（Lindsay Gibson）與周慕姿共同指出：童年時期若家庭照護者情緒不穩定、易怒或冷漠，敏銳的孩子往往被迫承擔照顧大人情緒的角色。為了維持安全感，孩子內化了「唯有表現優秀、懂事退讓，才配被愛」的信條，並在成年後將此模式完整複製到職場關係中。
+            琳賽·吉普森在《如果父母情緒不成熟》中描述，部分孩子為了維持關係，可能過早習慣留意照護者的情緒，並壓抑自身需求。周慕姿在《過度努力》中則討論，擔心遭到否定的人，可能透過過量承擔尋求肯定。早年經驗不會決定成年後的所有選擇。辨認哪些責任出於自願、哪些源於害怕拒絕，能協助自己逐步調整關係界線。
           </p>
         </article>
       </div>
@@ -3828,67 +3975,67 @@
   <section id="adversarial">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">CRITICAL ADVERSARIAL REVIEW</span>
-        <h2 class="section-title">對抗式分析：破除直覺推薦的三大致命盲點</h2>
+        <span class="section-tag">READING ROADMAP</span>
+        <h2 class="section-title">閱讀路線的三項常見盲點</h2>
         <p class="section-desc">
-          常規建議往往流於表面激勵，忽略了真實權力場域中的神經過載與資源博弈。<br>
-          我們對直覺式的閱讀路徑展開審查與重構，確立先止血抗耗、後看清規則、再實戰防禦、終解除束縛的四階進程。
+          單靠正向鼓勵，可能忽略威脅下的生理反應、現實職場的資源分配，以及事後反覆自責的困擾。<br>
+          閱讀起點可以依當前壓力、關係困難與職場需求調整。先找到最急迫的問題，再逐步理解界線、組織規則與長期互動習慣。
         </p>
       </div>
 
       <div class="adversarial-box">
         <div class="adversarial-header">
-          <h3 class="adversarial-card-title">常規盲點審查與破局校準</h3>
-          <p>針對常見直覺建議中隱藏的二次傷害風險，建立清晰因果防護。</p>
+          <h3 class="adversarial-card-title">先辨認處境，再選擇閱讀起點</h3>
+          <p>下列三種閱讀順序可能忽略讀者的現實限制。調整閱讀重點，可以減少不必要的負擔。</p>
         </div>
         <div class="blindspot-grid">
           <div class="blindspot-card">
             <div class="blindspot-col">
-              <span class="blindspot-tag tag-danger"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 直覺盲點一：創傷先行的崩潰風險</span>
+              <span class="blindspot-tag tag-danger"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 常見盲點一：過早追問童年原因</span>
               <h4 class="blindspot-title">一開始就要求剖析童年創傷與深層痛點</h4>
               <p class="blindspot-text">
-                當當事人正處於職場高壓被剝削、夜間反芻失眠的狀態時，神經系統早已超載。此時強行挖掘童年創傷，容易引發習得性無助與更深層的自我懷疑，甚至讓身心狀態進一步惡化。
+                當一個人仍受職場壓力、失眠或反覆自責困擾時，深入回顧童年經歷未必是適合每個人的第一步。可以先整理當下最急迫的壓力，練習休息與界線，再依自身狀況決定探索過往經驗的步調。
               </p>
             </div>
             <div class="blindspot-col">
-              <span class="blindspot-tag tag-solution"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> 破局對策：止血抗耗先行</span>
-              <h4 class="blindspot-title">優先切斷大腦夜間反芻迴路</h4>
+              <span class="blindspot-tag tag-solution"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> 建議方向：先處理當前壓力</span>
+              <h4 class="blindspot-title">先練習整理反覆自責的想法</h4>
               <p class="blindspot-text">
-                第一步必須先建立心理防線。先讀《強大內心的自我對話習慣》掌握第三人稱抽離技術與時間透視法，搭配《鈍感力》的神經鈍化練習，在數日內阻斷夜間反芻迴路，讓皮質醇平穩下降，恢復理性決策能量。
+                可以先從《強大內心的自我對話習慣》練習拉開與自責念頭的距離，再參考《鈍感力》，辨認哪些評價值得回應、哪些可以放下。這些方法能成為日常練習，效果與所需時間仍因人而異。
               </p>
             </div>
           </div>
 
           <div class="blindspot-card">
             <div class="blindspot-col">
-              <span class="blindspot-tag tag-danger"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 直覺盲點二：權力污名化與盲目推遲</span>
-              <h4 class="blindspot-title">認為權力學過於冷峻無情，主張完全避讀</h4>
+              <span class="blindspot-tag tag-danger"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 常見盲點二：忽略權力與資源分配</span>
+              <h4 class="blindspot-title">因排斥權力操作而迴避職場規則</h4>
               <p class="blindspot-text">
-                此舉將使當事人持續以道德幻想面對現實利益爭端，隨時承受被邊緣化或被掠奪的代價，並忽視了葛倫費德在《懂權力》中強調的角色承擔價值。
+                若完全迴避討論權力，可能忽略組織裡實際存在的資源分配與決策程序。《懂權力》提供另一個視角：行使影響力也涉及角色責任及對他人的支持。
               </p>
             </div>
             <div class="blindspot-col">
-              <span class="blindspot-tag tag-solution"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> 破局對策：雙軌權力認知重構</span>
-              <h4 class="blindspot-title">菲佛與葛倫費德雙軌並進</h4>
+              <span class="blindspot-tag tag-solution"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> 建議方向：理解資源與角色責任</span>
+              <h4 class="blindspot-title">從組織權力與角色責任理解處境</h4>
               <p class="blindspot-text">
-                菲佛負責瓦解不切實際的幻想，看清組織資源分配與籌碼運作機制；葛倫費德則提供角色權力視角，說明權力實為承擔責任所需的資源與工具，而非壓迫他人的特權。配合格蘭特《給予》確立明確界限。
+                《精進權力》有助於辨認組織的資源及決策規則；《懂權力》討論角色責任與高低姿態；《給予》則提醒讀者兼顧他人的需要與自身資源。三者可以相互補充。
               </p>
             </div>
           </div>
 
           <div class="blindspot-card">
             <div class="blindspot-col">
-              <span class="blindspot-tag tag-danger"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 直覺盲點三：常規溝通術在權力失衡下的失效</span>
+              <span class="blindspot-tag tag-danger"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 常見盲點三：在缺乏信任時過度揭露</span>
               <h4 class="blindspot-title">在地位懸殊且對方缺乏同理心時坦露脆弱</h4>
               <p class="blindspot-text">
-                面對自戀型主管或惡意索取者，主動表露受傷與委屈容易被對方視為破綻，成為後續情感施壓與責任轉嫁的施力點。
+                當職場關係存在反覆施壓、威脅或不尊重界線的情況，揭露個人脆弱經驗前宜先確認信任程度。某些訊息可能被不當利用，但不能只憑一次衝突就判定對方的人格。
               </p>
             </div>
             <div class="blindspot-col">
-              <span class="blindspot-tag tag-solution"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> 破局對策：客觀抽離的非情感邊界</span>
-              <h4 class="blindspot-title">完全聚焦於事實、成果與責任邊界</h4>
+              <span class="blindspot-tag tag-solution"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> 建議方向：先核對事實與責任</span>
+              <h4 class="blindspot-title">按關係與需求決定分享程度</h4>
               <p class="blindspot-text">
-                借鏡吉普森的客觀觀察者立場，放棄對強勢者的情感期待；對話完全聚焦於客觀事實、交付成果與責任邊界，將《關鍵對話》的對比確認法作為防禦工具，堅守專業底線。
+                在權力失衡的對話中，可以先核對事實、交付成果與責任界線，再決定適合分享多少個人感受。必要時參考《關鍵對話》的對比說明方式，釐清自己提出要求的目的及不包含的意思。
               </p>
             </div>
           </div>
@@ -3910,42 +4057,42 @@
             <tr>
               <td>
                 <span class="stage-badge">階梯 I</span>
-                <strong style="display:block; color:var(--text-main);">止血急救</strong>
-                <small style="color:var(--text-dim);">神經反芻與生理調控</small>
+                <strong style="display:block; color:var(--text-main);">整理當前壓力</strong>
+                <small style="color:var(--text-dim);">辨認反芻與注意力調整</small>
               </td>
-              <td>建立心理防線，中斷大腦反芻對話，平息迷走神經凍結，恢復身心平靜。</td>
+              <td>先整理反覆自責的念頭，練習拉開心理距離，再回到眼前能採取的行動。</td>
               <td>《強大內心的自我對話習慣》<br>《鈍感力》<br><small style="color:var(--text-dim);">互補支援：《自我慈悲》</small></td>
-              <td>衝突後反芻縮短至 30 分鐘內，終結入睡前反覆重播。</td>
+              <td>能察覺反覆自責的起點，並嘗試一次抽離自語、書寫或其他適合的整理方式。</td>
             </tr>
             <tr>
               <td>
                 <span class="stage-badge">階梯 II</span>
-                <strong style="display:block; color:var(--text-main);">防禦邊界</strong>
-                <small style="color:var(--text-dim);">識破勒索與保護利他</small>
+                <strong style="display:block; color:var(--text-main);">練習關係界線</strong>
+                <small style="color:var(--text-dim);">辨認要求與分配責任</small>
               </td>
-              <td>辨識索取者與 FOG 罪惡感操控，掌握「停、看、應」實戰防身術。</td>
+              <td>區分合理請託與持續施壓，參考「停、看、應」整理自己的意願、責任及回覆方式。</td>
               <td>《給予》<br><strong>《情緒勒索》</strong><br><small style="color:var(--text-dim);">互補支援：《關鍵對話》</small></td>
-              <td>面對不合理要求能在當場平靜拒絕，不再產生自責與罪惡感。</td>
+              <td>能清楚說明可以承擔的範圍，必要時延後答覆，而不要求自己完全消除罪惡感。</td>
             </tr>
             <tr>
               <td>
                 <span class="stage-badge">階梯 III</span>
-                <strong style="display:block; color:var(--text-main);">權力重構</strong>
-                <small style="color:var(--text-dim);">角色博弈與除魅實戰</small>
+                <strong style="display:block; color:var(--text-main);">理解職場權力</strong>
+                <small style="color:var(--text-dim);">組織規則、角色與成果</small>
               </td>
-              <td>打破好女孩道德潔癖與公正迷思，掌握角色權力槓桿與高權力肢體姿態。</td>
+              <td>理解權力、角色責任與成果能見度，依具體處境選擇合適的溝通方式。</td>
               <td>《懂權力，在每個角色上發光》<br>《精進權力》<br><strong>《職場女性：別讓細節絆住你》</strong></td>
-              <td>主動建立專業能見度，會議坐上核心長桌，戒斷發言先道歉。</td>
+              <td>能以具體資料呈現一項專業貢獻，並在適合的場合提出問題或建議。</td>
             </tr>
             <tr>
               <td>
                 <span class="stage-badge">階梯 IV</span>
-                <strong style="display:block; color:var(--text-main);">源頭解咒</strong>
-                <small style="color:var(--text-dim);">心理主權與自尊重建</small>
+                <strong style="display:block; color:var(--text-main);">調整長期習慣</strong>
+                <small style="color:var(--text-dim);">自我價值與互動界線</small>
               </td>
-              <td>走出假性孤兒陰影，卸下完美主義防禦盔甲，確立不可撼動的自尊。</td>
-              <td>《如果父母情緒不成熟》<br>《過度努力》<br><strong>《不完美的禮物》</strong></td>
-              <td>接納自身精力極限，深信自己「已經足夠好」，全然接納不完美。</td>
+              <td>回顧早年互動可能留下的期待，辨認過度努力與完美主義如何影響當下的選擇。</td>
+              <td>《如果父母情緒不成熟》<br>《過度努力》<br><strong>《脆弱的力量》</strong></td>
+              <td>能辨認一項過度承擔的責任，並嘗試調整安排，為休息與個人需要保留空間。</td>
             </tr>
           </tbody>
         </table>
@@ -3958,60 +4105,60 @@
     <div id="ladder" style="position:relative; top:-20px; scroll-margin-top: calc(var(--nav-height) + 20px);"></div>
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">READING PSYCHOLOGY</span>
-        <h2 class="section-title">為什麼妳應該翻開原書？六大心智鬆綁與閱讀啟動指南</h2>
+        <span class="section-tag">START READING</span>
+        <h2 class="section-title">開始閱讀的六種實用方法</h2>
         <p class="section-desc">
-          許多習慣退讓與內耗的人遲遲無法開卷，往往源於精力枯竭與防禦性自責。<br>
-          運用心理學機制卸下防禦，把閱讀轉化為溫和奪回自我主權的日常微習慣。
+          身心疲憊或反覆思考時，要開始閱讀可能並不容易。<br>
+          可以先從一個與眼前處境有關的問題出發，逐步建立適合自己的閱讀習慣。
         </p>
       </div>
 
       <div class="strategy-grid">
         <div class="strategy-card">
           <div class="strategy-num">1</div>
-          <h3 class="strategy-title">微步承諾：5 分鐘切片急救閱讀法</h3>
+          <h3 class="strategy-title">從一小段開始：降低閱讀負擔</h3>
           <p class="strategy-text">
-            妳不需要正襟危坐從第一頁讀到最後一頁。把這些書當作擺在辦公桌與床頭的「急救醫藥箱」：今天遇到被過度索取時，直接翻閱《給予》第 6 章〈保護型給予者：如何避免被索取者耗盡〉；深夜反芻自責時，直接點開《強大內心的自我對話習慣》第 2 章〈心理抽離的工具箱：從暴風雨中心退後一步〉。在 Readify AI 裡隨手點開一個章節，就是在為自己奪回一寸主權。
+            不必要求自己一次讀完一本書。若最近經常承接他人的請託，可以先閱讀《給予》第六章，了解付出者如何兼顧自己與他人的需要。若持續反覆自責，可以從《強大內心的自我對話習慣》的抽離式自我對話開始。讀完一小段，再決定是否繼續深入。
           </p>
         </div>
 
         <div class="strategy-card">
           <div class="strategy-num">2</div>
-          <h3 class="strategy-title">蔡格尼克效應：破解衝突現場的關鍵懸念</h3>
+          <h3 class="strategy-title">面對質疑：先確認問題，再選擇回應</h3>
           <p class="strategy-text">
-            當主管當眾否定妳的方案，為什麼保持微笑或立刻反駁都是錯的？葛倫費德教授在《懂權力》第 2 章〈高姿態的權力〉與第 8 章〈力抗霸凌，擺脫受害者角色〉中，詳細拆解了重掌主導權的肢體定錨法，能讓強勢者在 10 秒內本能收回侵略性。在電子書目錄中點選第八章，即可取得完整的防禦對話範本。
+            會議中遭到尖銳質疑時，不必立即反駁，也無須一味附和。可以先確認對方提出的是資料疑點、工作分歧，還是需要處理的互動界線。《懂權力》第二、三章討論高低姿態的選擇，提供依情境調整溝通方式的角度。
           </p>
         </div>
 
         <div class="strategy-card">
           <div class="strategy-num">3</div>
-          <h3 class="strategy-title">去病理化接納：升級過往的自我保護裝備</h3>
+          <h3 class="strategy-title">辨認慣性退讓：重新理解自己的選擇</h3>
           <p class="strategy-text">
-            翻閱原書旨在為過去的自我防禦本能升級更成熟的應對工具，全然接納妳一路走來的生存智慧。妳的退讓與敏感，曾保護妳度過童年與動盪環境；如今翻開原書，是為了讓這份敏銳轉化為保護自己的堅實防線，平靜而堅定地立足。
+            有些退讓出於現實考量，有些與長期形成的互動習慣有關。《如果父母情緒不成熟》協助讀者理解關係中的期待與界線。可以先記錄自己在哪些場合難以拒絕，再判斷哪些回應需要調整，無須直接把每次退讓歸因於童年經驗。
           </p>
         </div>
 
         <div class="strategy-card">
           <div class="strategy-num">4</div>
-          <h3 class="strategy-title">奪回控制權：成年人最清醒的自衛義務</h3>
+          <h3 class="strategy-title">理解職場規則：辨認可用資源</h3>
           <p class="strategy-text">
-            只要妳不主動理解權力運作的客觀規律，妳就是把支配自己情緒與前途的權利，毫無保留地拱手送給職場與生活中的掠奪者。翻開《精進權力》，此舉實為成年人保護自身尊嚴與勞動成果最清醒的自衛，絕非功利算計。
+            《精進權力》提醒讀者，工作成果與組織評價之間還涉及關係、資源及決策流程。遇到不合理的分工時，可以先核對職責、成果和決策者，再思考如何提出具體要求。理解權力運作，有助於作出更務實的選擇。
           </p>
         </div>
 
         <div class="strategy-card">
           <div class="strategy-num">5</div>
-          <h3 class="strategy-title">認知解離與邊界去敏：關閉過度共情的情緒雷達</h3>
+          <h3 class="strategy-title">區分情緒與責任：練習關係界線</h3>
           <p class="strategy-text">
-            習慣退讓的人往往具備高度敏銳的共情天賦，容易本能替對方的冷淡或怒氣承擔過多責任。翻開《情緒勒索》與《鈍感力》，旨在建立健康的認知解離：當他人的負面情緒襲來，在心底劃清清晰界線，明白那是對方的內在功課，無須由自己概括承受。為內心裝上一面單向透光玻璃，學會客觀觀察，不再讓自己成為無端受損的情緒海綿。
+            在意別人的感受，不代表必須負責解決對方的所有困擾。《情緒勒索》協助辨認以恐懼與罪惡感施壓的互動，《鈍感力》則提供面對日常評價的另一種態度。先確認自己實際承擔的責任，再選擇是否及如何回應。
           </p>
         </div>
 
         <div class="strategy-card">
           <div class="strategy-num">6</div>
-          <h3 class="strategy-title">If-Then 執行意向：建立睡前充電定錨儀式</h3>
+          <h3 class="strategy-title">預先安排：整理睡前反覆出現的想法</h3>
           <p class="strategy-text">
-            建立清晰的行為公式：<strong>如果</strong>今晚大腦又開始重播白天的會議衝突，<strong>那麼</strong>我就打開 Readify AI，點開《強大內心的自我對話習慣》第 2 章〈工具箱〉中的第三人稱抽離練習，跟隨內文做一次思維重置，以客觀平靜替代孤獨自責。
+            可以為自己預先安排一項簡單練習：<strong>如果</strong>睡前又想起白天的衝突，<strong>那麼</strong>先記錄需要查證的事實，再用自己的名字提醒自己明天可以如何處理。《強大內心的自我對話習慣》提供抽離式自我對話與書寫等工具，實際效果仍需依個人情況觀察。
           </p>
         </div>
       </div>
@@ -4023,10 +4170,10 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">THE 10 CORE PILLARS</span>
-        <h2 class="section-title">十大核心專書深度導讀與金句庫</h2>
+        <h2 class="section-title">十大核心專書與閱讀摘記</h2>
         <p class="section-desc">
-          結合史丹佛與華頓商學院的組織權力洞察，以及認知神經科學與臨床心理學。<br>
-          全面換裝官方真實正版書封，每本書均配備痛點剖析、破局心法、高光金句與專屬長頁。
+          從組織權力、人際界線、內在對話與自我照顧等角度，提供十本不同的閱讀入口。<br>
+          每本書附有書封、情境導讀、閱讀心法與專書頁。摘記由本站編輯依原著觀點整理，並非作者逐字引文。
         </p>
       </div>
 
@@ -4048,31 +4195,31 @@
           <div class="book-content-panel">
             <div>
               <div class="book-header-line">
-                <span class="card-highlight-tag tag-amber">核心定位：重構權力認知</span>
-                <span style="font-size: 0.85rem; color: var(--text-dim);">史丹佛 MBA 爆棚選修課</span>
+                <span class="card-highlight-tag tag-amber">核心定位：理解角色與影響力</span>
+                <span style="font-size: 0.85rem; color: var(--text-dim);">以角色與人際依賴理解權力</span>
               </div>
               <h3 class="book-main-title">懂權力，<br class="mobile-break">在每個角色上發光</h3>
               <div class="book-core-axiom">
-                核心公理：權力實為角色賦予的責任工具，而非個人特權。弱勢感往往源於對權力的道德潔癖。
+                閱讀線索：權力會隨角色、情境與彼此需要而改變。當你能提供有用的判斷與支持，也可以練習更清楚地表達自己的立場。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">面對上位者，<br class="mobile-break">不由自主自卑萎縮</span></div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">面對職位較高者，<br class="mobile-break">難以清楚表達意見</span></div>
                 <div class="book-block-text">
-                  許多人在權威面前習慣將自己縮小，聲音變細、視線閃爍、過度道歉。內心誤以為展現強勢就是霸凌他人，寧可扮演受害者也不願承擔領導責任。
+                  面對較高職位或強勢的發言者，有些人會降低音量、反覆道歉，或暫時放棄原本的判斷。這可能與當下的權力關係、經驗及表達習慣有關。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">如演員般切換<br class="mobile-break">「高權力」與「低權力」姿態</span></div>
+                <div class="book-block-label"><span class="label-badge badge-cure">閱讀方法</span><span class="label-heading">依情境調整<br class="mobile-break">高姿態與低姿態</span></div>
                 <div class="book-block-text">
-                  權力如同舞台上的角色外衣。當團隊需要決策與方向時，你必須穿上高權力姿態定調；當需要傾聽與協作時，再靈活切換至低權力姿態。權力的本質在於推進團隊目標與承擔決策責任，旨在服務集體成果。
+                  葛倫費德借用表演中的高、低姿態，說明影響力如何隨角色而變化。需要提出判斷時，可以清楚表達立場；需要協調合作時，則可透過傾聽與提問提供支持。
                 </div>
               </div>
 
               <div class="book-quote-box">
-                「在權力關係中，最危險的並非擁有權力的人，而是那些身處權力位置卻假裝自己毫無影響力的人。」
-                <button class="copy-quote-btn" onclick="copyQuote(this, '在權力關係中，最危險的並非擁有權力的人，而是那些身處權力位置卻假裝自己毫無影響力的人。')">複製金句</button>
+                權力會隨關係與情境改變。與其急著證明自己夠強，不如問：這個角色需要我承擔什麼，誰需要我提供的判斷與支持？
+                <button class="copy-quote-btn" onclick="copyQuote(this, '權力會隨關係與情境改變。與其急著證明自己夠強，不如問：這個角色需要我承擔什麼，誰需要我提供的判斷與支持？')">複製摘記</button>
               </div>
             </div>
 
@@ -4099,31 +4246,31 @@
           <div class="book-content-panel">
             <div>
               <div class="book-header-line">
-                <span class="card-highlight-tag tag-rose">核心定位：拆除組織天真</span>
-                <span style="font-size: 0.85rem; color: var(--text-dim);">史丹佛權力學權威巨作</span>
+                <span class="card-highlight-tag tag-rose">核心定位：理解組織權力</span>
+                <span style="font-size: 0.85rem; color: var(--text-dim);">組織權力與資源分配的七項法則</span>
               </div>
               <h3 class="book-main-title">精進權力：<br class="mobile-break">史丹佛教授的 7 大權力法則</h3>
               <div class="book-core-axiom">
-                核心公理：工作成果不會替你說話，世界不保證公平回報。拒絕理解權力，實質是放棄自我保護。
+                閱讀線索：工作成果未必會自動被看見。理解組織如何運作、建立可信任的關係並清楚說明貢獻，有助於爭取合理的機會。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">埋頭苦幹卻總被搶功，<br class="mobile-break">淪為隱形工具人</span></div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">努力完成工作，<br class="mobile-break">貢獻卻未充分獲得辨認</span></div>
                 <div class="book-block-text">
-                  堅信「只要我做得夠好，老闆自然會看見」，結果功勞被善於表現者搶走，升遷被善於建立關係者拿走，自己只剩下做不完的雜務與滿腔委屈。
+                  工作成果有時未能獲得相應的關注。即使投入許多時間，也可能因成果呈現、合作關係或決策程序而錯失參與重要任務的機會。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">主動呈現工作成果，<br class="mobile-break">建立專業合作人脈</span></div>
+                <div class="book-block-label"><span class="label-badge badge-cure">閱讀方法</span><span class="label-heading">主動呈現工作成果，<br class="mobile-break">建立專業合作人脈</span></div>
                 <div class="book-block-text">
-                  主動呈現工作成果屬於正當且必要的職業責任，能有效建立不可替代的專業節點。學習菲佛的法則：成為不可替代的資源節點，將自身價值清晰傳達給決策者，在合規前提下打破陳規以推進目標。
+                  菲佛提醒讀者，成果、聲譽、關係與決策影響力並非完全相同。可以整理可核對的工作貢獻，理解誰參與資源分配，再以適當方式提出需求。
                 </div>
               </div>
 
               <div class="book-quote-box">
-                「生活並非公正，組織更不保證公平。如果你不願意掌握權力的運作規律，你就是把支配自己的權利，拱手讓給那些願意掌握它的人。」
-                <button class="copy-quote-btn" onclick="copyQuote(this, '生活並非公正，組織更不保證公平。如果你不願意掌握權力的運作規律，你就是把支配自己的權利，拱手讓給那些願意掌握它的人。')">複製金句</button>
+                好的工作成果不一定會自動被看見。整理自己的貢獻、建立可信任的關係，清楚說出能帶來的價值，才能更有準備地爭取資源與決策空間。
+                <button class="copy-quote-btn" onclick="copyQuote(this, '好的工作成果不一定會自動被看見。整理自己的貢獻、建立可信任的關係，清楚說出能帶來的價值，才能更有準備地爭取資源與決策空間。')">複製摘記</button>
               </div>
             </div>
 
@@ -4142,7 +4289,7 @@
             </div>
             <div class="book-meta-list">
               <div class="book-meta-item"><span>作者：</span><span>Lois P. Frankel</span></div>
-              <div class="book-meta-item"><span>出版：</span><span>高寶書版 (2020)</span></div>
+              <div class="book-meta-item"><span>出版：</span><span>中央編譯出版社（2022 簡中版）</span></div>
               <div class="book-meta-item"><span>原名：</span><span>Nice Girls Don't Get the Corner Office</span></div>
               <div class="book-meta-item"><span>領域：</span><span>女性職場權力與微觀行為</span></div>
             </div>
@@ -4150,31 +4297,31 @@
           <div class="book-content-panel">
             <div>
               <div class="book-header-line">
-                <span class="card-highlight-tag tag-rose">核心定位：微觀職場除魅</span>
-                <span style="font-size: 0.85rem; color: var(--text-dim);">全球暢銷 20 年女性職涯經典</span>
+                <span class="card-highlight-tag tag-rose">核心定位：辨認職場慣性</span>
+                <span style="font-size: 0.85rem; color: var(--text-dim);">從日常行為理解女性職涯發展</span>
               </div>
               <h3 class="book-main-title">職場女性：<br class="mobile-break">別讓這些細節絆住你</h3>
               <div class="book-core-axiom">
-                核心公理：把童年「乖巧討喜」模式帶入職場，只會成為被過度索取的免洗勞動力。成熟的職業素養需要主動爭取能見度與佔據空間。
+                閱讀線索：成長中習得的禮貌與照顧方式，在職場未必每次都適用。練習表達觀點、呈現成果，也要留意工作是否公平分擔。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">職場中無意識出賣權力的細節，<br class="mobile-break">習慣過度道歉與退讓</span></div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">在會議中難以發聲，<br class="mobile-break">經常承擔額外雜務</span></div>
                 <div class="book-block-text">
-                  發言前習慣先道歉「對不起我插一句」、主動替大家張羅茶水退化成辦公室老媽子、在會議室挑角落坐、把手藏在桌下、難以開口拒絕雜務。
+                  有些女性習慣以道歉開場，或經常負責會議準備、茶水安排等工作。若這些任務長期由同一人承擔，可能壓縮專業發言與職涯發展的機會。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">從「乖巧女孩」<br class="mobile-break">向「成熟專業者」的轉身</span></div>
+                <div class="book-block-label"><span class="label-badge badge-cure">閱讀方法</span><span class="label-heading">清楚表達專業意見，<br class="mobile-break">合理協調工作分工</span></div>
                 <div class="book-block-text">
-                  零道歉溝通：刪除軟化前綴，直接陳述要點與專業建議；佔據物理空間：提前進場入座會議長桌中央，身體挺直，雙手自然置於桌面；確立向上彙報成果是保護自身勞動成果最清醒的防線。
+                  可以減少沒有必要的自我貶低，依據實際資料表達觀點；在會議中選擇方便參與的位置，也可提出更公平的雜務分配方式。需要致歉時仍應承擔責任。
                 </div>
               </div>
 
               <div class="book-quote-box">
-                「女孩總希望每個人都喜歡她，而成熟的職場女性懂得：贏得專業尊重，遠比被大家當成老好人更具實質力量。」
-                <button class="copy-quote-btn" onclick="copyQuote(this, '女孩總希望每個人都喜歡她，而成熟的職場女性懂得：贏得專業尊重，遠比被大家當成老好人更具實質力量。')">複製金句</button>
+                開口前不必先說「不好意思，我可能說錯了」。清楚提出觀點與依據，讓自己的工作成果被看見，是可以練習的專業能力。
+                <button class="copy-quote-btn" onclick="copyQuote(this, '開口前不必先說「不好意思，我可能說錯了」。清楚提出觀點與依據，讓自己的工作成果被看見，是可以練習的專業能力。')">複製摘記</button>
               </div>
             </div>
 
@@ -4201,31 +4348,31 @@
           <div class="book-content-panel">
             <div>
               <div class="book-header-line">
-                <span class="card-highlight-tag tag-sage">核心定位：防索取護盾</span>
-                <span style="font-size: 0.85rem; color: var(--text-dim);">華頓商學院最年輕終身教授</span>
+                <span class="card-highlight-tag tag-sage">核心定位：兼顧付出與自身需要</span>
+                <span style="font-size: 0.85rem; color: var(--text-dim);">探討給予、互惠與組織合作</span>
               </div>
-              <h3 class="book-main-title">給予：<br class="mobile-break">華頓商學院最啟發人心的一堂課</h3>
+              <h3 class="book-main-title">給予：<br class="mobile-break">華頓商學院最啟發人心的<br class="mobile-break">一堂課</h3>
               <div class="book-core-axiom">
-                核心公理：成功的付出者具備高度敏銳的邊界防線，能夠精準辨識索取者並設立保護機制。
+                閱讀線索：成功的付出者也會照顧自己的時間與資源。協助他人之前，先確認自己能負擔多少，有助於讓善意持續。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">不懂得拒絕別人，<br class="mobile-break">淪為職場受氣包</span></div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">經常答應請託，<br class="mobile-break">自己的工作卻受到影響</span></div>
                 <div class="book-block-text">
-                  總是優先滿足他人的要求，甚至犧牲自己的專案進度與休息時間。害怕說「不」會被討厭，結果累得精疲力竭，績效與身心雙雙落入谷底。
+                  當協助他人成為日常習慣，可能忽略原本的工作安排與休息需要。有些人擔心拒絕會影響關係，因此難以評估自己還有多少餘裕。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">從「自我犧牲型付出者」<br class="mobile-break">轉型為「策略型保護付出者」</span></div>
+                <div class="book-block-label"><span class="label-badge badge-cure">閱讀方法</span><span class="label-heading">兼顧善意、互惠<br class="mobile-break">與可承擔的時間</span></div>
                 <div class="book-block-text">
-                  給予必須設立邊界與時間配額。對待真誠合作者保持慷慨；面對掠奪型的索取者（Takers），立即切換為條件式互惠（Tit-for-Tat），守護自己的能量與時間。
+                  《給予》區分不同的付出方式，也討論互惠與自我保護。面對請託時，可以先辨認對方需要的協助，再衡量時間、能力與原有責任，不必一律答應或拒絕。
                 </div>
               </div>
 
               <div class="book-quote-box">
-                「保護性的給予者在幫助別人的同時，從未忘記守護自身利益。無底線的退讓會直接損耗自身心力，真正的善良必須建立在明確的邊界保護之上。」
-                <button class="copy-quote-btn" onclick="copyQuote(this, '保護性的給予者在幫助別人的同時，從未忘記守護自身利益。無底線的退讓會直接損耗自身心力，真正的善良必須建立在明確的邊界保護之上。')">複製金句</button>
+                能長久助人的人，也會保護自己的時間與心力。先確認自己能否負擔，再選擇如何幫忙；保有界限的善意，才比較可能持續。
+                <button class="copy-quote-btn" onclick="copyQuote(this, '能長久助人的人，也會保護自己的時間與心力。先確認自己能否負擔，再選擇如何幫忙；保有界限的善意，才比較可能持續。')">複製摘記</button>
               </div>
             </div>
 
@@ -4252,31 +4399,31 @@
           <div class="book-content-panel">
             <div>
               <div class="book-header-line">
-                <span class="card-highlight-tag tag-blue">核心定位：拆解罪惡感綁架</span>
-                <span style="font-size: 0.85rem; color: var(--text-dim);">台灣破億心理諮商現象級專著</span>
+                <span class="card-highlight-tag tag-blue">核心定位：辨認情緒施壓與責任</span>
+                <span style="font-size: 0.85rem; color: var(--text-dim);">從恐懼、責任與罪惡感理解關係</span>
               </div>
               <h3 class="book-main-title">情緒勒索：<br class="mobile-break">那些在伴侶、親子、職場間，最讓人窒息的相處</h3>
               <div class="book-core-axiom">
-                核心公理：情緒勒索者利用 FOG（恐懼、責任、罪惡感）讓妳動彈不得。建立情緒界限的「停、看、應」，是找回自我價值的護身符。
+                閱讀線索：當一段關係反覆以恐懼、責任或罪惡感要求你順從，值得辨認哪些要求合理、哪些超出自己的責任，為回應保留選擇。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">被勒索者的四個心理按鈕：<br class="mobile-break">渴望認同與恐懼衝突</span></div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">害怕拒絕影響關係，<br class="mobile-break">於是承擔過多責任</span></div>
                 <div class="book-block-text">
-                  渴望獲得認同、害怕衝突摩擦、過度在乎他人感受、習慣性自我懷疑。勒索者精準利用妳的善良與責任感，讓妳誤以為妥協才是「懂事」與「負責任」。
+                  有些人擔心對方失望，因而習慣先答應要求。若關係長期透過威脅、責任與罪惡感施壓，就需要重新確認哪些責任應由自己承擔。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">建立情緒界限的<br class="mobile-break">「停、看、應」法則</span></div>
+                <div class="book-block-label"><span class="label-badge badge-cure">閱讀方法</span><span class="label-heading">建立情緒界限的<br class="mobile-break">「停、看、應」法則</span></div>
                 <div class="book-block-text">
-                  停：當場面對施壓不即時承諾，以緩衝句果斷離開現場；看：覺察自己的恐懼與罪惡感，區分「對方的責任」與「我的界限」；應：溫和而堅定地表達底線，不爭辯、不掉入對方的道德審判陷阱。
+                  「停」是暫緩立即承諾；「看」是辨認恐懼、責任與罪惡感；「應」是依實際情境回覆，說明願意承擔的部分與界線。可以逐步練習，不必要求每次都立即拒絕。
                 </div>
               </div>
 
               <div class="book-quote-box">
-                「我們之所以會被情緒勒索，往往是因為我們害怕成為別人眼中不負責任、不體貼的人。但我們唯一必須負全責的，是自己的人生。」
-                <button class="copy-quote-btn" onclick="copyQuote(this, '我們之所以會被情緒勒索，往往是因為我們害怕成為別人眼中不負責任、不體貼的人。但我們唯一必須負全責的，是自己的人生。')">複製金句</button>
+                被要求立刻答應時，先辨認心裡的罪惡感從哪裡來。重視對方，不代表必須承擔對方所有的失望；你仍可以說出自己的需要。
+                <button class="copy-quote-btn" onclick="copyQuote(this, '被要求立刻答應時，先辨認心裡的罪惡感從哪裡來。重視對方，不代表必須承擔對方所有的失望；你仍可以說出自己的需要。')">複製摘記</button>
               </div>
             </div>
 
@@ -4295,7 +4442,7 @@
             </div>
             <div class="book-meta-list">
               <div class="book-meta-item"><span>作者：</span><span>Ethan Kross</span></div>
-              <div class="book-meta-item"><span>出版：</span><span>天下文化 (2021)</span></div>
+              <div class="book-meta-item"><span>出版：</span><span>天下雜誌 (2021)</span></div>
               <div class="book-meta-item"><span>原名：</span><span>Chatter</span></div>
               <div class="book-meta-item"><span>學府：</span><span>密西根大學情緒自控實驗室</span></div>
             </div>
@@ -4303,31 +4450,31 @@
           <div class="book-content-panel">
             <div>
               <div class="book-header-line">
-                <span class="card-highlight-tag tag-blue">核心定位：終結神經反芻</span>
-                <span style="font-size: 0.85rem; color: var(--text-dim);">全球情緒實驗室權威專著</span>
+                <span class="card-highlight-tag tag-blue">核心定位：整理反覆自責的思緒</span>
+                <span style="font-size: 0.85rem; color: var(--text-dim);">關於自我對話與情緒調適的研究</span>
               </div>
               <h3 class="book-main-title">強大內心的<br class="mobile-break">自我對話習慣 (Chatter)</h3>
               <div class="book-core-axiom">
-                核心公理：大腦失控反芻屬於神經迴路過載引起的自我審訊風暴。學會心理抽離與第三人稱對話，能迅速降溫過載的大腦。
+                閱讀線索：壓力下的內在對話有時會變成反覆自責。練習拉開心理距離、以自己的名字安慰自己，有助於重新整理思緒。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">深夜失眠與大腦反芻：<br class="mobile-break">反覆重播衝突現場與後悔自責</span></div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">夜晚反覆回想衝突，<br class="mobile-break">難以停止自我責備</span></div>
                 <div class="book-block-text">
-                  白天妥協後，夜間大腦持續陷入內耗循環，反覆質問「我當時為什麼不反駁？」「他是不是看扁我了？」，導致心律加速、皮質醇飆升、長期失眠。
+                  有些人在爭執後反覆檢查自己的回答，猜測他人如何評價自己。這種反芻可能加深焦慮，也可能妨礙休息與注意力集中。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">執行「第三人稱自言自語」<br class="mobile-break">與「時間透視抽離」</span></div>
+                <div class="book-block-label"><span class="label-badge badge-cure">閱讀方法</span><span class="label-heading">嘗試抽離式自我對話<br class="mobile-break">與時間視角轉換</span></div>
                 <div class="book-block-text">
-                  在心裡直呼自己的全名展開對話，將大腦從沉浸的威脅中拉開；接著啟動五年透視法：「五年後看今天這件事，還重要嗎？」，迅速平復情緒風暴。
+                  克洛斯提出用自己的姓名或非第一人稱對話，協助拉開心理距離。也可以想像一段時間之後會如何理解事件，再重新確認需要處理的事情。
                 </div>
               </div>
 
               <div class="book-quote-box">
-                「當你被困在暴風雨中心時，你看不到方向；唯有退後十步，你才會發現那不過是一場路過的陣雨。」
-                <button class="copy-quote-btn" onclick="copyQuote(this, '當你被困在暴風雨中心時，你看不到方向；唯有退後十步，你才會發現那不過是一場路過的陣雨。')">複製金句</button>
+                當腦中反覆重播一次衝突，試著用自己的名字問：如果朋友遇到同樣的事，我會怎樣安慰他？拉開一點距離，思緒就有機會重新整理。
+                <button class="copy-quote-btn" onclick="copyQuote(this, '當腦中反覆重播一次衝突，試著用自己的名字問：如果朋友遇到同樣的事，我會怎樣安慰他？拉開一點距離，思緒就有機會重新整理。')">複製摘記</button>
               </div>
             </div>
 
@@ -4354,31 +4501,31 @@
           <div class="book-content-panel">
             <div>
               <div class="book-header-line">
-                <span class="card-highlight-tag tag-amber">核心定位：過度敏感抗體</span>
-                <span style="font-size: 0.85rem; color: var(--text-dim);">現代職場高敏救贖指南</span>
+                <span class="card-highlight-tag tag-amber">核心定位：調整對評價的注意力</span>
+                <span style="font-size: 0.85rem; color: var(--text-dim);">從容面對批評與日常摩擦</span>
               </div>
-              <h3 class="book-main-title">鈍感力<br class="mobile-break"><span style="font-size: 0.9em; font-weight: 500;">（青島出版社權威譯本）</span></h3>
+              <h3 class="book-main-title">鈍感力<br class="mobile-break"><span style="font-size: 0.9em; font-weight: 500;">（青島出版社版本）</span></h3>
               <div class="book-core-axiom">
-                核心公理：鈍感屬於主動過濾無效噪音的生理防禦智慧，確保自律神經與精力高度聚焦於核心目標。
+                閱讀線索：適度不把刺耳評語放在心上，可以把注意力留給真正需要處理的事；也要分辨哪些提醒值得正視。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">對主管的一句話或一個眼神，<br class="mobile-break">過度解讀並自我折磨</span></div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">反覆揣測他人的評價，<br class="mobile-break">難以恢復平常心情</span></div>
                 <div class="book-block-text">
-                  別人隨口一句評價或冷淡表情，高敏感者會在心中咀嚼三天，懷疑自己做錯了什麼，陷入長期的焦慮與自我懷疑中。
+                  他人的一句批評或冷淡表情，可能讓人反覆揣測自己是否犯錯。若持續把注意力放在這些評價上，也容易忽略當下真正需要處理的事情。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">修煉自律神經防護罩：<br class="mobile-break">練習「聽過即忘」的過濾智慧</span></div>
+                <div class="book-block-label"><span class="label-badge badge-cure">閱讀方法</span><span class="label-heading">區分有用提醒<br class="mobile-break">與無須反覆揣測的評價</span></div>
                 <div class="book-block-text">
-                  將他人的情緒化批評視為「雨滴落在防水雨衣上」，任其自然滑落而不滲透到心靈內部。專注於長期的健康與核心目標，對枝節瑣事保持健康的遲鈍。
+                  《鈍感力》提醒讀者，面對瑣碎批評可以練習保持從容。先核對評語中有沒有需要修正的事實，再決定是否回應，讓注意力留給真正重要的事情。
                 </div>
               </div>
 
               <div class="book-quote-box">
-                「在漫長生涯中，具備堅定鈍感力、不受瑣事干擾者，往往展現出更持久的抗挫力與穩定表現。」
-                <button class="copy-quote-btn" onclick="copyQuote(this, '在漫長生涯中，具備堅定鈍感力、不受瑣事干擾者，往往展現出更持久的抗挫力與穩定表現。')">複製金句</button>
+                聽到刺耳評語時，先分辨其中是否有值得修正的事實；不必把每一句難聽話都帶回家反覆咀嚼。把注意力留給真正需要處理的事。
+                <button class="copy-quote-btn" onclick="copyQuote(this, '聽到刺耳評語時，先分辨其中是否有值得修正的事實；不必把每一句難聽話都帶回家反覆咀嚼。把注意力留給真正需要處理的事。')">複製摘記</button>
               </div>
             </div>
 
@@ -4399,37 +4546,37 @@
               <div class="book-meta-item"><span>作者：</span><span>Lindsay C. Gibson</span></div>
               <div class="book-meta-item"><span>出版：</span><span>橡實文化 (2020)</span></div>
               <div class="book-meta-item"><span>原名：</span><span>Recovering from Emotionally Immature Parents</span></div>
-              <div class="book-meta-item"><span>專業：</span><span>成人假性孤兒臨床心理學</span></div>
+                <div class="book-meta-item"><span>主題：</span><span>情緒不成熟父母與成人界線</span></div>
             </div>
           </div>
           <div class="book-content-panel">
             <div>
               <div class="book-header-line">
-                <span class="card-highlight-tag tag-rose">核心定位：破除情感內疚</span>
-                <span style="font-size: 0.85rem; color: var(--text-dim);">成人情感獨立實踐聖經</span>
+                <span class="card-highlight-tag tag-rose">核心定位：重新理解家庭互動</span>
+                <span style="font-size: 0.85rem; color: var(--text-dim);">理解情緒不成熟父母的互動模式</span>
               </div>
               <h3 class="book-main-title">如果父母情緒不成熟：<br class="mobile-break">和內在父母和解</h3>
               <div class="book-core-axiom">
-                核心公理：你不需要為大人的情緒失控負責。放棄改變對方的幻想，才能真正走向情感獨立。
+                閱讀線索：父母的情緒反應不能定義你的價值。成年後可以重新調整期待、表達需要，並依自己的處境設定互動界線。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">面對權威時產生強烈的<br class="mobile-break">「假性孤兒」恐懼與自責</span></div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">經常照顧他人情緒，<br class="mobile-break">卻難以表達自己的需要</span></div>
                 <div class="book-block-text">
-                  從小習慣察言觀色、承接長輩情緒。長大後將這種模式轉移至職場，一旦主管不高興，便立刻感到恐慌與自責，認為是自己的錯。
+                  部分孩子在照護者難以回應其感受時，可能習慣先顧及大人的情緒。成年後是否延續這種習慣，需要從個人經驗與當下關係判斷。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">轉換為「客觀觀察者視角」，<br class="mobile-break">建立清晰情感邊界</span></div>
+                <div class="book-block-label"><span class="label-badge badge-cure">閱讀方法</span><span class="label-heading">調整互動期待，<br class="mobile-break">練習表達需要與界線</span></div>
                 <div class="book-block-text">
-                  將情緒不成熟的主管或長輩視為「只有三歲心理年齡的個體」。停止尋求他們的認同與同理，將互動嚴格限定在事務層面，不再交出自己的情感主權。
+                  吉普森建議讀者觀察實際互動，避免期待對方立即改變。可以依自己的性格選擇溝通方式，清楚說明願意討論的事情與可以承擔的範圍。
                 </div>
               </div>
 
               <div class="book-quote-box">
-                「當你不再期望一棵枯樹開出繁花，你就不會再因它的荒蕪而感到飢渴。認清他們的局限，是你重獲自由的第一步。」
-                <button class="copy-quote-btn" onclick="copyQuote(this, '當你不再期望一棵枯樹開出繁花，你就不會再因它的荒蕪而感到飢渴。認清他們的局限，是你重獲自由的第一步。')">複製金句</button>
+                成年之後，你可以替互動設下界線：哪些話題願意談、何時結束對話、如何保留喘息時間。對方不理解，也不會取消你作出選擇的權利。
+                <button class="copy-quote-btn" onclick="copyQuote(this, '成年之後，你可以替互動設下界線：哪些話題願意談、何時結束對話、如何保留喘息時間。對方不理解，也不會取消你作出選擇的權利。')">複製摘記</button>
               </div>
             </div>
 
@@ -4457,30 +4604,30 @@
             <div>
               <div class="book-header-line">
                 <span class="card-highlight-tag tag-amber">核心定位：卸下防禦性完美</span>
-                <span style="font-size: 0.85rem; color: var(--text-dim);">暢銷 20 萬冊深度心靈剖析</span>
+                <span style="font-size: 0.85rem; color: var(--text-dim);">從認可需求重新理解過度努力</span>
               </div>
               <h3 class="book-main-title">過度努力：<br class="mobile-break">每個「過度」，都是傷的證明</h3>
               <div class="book-core-axiom">
-                核心公理：過度努力源於深層的情感防禦，藉由不斷追求完美來抵禦被否定或被拋棄的內在焦慮。
+                閱讀線索：過度努力有時與害怕失去認可有關。辨認自己努力的動機，允許休息，也是在照顧自己的需要。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">停不下來的自責與緊繃，<br class="mobile-break">無法接納自己的放鬆</span></div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">完成工作後仍然自責，<br class="mobile-break">難以安排休息</span></div>
                 <div class="book-block-text">
-                  即便事情已經做得很好，依然害怕只要稍有鬆懈就會被拋棄或否定。把所有的疲憊都歸咎於「自己還不夠努力」。
+                  有些人完成任務後仍擔心表現不足，甚至在休息時感到內疚。《過度努力》提供辨認認可需求與自我要求的角度。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">看見努力背後的傷口，<br class="mobile-break">重新擁抱真實自我</span></div>
+                <div class="book-block-label"><span class="label-badge badge-cure">閱讀方法</span><span class="label-heading">辨認努力的原因，<br class="mobile-break">重新安排責任與休息</span></div>
                 <div class="book-block-text">
-                  停下腳步，認清努力是為了生活，而非為了向世界證明自己的存在資格。學會對自己寬容，允許自己擁有弱點，卸下沉重的心理防禦。
+                  可以回顧哪些責任出於自身重視的目標，哪些是因為害怕失去肯定而承擔。針對可以調整的部分，逐步重新安排工作與休息。
                 </div>
               </div>
 
               <div class="book-quote-box">
-                「你的存在本身就具備價值，不需要用無休止的痛苦與退讓來換取認可。停下來，你依然安全。」
-                <button class="copy-quote-btn" onclick="copyQuote(this, '你的存在本身就具備價值，不需要用無休止的痛苦與退讓來換取認可。停下來，你依然安全。')">複製金句</button>
+                如果每次停下來都覺得自己不夠好，值得問問：我是在完成重要的事，還是在努力避免失去認可？照顧自己的需要，也應該占有位置。
+                <button class="copy-quote-btn" onclick="copyQuote(this, '如果每次停下來都覺得自己不夠好，值得問問：我是在完成重要的事，還是在努力避免失去認可？照顧自己的需要，也應該占有位置。')">複製摘記</button>
               </div>
             </div>
 
@@ -4491,53 +4638,54 @@
           </div>
         </article>
 
-        <!-- Book 10: 不完美的禮物 -->
+        <!-- Book 10: 脆弱的力量 -->
         <article class="book-pillar-card" id="book-daring-greatly">
           <div class="book-cover-panel">
             <div class="book-real-cover-box">
-              <img src="covers/daring-greatly.jpg" alt="不完美的禮物 官方書封" class="book-real-cover-img" loading="lazy">
+              <img src="covers/daring-greatly.jpg" alt="脆弱的力量 官方書封" class="book-real-cover-img" loading="lazy">
             </div>
             <div class="book-meta-list">
               <div class="book-meta-item"><span>作者：</span><span>Brené Brown</span></div>
-              <div class="book-meta-item"><span>出版：</span><span>心靈工坊 (2013)</span></div>
+              <div class="book-meta-item"><span>出版：</span><span>浙江人民出版社 (2014) · 湛廬文化電子版發行</span></div>
               <div class="book-meta-item"><span>原名：</span><span>The Gifts of Imperfection</span></div>
+              <div class="book-meta-item"><span>對照：</span><span>台版譯作《不完美的禮物》</span></div>
               <div class="book-meta-item"><span>領域：</span><span>羞恥感韌性與全心生活</span></div>
             </div>
           </div>
           <div class="book-content-panel">
             <div>
               <div class="book-header-line">
-                <span class="card-highlight-tag tag-green">核心定位：清理毒性羞恥感</span>
-                <span style="font-size: 0.85rem; color: var(--text-dim);">全球心靈覺醒奠基之作</span>
+                <span class="card-highlight-tag tag-green">核心定位：理解羞恥感與完美主義</span>
+                <span style="font-size: 0.85rem; color: var(--text-dim);">研究自我價值與全心生活的著作</span>
               </div>
-              <h3 class="book-main-title">不完美的禮物：<br class="mobile-break">放下「以為自己該成為的樣子」，擁抱「真實的自己」</h3>
+              <h3 class="book-main-title">脆弱的力量：<br class="mobile-break">放下「以為自己該成為的樣子」，擁抱「真實的自己」</h3>
               <div class="book-core-axiom">
-                核心公理：反芻自責的底層是對「我不夠好」的恐懼。放下完美主義盔甲，在不確定性中展現真實，才能獲得不可撼動的自尊。
+                閱讀線索：完美主義有時讓人把一次失敗看成整個人的價值。練習把行為與自我價值分開，才有機會在不完美時仍願意嘗試。
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">毒性羞恥感與<br class="mobile-break">完美主義防禦盔甲</span></div>
+                <div class="book-block-label"><span class="label-badge badge-pain">直擊痛點</span><span class="label-heading">把一次失誤擴大為<br class="mobile-break">對整個人的否定</span></div>
                 <div class="book-block-text">
-                  內疚是「我做錯了一件事」，羞恥是「我這個人是有缺陷的」。習慣退讓者常把所有的外在摩擦歸因為自身無能，並用完美主義來武裝自己，陷入筋疲力竭。
+                  布琳·布朗區分對行為感到內疚與對整個自我感到羞恥。完美主義有時讓人把外界的評價視為自我價值的標準，因而害怕承認失誤。
                 </div>
               </div>
 
               <div class="book-section-block">
-                <div class="book-block-label"><span class="label-badge badge-cure">破局心法</span><span class="label-heading">踐行全心生活的<br class="mobile-break">三個勇氣指南針</span></div>
+                <div class="book-block-label"><span class="label-badge badge-cure">閱讀方法</span><span class="label-heading">練習勇氣、自我關懷<br class="mobile-break">與可信任的連結</span></div>
                 <div class="book-block-text">
-                  日常勇氣：傾吐真實感受，坦露自己的極限，不再假裝堅強；自我慈悲：停下內心嚴酷法官的審判，像對待摯友般接納自己的不完美；真實聯結：放下討好偽裝，在被真實看見中建立深層安全感。
+                  本書重視勇氣、慈悲與連結。可以練習區分具體失誤與自我價值，選擇可信任的人分享感受，也讓休息與不完美成為日常生活可以接納的部分。
                 </div>
               </div>
 
               <div class="book-quote-box">
-                「擁有自己的人生，愛上不完美的自己，是我們所能做出的最勇敢決定。當妳敢於展示真實，便無人能以評價將妳擊垮。」
-                <button class="copy-quote-btn" onclick="copyQuote(this, '擁有自己的人生，愛上不完美的自己，是我們所能做出的最勇敢決定。當妳敢於展示真實，便無人能以評價將妳擊垮。')">複製金句</button>
+                完美主義容易讓人把「做錯一件事」擴大成「我整個人都不好」。練習把行為和自身價值分開，才能在不完美的生活裡更自在地做自己。
+                <button class="copy-quote-btn" onclick="copyQuote(this, '完美主義容易讓人把「做錯一件事」擴大成「我整個人都不好」。練習把行為和自身價值分開，才能在不完美的生活裡更自在地做自己。')">複製摘記</button>
               </div>
             </div>
 
             <div class="book-action-bar">
               <a href="book-daring-greatly.html" class="btn btn-primary">閱讀專屬獨立長頁 ➔</a>
-              <a href="books/脆弱的力量_布琳布朗.epub" class="btn btn-secondary" onclick="handleBookDownload('不完美的禮物')" download>下載 EPUB (701KB)</a>
+              <a href="books/脆弱的力量_布琳布朗.epub" class="btn btn-secondary" onclick="handleBookDownload('脆弱的力量')" download>下載 EPUB (701KB)</a>
             </div>
           </div>
         </article>
@@ -4551,9 +4699,9 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">TACTICAL TOOLKIT</span>
-        <h2 class="section-title">五大情境支援互補工具書對照矩陣</h2>
+        <h2 class="section-title">五本補充閱讀工具書</h2>
         <p class="section-desc">
-          結合上一輪討論的核心工具書，明確界定其「適用戰場」與「禁用警訊」，避免誤用良方反而成為溝通陷阱。
+          以下依五本工具書的主題整理閱讀方向及使用提醒。情境提示由本站編輯撰寫，實際做法需要配合關係、責任與安全條件調整。
         </p>
       </div>
 
@@ -4565,12 +4713,12 @@
             <span class="companion-author">Kerry Patterson 等著</span>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-pos"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> 適用戰場</span>
+            <span class="companion-field-label label-pos"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> 適用情境</span>
             <p class="companion-field-text">利害關係高、雙方情緒緊繃但具有共同利益的商業或職場協商。運用對比說明法（Contrasting）維持對話安全感。</p>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-neg"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 禁用警訊</span>
-            <p class="companion-field-text">對方處於極端自戀、惡意霸凌或完全不講理的狀態時，切勿單向試圖說服對方，否則只會被拖入泥潭。</p>
+            <span class="companion-field-label label-neg"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 使用提醒</span>
+            <p class="companion-field-text">若對方反覆威脅、辱罵或拒絕遵守討論規則，單靠溝通技巧未必能改善情況。可以暫停對話、記錄事實，必要時尋求協助。</p>
           </div>
         </article>
 
@@ -4580,12 +4728,12 @@
             <span class="companion-author">Marshall B. Rosenberg 著</span>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-pos"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> 適用戰場</span>
+            <span class="companion-field-label label-pos"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> 適用情境</span>
             <p class="companion-field-text">將情緒提煉為「觀察、感受、需要、請求」，向具備善意的合作者提出精確具體的行動指標。</p>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-neg"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 禁用警訊</span>
-            <p class="companion-field-text">嚴禁對惡意掠奪者暴露內心深層的脆弱感受，否則容易成為對方施壓與操控的切入點。</p>
+            <span class="companion-field-label label-neg"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 使用提醒</span>
+            <p class="companion-field-text">分享感受與需要前，可以先評估互動是否相互尊重。若對方反覆施壓，可以縮小揭露範圍，並清楚說明界線。</p>
           </div>
         </article>
 
@@ -4595,12 +4743,12 @@
             <span class="companion-author">Kristin Neff 著</span>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-pos"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> 適用戰場</span>
+            <span class="companion-field-label label-pos"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> 適用情境</span>
             <p class="companion-field-text">當內心產生嚴苛的自我評判與罪惡感時，以對待摯友的溫和視角取代批判，中斷負面內耗。</p>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-neg"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 禁用警訊</span>
-            <p class="companion-field-text">不可將自我慈悲作為逃避現實職場問題的藉口；必須與客觀的邊界防守及權力分析結合使用。</p>
+            <span class="companion-field-label label-neg"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 使用提醒</span>
+            <p class="companion-field-text">對自己保持友善，也可以同時檢視實際工作問題。需要時仍須確認事實、責任分工與後續行動。</p>
           </div>
         </article>
 
@@ -4610,12 +4758,12 @@
             <span class="companion-author">武志紅 著</span>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-pos"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> 適用戰場</span>
-            <p class="companion-field-text">看清成年後在職場中面對權威時的過度服從與恐懼，溯源其在原生家庭投射中的心理機制。</p>
+            <span class="companion-field-label label-pos"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> 適用情境</span>
+            <p class="companion-field-text">提供思考成長經驗與當下人際期待、權威互動可能存在何種關聯的角度。是否適用於自己，需要依個人經驗判斷。</p>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-neg"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 禁用警訊</span>
-            <p class="companion-field-text">避免在身心極度疲憊時將所有問題歸咎於家庭，陷入受害者心態；重在認清模式並建立當下邊界。</p>
+            <span class="companion-field-label label-neg"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 使用提醒</span>
+            <p class="companion-field-text">回顧家庭經驗可能引發情緒，也不一定能解釋所有職場問題。可以同時檢視目前的具體事件、界線與可用資源。</p>
           </div>
         </article>
 
@@ -4625,11 +4773,11 @@
             <span class="companion-author">岸見一郎、古賀史健 著</span>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-pos"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> 適用戰場</span>
-            <p class="companion-field-text">執行阿德勒心理學的「課題分離」：對方的評價是對方的課題，守護底線是自己的課題。</p>
+            <span class="companion-field-label label-pos"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> 適用情境</span>
+            <p class="companion-field-text">從「課題分離」的觀點，嘗試區分自己能負責的選擇與他人的反應，減少為所有評價反覆自責。</p>
           </div>
           <div class="companion-field">
-            <span class="companion-field-label label-neg"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 禁用警訊</span>
+            <span class="companion-field-label label-neg"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> 使用提醒</span>
             <p class="companion-field-text">課題分離並非盲目孤立或拒絕合作；在組織協作中仍須維持專業成果的交付與必要結盟。</p>
           </div>
         </article>
@@ -4642,100 +4790,102 @@
   <section id="assessment">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">SELF-ASSESSMENT TOOL</span>
-        <h2 class="section-title">3 分鐘受困心智自測：精準定位核心卡點</h2>
+        <span class="section-tag">READING PATHFINDER</span>
+        <h2 class="section-title">閱讀起點探索：找到此刻最能支持你的第一本書</h2>
         <p class="section-desc">
-          勾選在日常人際或職場中符合的真實反應，協助釐清當前心理負荷與適合切入的專屬閱讀路徑。
+          依目前的人際或職場處境勾選相關情境，可複選。結果只提供閱讀方向，協助你選擇想先了解的主題。
         </p>
       </div>
 
       <div class="assessment-card">
         <p class="assessment-intro">
-          <strong>檢測指標（請勾選符合現狀的項目，可多選）：</strong>
+          <strong>探索情境（請勾選符合此刻感受的項目，可複選）：</strong>
         </p>
         <div class="assessment-options" id="assessmentOptions">
           <!-- 12 題情境選項動態/靜態渲染 -->
           <label class="assessment-opt-label">
             <input type="checkbox" name="q" value="0" onchange="runAssessment()">
-            <span class="assessment-opt-text">1. 面對強勢威壓或當眾質疑時，當下身體凍結、呼吸急促無法言語，事後反芻自責長達數天。</span>
+            <span class="assessment-opt-text">1. 面對強勢質疑時，曾短暫僵住、呼吸急促或難以組織回應，事後仍反覆想起當時的對話。</span>
           </label>
           <label class="assessment-opt-label">
             <input type="checkbox" name="q" value="1" onchange="runAssessment()">
-            <span class="assessment-opt-text">2. 內心深信「只要把工作做好，自然會被看見」，認為爭取能見度或主動爭取資源是虛偽且不光彩的行為。</span>
+            <span class="assessment-opt-text">2. 習慣相信工作成果會自然獲得肯定，因此很少主動呈現貢獻或爭取必要資源。</span>
           </label>
           <label class="assessment-opt-label">
             <input type="checkbox" name="q" value="2" onchange="runAssessment()">
-            <span class="assessment-opt-text">3. 明明自己的工作已嚴重超載，但面對同事或主管請求時，仍舊難以開口拒絕，害怕破壞和諧。</span>
+            <span class="assessment-opt-text">3. 目前工作已經接近負荷上限，面對新的請託仍難以拒絕，擔心影響合作關係。</span>
           </label>
           <label class="assessment-opt-label">
             <input type="checkbox" name="q" value="3" onchange="runAssessment()">
-            <span class="assessment-opt-text">4. 幼年時期習慣承擔照顧父母情緒的責任，長大後在職場依然戒不掉「必須成為懂事可靠的大人」的沉重包袱。</span>
+            <span class="assessment-opt-text">4. 成長過程中經常留意家人的情緒，現在也容易把他人的失望視為自己需要解決的問題。</span>
           </label>
           <label class="assessment-opt-label">
             <input type="checkbox" name="q" value="4" onchange="runAssessment()">
-            <span class="assessment-opt-text">5. 結束一場會議或社交後，腦海反覆播放「我剛剛是不是說錯話了」、「對方眼神是不是在嫌棄我」。</span>
+            <span class="assessment-opt-text">5. 會議或聚會結束後，仍反覆回想自己的回答，擔心對方是否留下負面印象。</span>
           </label>
           <label class="assessment-opt-label">
             <input type="checkbox" name="q" value="5" onchange="runAssessment()">
-            <span class="assessment-opt-text">6. 在重要決策場合習慣退坐邊緣、聲音輕柔帶歉意，總覺得自己「還不夠格」扮演主導者角色。</span>
+            <span class="assessment-opt-text">6. 參與重要討論時，即使有所準備，也常因擔心自己不夠資格而減少發言。</span>
           </label>
           <label class="assessment-opt-label">
             <input type="checkbox" name="q" value="6" onchange="runAssessment()">
-            <span class="assessment-opt-text">7. 經常為他人雪中送炭，卻屢屢遭到索取者視為理所當然，甚至被轉嫁責任，深陷心力交瘁。</span>
+            <span class="assessment-opt-text">7. 經常協助同事或親友，卻發現請託越來越多，自己的時間與責任難以兼顧。</span>
           </label>
           <label class="assessment-opt-label">
             <input type="checkbox" name="q" value="7" onchange="runAssessment()">
-            <span class="assessment-opt-text">8. 即便已經取得顯著成果，依然不敢片刻鬆懈，內心常有「一旦停下來就會失去價值被淘汰」的恐慌感。</span>
+            <span class="assessment-opt-text">8. 即使完成重要工作，仍擔心自己表現不夠好，難以安心休息。</span>
           </label>
           <label class="assessment-opt-label">
             <input type="checkbox" name="q" value="8" onchange="runAssessment()">
-            <span class="assessment-opt-text">9. 遭遇不公對待時，本能地選擇退讓妥協，寧願自己委屈吞下，也不敢正面提出抗議維護權利。</span>
+            <span class="assessment-opt-text">9. 覺得分工或待遇不合理時，常選擇先配合，事後才想起自己原本想提出的意見。</span>
           </label>
           <label class="assessment-opt-label">
             <input type="checkbox" name="q" value="9" onchange="runAssessment()">
-            <span class="assessment-opt-text">10. 睡眠品質不佳，入睡前大腦如同失控的放映機，不停編排白天衝突的「完美反駁台詞」。</span>
+            <span class="assessment-opt-text">10. 入睡前容易反覆想起白天的衝突，不斷推敲當時還能如何回應。</span>
           </label>
           <label class="assessment-opt-label">
             <input type="checkbox" name="q" value="10" onchange="runAssessment()">
-            <span class="assessment-opt-text">11. 習慣無底線照顧團隊每一個人的情緒感受，把所有人的不開心都當成是自己的責任。</span>
+            <span class="assessment-opt-text">11. 經常試圖安撫身邊每個人的情緒，卻忽略自己也有需要處理的事情。</span>
           </label>
           <label class="assessment-opt-label">
             <input type="checkbox" name="q" value="11" onchange="runAssessment()">
-            <span class="assessment-opt-text">12. 只要收到主管傳來的訊息或未接來電，即使沒有任何犯錯，內心也會瞬間湧起大難臨頭的焦慮。</span>
+            <span class="assessment-opt-text">12. 收到主管訊息或未接來電時，尚未知道內容便容易緊張，擔心自己可能做錯事情。</span>
           </label>
         </div>
 
         <div id="assessmentResult" class="assessment-result">
-          <div id="resultBadge" class="composite-badge">評估結果</div>
-          <h3 id="resultTitle" class="result-title">複合型態診斷分析</h3>
+          <div id="resultBadge" class="composite-badge">閱讀方向</div>
+          <h3 id="resultTitle" class="result-title" role="status" aria-live="polite" aria-atomic="true">閱讀方向參考</h3>
+
+          <p class="assessment-intro">以下是本站題目所對應的閱讀線索分數（各面向滿分 12）。僅用來選擇閱讀順序，並非心理診斷或量表結果。</p>
 
           <!-- 四維視覺進度條 -->
           <div class="assessment-meters" id="assessmentMeters">
             <div class="meter-row">
               <div class="meter-label-row">
-                <span><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-brain"></use></svg> 急性神經反芻與迷走凍結 (R)</span>
-                <span class="meter-score" id="scoreR">0%</span>
+                <span><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-brain"></use></svg> 反覆自責與情緒緊繃 (R)</span>
+                <span class="meter-score" id="scoreR">0／12</span>
               </div>
               <div class="meter-track"><div class="meter-fill meter-r" id="fillR"></div></div>
             </div>
             <div class="meter-row">
               <div class="meter-label-row">
-                <span><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-temple"></use></svg> 權力博弈盲區與能見度阻滯 (P)</span>
-                <span class="meter-score" id="scoreP">0%</span>
+                <span><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-temple"></use></svg> 職場權力認知與能見度 (P)</span>
+                <span class="meter-score" id="scoreP">0／12</span>
               </div>
               <div class="meter-track"><div class="meter-fill meter-p" id="fillP"></div></div>
             </div>
             <div class="meter-row">
               <div class="meter-label-row">
-                <span><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> 邊界失守與過度利他透支 (B)</span>
-                <span class="meter-score" id="scoreB">0%</span>
+                <span><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-shield"></use></svg> 人際邊界與拒絕練習 (B)</span>
+                <span class="meter-score" id="scoreB">0／12</span>
               </div>
               <div class="meter-track"><div class="meter-fill meter-b" id="fillB"></div></div>
             </div>
             <div class="meter-row">
               <div class="meter-label-row">
-                <span><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> 童年代償與努力過度強迫 (O)</span>
-                <span class="meter-score" id="scoreO">0%</span>
+                <span><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> 自我要求與過度努力 (O)</span>
+                <span class="meter-score" id="scoreO">0／12</span>
               </div>
               <div class="meter-track"><div class="meter-fill meter-o" id="fillO"></div></div>
             </div>
@@ -4756,10 +4906,10 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">IN-SITU PLAYBOOK</span>
-        <h2 class="section-title">現場應急防身處方庫：六大高壓情境精準邊界話術</h2>
+        <h2 class="section-title">六種高壓情境回應練習</h2>
         <p class="section-desc">
-          當被強勢者突然施壓時，記住這六套不需要臨場雄辯、卻能固守邊界的實戰指南。<br>
-          每條處方均標註專屬理論依據與原書章節出處，方便按圖索驥翻閱深研。
+          以下話術由本站依常見情境撰寫，作為練習表達立場的參考。實際回應仍需配合責任、關係與當下條件調整。<br>
+          每則附有可回讀的原書主題或章節。話術是編輯整理的情境示例，並非作者逐字引文。
         </p>
       </div>
 
@@ -4767,90 +4917,90 @@
         <!-- Scenario 1 -->
         <article class="playbook-card">
           <div class="playbook-badge-row">
-            <span class="playbook-step-num">情境 01 · 任務超載</span>
-            <span class="playbook-citation">《精進權力》第 4 章</span>
+            <span class="playbook-step-num">01 · 任務超載</span>
+            <span class="playbook-citation">《職場女性》：資源協調</span>
           </div>
-          <h3 class="playbook-title">面對臨時甩鍋與不合理追加</h3>
+          <h3 class="playbook-title">面對臨時增加的工作任務</h3>
           <p class="playbook-desc">
-            面對突然塞過來的額外任務，切忌直接答應或憤怒拒絕，運用菲佛的「資源依賴談判法則」將選擇權交還對方。
+            接到新增工作時，可以先說明已承擔的任務，再請主管確認優先順序。此練習參考《職場女性》對不合理任務與有限資源的討論。
           </p>
           <div class="playbook-script-box">
-            「我了解這項任務的重要性。目前我手上有專案 A 與專案 B 正在全速推進；若要納入這項新工作，請協助確認應先暫緩哪一項的進度？」
+            「我了解這項任務的重要性。目前還有兩項工作按原定時程進行。如果要加入新的任務，請協助確認哪些工作需要調整優先順序或延後交付。」
           </div>
         </article>
 
         <!-- Scenario 2 -->
         <article class="playbook-card">
           <div class="playbook-badge-row">
-            <span class="playbook-step-num">情境 02 · 情感綁架</span>
+            <span class="playbook-step-num">02 · 情緒施壓</span>
             <span class="playbook-citation">《如果父母情緒不成熟》第 5 章</span>
           </div>
-          <h3 class="playbook-title">面對自戀型主管或長輩的情感勒索</h3>
+          <h3 class="playbook-title">面對情緒施壓的主管或長輩</h3>
           <p class="playbook-desc">
-            當對方試圖用受害者姿態或怒氣引發妳的內疚感時，啟動吉普森的「客觀觀察者非情感介入法」，絕不承接對方的情緒。
+            當對方因失望或憤怒而要求立即配合，可以先表示已聽見訴求，再說明能承擔的事項與答覆時間。原書第五章建議依自己的性格調整界線技巧。
           </p>
           <div class="playbook-script-box">
-            「我理解您現在心情很急切。不過這件事涉及客觀流程，我會在核對數據與責任歸屬後，於今天下午四點以書面形式回報給您。」
+            「我知道您希望盡快確認結果。這件事需要先核對資料與責任分工。我會確認可以回覆的時間，再向您說明進度。」
           </div>
         </article>
 
         <!-- Scenario 3 -->
         <article class="playbook-card">
           <div class="playbook-badge-row">
-            <span class="playbook-step-num">情境 03 · 資源掠奪</span>
-            <span class="playbook-citation">《給予》第 6 章</span>
+            <span class="playbook-step-num">03 · 重複請託</span>
+            <span class="playbook-citation">《給予》第 7 章</span>
           </div>
-          <h3 class="playbook-title">面對職場掠奪者的無休止索取</h3>
+          <h3 class="playbook-title">面對反覆請託代為完成工作的同事</h3>
           <p class="playbook-desc">
-            遇到習慣性找妳收尾或免費索取勞動成果的搭便車者，執行格蘭特的「條件式互惠（Tit-for-Tat）」防禦策略。
+            《給予》第七章討論辨認索取者與調整互動策略。面對反覆請託，可以提供資訊或方法，同時說明哪些工作仍需由對方負責。
           </p>
           <div class="playbook-script-box">
-            「這部分的背景資料我可以整理一份清單給妳參考，但具體的執行與成果產出，仍需由妳的主責團隊獨立完成。」
+            「這部分的背景資料我可以整理一份清單給你參考，但具體的執行與成果產出，仍需由你的主責團隊完成。」
           </div>
         </article>
 
         <!-- Scenario 4 -->
         <article class="playbook-card">
           <div class="playbook-badge-row">
-            <span class="playbook-step-num">情境 04 · 公然發難</span>
-            <span class="playbook-citation">《懂權力》第 3 章</span>
+            <span class="playbook-step-num">04 · 會議質疑</span>
+            <span class="playbook-citation">《懂權力》第 2、3 章</span>
           </div>
-          <h3 class="playbook-title">面對突如其來的公然質疑與挑釁</h3>
+          <h3 class="playbook-title">面對會議中的尖銳質疑</h3>
           <p class="playbook-desc">
-            在會議中突然遭遇人身貶抑或強勢發難，運用葛倫費德的「高姿態冷靜定調法」，不辯解、不道歉，維持專業節奏。
+            《懂權力》第二、三章討論如何依情境採取高姿態或低姿態。面對質疑時，先確認問題能否當場回答；尚待核實的資料可以約定查證及回覆方式。
           </p>
           <div class="playbook-script-box">
-            「您提出的顧慮非常具體。為了不耽誤大家會議時間，我們會在會後把檢核數據整理成專題說明，現在請先繼續推進下一項議程。」
+            「您提到的資料疑點需要進一步核對。我會記錄問題，會後補充來源及計算依據。其他已確認的部分，可以先繼續討論。」
           </div>
         </article>
 
         <!-- Scenario 5 -->
         <article class="playbook-card">
           <div class="playbook-badge-row">
-            <span class="playbook-step-num">情境 05 · 酸言冷語</span>
+            <span class="playbook-step-num">05 · 負面評語</span>
             <span class="playbook-citation">《鈍感力》第 2 章</span>
           </div>
           <h3 class="playbook-title">面對挑剔與無端的冷嘲熱諷</h3>
           <p class="playbook-desc">
-            遭遇背後的酸言酸語或刻薄評語時，啟動渡邊淳一的「防水雨衣效應」：評價如同水珠，滑過雨衣即可，絕不滲透至自律神經。
+            遇到刺耳的評語時，先分辨哪些內容需要回應，哪些可以放下。讓別人的一句話不必占據你一整天的心力。
           </p>
           <div class="playbook-script-box">
-            （保持平靜微笑與眼神平視，不辯解、不反問，安靜停頓 3 秒鐘，隨後直接切換回當前客觀工作事項）
+            （先確認評語中是否有值得修正的資訊；若只是無關的挖苦，可以簡短回應或轉回工作，無須規定停頓秒數。）
           </div>
         </article>
 
         <!-- Scenario 6 -->
         <article class="playbook-card">
           <div class="playbook-badge-row">
-            <span class="playbook-step-num">情境 06 · 深夜反芻</span>
-            <span class="playbook-citation">《自我對話習慣》第 2 章</span>
+            <span class="playbook-step-num">06 · 深夜反芻</span>
+            <span class="playbook-citation" aria-label="《強大內心的自我對話習慣》：抽離式自我對話">《自我對話習慣》：抽離練習</span>
           </div>
-          <h3 class="playbook-title">深夜大腦反芻自責發作時</h3>
+          <h3 class="playbook-title">深夜反覆回想白天的衝突</h3>
           <p class="playbook-desc">
-            當腦中失控重播白天衝突、心跳加速失眠時，執行克洛斯實驗室證實有效的「第三人稱自語與時間透視法」。
+            原書介紹使用姓名或非第一人稱對自己說話、想像未來觀點等工具。可以擇一嘗試，觀察是否有助於拉開思考距離；不保證立即入睡或消除焦慮。
           </p>
           <div class="playbook-script-box">
-            「[直呼自己的全名]，你今天已經完成當下最妥善的應對。五年之後，今天這場談話不會對你的人生造成任何本質傷害。」
+            「［自己的名字］，這次談話讓你感到不安。哪些事實還需要確認？等到明天或過一段時間再回看，你可能會怎樣理解這件事？」
           </div>
         </article>
       </div>
@@ -4864,8 +5014,8 @@
         <span class="section-tag">DOWNLOAD CENTER</span>
         <h2 class="section-title">電子書資源下載中心</h2>
         <p class="section-desc">
-          精選 10 部完整正規 EPUB 電子書，均已完成校驗。<br>
-          全面推薦搭配專用 AI 伴讀工具 <strong>Readify AI</strong>，享受深層對話與有聲導讀。
+          本站整理十本核心專書的 EPUB 閱讀資源，供核對書目與選擇閱讀順序。<br>
+          下載後可使用支援 EPUB 的閱讀器開啟，也可依需要選擇具備朗讀或 AI 閱讀輔助功能的工具。
         </p>
       </div>
 
@@ -4873,23 +5023,23 @@
       <div class="readify-banner">
         <div class="readify-icon"><svg class="riso-icon-md" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-glasses"></use></svg></div>
         <div class="readify-content">
-          <h3>首選閱讀載體推薦：Readify AI App</h3>
+          <h3>EPUB 閱讀器選項：Readify AI</h3>
           <p>
-            專為深度研讀打造的智慧閱讀器。支援正規 EPUB 無痛匯入，具備「AI 實時對話伴讀」、「章節核心洞察速提」、「反芻心理舒緩引導」與「自然有聲朗讀」功能。下載電子書後，強烈建議直接以 Readify AI 開啟研讀！
+            Readify AI 的公開產品資訊列有 EPUB 匯入與自然語音朗讀，部分版本也提供文件問答及內容摘要。具體功能可能因裝置與版本而異。下載後可使用自己習慣的 EPUB 閱讀器開啟，不必限定特定 App。
           </p>
         </div>
         <div>
-          <a href="#downloads" class="btn btn-primary" onclick="showToast('已為您準備好 EPUB 下載！下載後直接以 Readify AI 匯入即可開卷。')">以 Readify AI 開卷</a>
+          <a href="#epub-download-list" class="btn btn-primary">查看 EPUB 書目與下載選項</a>
         </div>
       </div>
 
-      <div class="download-grid">
+      <div class="download-grid" id="epub-download-list">
         <div class="download-card">
           <div class="download-info-top">
             <img src="covers/acting-with-power.jpg?v=2" alt="懂權力" class="download-thumb">
             <div>
               <h4 class="download-card-title">懂權力，在每個角色上發光</h4>
-              <p class="download-card-meta">史丹佛 MBA 選修課 · 1.4 MB · 天下雜誌</p>
+              <p class="download-card-meta">角色與影響力 · 1.4 MB · 天下雜誌</p>
             </div>
           </div>
           <a href="books/懂權力_在每個角色上發光_黛博拉·葛倫費德.epub" class="download-btn" onclick="handleBookDownload('懂權力')" download>
@@ -4914,7 +5064,7 @@
             <img src="covers/give-and-take.jpg" alt="給予" class="download-thumb">
             <div>
               <h4 class="download-card-title">給予 (Give and Take)</h4>
-              <p class="download-card-meta">華頓商學院啟發課 · 885 KB · 平安文化</p>
+              <p class="download-card-meta">給予與互惠關係 · 885 KB · 平安文化</p>
             </div>
           </div>
           <a href="books/給予_華頓商學院最啟發人心的一堂課_亞當·格蘭特.epub" class="download-btn" onclick="handleBookDownload('給予')" download>
@@ -4927,7 +5077,7 @@
             <img src="covers/chatter.jpg" alt="強大內心的自我對話習慣" class="download-thumb">
             <div>
               <h4 class="download-card-title">強大內心的自我對話習慣</h4>
-              <p class="download-card-meta">反芻腦科學 · 811 KB · 天下文化</p>
+              <p class="download-card-meta">內在對話與反芻 · 811 KB · 天下文化</p>
             </div>
           </div>
           <a href="books/強大內心的自我對話習慣_伊森·克洛斯.epub" class="download-btn" onclick="handleBookDownload('自我對話習慣')" download>
@@ -4940,7 +5090,7 @@
             <img src="covers/donganli.jpg" alt="鈍感力" class="download-thumb">
             <div>
               <h4 class="download-card-title">鈍感力（青島社版）</h4>
-              <p class="download-card-meta">權威譯本無亂碼 · 251 KB · 青島出版社</p>
+              <p class="download-card-meta">青島出版社（2018） · 251 KB</p>
             </div>
           </div>
           <a href="books/鈍感力_渡邊淳一_青島出版社版.epub" class="download-btn" onclick="handleBookDownload('鈍感力')" download>
@@ -4973,7 +5123,7 @@
             <span>⬇️</span> <span>下載 EPUB（支援 Readify AI）</span>
           </a>
         </div>
-      
+
         <div class="download-card">
           <div class="download-info-top">
             <img src="covers/emotional-blackmail.jpg" alt="情緒勒索" class="download-thumb">
@@ -4991,7 +5141,7 @@
           <div class="download-info-top">
             <img src="covers/nice-girls.jpg" alt="職場女性" class="download-thumb">
             <div>
-              <h4 class="download-card-title">職場女性：別讓細節絆住你</h4>
+              <h4 class="download-card-title">職場女性：別讓這些細節絆住你</h4>
               <p class="download-card-meta">避開無意識職場錯誤 · 1.2 MB · 中央編譯</p>
             </div>
           </div>
@@ -5002,13 +5152,13 @@
 
         <div class="download-card">
           <div class="download-info-top">
-            <img src="covers/daring-greatly.jpg" alt="不完美的禮物" class="download-thumb">
+            <img src="covers/daring-greatly.jpg" alt="脆弱的力量" class="download-thumb">
             <div>
-              <h4 class="download-card-title">不完美的禮物（脆弱的力量）</h4>
-              <p class="download-card-meta">擁抱真實自我 · 701 KB · 心靈工坊</p>
+              <h4 class="download-card-title">脆弱的力量（原著名：The Gifts of Imperfection）</h4>
+              <p class="download-card-meta">擁抱真實自我 · 701 KB · 浙江人民出版社／湛廬文化 · 台版譯作《不完美的禮物》</p>
             </div>
           </div>
-          <a href="books/脆弱的力量_布琳布朗.epub" class="download-btn" onclick="handleBookDownload('不完美的禮物')" download>
+          <a href="books/脆弱的力量_布琳布朗.epub" class="download-btn" onclick="handleBookDownload('脆弱的力量')" download>
             <span>⬇️</span> <span>下載 EPUB（支援 Readify AI）</span>
           </a>
         </div>
@@ -5022,11 +5172,11 @@
   <section id="bedtime-reset" style="background-color: var(--bg-page-alt, #FAF7F2); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 72px 0 64px 0;">
     <div class="container" style="text-align: center; max-width: 820px;">
       <div class="section-header" style="text-align: center; margin-bottom: 28px;">
-        <span class="section-tag">BEDTIME RESET &amp; RADICAL SURRENDER</span>
-        <h2 class="section-title">合上手帳：今晚把所有防衛與過度思慮，全然卸下</h2>
+        <span class="section-tag">A QUIET ENDING</span>
+        <h2 class="section-title">讀到這裡，今天可以先休息</h2>
         <p class="section-desc" style="margin: 0 auto; max-width: 580px;">
-          讀完全書，不必強求自己立刻變得無懈可擊。<br>
-          像牠一樣，把緊繃的肢體與重量全然託付給桌面。今晚安心翻肚、好好休息。
+          不必一次讀完，也不需要立刻解決所有問題。<br>
+          可以先記下一個值得繼續閱讀的問題。其他事情留到下次，讓今天的閱讀在此告一段落。
         </p>
       </div>
 
@@ -5040,16 +5190,14 @@
   </section>
 
   <!-- Footer -->
-  </main>
-
   <footer>
     <div class="container">
     <div class="footer-inner">
         <div class="footer-brand">
-          <div class="footer-title">在權力不對等處立足 · 心智自立書單</div>
+          <div class="footer-title">溫柔生長讀書誌 · 十本書的閱讀路線</div>
           <p class="footer-desc">
-            專為在職場與過往家庭生活中，遭遇權力失衡習慣退讓妥協、事後容易陷入反芻自責的讀者精心打造。<br>
-            嚴選心理學與史丹佛組織權力學經典，建構不可撼動的心智護城河。
+            為面對職場壓力、關係界線與反覆自責的讀者，整理十本書的核心主題與閱讀方法。<br>
+            依不同處境選擇閱讀起點，再從書中的概念與具體練習中尋找可行的下一步。
           </p>
         </div>
         <div class="footer-nav">
@@ -5064,7 +5212,7 @@
             <a href="book-donganli.html">鈍感力</a>
             <a href="book-immature-parents.html">如果父母情緒不成熟</a>
             <a href="book-overeffort.html">過度努力</a>
-            <a href="book-daring-greatly.html">不完美的禮物</a>
+            <a href="book-daring-greatly.html">脆弱的力量</a>
           </div>
           <div class="footer-nav-col">
             <h5>實戰架構</h5>
@@ -5072,20 +5220,20 @@
             <a href="#adversarial">對抗式盲點審查</a>
             <a href="#reading-strategy">心理閱讀心法</a>
             <a href="#companions">五大支援工具書</a>
-            <a href="#assessment">受困心智自測</a>
+            <a href="#assessment">閱讀起點探索</a>
             <a href="#playbook">現場防身處方</a>
             <a href="#downloads">電子書下載</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 心智自立書單與行動手冊 · 支援 Readify AI 智慧閱讀 · 內容引自權威學術研究與原著 · 供個人成長學習使用</p>
+        <p>© 2026 心智自立書單與行動手冊 · 支援 Readify AI 智慧閱讀 · 編輯依書籍觀點整理閱讀摘記 · 供個人成長學習使用</p>
       </div>
           <p class="copyright-notice" style="font-size: 0.85rem; color: var(--text-dim); margin-top: 14px; line-height: 1.7;">
         本站內容專注於女性成長、心理學與組織博弈之非營利學術探討與數位共讀推廣，尊重正版知識產權。所有電子書檔案皆標註原出版社與作者資訊，推薦讀者支持正版紙本書與官方電子書。
       </p>
       <p class="takedown-notice" style="font-size: 0.85rem; color: var(--text-dim); margin-top: 8px; line-height: 1.7;">
-        <strong>【權利人優先下架條款 (Notice & Takedown)】</strong>：若版權方或權利人對本站引證或內容有任何異議，請隨時透過聯繫管道通報，我們將於 24 小時內即時核實並立即移除相關內容。聯繫通報窗口：<code>contact@inner-power-reading.pages.dev</code>
+        <strong>【權利人聯繫與內容處理】</strong>：若您是相關著作權利人，對本站文字引述或下載資源有所疑慮，請透過 <a href="https://github.com/atonnyshen/inner-power-reading/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a> 提供具體項目。收到通知後將核對內容與權利狀況，必要時修正或下架。
       </p>
     </div>
   </footer>
@@ -5102,7 +5250,7 @@
   </aside>
 
   <!-- Mobile Chapter Quick-Drawer (TOC 抽屜) -->
-  <div class="toc-drawer-overlay" id="tocDrawerOverlay" onclick="toggleTocDrawer(false)" aria-modal="true" role="dialog" aria-label="章節目錄跳轉">
+  <div class="toc-drawer-overlay" id="tocDrawerOverlay" onclick="toggleTocDrawer(false)" aria-modal="true" role="dialog" aria-label="章節目錄跳轉" aria-hidden="true" inert>
     <div class="toc-drawer-sheet" onclick="event.stopPropagation()">
       <div class="toc-drawer-header">
         <div class="toc-drawer-title">
@@ -5117,7 +5265,7 @@
         </a>
         <a href="#persona" class="toc-item" onclick="toggleTocDrawer(false)">
           <span>⚡ 受困圖景剖析</span>
-          <span class="toc-item-tag">診斷</span>
+          <span class="toc-item-tag">觀察</span>
         </a>
         <a href="#adversarial" class="toc-item" onclick="toggleTocDrawer(false)">
           <span>🔍 常規盲點破局</span>
@@ -5140,12 +5288,12 @@
           <span class="toc-item-tag">矩陣</span>
         </a>
         <a href="#assessment" class="toc-item" onclick="toggleTocDrawer(false)">
-          <span>🧭 3 分鐘受困心智自測</span>
-          <span class="toc-item-tag">測驗</span>
+          <span>🧭 3 分鐘閱讀起點探索</span>
+          <span class="toc-item-tag">探索</span>
         </a>
         <a href="#playbook" class="toc-item" onclick="toggleTocDrawer(false)">
-          <span>💊 現場應急防身處方庫</span>
-          <span class="toc-item-tag">處方</span>
+          <span>現場溝通練習</span>
+          <span class="toc-item-tag">練習</span>
         </a>
         <a href="#downloads" class="toc-item" onclick="toggleTocDrawer(false)">
           <span>📥 電子書下載中心</span>
@@ -5160,10 +5308,10 @@
   </div>
 
   <!-- Lightbox Modal Overlay (Award-Winning Web Craft Pillar 6) -->
-  <div id="lightbox-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="圖片放大檢視" onclick="closeLightboxModal(event)">
+  <div id="lightbox-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="圖片放大檢視" aria-hidden="true" inert onclick="closeLightboxModal(event)">
     <div class="modal-box" onclick="event.stopPropagation()">
       <button type="button" class="modal-close" id="modalClose" aria-label="關閉圖片檢視" onclick="closeLightboxModal()">✕</button>
-      <img id="modalImg" src="" alt="放大檢視封面" class="modal-img">
+      <img id="modalImg" alt="放大檢視封面" class="modal-img">
       <p id="modalCaption" class="modal-caption"></p>
     </div>
   </div>
@@ -5194,7 +5342,7 @@
     async function copyQuote(btn, text) {
       try {
         await navigator.clipboard.writeText(text);
-        showToast('已複製高光金句到剪貼簿');
+        showToast('已複製閱讀摘記到剪貼簿');
         const origText = btn.textContent;
         btn.textContent = '已複製 ✓';
         btn.style.color = '#3E6B56';
@@ -5273,16 +5421,58 @@
       }
     }
 
-    // Toggle Mobile TOC Drawer
+    // Accessible modal focus management shared by drawer and cover lightbox.
+    const tocOverlay = document.getElementById('tocDrawerOverlay');
+    let previousDrawerFocus = null;
+    let previousLightboxFocus = null;
+    let previousBodyOverflow = null;
+
+    function lockDialogScroll() {
+      if (previousBodyOverflow === null) previousBodyOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+    }
+    function unlockDialogScroll() {
+      if (tocOverlay?.classList.contains('active') || document.getElementById('lightbox-modal')?.classList.contains('active')) return;
+      if (previousBodyOverflow !== null) document.body.style.overflow = previousBodyOverflow;
+      previousBodyOverflow = null;
+    }
+    function trapDialogTab(event, dialog) {
+      const items = Array.from(dialog.querySelectorAll('a[href], button:not([disabled]), [tabindex="0"]'))
+        .filter(el => el.getClientRects().length && getComputedStyle(el).visibility !== 'hidden');
+      if (!items.length) { event.preventDefault(); return; }
+      const first = items[0], last = items[items.length - 1];
+      if (event.shiftKey && (document.activeElement === first || !dialog.contains(document.activeElement))) {
+        event.preventDefault(); last.focus({ preventScroll: true });
+      } else if (!event.shiftKey && (document.activeElement === last || !dialog.contains(document.activeElement))) {
+        event.preventDefault(); first.focus({ preventScroll: true });
+      }
+    }
+
     function toggleTocDrawer(open) {
-      const overlay = document.getElementById('tocDrawerOverlay');
-      if (!overlay) return;
-      if (open === undefined) {
-        overlay.classList.toggle('active');
-      } else if (open) {
-        overlay.classList.add('active');
-      } else {
-        overlay.classList.remove('active');
+      if (!tocOverlay) return;
+      const shouldOpen = open === undefined ? !tocOverlay.classList.contains('active') : !!open;
+      if (shouldOpen && !tocOverlay.classList.contains('active')) {
+        previousDrawerFocus = document.activeElement;
+        tocOverlay.inert = false;
+        tocOverlay.style.visibility = 'visible';
+        tocOverlay.setAttribute('aria-hidden', 'false');
+        tocOverlay.classList.add('active');
+        lockDialogScroll();
+        tocOverlay.querySelector('.toc-drawer-close')?.focus({ preventScroll: true });
+        // An opening transition can defer focusability; verify after it settles.
+        setTimeout(() => {
+          if (tocOverlay.classList.contains('active') && !tocOverlay.contains(document.activeElement)) {
+            tocOverlay.querySelector('.toc-drawer-close')?.focus({ preventScroll: true });
+          }
+        }, 360);
+      } else if (!shouldOpen && tocOverlay.classList.contains('active')) {
+        tocOverlay.classList.remove('active');
+        tocOverlay.style.visibility = '';
+        tocOverlay.inert = true;
+        tocOverlay.setAttribute('aria-hidden', 'true');
+        unlockDialogScroll();
+        if (previousDrawerFocus?.isConnected) previousDrawerFocus.focus({ preventScroll: true });
+        previousDrawerFocus = null;
       }
     }
 
@@ -5292,7 +5482,7 @@
     function scrollToTopNav() {
       isNavigating = true;
       if (topNav) topNav.classList.remove('nav-hidden');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
       setTimeout(() => {
         isNavigating = false;
         accumulatedDelta = 0;
@@ -5316,7 +5506,7 @@
 
         window.scrollTo({
           top: Math.max(0, targetOffset),
-          behavior: 'smooth'
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
         });
 
         // Micro-correction settling
@@ -5324,7 +5514,7 @@
           const currentGap = targetEl.getBoundingClientRect().top;
           const deviation = currentGap - (navH + 20);
           if (Math.abs(deviation) > 3) {
-            window.scrollBy({ top: deviation, behavior: 'smooth' });
+            window.scrollBy({ top: deviation, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
           }
           isNavigating = false;
           accumulatedDelta = 0;
@@ -5356,17 +5546,18 @@
       const body = document.getElementById('resultBody');
       const link = document.getElementById('resultLink');
       const dlLink = document.getElementById('resultDownload');
+      if (dlLink) dlLink.style.display = '';
 
       if (checked.length === 0) {
         resBox.classList.remove('active');
         ['R', 'P', 'B', 'O'].forEach(k => {
-          document.getElementById('score' + k).textContent = '0%';
+          document.getElementById('score' + k).textContent = '0／12';
           document.getElementById('fill' + k).style.width = '0%';
         });
         return;
       }
 
-      // 統計維度得分
+      // 統計四個維度得分
       const scores = { R: 0, P: 0, B: 0, O: 0 };
       checked.forEach(cb => {
         const idx = parseInt(cb.value, 10);
@@ -5379,129 +5570,187 @@
         }
       });
 
-      // 歸一化為百分比 (基準滿分 7 分即達 100%)
+      // 客觀比例化 (各維度滿分為 12 分)
+      const maxScore = 12;
       const pct = {
-        R: Math.min(100, Math.round((scores.R / 7) * 100)),
-        P: Math.min(100, Math.round((scores.P / 7) * 100)),
-        B: Math.min(100, Math.round((scores.B / 7) * 100)),
-        O: Math.min(100, Math.round((scores.O / 7) * 100))
+        R: Math.min(100, Math.round((scores.R / maxScore) * 100)),
+        P: Math.min(100, Math.round((scores.P / maxScore) * 100)),
+        B: Math.min(100, Math.round((scores.B / maxScore) * 100)),
+        O: Math.min(100, Math.round((scores.O / maxScore) * 100))
       };
 
-      // 渲染四維動態進度條
+      // 渲染四維進度條
       ['R', 'P', 'B', 'O'].forEach(k => {
-        document.getElementById('score' + k).textContent = pct[k] + '%';
+        document.getElementById('score' + k).textContent = scores[k] + '／12';
         document.getElementById('fill' + k).style.width = pct[k] + '%';
       });
 
       resBox.classList.add('active');
 
-      // 排序判定主導型態與次要伴隨型態
+      const profileNames = {
+        R: '反覆自責與情緒緊繃',
+        P: '職場權力認知與能見度',
+        B: '人際邊界與拒絕練習',
+        O: '自我要求與過度努力'
+      };
+
+      // 邊界情況 1: 全選 12 題
+      if (checked.length === 12) {
+        badge.textContent = '全面探索建議：多面向負荷下的優先起點';
+        title.textContent = '勾選了多種情境：先從照顧眼前的心力開始';
+        body.textContent = '你勾選了多種情境，這些主題都值得留意。這份探索只提供閱讀方向，無法判斷你承受的壓力程度。若不知從何開始，可以先讀《強大內心的自我對話習慣》，練習整理反覆自責的念頭；也可以讀《鈍感力》，分辨哪些評價值得回應。接著挑一個最想改善的情境，試著做出一個小改變。';
+        link.href = '#book-chatter';
+        link.textContent = '優先閱讀：《強大內心的自我對話習慣》➔';
+        if (dlLink) {
+          dlLink.href = 'book-chatter.html';
+          dlLink.textContent = '前往專頁閱讀 ➔';
+          dlLink.removeAttribute('download');
+        }
+        return;
+      }
+
+      // 排序判定前兩位維度
       const sortedKeys = ['R', 'P', 'B', 'O'].sort((a, b) => pct[b] - pct[a]);
       const topKey = sortedKeys[0];
       const secondKey = sortedKeys[1];
       const diff = pct[topKey] - pct[secondKey];
-      const isComposite = (diff <= 25 && pct[secondKey] >= 35);
+      const isTieOrComposite = (diff <= 15 && pct[secondKey] >= 25);
 
-      const profileNames = {
-        R: '急性神經反芻與迷走凍結型',
-        P: '權力博弈盲區與道德潔癖型',
-        B: '邊界失守與過度付出透支型',
-        O: '童年創傷代償與過度努力型'
-      };
+      if (isTieOrComposite) {
+        badge.textContent = '雙向閱讀路徑：' + profileNames[topKey] + ' ＆ ' + profileNames[secondKey];
+        title.textContent = '兩個值得一起探索的閱讀面向';
 
-      if (isComposite) {
-        badge.textContent = `雙重複合受困診斷：${profileNames[topKey]} × ${profileNames[secondKey]}`;
-        title.textContent = `複合型態：大腦內耗與行為阻滯的雙重拉扯（${pct[topKey]}% / ${pct[secondKey]}%）`;
-
-        let compositeAnalysis = '';
+        let advice = '';
         let targetAnchor = '#pillars';
-        let targetBookName = '十大專書';
+        let targetBookName = '推薦專書';
+        let targetPage = 'index.html';
 
         if ((topKey === 'R' && secondKey === 'P') || (topKey === 'P' && secondKey === 'R')) {
-          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：白日面對權威或衝突時不敢確立專業能見度與邊界（權力盲區），當場退讓妥協；入夜後大腦神經反芻機制全面失控重播自責（神經反芻）。<br><strong>【雙軌突破處方】：</strong>第一優先研讀<strong>《強大內心的自我對話習慣》</strong>拉開心理距離、平息自責；隨後研讀<strong>《懂權力》</strong>與<strong>《精進權力》</strong>，建立角色責任意識與身體高權力姿態，杜絕下一次無謂退讓。';
+          advice = '若你同時勾選會後反覆回想與職場表達的情境，可以先讀《強大內心的自我對話習慣》，練習拉開與自責念頭的距離；再讀《懂權力，在每個角色上發光》，理解影響力與角色責任的關係。下次開會前，試著寫下一個想提出的觀點，為它找到適合說出口的時機。';
           targetAnchor = '#book-power';
-          targetBookName = '《懂權力》與《自我對話》';
+          targetBookName = '《懂權力》與《自我對話習慣》';
+          targetPage = 'book-power.html';
         } else if ((topKey === 'B' && secondKey === 'O') || (topKey === 'O' && secondKey === 'B')) {
-          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：童年時期作為懂事的假性孤兒承擔過多照護責任，內化了「只有表現優秀、體貼退讓才配被愛」的信條，導致成年後在職場中徹底失去拒絕能力，任由索取者榨取。<br><strong>【雙軌突破處方】：</strong>先讀<strong>《如果父母情緒不成熟》</strong>確立內在心理主權，再讀<strong>《過度努力》</strong>看清努力背後的傷；隨後以<strong>《給予》</strong>建立保護型利他護欄，學會向索取者堅定說「不」。';
-          targetAnchor = '#book-immature-parents';
-          targetBookName = '《如果父母情緒不成熟》與《給予》';
-        } else if ((topKey === 'R' && secondKey === 'O') || (topKey === 'O' && secondKey === 'R')) {
-          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：將「自我價值」與「完美成果」極端綁定。只要遭遇些微挫折或冷淡，童年被否定的創傷記憶瞬間被喚醒，轉化為大腦無休止的嚴厲自我審查與失眠。<br><strong>【雙軌突破處方】：</strong>研讀<strong>《過度努力》</strong>卸下防禦盔甲，隨後閱讀<strong>《鈍感力》</strong>過濾外界惡意噪音，守護自律神經與內在平靜。';
-          targetAnchor = '#book-overeffort';
-          targetBookName = '《過度努力》與《鈍感力》';
+          advice = '若你同時勾選難以拒絕與過度努力的情境，可以先讀《情緒勒索》，辨認在乎他人與承擔責任之間的界線，再搭配《過度努力》重新整理對自己的要求。下次接到額外請託時，先確認時間與負擔，再回覆自己能協助到哪裡。';
+          targetAnchor = '#book-emotional-blackmail';
+          targetBookName = '《情緒勒索》與《過度努力》';
+          targetPage = 'book-emotional-blackmail.html';
+        } else if ((topKey === 'P' && secondKey === 'B') || (topKey === 'B' && secondKey === 'P')) {
+          advice = '若你同時勾選過度付出與職場能見度的情境，可以先用《給予》思考如何保持互惠、照顧自己的資源，再讀《職場女性》，練習清楚說明工作成果。下一次接到額外工作，試著先確認優先順序，再答覆能承擔的範圍。';
+          targetAnchor = '#book-give-and-take';
+          targetBookName = '《給予》與《職場女性》';
+          targetPage = 'book-give-and-take.html';
         } else {
-          compositeAnalysis = '<strong>【雙重夾擊成因】</strong>：深陷道德潔癖與自我犧牲的泥潭，誤以為只要老實付出就會獲得公正回報，卻在現實權力博弈中屢屢受挫被邊緣化。<br><strong>【雙軌突破處方】：</strong>閱讀<strong>《精進權力》</strong>打破公正世界假設，隨後研讀<strong>《關鍵對話》</strong>開展防禦性協商，守護自身勞動成果。';
-          targetAnchor = '#book-rules-of-power';
-          targetBookName = '《精進權力》與《關鍵對話》';
+          advice = '你勾選的情境涉及「' + profileNames[topKey] + '」與「' + profileNames[secondKey] + '」兩個主題。可以先從目前最想改善的困難挑一本書，再以另一本文補充。閱讀後記下一個可嘗試的行動，不必急於一次處理所有問題。';
+          targetAnchor = '#pillars';
+          targetBookName = '精選推薦書目';
+          targetPage = '';
         }
 
-        body.innerHTML = compositeAnalysis;
+        body.textContent = advice;
         link.href = targetAnchor;
-        link.textContent = `深入研讀：${targetBookName} ➔`;
-        dlLink.href = '#downloads';
+        link.textContent = '前往專書解析：' + targetBookName + ' ➔';
+        if (dlLink) {
+          dlLink.style.display = targetPage ? '' : 'none';
+          if (targetPage) dlLink.href = targetPage;
+          else dlLink.removeAttribute('href');
+          dlLink.textContent = '深入專頁導讀 ➔';
+          dlLink.removeAttribute('download');
+        }
       } else {
-        badge.textContent = `單一主導受困型態：${profileNames[topKey]}（${pct[topKey]}%）`;
+        // 單一主導型態
+        const singleAdvice = {
+          R: {
+            name: profileNames.R,
+            book: '《強大內心的自我對話習慣》',
+            anchor: '#book-chatter',
+            page: 'book-chatter.html',
+            text: '你勾選的情境涉及事後反覆回想、難以放下自責。可以先讀《強大內心的自我對話習慣》，練習拉開心理距離。試著用自己的名字問：如果朋友遇到同樣的事，我會如何安慰他？讓思緒從責備慢慢回到眼前能做的事。'
+          },
+          P: {
+            name: profileNames.P,
+            book: '《懂權力，在每個角色上發光》',
+            anchor: '#book-power',
+            page: 'book-power.html',
+            text: '你勾選的情境涉及職場表達與讓成果被看見。可以先讀《懂權力，在每個角色上發光》，思考角色責任與影響力如何隨情境改變。從一項已完成的工作開始，寫下它幫誰解決了什麼問題，再找合適的機會清楚說明。'
+          },
+          B: {
+            name: profileNames.B,
+            book: '《給予：華頓商學院最啟發人心的一堂課》',
+            anchor: '#book-give-and-take',
+            page: 'book-give-and-take.html',
+            text: '你勾選的情境涉及難以拒絕、付出過量。可以先讀《給予》，認識成功的付出者如何兼顧幫助他人與照顧自己的資源。下次回應請託前，先確認目前能負擔的時間與工作量，再決定如何協助。'
+          },
+          O: {
+            name: profileNames.O,
+            book: '《過度努力：每個「過度」，都是傷的證明》',
+            anchor: '#book-overeffort',
+            page: 'book-overeffort.html',
+            text: '你勾選的情境涉及害怕休息、擔心自己不夠好。可以先讀《過度努力》，分辨哪些努力來自真正重視的事，哪些可能是為了避免讓人失望。今天試著留一段不用交出成果的休息時間，練習照顧自己的需要。'
+          }
+        };
 
-        if (topKey === 'R') {
-          title.textContent = '主導型態：急性神經反芻型（大腦自我評判過載）';
-          body.innerHTML = '你的核心消耗在於「事後的持續自責與大腦小對話」。面對衝突後，大腦前額葉將抑鬱全部轉化為對自我的嚴厲審判。<br><strong>【破局處方】：</strong>立即進入<strong>階梯 I 止血急救</strong>。首選精讀<strong>《強大內心的自我對話習慣》</strong>，以「抽離式自言自語」中斷大腦反芻；輔以<strong>《鈍感力》</strong>鈍化神經信號，迅速恢復情緒清明。';
-          link.href = '#book-chatter';
-          link.textContent = '開始研讀《強大內心的自我對話習慣》➔';
-        } else if (topKey === 'P') {
-          title.textContent = '主導型態：權力認知潔癖型（被動等待公正迷思）';
-          body.innerHTML = '你的核心障礙在於「對權力懷有道德潔癖」。深信公正世界假設，害怕展現強勢會傷害關係，導致在資源分配時主動退讓被邊緣化。<br><strong>【破局處方】：</strong>進入<strong>階梯 III 權力重構</strong>。首選精讀<strong>《懂權力，在每個角色上發光》</strong>將權力視為責任資源；搭配<strong>《職場女性：別讓這些細節絆住你》</strong>戒斷發言先道歉與邊緣化習慣，進階研讀<strong>《精進權力》</strong>建立專業能見度。';
-          link.href = '#book-power';
-          link.textContent = '開始研讀《懂權力》與《精進權力》➔';
-        } else if (topKey === 'B') {
-          title.textContent = '主導型態：邊界失守犧牲型（過度付出受害者）';
-          body.innerHTML = '你的核心特質為真誠溫暖，但缺乏防範索取者的心理護欄，容易承擔過多不屬於自己的責任與情緒。<br><strong>【破局處方】：</strong>進入<strong>階梯 II 防禦邊界</strong>。首選精讀<strong>《情緒勒索》</strong>識破恐懼、責任與罪惡感操控；配合<strong>《給予》</strong>建立保護型利他護欄，從盲目退讓轉型為擁有防護線的成熟實踐者。';
-          link.href = '#book-give-and-take';
-          link.textContent = '開始研讀《給予》➔';
-        } else {
-          title.textContent = '主導型態：童年創傷代償型（假性孤兒與過度努力）';
-          body.innerHTML = '你的過度謹慎與退讓根源於童年時期照護者的情緒不穩定，被迫成為懂事的假性孤兒，內化了討好信條。<br><strong>【破局處方】：</strong>進入<strong>階梯 IV 源頭解咒</strong>。首選精讀<strong>《如果父母情緒不成熟》</strong>劃清心理代溝；隨後閱讀<strong>《過度努力》</strong>與<strong>《不完美的禮物》</strong>，卸下完美主義盔甲，全然接納真實的自己。';
-          link.href = '#book-immature-parents';
-          link.textContent = '開始研讀《如果父母情緒不成熟》與《過度努力》➔';
+        const target = singleAdvice[topKey];
+        badge.textContent = '推薦閱讀起點：' + target.name;
+        title.textContent = '此刻可以先讀的方向';
+        body.textContent = target.text;
+        link.href = target.anchor;
+        link.textContent = '前往專書解析：' + target.book + ' ➔';
+        if (dlLink) {
+          dlLink.href = target.page;
+          dlLink.textContent = '深入專頁導讀 ➔';
+          dlLink.removeAttribute('download');
         }
       }
     }
 
-    // 4. Global Image Lightbox Modal Engine (Pillar 6)
+    // Cover lightbox: click, keyboard activation, focus containment, and return focus.
     const lightboxModal = document.getElementById('lightbox-modal');
-    const modalImg = document.getElementById('modalImg');
-    const modalCaption = document.getElementById('modalCaption');
-
-    function openLightboxModal(src, captionText) {
-      if (!lightboxModal || !modalImg) return;
-      modalImg.src = src;
-      modalCaption.textContent = captionText || '官方圖書封面檢視';
-      lightboxModal.classList.add('active');
-      lightboxModal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightboxModal(e) {
+    function openLightboxModal(src, caption, trigger) {
       if (!lightboxModal) return;
+      previousLightboxFocus = trigger || document.activeElement;
+      document.getElementById('modalImg').src = src;
+      document.getElementById('modalImg').alt = caption || '放大檢視封面';
+      document.getElementById('modalCaption').textContent = caption || '';
+      lightboxModal.inert = false;
+      lightboxModal.setAttribute('aria-hidden', 'false');
+      lightboxModal.classList.add('active');
+      lockDialogScroll();
+      document.getElementById('modalClose').focus({ preventScroll: true });
+    }
+    function closeLightboxModal(event) {
+      if (event && event.target !== lightboxModal) return;
+      if (!lightboxModal?.classList.contains('active')) return;
       lightboxModal.classList.remove('active');
-      setTimeout(() => {
-        lightboxModal.style.display = 'none';
-        if (modalImg) modalImg.src = '';
-      }, 200);
-      document.body.style.overflow = '';
+      if (previousLightboxFocus?.isConnected) previousLightboxFocus.focus({ preventScroll: true });
+      previousLightboxFocus = null;
+      lightboxModal.inert = true;
+      lightboxModal.setAttribute('aria-hidden', 'true');
+      unlockDialogScroll();
     }
 
-    // Bind all book covers to lightbox
     document.querySelectorAll('.book-real-cover-img, .download-thumb, .showcase-cover-img, figure img').forEach(img => {
+      if (img.closest('a, button')) return;
       img.style.cursor = 'zoom-in';
-      img.addEventListener('click', function() {
-        openLightboxModal(this.src, this.alt || this.getAttribute('data-caption'));
+      img.setAttribute('role', 'button');
+      img.tabIndex = 0;
+      img.setAttribute('aria-label', '放大檢視：' + (img.alt || '圖片'));
+      const open = () => openLightboxModal(img.src, img.alt || img.getAttribute('data-caption'), img);
+      img.addEventListener('click', open);
+      img.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
       });
     });
 
-    // Keyboard Escape to close modal
-    window.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) {
-        closeLightboxModal();
+    window.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && lightboxModal?.classList.contains('active')) {
+        e.preventDefault(); closeLightboxModal();
+      } else if (e.key === 'Escape' && tocOverlay?.classList.contains('active')) {
+        e.preventDefault(); toggleTocDrawer(false);
+      } else if (e.key === 'Tab' && lightboxModal?.classList.contains('active')) {
+        trapDialogTab(e, lightboxModal);
+      } else if (e.key === 'Tab' && tocOverlay?.classList.contains('active')) {
+        trapDialogTab(e, tocOverlay);
       }
     });
 

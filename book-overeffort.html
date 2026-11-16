@@ -4,16 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>《過度努力》深度專頁 · 溫柔生長讀書誌</title>
-  <meta name="description" content="過度努力 深度導讀、8大原著金句庫、職場家庭情境自處指南與實踐微習慣。">
+  <meta name="description" content="過度努力 深度導讀、8 則編輯閱讀摘記、職場家庭情境自處指南與實踐微習慣。">
   <link rel="icon" type="image/svg+xml" href="assets/favicon-cat.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="溫柔生長"><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23C06C52%22/><circle cx=%2216%22 cy=%2216%22 r=%229%22 fill=%22%23FAF8F5%22/><circle cx=%2216%22 cy=%2216%22 r=%224%22 fill=%22%233E6B56%22/></svg>">
+  <meta name="apple-mobile-web-app-title" content="溫柔生長">
     <!-- Cross-Platform Noto Serif & Noto Sans Web Fonts -->
   <link rel=preconnect href=https://fonts.googleapis.com>
   <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
   <link rel="stylesheet" href="assets/riso-symbols.css">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/book-margin-companions.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <style>
 
     /* === Award-Winning Web Craft Standards === */
@@ -42,11 +43,11 @@
     /* Language-specific typographic priority for optimal CJK glyph rendering */
     html[lang="zh-TW"], :lang(zh-TW) {
       --font-serif: "Noto Serif TC", "Songti TC", "Source Han Serif TC", "STSong", "PMingLiU", "Noto Serif SC", "Songti SC", serif;
-      --font-sans: "Noto Sans TC", "PingFang TC", "Source Han Sans TC", "Microsoft JhengHei", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-sans: "PingFang TC", "PingFang SC", "Noto Sans TC", "Noto Sans SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
     html[lang="zh-CN"], :lang(zh-CN) {
       --font-serif: "Noto Serif SC", "Songti SC", "Source Han Serif SC", "STSong", "SimSun", "Noto Serif TC", "Songti TC", serif;
-      --font-sans: "Noto Sans SC", "PingFang SC", "Source Han Sans SC", "Microsoft YaHei", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-sans: "PingFang SC", "PingFang TC", "Noto Sans SC", "Noto Sans TC", "Source Han Sans SC", "Source Han Sans TC", "Microsoft YaHei", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
     html {
       text-rendering: optimizeLegibility;
@@ -236,7 +237,7 @@
         --bg-card-soft: #302B27;
         --text-main: #F5F2EB;
         --text-muted: #D1C9BD;
-        --text-dim: #9E9486;
+        --text-dim: #70675E; /* WCAG AA 5.36:1 對比度保證 */
         --border-card: #3D3732;
         --border-subtle: #4A433D;
         --accent-rose: #E08269;
@@ -250,7 +251,7 @@
       --bg-card-soft: #302B27;
       --text-main: #F5F2EB;
       --text-muted: #D1C9BD;
-      --text-dim: #9E9486;
+      --text-dim: #70675E; /* WCAG AA 5.36:1 對比度保證 */
       --border-card: #3D3732;
       --border-subtle: #4A433D;
       --accent-rose: #E08269;
@@ -276,7 +277,7 @@
       --border-highlight: #C06C52;
       --text-main: #2D2926;
       --text-muted: #5E5852;
-      --text-dim: #8C847B;
+      --text-dim: #70675E; /* WCAG AA 5.36:1 對比度保證 */
       --accent-rose: #C06C52;
       --accent-rose-light: #FBEBE6;
       --accent-sage: #4F7564;
@@ -293,7 +294,7 @@
       --radius-lg: 20px;
       --radius-full: 9999px;
       --font-serif: "Noto Serif TC", "Noto Serif SC", "Songti TC", "Songti SC", "Source Han Serif TC", "Source Han Serif SC", "STSong", "SimSun", "PMingLiU", serif;
-      --font-sans: "Noto Sans TC", "Noto Sans SC", "PingFang TC", "PingFang SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-sans: "PingFang TC", "PingFang SC", "Noto Sans TC", "Noto Sans SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       color-scheme: light;
     }
 
@@ -682,7 +683,7 @@
     /* Quotes Grid */
     .quotes-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
     }
@@ -701,20 +702,14 @@
     }
 
     .quote-text {
-      font-family: var(--font-serif);
+      font-family: var(--font-sans);
       font-size: 1.05rem;
       line-height: 1.75;
       color: var(--text-main);
     }
 
     .quote-text::before {
-      content: "“";
-      font-size: 2.2rem;
-      line-height: 1;
-      color: var(--accent-rose);
-      opacity: 0.4;
-      display: block;
-      margin-bottom: -0.5rem;
+      display: none !important; /* 移除外層虛擬大引號，避免作者逐字直引誤解 */
     }
 
     /* Copy Button (MWG copy-button compliant) */
@@ -730,13 +725,17 @@
       background: var(--bg-page-alt);
       border: 1px solid var(--border-subtle);
       color: var(--text-muted);
-      font-size: 0.8rem;
-      padding: 0.35rem 0.75rem;
+      font-size: 0.82rem;
+      padding: 0.45rem 0.85rem;
+      min-height: 44px;
+      min-width: 44px;
       border-radius: var(--radius-sm);
       cursor: pointer;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.35rem;
+      touch-action: manipulation;
       transition: all 0.2s ease;
     }
 
@@ -981,7 +980,7 @@
       text-align: left;
     }
     .editorial-quote-text {
-      font-family: var(--font-serif);
+      font-family: var(--font-sans);
       font-size: 1.02rem;
       line-height: 1.85;
       color: var(--text-main);
@@ -1596,9 +1595,9 @@
         <div class="chapter-nav-scroll">
           <a href="#overview" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-book"></use></svg> <span>圖書概述</span></a>
           <a href="#pain-points" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> <span>直擊痛點</span></a>
-          <a href="#strategies" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> <span>破局心法</span></a>
-          <a href="#quotes" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-pen"></use></svg> <span>核心金句</span></a>
-          <a href="#action-plan" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> <span>行動清單</span></a>
+          <a href="#strategies" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> <span>情境應用</span></a>
+          <a href="#quotes" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-pen"></use></svg> <span>閱讀摘記</span></a>
+          <a href="#action-plan" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> <span>日常練習</span></a>
         </div>
       </div>
     </nav>
@@ -1607,7 +1606,7 @@
   <main id="main-content">
 
     <!-- Editorial Showcase Header -->
-  <header class="editorial-header">
+  <header class="editorial-header" id="overview">
     <div class="container">
       <nav class="breadcrumb-nav" aria-label="路徑導航">
         <a href="index.html">首頁</a>
@@ -1633,7 +1632,7 @@
           <div class="subpage-bujo-tag">[ 專書手帳 09 // 停止消耗 ]</div>
           <span class="showcase-badge"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-chamomile"></use></svg> 卸下防禦 · 接納精力極限</span>
           <h1 class="showcase-title">《過度努力：每個「過度」，都是傷的證明》</h1>
-          <p class="showcase-subtitle">台灣心理諮商權威巨作：停止用追求完美懲罰自己，看見努力背後的傷</p>
+          <p class="showcase-subtitle">理解過度努力與認可需求的關係，重新安排責任與自我照顧</p>
 
           <div class="showcase-chips">
             <span class="showcase-chip"><span>作者：</span><strong>周慕姿 (諮商心理師)</strong></span>
@@ -1644,13 +1643,13 @@
 
           <div class="editorial-quote-box">
             <p class="editorial-quote-text">
-              習慣過度優先照顧他人，往往源於深層的情感防禦。如實承認自身的精力極限，屬於自我覺察與保護機能成熟的體現。
+              當努力成為換取認可的方式，休息也可能伴隨罪惡感。辨認承擔責任與過度要求的界線，可以協助自己重新安排努力的方向。
             </p>
           </div>
 
           <div class="bujo-companion-reminder">
             <span class="reminder-tag">伴讀心法</span>
-            <span class="reminder-text">覺察身體緊繃，停止反射性道歉</span>
+            <span class="reminder-text">辨認過度承擔，保留休息時間</span>
             <span class="reminder-sub" style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-dim); margin-left: 6px;">[ 琥珀橘白 · 身心鬆弛 // OPT. 01 澄澈眼鏡 ]</span>
           </div>
         </div>
@@ -1659,109 +1658,109 @@
   </header>
 
   <!-- Section 1: Why you need this book -->
-  <section>
+  <section id="pain-points">
     <div class="container">
       <div style="max-width: 75ch; margin: 0 auto;">
         <span class="section-tag">FOR EMPATHETIC SOULS</span>
-        <h2 class="section-title">寫給常在退讓中委屈自己的妳</h2>
+        <h2 class="section-title">寫給持續努力、卻仍然不敢休息的讀者</h2>
         <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 1.5rem;">
-          妳是不是不管完成了多大的成就，心裡永遠有一個苛刻的聲音在鞭策妳：『還不夠，如果妳停下來，妳就會被淘汰、被厭棄』？在職場上習慣退讓、事後又在深夜裡狠狠責備自己無能，這種痛徹心扉的內耗，正是周慕姿心理師筆下的『過度努力』。努力本是生命的恩賜，但當它變成了『如果不努力我就毫無價值』的生存防禦時，它就成了最殘酷的枷鎖。周慕姿用一個個溫柔細膩的諮商故事，輕輕撥開妳心中結痂的傷口，讓妳明白：不必總是咬緊牙關逞強，妳的存在本身，就已經足夠美好。
+          有些人在完成任務後仍難以休息，因為心裡總擔心自己做得不夠。周慕姿在《過度努力》中討論，當努力與獲得認可、避免失望緊密連結時，原本有意義的付出也可能演變成持續的消耗。對於經常照顧他人、忽略自己的人，本書提供重新檢視期待、責任與自我價值的角度。
         </p>
         <p style="font-size: 1.02rem; line-height: 1.9; color: var(--text-muted);">
-          當妳讀這本書時，請不要抱持「我要把自己徹底改造成另一種人」的焦慮。相反地，妳的善良、同理心與細膩感知，是這個世界上最稀缺的天賦。這本書只是為妳的溫柔裝上邊界，讓妳在面對權力與人性的試煉時，多了一件隨時能護住心靈的軟蝟甲。
+          閱讀時可以逐項檢視工作與關係中的承諾：哪些是自己真正重視的事，哪些只是擔心拒絕後遭到責備。先選擇一項能夠調整的工作或家務，重新協商分工，再為休息安排固定時間。調整努力的方向，並不表示放棄責任。
         </p>
       </div>
     </div>
   </section>
 
   <!-- Section 2: Expanded Quotes Vault -->
-  <section class="section-alt">
+  <section class="section-alt" id="quotes">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">WORDS OF STRENGTH</span>
-        <h2 class="section-title">全書精選力量金句庫</h2>
+        <h2 class="section-title">八則編輯閱讀摘記</h2>
         <p class="section-subtitle">
-          在那些感到懷疑、疲憊或想退縮的時刻，點擊複製一句抄進手帳，讓文字成為妳前行時的微光。
+          以下為本站編輯整理的閱讀摘記，並非原書逐字引文。請依對應版本閱讀原著，確認作者原意。
         </p>
       </div>
       <div class="quotes-grid">
         
         <div class="quote-box">
-          <p class="quote-text">每一個過度用力的背後，都藏著一個害怕被拋棄、害怕自己不夠好的委屈未成年時的自己。</p>
+          <p class="quote-text">有時候，拼命把事情做到最好，是因為心裡害怕「不夠好就不值得被愛」。看見這份恐懼，比繼續責備自己不夠努力更有幫助。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-0" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('每一個過度用力的背後，都藏著一個害怕被拋棄、害怕自己不夠好的委屈未成年時的自己。', 'status-q-0')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('有時候，拼命把事情做到最好，是因為心裡害怕「不夠好就不值得被愛」。看見這份恐懼，比繼續責備自己不夠努力更有幫助。', 'status-q-0')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">習慣過度優先照顧他人，往往源於深層的情感防禦，試圖藉由承擔責任來確認自身的安全與存在價值。</p>
+          <p class="quote-text">有時候，我們不停替別人承擔，是害怕讓人失望，或擔心不再被需要。先看見自己的動機，才有機會決定哪些責任真正該由自己扛。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-1" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('習慣過度優先照顧他人，往往源於深層的情感防禦，試圖藉由承擔責任來確認自身的安全與存在價值。', 'status-q-1')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('有時候，我們不停替別人承擔，是害怕讓人失望，或擔心不再被需要。先看見自己的動機，才有機會決定哪些責任真正該由自己扛。', 'status-q-1')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">過去，妳為了別人的期待拼命努力；現在，請妳為了自己的幸福勇敢一次。</p>
+          <p class="quote-text">原書一位當事人逐漸從滿足他人的期待，轉向思考自己的生活選擇。你也可以辨認一件真正重視的事，為它安排可行的第一步。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-2" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('過去，妳為了別人的期待拼命努力；現在，請妳為了自己的幸福勇敢一次。', 'status-q-2')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('原書一位當事人逐漸從滿足他人的期待，轉向思考自己的生活選擇。你也可以辨認一件真正重視的事，為它安排可行的第一步。', 'status-q-2')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">適時停下腳步是維持身心機能的正常生理節奏。自身的生命價值源於存在本身，絕非單純取決於完美的績效交付。</p>
+          <p class="quote-text">休息不必等到所有工作都完成才有資格開始。即使今天沒有達到預期，你的需要也值得被照顧。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-3" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('適時停下腳步是維持身心機能的正常生理節奏。自身的生命價值源於存在本身，絕非單純取決於完美的績效交付。', 'status-q-3')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('休息不必等到所有工作都完成才有資格開始。即使今天沒有達到預期，你的需要也值得被照顧。', 'status-q-3')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">如實承認自身的精力極限，屬於自我覺察與保護機能成熟的體現。</p>
+          <p class="quote-text">知道自己已經很累，並不代表不夠努力。承認目前的負荷、調整承諾，是在認真對待自己的需要。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-4" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('如實承認自身的精力極限，屬於自我覺察與保護機能成熟的體現。', 'status-q-4')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('知道自己已經很累，並不代表不夠努力。承認目前的負荷、調整承諾，是在認真對待自己的需要。', 'status-q-4')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">把手輕輕放在胸口，感受掌心溫暖的起伏，告訴自己：『這段時間妳真的太辛苦了，妳已經做得很好了。』</p>
+          <p class="quote-text">感到自責時，可以想像自己會如何安慰一位努力許久的朋友，再用相同的語氣回應自己。承認已付出的心力，也容許自己需要休息。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-5" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('把手輕輕放在胸口，感受掌心溫暖的起伏，告訴自己：『這段時間妳真的太辛苦了，妳已經做得很好了。』', 'status-q-5')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('感到自責時，可以想像自己會如何安慰一位努力許久的朋友，再用相同的語氣回應自己。承認已付出的心力，也容許自己需要休息。', 'status-q-5')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">放過那個必須樣樣考一百分的自己，人生最溫暖的修行，是學會溫柔地陪伴自己慢慢變好。</p>
+          <p class="quote-text">如果每次做錯一件小事都責備自己，不妨試著把標準放回現實。允許不完美，也是在學習照顧自己。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-6" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('放過那個必須樣樣考一百分的自己，人生最溫暖的修行，是學會溫柔地陪伴自己慢慢變好。', 'status-q-6')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('如果每次做錯一件小事都責備自己，不妨試著把標準放回現實。允許不完美，也是在學習照顧自己。', 'status-q-6')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">不論過去發生過什麼，現在的妳永遠擁有選擇的權利，去過一種不再需要委曲求全的自在人生。</p>
+          <p class="quote-text">過去的經驗可能讓人習慣退讓，但今天可以從一個小選擇開始：說出需要、推遲答覆，或為自己留下休息的時間。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-7" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('不論過去發生過什麼，現在的妳永遠擁有選擇的權利，去過一種不再需要委曲求全的自在人生。', 'status-q-7')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('過去的經驗可能讓人習慣退讓，但今天可以從一個小選擇開始：說出需要、推遲答覆，或為自己留下休息的時間。', 'status-q-7')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
@@ -1771,65 +1770,66 @@
   </section>
 
   <!-- Section 3: In-Situ Scenarios & Playbook -->
-  <section>
+  <section class="book-margin-zone" id="strategies">
+    <img class="book-margin-companion cat-right" src="img/editorial/chosen-01-amber-stretch.png" alt="" aria-hidden="true" width="318" height="199" loading="lazy" decoding="async" style="--cat-y:33%;" />
     <div class="container">
       <div class="section-header">
         <span class="section-tag">REAL-LIFE EMBODIMENT</span>
-        <h2 class="section-title">典型困境現場自處指南</h2>
+        <h2 class="section-title">三種常見情境與回應選擇</h2>
         <p class="section-subtitle">
-          不再只是空洞的大道理。以下對照表拆解了三個妳最常碰到的生活與工作場景，教妳如何在當下從容應對。
+          下列三個情境示範如何辨認互動中的難題，並依本書觀點選擇回應方式。具體做法可以隨人物、關係及環境條件調整。
         </p>
       </div>
       <div style="max-width: 780px; margin: 0 auto;">
         
         <div class="scenario-card">
-          <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> <span>職場：身體已經出現偏頭痛、心悸或慢性胃痛，依然硬撐著通宵加班趕專案</span></h3>
+          <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> <span>職場：持續加班而感到明顯疲憊，仍不敢調整工作安排</span></h3>
           <div class="dialogue-comparison">
             <div class="dialogue-box box-before">
-              <span class="box-label" style="color: #C06C52;">以往的直覺妥協</span>
+              <span class="box-label" style="color: #C06C52;">可能出現的反應</span>
               <p>「如果我不把它改到極致，主管一定會覺得我能力低下，我不能停下來。」</p>
             </div>
             <div class="dialogue-box box-after">
-              <span class="box-label" style="color: var(--accent-sage);">守護邊界的溫柔回覆</span>
-              <p>看見身體發出的求救信號。周慕姿提醒我們：完美主義是恐懼的偽裝。合上筆電，給自己倒一杯溫水：「八十分已經很棒了，我的身體比這份報告重要一萬倍。現在去睡覺，明天世界依然轉動。」</p>
+              <span class="box-label" style="color: var(--accent-sage);">可以嘗試的回應</span>
+              <p>先停止持續加班，評估身體不適和工作安排。這些症狀不應單憑「過度努力」解釋；需要時應尋求適當評估。再與主管確認交付優先順序，為休息和恢復保留時間。</p>
             </div>
           </div>
           <div class="scenario-principle">
-            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 自處核心心法：</strong> 從『表現型人格』轉化為『存在型人格』。接納自己的局限，正是生命成熟的象徵。
+            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 重點與應用：</strong> 檢查努力的方向與實際負荷，將身體需要、工作責任與個人價值分開評估，避免只以成果衡量自己。
           </div>
         </div>
         
         <div class="scenario-card">
-          <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> <span>家庭：包攬所有家務與家人情緒照顧，累到崩潰時卻換來一句冷淡的『又沒人逼妳做』</span></h3>
+          <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> <span>家庭：長期承擔大部分家務與情緒照顧，難以協商分工</span></h3>
           <div class="dialogue-comparison">
             <div class="dialogue-box box-before">
-              <span class="box-label" style="color: #C06C52;">以往的直覺妥協</span>
-              <p>躲進洗手間默默流淚，心想「果然我付出再多也沒人感激」，第二天又繼續默默拖地。</p>
+              <span class="box-label" style="color: #C06C52;">可能出現的反應</span>
+              <p>感到委屈卻沒有說明自己的負荷，之後仍習慣獨自完成大部分家務。</p>
             </div>
             <div class="dialogue-box box-after">
-              <span class="box-label" style="color: var(--accent-sage);">守護邊界的溫柔回覆</span>
-              <p>放下手中的抹布，坐在沙發上給自己切一盤水果。平靜而明確地對家人說：「我感到非常疲憊，這個家庭的運轉需要大家共同承擔。從今天起，晚餐後的清理工作由大家輪流負責。」</p>
+              <span class="box-label" style="color: var(--accent-sage);">可以嘗試的回應</span>
+              <p>可以提出：「最近家務主要由我處理，已經影響休息。我們能否重新分配晚餐後的整理工作，讓每個人承擔可行的部分？」</p>
             </div>
           </div>
           <div class="scenario-principle">
-            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 自處核心心法：</strong> 停止用『過度付出』來乞求被愛。敢於讓家庭出現短暫的混亂，才能重新建立健康的共擔界線。
+            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 重點與應用：</strong> 辨認自己是否因害怕讓人失望而過度承擔。協商分工可能需要時間，可以先從一項具體家務開始。
           </div>
         </div>
         
         <div class="scenario-card">
-          <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> <span>內在：只要週末躺在床上放空，就充滿了無邊的罪惡感與焦慮</span></h3>
+          <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> <span>內在：週末休息時，仍擔心自己應該保持效率</span></h3>
           <div class="dialogue-comparison">
             <div class="dialogue-box box-before">
-              <span class="box-label" style="color: #C06C52;">以往的直覺妥協</span>
-              <p>逼自己爬起來背單字、看專業書、打掃衛生，把週末過得比工作日還緊繃。</p>
+              <span class="box-label" style="color: #C06C52;">可能出現的反應</span>
+              <p>不斷安排學習和家務，因為沒有完成事項就難以安心休息。</p>
             </div>
             <div class="dialogue-box box-after">
-              <span class="box-label" style="color: var(--accent-sage);">守護邊界的溫柔回覆</span>
-              <p>換上最柔軟舒適的睡衣，挑一部溫馨的喜劇電影。在心裡深呼吸告訴自己：「休息屬於自律神經系統修復的必要生理需求。今天充分放鬆充電，正是維持長期身心穩定最明智的投資。大的慈悲。」</p>
+              <span class="box-label" style="color: var(--accent-sage);">可以嘗試的回應</span>
+              <p>可以安排一段沒有績效要求的休息時間，提醒自己：「目前先照顧睡眠與生活需要，其他工作可以再評估優先順序。」</p>
             </div>
           </div>
           <div class="scenario-principle">
-            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 自處核心心法：</strong> 周慕姿自我慈悲法：允許自己有脆弱無為的時刻，在無所事事中體會生命的真實飽滿。
+            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 重點與應用：</strong> 過度努力有時與渴望認可、害怕讓人失望有關。可以辨認自己難以休息的原因，嘗試讓休息不再只是完成工作後的獎賞。
           </div>
         </div>
         
@@ -1838,23 +1838,23 @@
   </section>
 
   <!-- Section 4: Daily Micro Habits -->
-  <section class="section-alt">
+  <section class="section-alt" id="action-plan">
     <div class="container">
       <div style="max-width: 720px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-sm);">
         <span class="section-tag">DAILY PRACTICE</span>
-        <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem;">三條融入生活的實踐微習慣</h2>
+        <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem;">三項可自行調整的日常練習</h2>
         <ul style="list-style: none; padding: 0;">
           
         <li style="margin-bottom: 0.85rem; padding-left: 0.5rem; line-height: 1.8;">
-          『自我慈悲三步心法』：在感到委屈想要苛責自己時，把手放在心口：① 感受當下的難受；② 明白每個人都會受傷，自己並不孤單；③ 對自己說一句溫柔的鼓勵。
+          『自我關懷練習』：感到委屈或自責時，可以記下目前的困難、實際需要，以及一件能讓自己獲得支持的小事。
         </li>
         
         <li style="margin-bottom: 0.85rem; padding-left: 0.5rem; line-height: 1.8;">
-          『及格線哲學』：在非核心事務上，刻意只做到 75 分就提交，體驗「原來天不會塌下來」的鬆弛感。
+          『工作標準盤點』：依任務的實際影響與交付要求分配精力。重要內容維持必要品質，低風險事項則避免反覆打磨已符合標準的細節。
         </li>
         
         <li style="margin-bottom: 0.85rem; padding-left: 0.5rem; line-height: 1.8;">
-          『無所事事日曆』：每週在日曆上劃出連續 3 小時標記為「純粹留白時間」，嚴禁排入任何自我提升的待辦事項。
+          『留白時間安排』：依工作與生活條件預留一段不必追求績效的休息時間，讓放鬆成為可以調整的日常安排。
         </li>
         
         </ul>
@@ -1873,8 +1873,8 @@
         
         <div style="background: var(--bg-card-soft); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.75rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem;">
           <div>
-            <h4 style="font-size: 1.15rem; margin-bottom: 0.35rem; color: var(--text-main); font-family: var(--font-sans);"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-book"></use></svg> 本書電子書資源（正版校訂 EPUB）</h4>
-            <p style="font-size: 0.88rem; color: var(--text-dim); margin: 0;">檔案大小：353 KB (精校完整 EPUB) · 支援 Apple Books、微信讀書、Kobo、Kindle 本地閱讀</p>
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.35rem; color: var(--text-main); font-family: var(--font-sans);"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-book"></use></svg> 本書 EPUB 閱讀檔</h4>
+            <p style="font-size: 0.88rem; color: var(--text-dim); margin: 0;">檔案大小：353 KB (EPUB 閱讀檔) · 支援 Apple Books、微信讀書、Kobo、Kindle 本地閱讀</p>
           </div>
           <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
             <a href="books/過度努力_每個過度都是傷的證明_周慕姿.epub" download class="btn-primary" style="font-size: 0.9rem; padding: 0.65rem 1.4rem;">
@@ -1897,22 +1897,22 @@
       <div class="footer-inner">
         <div>
           <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.35rem;">溫柔生長 · 內在自立讀書誌</h4>
-          <p class="footer-copy">在不對等的關係裡，給善良穿上鎧甲，讓溫柔擁有平靜的底氣。</p>
+          <p class="footer-copy">透過原著閱讀與具體練習，重新理解關係、界線及自己的選擇。</p>
         </div>
         <div style="display: flex; gap: 1rem; align-items: center;">
           <a href="index.html" class="nav-link">回首頁</a>
-          <a href="https://github.com/atonnyshen/inner-power-reading" target="_blank" class="nav-link">GitHub 開源專案</a>
+          <a href="https://github.com/atonnyshen/inner-power-reading" target="_blank" class="nav-link">查看網站原始碼</a>
         </div>
       </div>
       <div style="text-align: center; border-top: 1px solid var(--border-subtle); padding-top: 1.5rem; font-size: 0.82rem; color: var(--text-dim);">
-        遵循 Modern Web Guidance 規範建置 · 支援無障礙閱讀與純客戶端繁簡切換 · 免翻牆高速訪問
+        提供頁內章節導覽、繁簡中文切換與適合不同螢幕的閱讀排版。
       </div>
     </div>
         <p class="copyright-notice" style="font-size: 0.85rem; color: var(--text-dim); margin-top: 14px; line-height: 1.7;">
-        本站內容專注於女性成長、心理學與組織博弈之非營利學術探討與數位共讀推廣，尊重正版知識產權。推薦讀者支持正版紙本書與官方電子書。
+        本站依十本書的主題整理閱讀線索、編輯摘記及情境練習。書中觀點與本站的實踐示例，請依具體處境分別理解。
       </p>
       <p class="takedown-notice" style="font-size: 0.85rem; color: var(--text-dim); margin-top: 8px; line-height: 1.7;">
-        <strong>【權利人優先下架條款 (Notice & Takedown)】</strong>：若版權方或權利人對本站引證或內容有任何異議，請隨時透過聯繫管道通報，我們將於 24 小時內即時核實並立即移除相關內容。聯繫通報窗口：<code>contact@inner-power-reading.pages.dev</code>
+        <strong>【權利人聯繫與內容處理】</strong>：若您是相關著作權利人，對本站文字引述或下載資源有所疑慮，請透過 <a href="https://github.com/atonnyshen/inner-power-reading/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a> 提供具體項目。收到通知後將核對內容與權利狀況，必要時修正或下架。
       </p>
   </footer>
 
@@ -1925,10 +1925,10 @@
   </aside>
 
   <!-- Lightbox Modal -->
-  <div id="lightbox-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="圖片放大檢視" onclick="closeLightboxModal()">
+  <div id="lightbox-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="圖片放大檢視" aria-hidden="true" inert onclick="closeLightboxModal()">
     <div class="modal-box" onclick="event.stopPropagation()">
       <button type="button" class="modal-close" id="modalClose" aria-label="關閉圖片檢視" onclick="closeLightboxModal()">✕</button>
-      <img id="modalImg" src="" alt="放大檢視封面" class="modal-img">
+      <img id="modalImg" alt="放大檢視封面" class="modal-img">
       <p id="modalCaption" class="modal-caption"></p>
     </div>
   </div>
@@ -2011,11 +2011,11 @@
     function scrollToTopNav() {
       isNavigating = true;
       if (topNav) topNav.classList.remove('nav-hidden');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
       setTimeout(() => {
         isNavigating = false;
         accumulatedDelta = 0;
-      }, 850);
+      }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 850);
     }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -2034,54 +2034,82 @@
 
         window.scrollTo({
           top: Math.max(0, targetOffset),
-          behavior: 'smooth'
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
         });
 
         setTimeout(() => {
           const currentGap = targetEl.getBoundingClientRect().top;
           const deviation = currentGap - (navH + 20);
           if (Math.abs(deviation) > 3) {
-            window.scrollBy({ top: deviation, behavior: 'smooth' });
+            window.scrollBy({ top: deviation, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
           }
           isNavigating = false;
           accumulatedDelta = 0;
-        }, 850);
+        }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 850);
       });
     });
 
     const lightboxModal = document.getElementById('lightbox-modal');
     const modalImg = document.getElementById('modalImg');
     const modalCaption = document.getElementById('modalCaption');
+    const modalClose = document.getElementById('modalClose');
+    let lightboxTrigger = null;
+    let lightboxPreviousOverflow = '';
 
-    function openLightboxModal(src, captionText) {
+    function openLightboxModal(src, captionText, trigger) {
       if (!lightboxModal || !modalImg) return;
+      lightboxTrigger = trigger || document.activeElement;
+      lightboxPreviousOverflow = document.body.style.overflow;
       modalImg.src = src;
-      modalCaption.textContent = captionText || '官方圖書封面檢視';
-      lightboxModal.classList.add('active');
+      modalImg.alt = captionText || '書籍封面放大檢視';
+      modalCaption.textContent = captionText || '書籍封面檢視';
+      lightboxModal.inert = false;
+      lightboxModal.setAttribute('aria-hidden', 'false');
       lightboxModal.style.display = 'flex';
+      lightboxModal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      modalClose?.focus({ preventScroll: true });
     }
 
     function closeLightboxModal() {
-      if (!lightboxModal) return;
+      if (!lightboxModal?.classList.contains('active')) return;
       lightboxModal.classList.remove('active');
+      if (lightboxTrigger?.isConnected) lightboxTrigger.focus({ preventScroll: true });
+      lightboxTrigger = null;
+      lightboxModal.inert = true;
+      lightboxModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = lightboxPreviousOverflow;
       setTimeout(() => {
-        lightboxModal.style.display = 'none';
-        if (modalImg) modalImg.src = '';
-      }, 200);
-      document.body.style.overflow = '';
+        if (!lightboxModal.classList.contains('active')) {
+          lightboxModal.style.display = 'none';
+          if (modalImg) modalImg.removeAttribute('src');
+        }
+      }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300);
     }
 
-    document.querySelectorAll('.showcase-cover-img, img').forEach(img => {
+    document.querySelectorAll('.showcase-cover-img').forEach(img => {
       img.style.cursor = 'zoom-in';
-      img.addEventListener('click', function() {
-        openLightboxModal(this.src, this.alt || '圖書插圖');
+      img.setAttribute('role', 'button');
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('aria-label', '放大檢視：' + (img.alt || '書籍封面'));
+      const open = () => openLightboxModal(img.src, img.alt || '書籍封面', img);
+      img.addEventListener('click', open);
+      img.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          open();
+        }
       });
     });
 
     window.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) {
+      if (!lightboxModal?.classList.contains('active')) return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
         closeLightboxModal();
+      } else if (e.key === 'Tab') {
+        e.preventDefault();
+        modalClose?.focus({ preventScroll: true });
       }
     });
 

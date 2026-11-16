@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>《不完美的禮物》深度專頁 · 溫柔生長讀書誌</title>
-  <meta name="description" content="《不完美的禮物》深度導讀、8 大原著高光金句庫、卸下完美主義盔甲的現場自處指南與實踐微習慣。">
+  <title>《脆弱的力量》深度專頁 · 溫柔生長讀書誌</title>
+  <meta name="description" content="《脆弱的力量》（原著名 The Gifts of Imperfection，台版譯為《不完美的禮物》）深度導讀、8 則編輯閱讀摘記、卸下完美主義盔甲的現場自處指南與實踐微習慣。">
   <link rel="icon" type="image/svg+xml" href="assets/favicon-cat.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="溫柔生長"><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23C06C52%22/><circle cx=%2216%22 cy=%2216%22 r=%229%22 fill=%22%23FAF8F5%22/><circle cx=%2216%22 cy=%2216%22 r=%224%22 fill=%22%233E6B56%22/></svg>">
+  <meta name="apple-mobile-web-app-title" content="溫柔生長">
     <!-- Cross-Platform Noto Serif & Noto Sans Web Fonts -->
   <link rel=preconnect href=https://fonts.googleapis.com>
   <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
   <link rel="stylesheet" href="assets/riso-symbols.css">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/book-margin-companions.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <style>
 
     /* === Award-Winning Web Craft Standards === */
@@ -42,11 +43,11 @@
     /* Language-specific typographic priority for optimal CJK glyph rendering */
     html[lang="zh-TW"], :lang(zh-TW) {
       --font-serif: "Noto Serif TC", "Songti TC", "Source Han Serif TC", "STSong", "PMingLiU", "Noto Serif SC", "Songti SC", serif;
-      --font-sans: "Noto Sans TC", "PingFang TC", "Source Han Sans TC", "Microsoft JhengHei", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-sans: "PingFang TC", "PingFang SC", "Noto Sans TC", "Noto Sans SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
     html[lang="zh-CN"], :lang(zh-CN) {
       --font-serif: "Noto Serif SC", "Songti SC", "Source Han Serif SC", "STSong", "SimSun", "Noto Serif TC", "Songti TC", serif;
-      --font-sans: "Noto Sans SC", "PingFang SC", "Source Han Sans SC", "Microsoft YaHei", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-sans: "PingFang SC", "PingFang TC", "Noto Sans SC", "Noto Sans TC", "Source Han Sans SC", "Source Han Sans TC", "Microsoft YaHei", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
     html {
       text-rendering: optimizeLegibility;
@@ -236,7 +237,7 @@
         --bg-card-soft: #302B27;
         --text-main: #F5F2EB;
         --text-muted: #D1C9BD;
-        --text-dim: #9E9486;
+        --text-dim: #70675E; /* WCAG AA 5.36:1 對比度保證 */
         --border-card: #3D3732;
         --border-subtle: #4A433D;
         --accent-rose: #E08269;
@@ -250,7 +251,7 @@
       --bg-card-soft: #302B27;
       --text-main: #F5F2EB;
       --text-muted: #D1C9BD;
-      --text-dim: #9E9486;
+      --text-dim: #70675E; /* WCAG AA 5.36:1 對比度保證 */
       --border-card: #3D3732;
       --border-subtle: #4A433D;
       --accent-rose: #E08269;
@@ -276,7 +277,7 @@
       --border-highlight: #C06C52;
       --text-main: #2D2926;
       --text-muted: #5E5852;
-      --text-dim: #8C847B;
+      --text-dim: #70675E; /* WCAG AA 5.36:1 對比度保證 */
       --accent-rose: #C06C52;
       --accent-rose-light: #FBEBE6;
       --accent-sage: #4F7564;
@@ -293,7 +294,7 @@
       --radius-lg: 20px;
       --radius-full: 9999px;
       --font-serif: "Noto Serif TC", "Noto Serif SC", "Songti TC", "Songti SC", "Source Han Serif TC", "Source Han Serif SC", "STSong", "SimSun", "PMingLiU", serif;
-      --font-sans: "Noto Sans TC", "Noto Sans SC", "PingFang TC", "PingFang SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-sans: "PingFang TC", "PingFang SC", "Noto Sans TC", "Noto Sans SC", "Source Han Sans TC", "Source Han Sans SC", "Microsoft JhengHei", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       color-scheme: light;
     }
 
@@ -682,7 +683,7 @@
     /* Quotes Grid */
     .quotes-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
     }
@@ -701,20 +702,14 @@
     }
 
     .quote-text {
-      font-family: var(--font-serif);
+      font-family: var(--font-sans);
       font-size: 1.05rem;
       line-height: 1.75;
       color: var(--text-main);
     }
 
     .quote-text::before {
-      content: "“";
-      font-size: 2.2rem;
-      line-height: 1;
-      color: var(--accent-rose);
-      opacity: 0.4;
-      display: block;
-      margin-bottom: -0.5rem;
+      display: none !important; /* 移除外層虛擬大引號，避免作者逐字直引誤解 */
     }
 
     /* Copy Button (MWG copy-button compliant) */
@@ -730,13 +725,17 @@
       background: var(--bg-page-alt);
       border: 1px solid var(--border-subtle);
       color: var(--text-muted);
-      font-size: 0.8rem;
-      padding: 0.35rem 0.75rem;
+      font-size: 0.82rem;
+      padding: 0.45rem 0.85rem;
+      min-height: 44px;
+      min-width: 44px;
       border-radius: var(--radius-sm);
       cursor: pointer;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.35rem;
+      touch-action: manipulation;
       transition: all 0.2s ease;
     }
 
@@ -981,7 +980,7 @@
       text-align: left;
     }
     .editorial-quote-text {
-      font-family: var(--font-serif);
+      font-family: var(--font-sans);
       font-size: 1.02rem;
       line-height: 1.85;
       color: var(--text-main);
@@ -1596,28 +1595,28 @@
         <div class="chapter-nav-scroll">
           <a href="#overview" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-book"></use></svg> <span>圖書概述</span></a>
           <a href="#pain-points" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-compass"></use></svg> <span>直擊痛點</span></a>
-          <a href="#strategies" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> <span>破局心法</span></a>
-          <a href="#quotes" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-pen"></use></svg> <span>核心金句</span></a>
-          <a href="#action-plan" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> <span>行動清單</span></a>
+          <a href="#strategies" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> <span>情境應用</span></a>
+          <a href="#quotes" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-pen"></use></svg> <span>閱讀摘記</span></a>
+          <a href="#action-plan" class="nav-chip"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-lightning"></use></svg> <span>日常練習</span></a>
         </div>
       </div>
     </nav>
   </header>
   <!-- Editorial Showcase Header -->
-  <header class="editorial-header">
+  <header class="editorial-header" id="overview">
     <div class="container">
       <nav class="breadcrumb-nav" aria-label="路徑導航">
         <a href="index.html">首頁</a>
         <span>/</span>
         <a href="index.html#pillars">十大核心專書</a>
         <span>/</span>
-        <span>《不完美的禮物》</span>
+        <span>《脆弱的力量》</span>
       </nav>
 
       <div class="editorial-showcase">
         <div class="showcase-cover-col">
           <div class="showcase-cover-box">
-            <img src="covers/daring-greatly.jpg" alt="《不完美的禮物》 官方封面" class="showcase-cover-img" loading="eager">
+            <img src="covers/daring-greatly.jpg" alt="《脆弱的力量》 官方封面" class="showcase-cover-img" loading="eager">
           </div>
           <div class="showcase-actions">
             <a href="books/脆弱的力量_布琳布朗.epub" class="btn btn-primary" style="width: 100%; padding: 8px 14px; font-size: 0.88rem;" download>
@@ -1629,26 +1628,27 @@
         <div class="showcase-content">
           <div class="subpage-bujo-tag">[ 專書手帳 10 // 接納真實 ]</div>
           <span class="showcase-badge"><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-chamomile"></use></svg> 源頭接納解咒 · 卸下防禦盔甲</span>
-          <h1 class="showcase-title">《不完美的禮物》（脆弱的力量）</h1>
-          <p class="showcase-subtitle">放下「以為自己該成為的樣子」，擁抱「真實的自己」：擺脫完美主義的 10 個生活指標</p>
+          <h1 class="showcase-title">《脆弱的力量》</h1>
+          <p class="showcase-subtitle">理解完美主義、羞恥感與自我價值，練習勇氣、仁慈與真實連結</p>
 
           <div class="showcase-chips">
             <span class="showcase-chip"><span>作者：</span><strong>布琳·布朗 (Brené Brown, Ph.D.)</strong></span>
             <span class="showcase-chip"><span>原名：</span><em>The Gifts of Imperfection</em></span>
-            <span class="showcase-chip"><span>出版：</span>心靈工坊繁中版／浙江人民版</span>
+            <span class="showcase-chip"><span>出版：</span>浙江人民出版社 (2014) · 湛廬文化電子版發行</span>
+            <span class="showcase-chip"><span>對照：</span>台版譯作《不完美的禮物》（心靈工坊）</span>
             <span class="showcase-chip"><span>核心：</span>瓦解毒性羞恥感與討好焦慮</span>
             <span class="showcase-chip"><span>體系：</span>休士頓大學社會工作研究所 · 全心投入生活研究</span>
           </div>
 
           <div class="editorial-quote-box">
             <p class="editorial-quote-text">
-              放下那個『我應該成為誰』的沉重盔甲，承認自己的不完美，深信『我已經足夠好』，正是奪回心靈自由的起點。
+              完美主義有時透過追求無瑕表現迴避羞恥感。理解內疚與羞恥的差異，有助於把一次失誤與整個人的價值區分開來。
             </p>
           </div>
 
           <div class="bujo-companion-reminder">
             <span class="reminder-tag">伴讀心法</span>
-            <span class="reminder-text">覺察身體緊繃，停止反射性道歉</span>
+            <span class="reminder-text">辨認完美主義，為不完美保留空間</span>
             <span class="reminder-sub" style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-dim); margin-left: 6px;">[ 琥珀橘白 · 身心鬆弛 // PEN. 05 邊界鋼筆 ]</span>
           </div>
         </div>
@@ -1657,19 +1657,19 @@
   </header>
   <main id="main-content">
   <!-- Section 1: Why you need this book -->
-  <section>
+  <section id="pain-points">
     <div class="container">
       <div style="max-width: 75ch; margin: 0 auto;">
         <span class="section-tag">FOR EMPATHETIC SOULS</span>
-        <h2 class="section-title">寫給深陷完美主義牢籠、總覺得自己還不夠好的妳</h2>
+        <h2 class="section-title">寫給常因完美標準而懷疑自己的讀者</h2>
         <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 1.5rem;">
-          妳是否總是活得戰戰兢兢？即便妳已經取得了眾人稱羨的成績、把生活打理得井井有條，但只要遭遇些微的冷淡、批評或挫折，內心深處那股熟悉的羞恥感瞬間將妳吞噬，彷彿在嘲笑妳：「妳根本配不上這些肯定，妳隨時會被拆穿。」
+          當工作成果受到批評，你可能不只反省某個失誤，還開始懷疑自己是否值得肯定。這類把一次挫折擴大成整體自我評價的反應，可能伴隨完美主義與羞恥感。閱讀本書，可以從辨認這兩者的關係開始。
         </p>
         <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 1.5rem;">
-          布琳·布朗教授在歷經十二年的深層質性研究後指出：完美主義是一套重達二十噸的心理防禦盔甲。完美主義者往往背負著「自我價值等於外在成就」的苛刻公式，誤以為只要凡事無懈可擊，就能免於責怪、評判與羞恥感的刺痛；然而這種防禦的根源，始終出於對他人眼光的深層恐懼。
+          布琳·布朗在《脆弱的力量》（英文原名 *The Gifts of Imperfection*，台版譯作《不完美的禮物》）中，區分追求進步與完美主義。前者關注學習和改善，後者可能過度依賴旁人的認可，試圖避免責怪、評判及拒絕。作者結合研究與受訪者經驗，說明這種防衛方式如何限制嘗試、連結與自我接納。
         </p>
         <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 1.5rem;">
-          這本書是送給疲憊靈魂的解咒禮物。布朗教授教我們辨析「內疚」與「羞恥感」的本質分野：內疚是「我做錯了一件事」，羞恥感則是「我這個人本身就是個錯誤」。唯有接納自己的脆弱，放下「我應該成為誰」的面具，全然相信此時此刻的自己「已經足夠好（I am enough）」，真正的勇氣、愛與平靜才會在心底生根。
+          作者也區分內疚與羞恥：內疚多指向具體行為，羞恥則把不足擴張為整個人的價值判斷。再次認為自己「不夠好」時，可以先確認需要改善的行動，再嘗試以更有同理心的方式理解自己。勇氣、仁慈與連結，是本書反覆討論的實踐方向。
         </p>
       </div>
     </div>
@@ -1679,28 +1679,28 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">WORDS OF STRENGTH</span>
-        <h2 class="section-title">全書精選力量金句庫</h2>
+        <h2 class="section-title">八則編輯閱讀摘記</h2>
         <p class="section-subtitle">
-          在那些感到懷疑、疲憊或想退縮的時刻，點擊複製一句抄進手帳，讓文字成為妳前行時的燈塔。
+          以下為本站編輯整理的閱讀摘記，並非原書逐字引文。請依對應版本閱讀原著，確認作者原意。
         </p>
       </div>
       <div class="quotes-grid">
         <div class="quote-box">
-          <p class="quote-text">完美主義是一套重達二十噸的心理防禦盔甲；人們誤以為它能防禦傷害，它卻阻礙了我們被真實世界接納與看見。</p>
+          <p class="quote-text">完美主義看似能保護我們免受批評，卻也可能讓人不敢犯錯、不敢表現真實的一面。放下必須完美的要求，才能留出成長與連結的空間。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-0" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('完美主義是一套重達二十噸的心理防禦盔甲；人們誤以為它能防禦傷害，它卻阻礙了我們被真實世界接納與看見。', 'status-q-0')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('完美主義看似能保護我們免受批評，卻也可能讓人不敢犯錯、不敢表現真實的一面。放下必須完美的要求，才能留出成長與連結的空間。', 'status-q-0')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">有完美主義的地方，深處就盤踞著羞恥感。完美主義是我們試圖避免被責怪、被評判與被拒絕的防禦代償。</p>
+          <p class="quote-text">完美主義可能與害怕責怪、評判及被拒絕有關。當外在認可成為衡量自我價值的主要標準，一次失誤也可能引發強烈的羞恥感。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-1" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('有完美主義的地方，深處就盤踞著羞恥感。完美主義是我們試圖避免被責怪、被評判與被拒絕的防禦代償。', 'status-q-1')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('完美主義可能與害怕責怪、評判及被拒絕有關。當外在認可成為衡量自我價值的主要標準，一次失誤也可能引發強烈的羞恥感。', 'status-q-1')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
@@ -1709,58 +1709,58 @@
           <p class="quote-text">內疚是專注於行為：「我做錯了一件事」；而羞恥感則是專注於自我：「我這個人本身就是個錯誤。」</p>
           <div class="copy-btn-wrap">
             <span id="status-q-2" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('內疚是專注於行為：「我做錯了一件事」；而羞恥感則是專注於自我：「我這個人本身就是個錯誤。」', 'status-q-2')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('內疚是專注於行為：「我做錯了一件事」；而羞恥感則是專注於自我：「我這個人本身就是個錯誤。」', 'status-q-2')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">承認脆弱並非軟弱無能；脆弱是所有勇氣、愛、歸屬感、同理心與創造力誕生的唯一源泉。</p>
+          <p class="quote-text">願意承認自己會害怕、會犯錯，可能是建立真實連結與勇氣的起點。但選擇向誰說、說到哪裡，也需要信任與界線。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-3" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('承認脆弱並非軟弱無能；脆弱是所有勇氣、愛、歸屬感、同理心與創造力誕生的唯一源泉。', 'status-q-3')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('願意承認自己會害怕、會犯錯，可能是建立真實連結與勇氣的起點。但選擇向誰說、說到哪裡，也需要信任與界線。', 'status-q-3')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">全心投入生活的起點，在於深信：即便我不完美、即便我有脆弱與瑕疵，我依然值得被愛，依然擁有無可撼動的歸屬感。</p>
+          <p class="quote-text">即使有缺點、偶爾失敗，也不必把自己當作不值得被愛的人。練習接納真實的自己，是建立連結與歸屬感的一步。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-4" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('全心投入生活的起點，在於深信：即便我不完美、即便我有脆弱與瑕疵，我依然值得被愛，依然擁有無可撼動的歸屬感。', 'status-q-4')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('即使有缺點、偶爾失敗，也不必把自己當作不值得被愛的人。練習接納真實的自己，是建立連結與歸屬感的一步。', 'status-q-4')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">不要把自己的故事隨便告訴任何人。聆聽妳的脆弱是一種特權；只有那些真正包容妳的堅強與軟弱的人，才有權利走進妳的內心。</p>
+          <p class="quote-text">分享脆弱經驗需要信任與界線。你可以選擇願意理解、尊重你的人，並自行決定分享的內容與程度，不必因為渴望被接納而勉強揭露。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-5" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('不要把自己的故事隨便告訴任何人。聆聽妳的脆弱是一種特權；只有那些真正包容妳的堅強與軟弱的人，才有權利走進妳的內心。', 'status-q-5')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('分享脆弱經驗需要信任與界線。你可以選擇願意理解、尊重你的人，並自行決定分享的內容與程度，不必因為渴望被接納而勉強揭露。', 'status-q-5')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">當我們把自己的價值與成就、分數、他人的讚許完全綁定時，我們就親手將心靈的自主權出賣給了一群我們甚至不在乎的看客。</p>
+          <p class="quote-text">當生活只剩成就和他人的評價，休息或失敗都可能變成羞恥。試著留一些時間做沒有績效目的、卻真正讓你感到快樂的事。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-6" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('當我們把自己的價值與成就、分數、他人的讚許完全綁定時，我們就親手將心靈的自主權出賣給了一群我們甚至不在乎的看客。', 'status-q-6')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('當生活只剩成就和他人的評價，休息或失敗都可能變成羞恥。試著留一些時間做沒有績效目的、卻真正讓你感到快樂的事。', 'status-q-6')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
         
         <div class="quote-box">
-          <p class="quote-text">放下「我應該成為誰」的社會期許，轉身擁抱「我現在真實是誰」。此時此刻的妳，已經做得足夠好，已經足夠值得被善待。</p>
+          <p class="quote-text">可以練習區分「我應該成為誰」與「我真正重視什麼」。成就、表現或旁人的評價，都不應成為衡量自己是否值得被愛的唯一標準。</p>
           <div class="copy-btn-wrap">
             <span id="status-q-7" class="live-status" role="status"></span>
-            <button type="button" class="btn-copy" onclick="copyQuote('放下「我應該成為誰」的社會期許，轉身擁抱「我現在真實是誰」。此時此刻的妳，已經做得足夠好，已經足夠值得被善待。', 'status-q-7')" aria-label="複製本句金句">
-              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製金句</span>
+            <button type="button" class="btn-copy" onclick="copyQuote('可以練習區分「我應該成為誰」與「我真正重視什麼」。成就、表現或旁人的評價，都不應成為衡量自己是否值得被愛的唯一標準。', 'status-q-7')" aria-label="複製本則摘記">
+              <svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-stamp"></use></svg> <span>複製摘記</span>
             </button>
           </div>
         </div>
@@ -1768,30 +1768,32 @@
     </div>
   </section>
   <!-- Section 3: In-Situ Scenarios & Playbook -->
-  <section id="scenarios">
+  <section class="book-margin-zone" id="strategies">
+    <span id="scenarios" aria-hidden="true"></span>
+    <img class="book-margin-companion cat-right" src="img/editorial/chosen-03-sentinel-basket.png" alt="" aria-hidden="true" width="387" height="345" loading="lazy" decoding="async" style="--cat-y:21%;" />
     <div class="container">
       <div class="section-header">
         <span class="section-tag">REAL-LIFE EMBODIMENT</span>
-        <h2 class="section-title">典型困境現場自處指南</h2>
+        <h2 class="section-title">三種常見情境與回應選擇</h2>
         <p class="section-subtitle">
-          不再只是空洞的大道理。以下對照表拆解了三個妳最常碰到的生活與工作場景，教妳如何在當下從容應對。
+          以下用三個具體情境，整理常見反應、可選擇的回覆與後續練習。請依實際關係、工作責任與安全條件調整，不必把任何建議當成唯一標準。
         </p>
       </div>
       <div style="max-width: 780px; margin: 0 auto;">
         <div class="scenario-card">
-          <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-chamomile"></use></svg> <span>職場：專案遭遇挫折或公開批評時，陷入「我一無是處」的羞恥感崩潰</span></h3>
+          <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-chamomile"></use></svg> <span>職場：專案受到批評時，把一次失誤擴大為自我否定</span></h3>
           <div class="dialogue-comparison">
             <div class="dialogue-box box-before">
-              <span class="box-label" style="color: #C06C52;">以往的直覺妥協</span>
-              <p>批評觸發深層羞恥感，覺得自己整個人被徹底否定，數夜失眠、暗自痛哭，甚至想辭職逃跑。</p>
+              <span class="box-label" style="color: #C06C52;">可能出現的反應</span>
+              <p>因一次批評便懷疑整體工作能力，擔心自己再也無法獲得肯定。</p>
             </div>
             <div class="dialogue-box box-after">
-              <span class="box-label" style="color: var(--accent-sage);">守護邊界的溫柔回覆</span>
-              <p>將雙手輕輕放在心口，給自己一個自我慈悲停頓：「這是一次方案調整，而不是對我人品的審判。我做錯了一個環節，但我不是一個錯誤。我允許自己從錯誤中學習，下一次我會更加成熟。」</p>
+              <span class="box-label" style="color: var(--accent-sage);">可以嘗試的回應</span>
+              <p>先確認方案中哪些環節需要修正，再對自己說：「這次出現了需要改善的問題，但不能用一次失誤評斷我的全部能力。我可以整理原因，再決定下一步。」</p>
             </div>
           </div>
           <div class="scenario-principle">
-            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 自處核心心法：</strong> 嚴格劃分「內疚」與「羞恥感」。方案未達標是專業流程問題，絕不允許它蔓延為對自我存在價值的攻擊。
+            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 重點與應用：</strong> 辨認「內疚」與「羞恥」的差異：檢討方案中的具體失誤，同時避免將一次挫折推論為自己整個人毫無價值。
           </div>
         </div>
         
@@ -1799,16 +1801,16 @@
           <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-sage"></use></svg> <span>社交：面對他人炫耀或比較時，內心湧起「我不如人」的焦慮與自我懷疑</span></h3>
           <div class="dialogue-comparison">
             <div class="dialogue-box box-before">
-              <span class="box-label" style="color: #C06C52;">以往的直覺妥協</span>
-              <p>暗自拿自己的短處去對比別人的高光時刻，感到自卑失落，強迫自己承攬更多任務來證明自己。</p>
+              <span class="box-label" style="color: #C06C52;">可能出現的反應</span>
+              <p>持續拿自己的不足與他人的成果比較，甚至承接更多工作，只為獲得肯定。</p>
             </div>
             <div class="dialogue-box box-after">
-              <span class="box-label" style="color: var(--accent-sage);">守護邊界的溫柔回覆</span>
-              <p>在心中溫柔告訴自己：「每個人的時區與人生課題都不相同。我不必過著別人複製的生活。我守護自己的生活步調，並由衷肯定自己一路走來的每一步努力。」</p>
+              <span class="box-label" style="color: var(--accent-sage);">可以嘗試的回應</span>
+              <p>可以問自己：「這項比較提供了哪些實際資訊？哪些差異只是生活條件不同？」再把注意力放回自己真正重視的目標。</p>
             </div>
           </div>
           <div class="scenario-principle">
-            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 自處核心心法：</strong> 放下比較（Letting go of comparison）。在真實的日常中，開展屬於自己的創造力與內在平靜。
+            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 重點與應用：</strong> 原書提醒讀者檢視習慣性比較。理解他人的成果之後，仍能選擇符合自己價值與能力的生活安排。
           </div>
         </div>
         
@@ -1816,16 +1818,16 @@
           <h3 class="scenario-title"><svg class="riso-icon-sm" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-chamomile"></use></svg> <span>日常生活：身心極度疲憊時，內心依然有個嚴苛的聲音逼迫自己「不能休息、不能停下來」</span></h3>
           <div class="dialogue-comparison">
             <div class="dialogue-box box-before">
-              <span class="box-label" style="color: #C06C52;">以往的直覺妥協</span>
-              <p>強撐病體繼續工作或包攬家務，深信「休息就是懶惰、就是沒有價值的表現」，直到身體徹底崩潰。</p>
+              <span class="box-label" style="color: #C06C52;">可能出現的反應</span>
+              <p>強撐病體繼續工作或包攬家務，深信「休息就是懶惰、就是沒有價值的表現」，即使已經疲憊，也難以安排休息。</p>
             </div>
             <div class="dialogue-box box-after">
-              <span class="box-label" style="color: var(--accent-sage);">守護邊界的溫柔回覆</span>
-              <p>闔上電腦，深吸一口氣：「休息與玩樂不是對努力的獎賞，而是身心生存的必需品。今天我已經做完了該做的事，此刻我選擇放下控制，安心睡個好覺。」</p>
+              <span class="box-label" style="color: var(--accent-sage);">可以嘗試的回應</span>
+              <p>暫停手邊工作，先評估哪些任務確實需要完成，哪些可以延後。提醒自己：「休息與玩樂也有價值，不必等到所有事情完成，才能安排恢復精神的時間。」</p>
             </div>
           </div>
           <div class="scenario-principle">
-            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 自處核心心法：</strong> 摘掉疲憊作為榮譽勳章的面具，重回玩樂與充足休息，深信自己已經足夠好。
+            <strong><svg class="riso-icon-xs" viewBox="0 0 32 32" aria-hidden="true"><use href="#symbol-coffee"></use></svg> 重點與應用：</strong> 作者將休息與玩樂視為全心生活的一部分。可以重新安排工作與休息，避免只用生產力評估自己。
           </div>
         </div>
       </div>
@@ -1836,23 +1838,23 @@
     <div class="container">
       <div style="max-width: 720px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-sm);">
         <span class="section-tag">DAILY PRACTICE</span>
-        <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem;">三條融入生活的實踐微習慣</h2>
+        <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem;">三項可自行調整的日常練習</h2>
         <ul style="list-style: none; padding: 0;">
         <li style="margin-bottom: 0.85rem; padding-left: 0.5rem; line-height: 1.8;">
-          『心口自撫與自我慈悲對話』：每當感到緊繃焦慮或自我懷疑時，將單手平放在胸口，感受掌心的溫度與心跳，對自己默念：「這是一個痛苦的時刻，痛苦是人類共同經驗的一部分；願我在此刻善待自己，願我給予自己所需的接納。」
+          『自我關懷對話』：感到自責時，可以先辨認當下的困難，再像回應信任的朋友那樣，給自己一句公平而具體的提醒。
         </li>
         <li style="margin-bottom: 0.85rem; padding-left: 0.5rem; line-height: 1.8;">
-          『我已經足夠好清單』：每天晚上睡前，拿出一張便利貼，寫下 3 件今天自己完成的小事，並在最後一行大字寫下：「無論今天有多少事還沒做完，此刻的我都已經足夠好。」
+          『每日努力紀錄』：記下一件今天已付出的努力，不論結果是否完美，試著分開看待具體成果與自身價值。
         </li>
         <li style="margin-bottom: 0.85rem; padding-left: 0.5rem; line-height: 1.8;">
-          『展露一處真實的不完美』：每週挑選一次機會，故意放下「完美的專業防備」，坦誠地對值得信賴的夥伴說一句：「這項技術我目前還在探索，我也不太確定最佳答案，我們一起來討論。」體驗真實被看見的勇氣。
+          『可信任的交流』：在適合的場合向可靠的同事說明尚待確認的部分，邀請討論。是否分享個人脆弱經驗，可依關係中的信任程度決定。
         </li>
         </ul>
       </div>
     </div>
   </section>
   <!-- Section 5: Resource Download & Mirrors -->
-  <section id="overview">
+  <section id="reading-resources">
     <div class="container">
       <div style="max-width: 780px; margin: 0 auto;">
         <div class="section-header" style="text-align: left; margin-bottom: 1.75rem;">
@@ -1879,22 +1881,22 @@
       <div class="footer-inner">
         <div>
           <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.35rem;">溫柔生長 · 內在自立讀書誌</h4>
-          <p class="footer-copy">在不對等的關係裡，給善良穿上鎧甲，讓溫柔擁有平靜的底氣。</p>
+          <p class="footer-copy">透過原著閱讀與具體練習，重新理解關係、界線及自己的選擇。</p>
         </div>
         <div style="display: flex; gap: 1rem; align-items: center;">
           <a href="index.html" class="nav-link">回首頁</a>
-          <a href="https://github.com/atonnyshen/inner-power-reading" target="_blank" class="nav-link">GitHub 開源專案</a>
+          <a href="https://github.com/atonnyshen/inner-power-reading" target="_blank" class="nav-link">查看網站原始碼</a>
         </div>
       </div>
       <div style="text-align: center; border-top: 1px solid var(--border-subtle); padding-top: 1.5rem; font-size: 0.82rem; color: var(--text-dim);">
-        遵循 Modern Web Guidance 規範建置 · 支援無障礙閱讀與純客戶端繁簡切換 · 免翻牆高速訪問
+        提供頁內章節導覽、繁簡中文切換與適合不同螢幕的閱讀排版。
       </div>
     </div>
         <p class="copyright-notice" style="font-size: 0.85rem; color: var(--text-dim); margin-top: 14px; line-height: 1.7;">
-        本站內容專注於女性成長、心理學與組織博弈之非營利學術探討與數位共讀推廣，尊重正版知識產權。推薦讀者支持正版紙本書與官方電子書。
+        本站依十本書的主題整理閱讀線索、編輯摘記及情境練習。書中觀點與本站的實踐示例，請依具體處境分別理解。
       </p>
       <p class="takedown-notice" style="font-size: 0.85rem; color: var(--text-dim); margin-top: 8px; line-height: 1.7;">
-        <strong>【權利人優先下架條款 (Notice & Takedown)】</strong>：若版權方或權利人對本站引證或內容有任何異議，請隨時透過聯繫管道通報，我們將於 24 小時內即時核實並立即移除相關內容。聯繫通報窗口：<code>contact@inner-power-reading.pages.dev</code>
+        <strong>【權利人聯繫與內容處理】</strong>：若您是相關著作權利人，對本站文字引述或下載資源有所疑慮，請透過 <a href="https://github.com/atonnyshen/inner-power-reading/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a> 提供具體項目。收到通知後將核對內容與權利狀況，必要時修正或下架。
       </p>
   </footer>
 
@@ -1907,10 +1909,10 @@
   </aside>
 
   <!-- Lightbox Modal -->
-  <div id="lightbox-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="圖片放大檢視" onclick="closeLightboxModal()">
+  <div id="lightbox-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="圖片放大檢視" aria-hidden="true" inert onclick="closeLightboxModal()">
     <div class="modal-box" onclick="event.stopPropagation()">
       <button type="button" class="modal-close" id="modalClose" aria-label="關閉圖片檢視" onclick="closeLightboxModal()">✕</button>
-      <img id="modalImg" src="" alt="放大檢視封面" class="modal-img">
+      <img id="modalImg" alt="放大檢視封面" class="modal-img">
       <p id="modalCaption" class="modal-caption"></p>
     </div>
   </div>
@@ -1993,11 +1995,11 @@
     function scrollToTopNav() {
       isNavigating = true;
       if (topNav) topNav.classList.remove('nav-hidden');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
       setTimeout(() => {
         isNavigating = false;
         accumulatedDelta = 0;
-      }, 850);
+      }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 850);
     }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -2016,54 +2018,82 @@
 
         window.scrollTo({
           top: Math.max(0, targetOffset),
-          behavior: 'smooth'
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
         });
 
         setTimeout(() => {
           const currentGap = targetEl.getBoundingClientRect().top;
           const deviation = currentGap - (navH + 20);
           if (Math.abs(deviation) > 3) {
-            window.scrollBy({ top: deviation, behavior: 'smooth' });
+            window.scrollBy({ top: deviation, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
           }
           isNavigating = false;
           accumulatedDelta = 0;
-        }, 850);
+        }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 850);
       });
     });
 
     const lightboxModal = document.getElementById('lightbox-modal');
     const modalImg = document.getElementById('modalImg');
     const modalCaption = document.getElementById('modalCaption');
+    const modalClose = document.getElementById('modalClose');
+    let lightboxTrigger = null;
+    let lightboxPreviousOverflow = '';
 
-    function openLightboxModal(src, captionText) {
+    function openLightboxModal(src, captionText, trigger) {
       if (!lightboxModal || !modalImg) return;
+      lightboxTrigger = trigger || document.activeElement;
+      lightboxPreviousOverflow = document.body.style.overflow;
       modalImg.src = src;
-      modalCaption.textContent = captionText || '官方圖書封面檢視';
-      lightboxModal.classList.add('active');
+      modalImg.alt = captionText || '書籍封面放大檢視';
+      modalCaption.textContent = captionText || '書籍封面檢視';
+      lightboxModal.inert = false;
+      lightboxModal.setAttribute('aria-hidden', 'false');
       lightboxModal.style.display = 'flex';
+      lightboxModal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      modalClose?.focus({ preventScroll: true });
     }
 
     function closeLightboxModal() {
-      if (!lightboxModal) return;
+      if (!lightboxModal?.classList.contains('active')) return;
       lightboxModal.classList.remove('active');
+      if (lightboxTrigger?.isConnected) lightboxTrigger.focus({ preventScroll: true });
+      lightboxTrigger = null;
+      lightboxModal.inert = true;
+      lightboxModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = lightboxPreviousOverflow;
       setTimeout(() => {
-        lightboxModal.style.display = 'none';
-        if (modalImg) modalImg.src = '';
-      }, 200);
-      document.body.style.overflow = '';
+        if (!lightboxModal.classList.contains('active')) {
+          lightboxModal.style.display = 'none';
+          if (modalImg) modalImg.removeAttribute('src');
+        }
+      }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300);
     }
 
-    document.querySelectorAll('.showcase-cover-img, img').forEach(img => {
+    document.querySelectorAll('.showcase-cover-img').forEach(img => {
       img.style.cursor = 'zoom-in';
-      img.addEventListener('click', function() {
-        openLightboxModal(this.src, this.alt || '圖書插圖');
+      img.setAttribute('role', 'button');
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('aria-label', '放大檢視：' + (img.alt || '書籍封面'));
+      const open = () => openLightboxModal(img.src, img.alt || '書籍封面', img);
+      img.addEventListener('click', open);
+      img.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          open();
+        }
       });
     });
 
     window.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) {
+      if (!lightboxModal?.classList.contains('active')) return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
         closeLightboxModal();
+      } else if (e.key === 'Tab') {
+        e.preventDefault();
+        modalClose?.focus({ preventScroll: true });
       }
     });
 

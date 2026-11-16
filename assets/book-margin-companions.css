@@ -1,0 +1,76 @@
+/* Book-specific companions: stable, non-interactive illustrations in wide gutters.
+   Respect reading flow: no overlay on text, no mobile/print distraction, no layout shift. */
+.book-margin-zone {
+  position: relative;
+}
+.book-margin-companion {
+  display: none;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+@media (min-width: 1420px) {
+  .book-margin-companion {
+    display: block;
+    position: absolute;
+    top: var(--cat-y, 28%);
+    width: 128px;
+    height: auto;
+    max-height: 174px;
+    object-fit: contain;
+    opacity: .94;
+    filter: drop-shadow(0 6px 12px rgba(45, 41, 38, .08));
+    z-index: 0;
+  }
+  .book-margin-companion.cat-left {
+    left: max(8px, calc(50% - 720px));
+    transform: rotate(-5deg);
+  }
+  .book-margin-companion.cat-right {
+    right: max(8px, calc(50% - 720px));
+    transform: rotate(5deg);
+  }
+  .book-margin-companion.cat-frame {
+    width: 116px;
+    border: 5px solid #fffdfa;
+    border-radius: 8px;
+    box-shadow: 0 5px 16px rgba(45, 41, 38, .12);
+    filter: none;
+    transform: rotate(var(--cat-rotation, 4deg));
+  }
+}
+/* The ten book pages use the same cover-lightbox interaction contract. */
+.modal-close {
+  min-width: 44px;
+  min-height: 44px;
+}
+.showcase-cover-img[role="button"]:focus-visible {
+  outline: 3px solid var(--accent-rose);
+  outline-offset: 5px;
+}
+/* Shared phone typography for all ten book pages: long reading copy stays left-aligned. */
+@media (max-width: 768px) {
+  .section-header {
+    text-align: left !important;
+  }
+  .section-header .section-title {
+    text-align: left;
+    text-wrap: balance;
+  }
+  .section-header .section-subtitle,
+  .hero-section .hero-desc {
+    max-width: 36rem;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.75;
+    text-wrap: pretty;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+}
+@media print {
+  .book-margin-companion { display: none !important; }
+}
