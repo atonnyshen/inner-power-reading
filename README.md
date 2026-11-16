@@ -16,9 +16,9 @@
 
 ---
 
-## 📚 十本核心專書與收錄版本（EPUB 版權頁 SSOT）
+## 📚 十本核心專書與收錄版本（以實際 EPUB 為起點）
 
-全站書目嚴格以實際收錄之 EPUB 版權頁為唯一事實來源（SSOT），繁體中文網頁遵循字形轉寫但忠實保留收錄版本之譯者、出版社與出版年份：
+全站書目以實際收錄 EPUB 的版權頁為優先來源，必要時交叉核對封面、ISBN、OPF 與出版社資訊；不能把 EPUB 檔案建立日期當成正式出版年份。繁體中文網頁保留收錄版本的作者、譯者、出版社及出版年份，僅轉寫書名的簡繁字形：
 
 | 主書名 | 英文原名／對照資訊 | 核心主題 | 獨立專頁 |
 |---|---|---|---|
@@ -86,6 +86,6 @@
 * **章節抽屜導航對稱性**：
   全站 11 個導航項目皆配置對應語義圖示（如 `💬 現場溝通練習`）。
 * **安全標頭與雲端部署**：
-  專案根目錄備有 `_headers`，透過 `cloudflare-deploy-ops/scripts/deploy.py` 直傳 Cloudflare Pages 邊緣節點，嚴格套用 CSP、HSTS、noindex 爬蟲防護等安全標頭。
+  專案根目錄備有 `_headers`，透過 `cloudflare-deploy-ops/scripts/deploy.py` 直傳 Cloudflare Pages 邊緣節點。現有標頭包含 CSP、`X-Content-Type-Options`、`Referrer-Policy` 及 `X-Robots-Tag`；`noindex` 影響搜尋索引，不代表私密存取控制。
 
-詳細架構歷程與治理規範請參閱 [PROJECT_GOVERNANCE.md](PROJECT_GOVERNANCE.md)。
+後續需要核對實際內容、使用者裁決或既往缺陷時，請先看 [PROJECT_CASEBOOK.md](PROJECT_CASEBOOK.md) 的快速索引、歷史版本與收據範圍；正式治理規範見 [PROJECT_GOVERNANCE.md](PROJECT_GOVERNANCE.md)。
