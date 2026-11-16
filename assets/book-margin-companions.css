@@ -70,6 +70,38 @@
     word-break: normal;
     overflow-wrap: break-word;
   }
+  /* Keep short bibliographic labels intact while long titles wrap naturally. */
+  .showcase-chip {
+    flex-wrap: wrap;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .showcase-chip > span:first-child {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .showcase-chip > strong,
+  .showcase-chip > em {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  /* The reading tip is prose, not a compressed multi-column label. */
+  .bujo-companion-reminder {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    align-items: baseline;
+    gap: 5px 10px;
+  }
+  .bujo-companion-reminder .reminder-tag {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .bujo-companion-reminder .reminder-text {
+    flex: 1 1 12ch;
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
 }
 @media print {
   .book-margin-companion { display: none !important; }
