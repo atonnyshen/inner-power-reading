@@ -76,8 +76,8 @@
 
 ### 支柱四：前端工程與防禦性 CSS 架構
 
-1. **雙首頁同位元對齊鐵律**：
-   * `index.html` 與 `preview-bullet-journal-main.html` 在任何修改後，必須執行 SHA256 校驗，保證 100% 同位元完全一致。
+1. **單一首頁／歷史鏡像退役**：
+   * 正式首頁僅維護 `index.html`；已移除舊預覽鏡像。部署包包含 `404.html`，失效路徑不得由 SPA 首頁回退冒充 HTTP 200。
 2. **手機端窄螢幕（320px/375px）掉字防護**：
    在 `assets/book-margin-companions.css` 中注入：
    ```css
@@ -112,8 +112,8 @@
 
 ```
 inner-power-reading/
-├── index.html                           # 正式首頁 (與 preview-bullet-journal-main.html 同位元一致)
-├── preview-bullet-journal-main.html     # 預覽首頁 (同位元 SHA256 鏡像)
+├── index.html                           # 唯一正式首頁
+├── 404.html                             # 未知與已退役路徑的 HTTP 404 頁
 ├── PROJECT_CASEBOOK.md                  # ChatGPT 裁決、實證失誤、收據索引與 Hallmark 對照
 ├── book-power.html                      # 專書頁 01：《懂權力，在每個角色上發光》
 ├── book-rules-of-power.html             # 專書頁 02：《精進權力》
@@ -151,7 +151,7 @@ inner-power-reading/
 
 * [x] **Gate 1: 書目一致性** — 十本主書名稱與版本資訊符合 EPUB 版權頁，第十本標題為《脆弱的力量》。
 * [x] **Gate 2: 核心內容保護** — 90 則摘記與 30 組情境正文未被更動。
-* [x] **Gate 3: 雙首頁同位元校驗** — `cmp index.html preview-bullet-journal-main.html` 輸出 0。
+* [x] **Gate 3（歷史）: 雙首頁同位元校驗** — 當時 `cmp` 輸出 0；此 Gate 已隨預覽鏡像退役。現行以 `index.html` 唯一入口、`404.html` 的實際 HTTP 404 驗收取代。
 * [x] **Gate 4: 文字衛生檢驗** — 無生硬免責語、無「不保證」等防禦性字眼、無內部設計代碼。
 * [x] **Gate 5: 閱讀器生態連結** — Readify AI 官方連結指向 `https://readifyai.com/zh`，支援閱讀器完整列出。
 * [x] **Gate 6: HTML 結構平衡** — 所有 `main`、`section`、`footer`、`article` 標籤 100% 閉合。

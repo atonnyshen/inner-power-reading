@@ -2105,28 +2105,6 @@
   </script>
   <script src="js/chinese-convert.js"></script>
 
-  <!-- Smart Bullet Journal Preview Navigation -->
-  <script>
-    (function() {
-      try {
-        var isBujo = (document.referrer && document.referrer.indexOf("preview-bullet-journal-main.html") !== -1) ||
-                     (window.location.search && window.location.search.indexOf("preview=bujo") !== -1) ||
-                     (sessionStorage.getItem("reading_preview") === "bujo");
-        if (isBujo) {
-          document.querySelectorAll('a[href="index.html"]').forEach(function(a) {
-            a.href = "preview-bullet-journal-main.html";
-          });
-          document.querySelectorAll('a[href^="index.html#"]').forEach(function(a) {
-            a.href = a.href.replace("index.html#", "preview-bullet-journal-main.html#");
-          });
-          var backLink = document.querySelector(".nav-menu .nav-link");
-          if (backLink && backLink.textContent.indexOf("回首頁") !== -1) {
-            backLink.textContent = "← 回手帳讀書誌";
-          }
-        }
-      } catch(e) {}
-    })();
-  </script>
 
 </body>
 </html>

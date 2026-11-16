@@ -115,7 +115,7 @@ ChatGPT 接手後在本對話完成過一輪本地 **12 頁×6視口=72／72**�
 
 ## 6. 現行架構、開放問題與工作權限
 
-- 網站入口：`index.html`、`preview-bullet-journal-main.html`；十本 `book-*.html`；共用手機 CSS `assets/book-margin-companions.css`；繁簡切換 `js/chinese-convert.js`；書籍 `books/*.epub`；封面 `covers/`；圖像 `img/`。
+- 網站入口：唯一首頁 `index.html`、十本 `book-*.html`、失效路由 `404.html`；共用手機 CSS `assets/book-margin-companions.css`；繁簡切換 `js/chinese-convert.js`；書籍 `books/*.epub`；封面 `covers/`；圖像 `img/`。原首頁鏡像已退役。
 - 正式站：`https://inner-power-reading.pages.dev`；Cloudflare 安全／快取行為以現行 `_headers`、`robots.txt` 為準。若要搜尋引擎收錄，需另決定是否保留當前 `noindex`，不能默認網站公開即可被索引。
 - Readify AI 官方 `https://readifyai.com/zh` 可作**一般 HTTPS 導流**。Universal Links 需要 App 與網站完成 associated domains/AASA、系統／瀏覽器符合條件；未真機證實就標 `NOT_VERIFIED`。匯入 EPUB 是否出現 Share Sheet 指定項也需按真實 App 版本與平台實測。
 - EPUB 的技術完整性、產品下載功能與**公開散布／封面使用權**必須分別認列；後者目前無可用的獨立確認憑證。使用者先前要求保留下載，任何後續改動必須尊重這項產品裁決。

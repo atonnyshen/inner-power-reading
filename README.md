@@ -9,10 +9,8 @@
 ## 🌐 閱讀入口與線上部署
 
 * **正式生產網站**：[https://inner-power-reading.pages.dev](https://inner-power-reading.pages.dev)
-* **預覽鏡像頁面**：[https://inner-power-reading.pages.dev/preview-bullet-journal-main](https://inner-power-reading.pages.dev/preview-bullet-journal-main)
 * **GitHub 倉庫**：[atonnyshen/inner-power-reading](https://github.com/atonnyshen/inner-power-reading)
 * **本機首頁**：[index.html](index.html)
-* **本機預覽**：[preview-bullet-journal-main.html](preview-bullet-journal-main.html)
 
 ---
 
@@ -77,8 +75,8 @@
 
 ## 🛠️ 工程架構與維護規範
 
-* **雙首頁同位元對齊鐵律**：
-  `index.html` 與 `preview-bullet-journal-main.html` 必須始終保持 SHA256 100% 同位元一致。所有首頁修改必須同步更新兩檔。
+* **單一正式首頁與失效路由**：
+  僅維護 `index.html`；已退役預覽鏡像。部署包含 `404.html`，確保不存在的舊網址回傳 HTTP 404，而非誤顯示正式首頁。
 * **行動端文字排版防護**：
   `assets/book-margin-companions.css` 中注入 `.showcase-chip > span:first-child` 與 `.bujo-companion-reminder .reminder-tag` 之 `flex: 0 0 auto; white-space: nowrap;`，防止在 320px/375px 小螢幕下標籤（如「作者：」、「出版：」）被拆字垂直折行。
 * **頁尾版面約束**：
