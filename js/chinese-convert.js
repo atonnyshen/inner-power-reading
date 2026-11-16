@@ -2,6 +2,16 @@
 // Dual-Layer Engine: Phrase Normalization + Full OpenCC Character Mapping
 (function(window){
   var PHRASES = {
+  // Contextual particle conversion. Never map 著 globally: 原著／著作 must remain intact.
+  "試著": "试着",
+  "急著": "急着",
+  "等著": "等着",
+  "牽著": "牵着",
+  "追著": "追着",
+  "帶著": "带着",
+  "笑著": "笑着",
+  "想著": "想着",
+  "沉著": "沉着",
   "漢拏山": "汉拿山",
   "漢拏峰": "汉拿峰",
   "汉拏山": "汉拿山",

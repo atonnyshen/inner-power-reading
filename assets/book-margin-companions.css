@@ -9,7 +9,7 @@
   user-select: none;
   -webkit-user-drag: none;
 }
-@media (min-width: 1420px) {
+@media (min-width: 1600px) {
   .book-margin-companion {
     display: block;
     position: absolute;
@@ -23,11 +23,11 @@
     z-index: 0;
   }
   .book-margin-companion.cat-left {
-    left: max(8px, calc(50% - 720px));
+    left: max(12px, calc(50% - 850px));
     transform: rotate(-5deg);
   }
   .book-margin-companion.cat-right {
-    right: max(8px, calc(50% - 720px));
+    right: max(12px, calc(50% - 850px));
     transform: rotate(5deg);
   }
   .book-margin-companion.cat-frame {
@@ -99,6 +99,63 @@
   }
   .bujo-companion-reminder .reminder-text {
     flex: 1 1 12ch;
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+}
+/* Two historical book structures: the showcase header can be inside or outside main. */
+.site-nav + #main-content { padding-top: var(--nav-height, 120px); }
+.site-nav + .editorial-header { padding-top: calc(var(--nav-height, 120px) + 40px); }
+
+/* Fixed contrast on the ten reading pages: brand palette unchanged elsewhere. */
+.site-nav .nav-brand-tag { color: #A95139 !important; }
+.btn-primary { background-color: #A95139 !important; }
+.btn-primary:hover { background-color: #913D29 !important; }
+
+/* The 60px inline navbar height must not clip 200% text on narrow screens. */
+@media (max-width: 640px) {
+  .site-nav .nav-inner {
+    height: auto !important;
+    min-height: 60px;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 6px 10px !important;
+    padding-block: 7px;
+  }
+  .site-nav .nav-brand {
+    flex: 1 1 180px;
+    min-width: 0;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+  }
+  .site-nav .nav-brand > span:not(.nav-brand-tag) {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .site-nav .nav-menu {
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px 10px !important;
+    min-width: 0;
+  }
+  .site-nav .btn-lang-toggle {
+    min-height: 44px;
+    white-space: normal;
+    text-align: center;
+  }
+  /* A single-line flex breadcrumb shrinks Chinese words into vertical columns at 200%. */
+  .editorial-header .breadcrumb-nav {
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 10px;
+  }
+  .editorial-header .breadcrumb-nav > a,
+  .editorial-header .breadcrumb-nav > span:not(:last-child) {
+    flex: 0 0 auto;
+  }
+  .editorial-header .breadcrumb-nav > span:last-child {
+    flex: 1 1 100%;
     min-width: 0;
     overflow-wrap: break-word;
   }

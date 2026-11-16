@@ -1657,7 +1657,7 @@
   <main id="main-content">
   <!-- Section 1: Why you need this book -->
   <section class="book-margin-zone" id="pain-points">
-    <img class="book-margin-companion cat-left cat-frame" src="img/editorial/chosen-05-total-surrender-plate.png" alt="" aria-hidden="true" width="1024" height="686" loading="lazy" decoding="async" style="--cat-y:27%;" />
+    <img class="book-margin-companion cat-left cat-frame" src="img/editorial/cat-two-companions.webp" alt="" aria-hidden="true" width="647" height="456" loading="lazy" decoding="async" style="--cat-y:27%;" />
     <div class="container">
       <div style="max-width: 75ch; margin: 0 auto;">
         <span class="section-tag">FOR EMPATHETIC SOULS</span>
@@ -1912,6 +1912,10 @@
     
     // Accessible Copy Function (MWG copy-button compliant)
     async function copyQuote(text, statusId) {
+      // Always copy the visible Traditional/Simplified text, not the inline source literal.
+      const displayedText = document.getElementById(statusId)?.closest('.quote-box')
+        ?.querySelector('.quote-text')?.textContent.trim();
+      text = displayedText || text;
       try {
         await navigator.clipboard.writeText(text);
         const statusEl = document.getElementById(statusId);

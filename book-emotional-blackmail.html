@@ -1768,7 +1768,7 @@
   <!-- Section 3: In-Situ Scenarios & Playbook -->
   <section class="book-margin-zone" id="strategies">
     <span id="scenarios" aria-hidden="true"></span>
-    <img class="book-margin-companion cat-right" src="img/editorial/chosen-01-amber-stretch.png" alt="" aria-hidden="true" width="318" height="199" loading="lazy" decoding="async" style="--cat-y:24%;" />
+    <img class="book-margin-companion cat-right" src="img/editorial/cat-amber-at-door.webp" alt="" aria-hidden="true" width="664" height="381" loading="lazy" decoding="async" style="--cat-y:24%;" />
     <div class="container">
       <div class="section-header">
         <span class="section-tag">REAL-LIFE EMBODIMENT</span>
@@ -1911,6 +1911,10 @@
     
     // Accessible Copy Function (MWG copy-button compliant)
     async function copyQuote(text, statusId) {
+      // Always copy the visible Traditional/Simplified text, not the inline source literal.
+      const displayedText = document.getElementById(statusId)?.closest('.quote-box')
+        ?.querySelector('.quote-text')?.textContent.trim();
+      text = displayedText || text;
       try {
         await navigator.clipboard.writeText(text);
         const statusEl = document.getElementById(statusId);

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>《溫柔生長讀書誌》在權力不對等處立足：心智自立與邊界守護</title>
-  <meta name="description" content="《溫柔生長讀書誌》：融合雙貓伴讀哲學（橘白身心鬆弛 × 玳瑁堅定邊界）與瑞士解構視覺。提供心靈困境專書檢索索引，為習慣退讓的女性建立安靜自洽的心理邊界。">
+  <meta name="description" content="《溫柔生長讀書誌》整理十本關於權力、關係、情緒勒索與自我照顧的書，提供情境導讀、閱讀摘記與日常練習，陪伴成年讀者辨認壓力、清楚表達需要，找到適合自己的閱讀起點。">
   <!-- Cross-Platform Noto Serif & Noto Sans Web Fonts -->
   <link rel=preconnect href=https://fonts.googleapis.com>
   <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
@@ -296,7 +296,8 @@
     /* Hero Section (Anti-Orphan & Anti-Word-Break) */
     .hero {
       background: transparent;
-      padding: 100px 0 84px 0;
+      /* Fixed header expands with larger text; keep the first heading below it. */
+      padding: max(100px, calc(var(--nav-height, 100px) + 24px)) 0 84px 0;
       border-bottom: 1px solid var(--border-subtle);
       text-align: center;
       position: relative;
@@ -1463,6 +1464,24 @@
       height: 52px;
       gap: 12px;
     }
+    /* Keep the brand and language switch usable at 200% text size. */
+    @media (max-width: 640px) {
+      .top-nav-inner {
+        height: auto;
+        min-height: 52px;
+        padding-block: 6px;
+        flex-wrap: wrap;
+        gap: 7px 10px;
+      }
+      .top-nav-inner .brand { flex: 1 0 225px; min-width: 0; max-width: 100%; }
+      .top-nav-inner .brand-title { white-space: normal; overflow-wrap: anywhere; }
+      .top-nav-inner .nav-actions { flex: 0 0 auto; margin-left: auto; min-width: 0; }
+      .top-nav-inner .lang-btn { min-height: 44px; white-space: normal; }
+    }
+    @media (max-width: 768px) {
+      /* Override the general mobile section padding without hiding the first heading. */
+      .hero { padding-top: max(100px, calc(var(--nav-height, 100px) + 24px)) !important; }
+    }
 
     /* Chapter Scroll Snap Bar inside Header (專屬書籤導航列 · 高階滑動隱喻) */
     .nav-chapter-bar {
@@ -2301,66 +2320,28 @@
     }
 
 
-    /* ══════════════════════════════════════════════════════════════════════
-       FIXED AMBIENT BACKGROUND GUARDIAN CATS (固定兩側實體花紋守護貓咪)
-       白色橘背舒展貓 × 三花戴帽端坐貓 · 零高度佔用 · 寬屏清晰 · 手機端靜音防干擾
-       ══════════════════════════════════════════════════════════════════════ */
-    .ambient-cat-fixed {
-      position: fixed;
+    /* In-flow paper illustrations: each is a quiet editorial pause, not a UI card. */
+    .cat-reading-figure {
+      width: min(100% - 36px, 300px);
+      margin: 6px auto 12px;
       pointer-events: none;
-      z-index: 1; /* Behind main text containers (cards have z-index: 2 or background: #fff) */
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      user-select: none;
+      line-height: 0;
     }
-    .ambient-cat-left {
-      bottom: 42px;
-      left: 24px;
-      width: 240px;
+    .cat-reading-figure img {
+      display: block;
+      width: 100%;
       height: auto;
-      opacity: 0.88;
+      object-fit: contain;
+      mix-blend-mode: multiply;
     }
-    .ambient-cat-right {
-      bottom: 42px;
-      right: 24px;
-      width: 230px;
-      height: auto;
-      opacity: 0.88;
-    }
-    @media (max-width: 1360px) {
-      .ambient-cat-left {
-        width: 170px;
-        height: auto;
-        bottom: 30px;
-        left: 16px;
-        opacity: 0.22;
-      }
-      .ambient-cat-right {
-        width: 160px;
-        height: auto;
-        bottom: 30px;
-        right: 16px;
-        opacity: 0.22;
-      }
-    }
-    @media (max-width: 1024px) {
-      .ambient-cat-left {
-        width: 130px;
-        height: auto;
-        bottom: 24px;
-        left: 12px;
-        opacity: 0.12;
-      }
-      .ambient-cat-right {
-        width: 125px;
-        height: auto;
-        bottom: 24px;
-        right: 12px;
-        opacity: 0.12;
-      }
-    }
+    .cat-reading-figure.cat-shelf { width: min(100% - 36px, 285px); margin: 0 auto -10px; }
+    .cat-reading-figure.cat-amber-pause { width: min(100% - 36px, 225px); margin: 6px 7% 14px auto; }
+    .cat-reading-figure.cat-portrait-pause { width: min(100% - 36px, 190px); margin: 8px auto 14px 7%; }
     @media (max-width: 768px) {
-      .ambient-cat-fixed {
-        opacity: 0.04; /* Nearly imperceptible on small mobile screens to guarantee 100% reading focus */
-      }
+      .cat-reading-figure.cat-amber-pause { width: min(55vw, 175px); margin: 4px 6% 8px auto; }
+      .cat-reading-figure.cat-portrait-pause { width: min(52vw, 170px); margin: 8px auto 12px 7%; }
+      .cat-reading-figure.cat-shelf { width: min(68vw, 265px); margin: 0 auto 8px; }
     }
 
     /* ══════════════════════════════════════════════════════════════════════
@@ -3790,15 +3771,6 @@
   <!-- Main Content Wrapper (HTML5 Semantic) -->
   <main id="main-content">
 
-          <!-- 讀者選定之三大插圖之一 & 二：固定兩側守護貓咪 (純淨去背、無文字、融入手帳紙面) -->
-  <div class="ambient-cat-fixed ambient-cat-left" aria-hidden="true" title="身心放鬆·側伸後腿貓">
-    <img src="img/editorial/chosen-01-amber-stretch.png" alt="身心放鬆·白色橘頭側伸後腿貓" width="230" height="152" style="width:100%;height:auto;display:block;filter:drop-shadow(0 6px 14px rgba(45,41,38,0.08));">
-  </div>
-
-  <div class="ambient-cat-fixed ambient-cat-right" aria-hidden="true" title="堅定邊界·端坐編織提籃旁玳瑁貓">
-    <img src="img/editorial/chosen-03-sentinel-basket.png" alt="堅定邊界·端坐編織提籃旁玳瑁貓" width="210" height="187" style="width:100%;height:auto;display:block;filter:drop-shadow(0 6px 14px rgba(45,41,38,0.08));">
-  </div>
-
   <!-- Top Bullet Journal Folio Section (Dual Feline Companions & Crisis-to-Book Reading Index) -->
 
   <!-- Top Bullet Journal Folio Section: Dual-Track Reading Guide (Practical, Zero Blueprint Noise) -->
@@ -3918,6 +3890,10 @@
   </section>
 
   <!-- Section 1: Persona Breakdown -->
+  <figure class="cat-reading-figure cat-amber-pause" aria-hidden="true">
+    <img src="img/editorial/cat-amber-at-door.webp" alt="" width="664" height="381" loading="lazy" decoding="async">
+  </figure>
+
   <section id="persona">
     <div class="container">
       <div class="section-header">
@@ -4899,6 +4875,10 @@
   </section>
 
   <!-- Section 6: In-Situ Playbook (Expanded with Citations) -->
+  <figure class="cat-reading-figure cat-shelf" aria-hidden="true">
+    <img src="img/editorial/cat-calico-bookshelf.webp" alt="" width="630" height="395" loading="lazy" decoding="async">
+  </figure>
+
   <section id="playbook">
     <div class="container">
       <div class="section-header">
@@ -5163,6 +5143,10 @@
     </div>
   </section>
 
+  <figure class="cat-reading-figure cat-portrait-pause" aria-hidden="true">
+    <img src="img/editorial/cat-calico-portrait.webp" alt="" width="479" height="393" loading="lazy" decoding="async">
+  </figure>
+
   </main>
 
   <!-- Section: Bedtime Reset & Radical Surrender (獨立晚安放鬆定錨區塊 · 手繪原版畫片完整展開) -->
@@ -5177,9 +5161,9 @@
         </p>
       </div>
 
-      <!-- 讀者選定原版手繪藝術畫片 (完整保留和紙底色、桌面切線與原版微型文字，零截斷) -->
-      <div class="bedtime-cat-plate-frame" style="margin: 28px auto 16px; max-width: 640px; border-radius: 12px; overflow: hidden; box-shadow: 0 14px 36px rgba(45, 41, 38, 0.09), 0 2px 8px rgba(45, 41, 38, 0.04); border: 1px solid rgba(224, 217, 206, 0.6); background: #FAF7F2; line-height: 0;">
-        <img src="img/editorial/chosen-05-total-surrender-plate.png" alt="全然臣服·升降桌四腳朝天徹底放鬆貓 (手繪原版畫片)" width="1024" height="686" style="width: 100%; height: auto; display: block;">
+      <!-- 原手繪下半部裁切畫片：保留雙貓、木柱、玩具和原有紙面紋理，不重新繪製。 -->
+      <div class="bedtime-cat-plate-frame" style="margin: 24px auto 10px; max-width: 570px; line-height: 0;">
+        <img src="img/editorial/cat-two-companions.webp" alt="兩隻貓安靜相伴，一隻在木柱後探頭，另一隻坐在貓架旁" width="647" height="456" loading="lazy" decoding="async" style="width: 100%; height: auto; display: block; mix-blend-mode: multiply;">
       </div>
 
 
@@ -5329,8 +5313,13 @@
       }, 500);
     }
 
-    // 3. Copy Quote to Clipboard
-    async function copyQuote(btn, text) {
+    // 3. Copy the currently displayed script; retain original inline text as a fallback only.
+    async function copyQuote(btn, originalText) {
+      const quote = btn.closest('.book-quote-box');
+      const displayed = quote && Array.from(quote.childNodes)
+        .filter(node => node.nodeType === Node.TEXT_NODE)
+        .map(node => node.textContent).join(' ').trim().replace(/\s+/g, ' ');
+      const text = displayed || originalText;
       try {
         await navigator.clipboard.writeText(text);
         showToast('已複製閱讀摘記到剪貼簿');
