@@ -112,7 +112,29 @@
 .btn-primary { background-color: #A95139 !important; }
 .btn-primary:hover { background-color: #913D29 !important; }
 
-/* The 60px inline navbar height must not clip 200% text on narrow screens. */
+/* Let navigation grow with enlarged text at every viewport width.
+   The ten book headers have an inline fixed height:60px, so this targeted
+   important override prevents the 200% text controls from escaping the header. */
+.site-nav .nav-inner {
+  height: auto !important;
+  min-height: 64px;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  padding-block: 6px;
+}
+.site-nav .nav-brand {
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-wrap: wrap;
+  overflow-wrap: anywhere;
+}
+.site-nav .nav-menu {
+  flex: 0 1 auto;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+/* Narrow screens additionally simplify the controls without hiding them. */
 @media (max-width: 640px) {
   .site-nav .nav-inner {
     height: auto !important;
